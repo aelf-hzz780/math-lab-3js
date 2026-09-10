@@ -1,0 +1,841 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/aelf-hzz780/math-lab-3js",
+  "title": {
+    "zh": "FORMA 数学实验室：十个可复现示例",
+    "en": "FORMA math lab: ten reproducible examples"
+  },
+  "capturedAt": "2026-09-10T08:16:59.689Z",
+  "browser": "152.0.7977.83",
+  "bundle": {
+    "path": "dist/app.js",
+    "sha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf",
+    "bytes": 798552
+  },
+  "capture": {
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "deviceScaleFactor": 1,
+    "imageFormat": "jpeg",
+    "jpegQuality": 82,
+    "layout": "full application, immersive mode",
+    "reducedMotion": "reduce",
+    "automaticCamera": false,
+    "seed": 42,
+    "protocol": "file:",
+    "virtualClock": "Playwright clock paused at 2026-09-10T00:00:00Z; only explicitly requested virtual time is advanced",
+    "pixelReproducibility": "GPU, browser version, and installed fonts can change pixels; model state and image hashes are recorded.",
+    "performanceMeasurement": false
+  },
+  "examples": [
+    {
+      "id": "navier",
+      "name": {
+        "zh": "N–S · 涡旋之心",
+        "en": "Navier–Stokes vortex concentration"
+      },
+      "description": {
+        "zh": "青绿与琥珀色流管组成细长涡旋，示意收缩、旋转与轴向拉伸。",
+        "en": "Teal and amber stream tubes form a spindle that illustrates contraction, rotation, and axial stretching."
+      },
+      "modelType": "几何机制示意",
+      "route": "index.html#navier",
+      "screenshot": {
+        "path": "docs/screenshots/01-navier.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/01-navier.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 115470,
+        "sha256": "70b394f38e0acde8cf7ab2594e92e7b9604b00e2a1e9c24fe44989fbcb6189b0"
+      },
+      "source": {
+        "scene": "src/experiments/navier.js",
+        "math": "src/math/navier.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/navier.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/navier.js"
+      },
+      "defaults": {
+        "view": "sculpture",
+        "motion": "loop",
+        "concentration": 0.24,
+        "stretch": 1,
+        "winding": 1.15,
+        "speed": 0.7
+      },
+      "capturedState": {
+        "params": {
+          "view": "sculpture",
+          "motion": "loop",
+          "concentration": 0.24,
+          "stretch": 1,
+          "winding": 1.15,
+          "speed": 0.7
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            10.875599999999999,
+            2.9574000000000007,
+            16.695
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "流管": "96 根",
+          "径向比例": "0.86 ×",
+          "轴向比例": "1.06 ×",
+          "当前集中 c": "0.24",
+          "模型": "有限几何示意"
+        }
+      },
+      "formula": "x = ρR(u)cosΘ / √λ    z = ρR(u)sinΘ / √λ\ny = 5.6λ(1 + c/4)(2u − 1)    ρ = 1 − 0.6c\nR(u) = s[0.14 + 3.55sin(πu)^0.82]    0 ≤ c ≤ 0.9",
+      "modelLimits": "有限参数几何示意，不是 Navier–Stokes 数值求解器，也不是公告证明或原始速度场的复现。收缩始终有下界；循环接头是显示截断。不能从此图推出奇点、有限能量或完整流场的不可压缩性。截图中的 GPT6 ASTRA 面板属于社媒视觉参考，不视为官方计算数据。Clay 状态仅按 2026-09-09 的核验记录标为 Unsolved。",
+      "sources": [
+        {
+          "label": "2026-09-08 · OpenAI 研究公告与原图说明",
+          "url": "https://openai.com/index/navier-stokes-solution/"
+        },
+        {
+          "label": "Clay Mathematics Institute · 问题与状态",
+          "url": "https://www.claymath.org/millennium/navier-stokes-equation/"
+        }
+      ],
+      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+    },
+    {
+      "id": "vortex",
+      "name": {
+        "zh": "有限核涡旋",
+        "en": "Finite-core Burgers vortex"
+      },
+      "description": {
+        "zh": "发光的螺旋流线环绕有限涡核，粒子展示径向收缩与轴向运动。",
+        "en": "Glowing helical streamlines wrap a finite vortex core while tracers show radial contraction and axial motion."
+      },
+      "modelType": "解析模型",
+      "route": "index.html#vortex",
+      "screenshot": {
+        "path": "docs/screenshots/02-vortex.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/02-vortex.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 150519,
+        "sha256": "ad01bd0a379f596cb361d288ad1648ff5d7196cc7df6e09ba325598c15310323"
+      },
+      "source": {
+        "scene": "src/experiments/vortex.js",
+        "math": "src/math/vortex.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/vortex.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/vortex.js"
+      },
+      "defaults": {
+        "view": "streamlines",
+        "strain": 0.65,
+        "viscosity": 0.12,
+        "circulation": 14
+      },
+      "capturedState": {
+        "params": {
+          "view": "streamlines",
+          "strain": 0.65,
+          "viscosity": 0.12,
+          "circulation": 14
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            9.2,
+            3.3999999999999995,
+            11.999999999999998
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "核心半径 r꜀": "0.859",
+          "轴心涡量 ω": "6.035",
+          "拉伸率 a": "0.65",
+          "流线数": "136"
+        }
+      },
+      "formula": "uᵣ = −ar/2    uᵧ = ay    uθ = Γ(1 − e^(−r²/r꜀²))/(2πr)\nr꜀ = √(4ν/a)    ωᵧ = Γe^(−r²/r꜀²)/(πr꜀²)",
+      "modelLimits": "解析教学模型，不是 LBM、DNS 或 OpenAI 2026 证明的复现。所有有限正黏度、正拉伸参数下核心光滑；画面收缩不表示有限时间奇点。流线以有限时间与有限空间截断，边缘重新出现的点是可视化示踪粒子。",
+      "sources": [
+        {
+          "label": "Burgers vortex · 模型与方程",
+          "url": "https://en.wikipedia.org/wiki/Burgers_vortex"
+        },
+        {
+          "label": "2026-09-08 · OpenAI 原始研究公告",
+          "url": "https://openai.com/index/navier-stokes-solution/"
+        },
+        {
+          "label": "Clay Mathematics Institute · 问题与状态",
+          "url": "https://www.claymath.org/millennium/navier-stokes-equation/"
+        }
+      ],
+      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+    },
+    {
+      "id": "quantum",
+      "name": {
+        "zh": "量子纠缠",
+        "en": "Quantum entanglement probability surface"
+      },
+      "description": {
+        "zh": "彩色概率曲面连接两端测量角度，展示双量子比特的联合概率。",
+        "en": "A luminous probability surface maps two measurement angles to the joint outcome probability of two qubits."
+      },
+      "modelType": "概率模型",
+      "route": "index.html#quantum",
+      "screenshot": {
+        "path": "docs/screenshots/03-quantum.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/03-quantum.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 77938,
+        "sha256": "6ad60d05e5d6a583130f78c992ad8b96b1a83f44816244861fbed88b574d6337"
+      },
+      "source": {
+        "scene": "src/experiments/quantum.js",
+        "math": "src/math/quantum.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/quantum.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/quantum.js"
+      },
+      "defaults": {
+        "chi": 45,
+        "phi": 0,
+        "alpha": 45,
+        "beta": 70
+      },
+      "capturedState": {
+        "params": {
+          "chi": 45,
+          "phi": 0,
+          "alpha": 45,
+          "beta": 70
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            9.700000000000001,
+            8.499999999999998,
+            11.5
+          ],
+          "target": [
+            0,
+            1.2,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "纠缠度 C": "1.000",
+          "局部纯度 Tr(ρ²)": "0.500",
+          "P(++ )": "47.7%",
+          "采样 ++ / +− / −+ / −−": "0 / 0 / 0 / 0"
+        }
+      },
+      "formula": "|ψ⟩ = cosχ |00⟩ + eⁱᵠ sinχ |11⟩\nP(a,b) = [1 + a cos2χ cosα + b cos2χ cosβ + ab E(α,β)] / 4\nE = cosα cosβ + sin2χ cosφ sinα sinβ",
+      "modelLimits": "这是一张概率函数曲面，不是粒子的实际空间形状，也不是完整 Hilbert 空间的三维等价物。远端测量设置不改变本端边缘概率，不能用于超光速通信。改变任一参数会清空旧设置的采样统计。",
+      "sources": [
+        {
+          "label": "Bell 1964 · On the Einstein Podolsky Rosen paradox",
+          "url": "https://doi.org/10.1103/PhysicsPhysiqueFizika.1.195"
+        }
+      ],
+      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+    },
+    {
+      "id": "dunes",
+      "name": {
+        "zh": "风成沙丘",
+        "en": "Wind-shaped sand dunes"
+      },
+      "description": {
+        "zh": "暖色掠射光照亮起伏沙脊与程序化细沙纹。",
+        "en": "Warm grazing light reveals rolling dune crests and fine procedural sand ripples."
+      },
+      "modelType": "程序化地形",
+      "route": "index.html#dunes",
+      "screenshot": {
+        "path": "docs/screenshots/04-dunes.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/04-dunes.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 92886,
+        "sha256": "a9180b16a6eaa1ce3a9cfb0f276a483f5eb6caac85cee90e2efc4ff91f8acece"
+      },
+      "source": {
+        "scene": "src/experiments/dunes.js",
+        "math": "src/math/dunes.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/dunes.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/dunes.js"
+      },
+      "defaults": {
+        "wind": 25,
+        "speed": 0.15,
+        "height": 3.15,
+        "ripples": 14,
+        "sun": 12
+      },
+      "capturedState": {
+        "params": {
+          "wind": 25,
+          "speed": 0.15,
+          "height": 3.15,
+          "ripples": 14,
+          "sun": 12
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            16,
+            6.800000000000001,
+            18
+          ],
+          "target": [
+            0,
+            0.7,
+            -8
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "沙丘高度": "3.15 m",
+          "风向": "25°",
+          "原点坡度": "22.5°",
+          "构造": "双谐波 + 两层噪声"
+        }
+      },
+      "formula": "h = H[0.58 sin θ + 0.24 sin(2θ + 0.7) + 0.36N₁ + 0.14N₂]",
+      "modelLimits": "这是可解释的程序化高度场，不求解沙粒输运方程，也不代表新发现的数学结构。移动速度是整体平移的演示参数；没有模拟侵蚀和崩塌。少量悬浮光点是用于表现风向的沙尘视觉层，不计算真实沙粒输运。",
+      "sources": [
+        {
+          "label": "Bagnold · The Physics of Blown Sand and Desert Dunes (1941)",
+          "url": "https://doi.org/10.1007/978-94-009-5682-7"
+        },
+        {
+          "label": "GPU Gems · Improved Perlin Noise",
+          "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-5-implementing-improved-perlin-noise"
+        }
+      ],
+      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+    },
+    {
+      "id": "sparks",
+      "name": {
+        "zh": "火花与轨迹",
+        "en": "Sparks and analytic particle trails"
+      },
+      "description": {
+        "zh": "金色火花形成喷泉，短拖尾描出重力与线性阻力下的运动。",
+        "en": "A fountain of golden sparks leaves short trails governed by gravity and linear drag."
+      },
+      "modelType": "运动模型",
+      "route": "index.html#sparks",
+      "screenshot": {
+        "path": "docs/screenshots/05-sparks.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/05-sparks.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 120401,
+        "sha256": "de33565432054cd28d1bf416865b723a6a7bb261353b37fff4ce5a8ff5804278"
+      },
+      "source": {
+        "scene": "src/experiments/sparks.js",
+        "math": "src/math/sparks.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/sparks.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/sparks.js"
+      },
+      "defaults": {
+        "speed": 9,
+        "drag": 0.25,
+        "gravity": 5,
+        "rate": 700,
+        "direction": 58,
+        "spread": 30,
+        "lifetime": 2.6
+      },
+      "capturedState": {
+        "params": {
+          "speed": 9,
+          "drag": 0.25,
+          "gravity": 5,
+          "rate": 700,
+          "direction": 58,
+          "spread": 30,
+          "lifetime": 2.6
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            10,
+            6.599999999999998,
+            18
+          ],
+          "target": [
+            0.6,
+            1.5,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "活动粒子 / 池容量": "1455 / 2000",
+          "实际发射率": "700 / s",
+          "向下终端速率": "20.00",
+          "阻力 λ": "0.25"
+        }
+      },
+      "formula": "dv/dt = g − λv\nv(t) = v₀e^(−λt) + g(1 − e^(−λt))/λ\nx(t) = x₀ + v₀(1 − e^(−λt))/λ + g[t − (1 − e^(−λt))/λ]/λ",
+      "modelLimits": "用于解释运动和粒子系统，不模拟真实燃烧、热传导或复杂空气湍流。粒子互不碰撞；轨迹池持续循环，颜色与亮度是视觉编码。发射率受当前画质的粒子池预算限制，指标显示实际发射率。",
+      "sources": [
+        {
+          "label": "Linear drag · 解析运动模型",
+          "url": "https://en.wikipedia.org/wiki/Projectile_motion#Trajectory_of_a_projectile_with_air_resistance"
+        }
+      ],
+      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+    },
+    {
+      "id": "ocean",
+      "name": {
+        "zh": "海水与浮力",
+        "en": "Ocean waves, buoyancy, and wakes"
+      },
+      "description": {
+        "zh": "程序化小船穿过深水波叠加形成的水面，身后可见近似尾流与泡沫。",
+        "en": "A procedural boat crosses superposed deep-water waves, leaving an approximate wake and foam."
+      },
+      "modelType": "简化物理模型",
+      "route": "index.html#ocean",
+      "screenshot": {
+        "path": "docs/screenshots/06-ocean.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/06-ocean.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 119850,
+        "sha256": "c41d302060acb2a25d38f5095ce266741666f7f92038d660d802d65bbfb97246"
+      },
+      "source": {
+        "scene": "src/experiments/ocean.js",
+        "math": "src/math/ocean.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/ocean.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/ocean.js"
+      },
+      "defaults": {
+        "amplitude": 0.85,
+        "speed": 2.6,
+        "turn": 0.18,
+        "body": "boat"
+      },
+      "capturedState": {
+        "params": {
+          "amplitude": 0.85,
+          "speed": 2.6,
+          "turn": 0.18,
+          "body": "boat"
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            12,
+            7.3999999999999995,
+            15
+          ],
+          "target": [
+            2,
+            0,
+            -1
+          ]
+        },
+        "simulationTimeSeconds": 2.0000000000000013,
+        "requestedRunningMilliseconds": 2000,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "航速": "2.6 m/s",
+          "四点升沉": "-0.14 m",
+          "尾流泡沫": "98 粒",
+          "入水飞溅": "0 次"
+        }
+      },
+      "formula": "η(x,z,t) = Σ Aⱼ cos(kⱼ·x − ωⱼt + φⱼ),  ωⱼ² = g|kⱼ|",
+      "modelLimits": "波面是线性深水波叠加，不是完整 Navier–Stokes 求解器。尾流采用约 19.47° 的 Kelvin 楔形视觉近似；泡沫和飞溅不反作用于波场，浮力采用离散船底和小角度近似。",
+      "sources": [
+        {
+          "label": "MIT · Deep Water Waves",
+          "url": "https://web.mit.edu/fluids-modules/www/waves.html"
+        },
+        {
+          "label": "Kelvin ship-wave pattern · Encyclopedia of Mathematics",
+          "url": "https://encyclopediaofmath.org/wiki/Kelvin_ship-wave_pattern"
+        },
+        {
+          "label": "GPU Gems · Effective Water Simulation",
+          "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models"
+        }
+      ],
+      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+    },
+    {
+      "id": "kissing",
+      "name": {
+        "zh": "11 维接吻构型",
+        "en": "604-point kissing configuration in 11 dimensions"
+      },
+      "description": {
+        "zh": "三维投影中的蓝金色点云显示 604 点构型，细线标出选中点的真实高维接触。",
+        "en": "A blue and gold 3D projection shows a 604-point configuration; lines mark the selected point’s actual high-dimensional contacts."
+      },
+      "modelType": "高维投影",
+      "route": "index.html#kissing",
+      "screenshot": {
+        "path": "docs/screenshots/07-kissing.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/07-kissing.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 99108,
+        "sha256": "27e3f1cc28e11c11af14e4c58ab8bbbe2cbd7ec76b881f8b9054433420ccf3c6"
+      },
+      "source": {
+        "scene": "src/experiments/kissing.js",
+        "math": "src/math/kissing.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/kissing.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/kissing.js"
+      },
+      "defaults": {
+        "configuration": "0",
+        "rotation": 0.18,
+        "selected": 17,
+        "pointSize": 0.18
+      },
+      "capturedState": {
+        "params": {
+          "configuration": "0",
+          "rotation": 0.18,
+          "selected": 17,
+          "pointSize": 0.18
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            0,
+            1.2000000000000006,
+            12.500000000000002
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "精确点数": "604",
+          "原始维度": "11 D",
+          "总接触数": "19,704",
+          "选中点邻居": "67"
+        }
+      },
+      "formula": "xᵢ ∈ ℝ¹¹  ·  ‖xᵢ‖² = 4  ·  ⟨xᵢ,xⱼ⟩ ≤ 2",
+      "modelLimits": "这是十一维结构的三维正交投影；画面距离与重叠不代表原空间中的距离。604 是下界，尚未宣称接吻数恰为 604。",
+      "sources": [
+        {
+          "label": "Station · 论文与三套精确构造",
+          "url": "https://arxiv.org/abs/2608.23691"
+        },
+        {
+          "label": "原始坐标与验证证书",
+          "url": "https://github.com/dualverse-ai/station_data_v2/tree/main/artifacts/kissing_number"
+        }
+      ],
+      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+    },
+    {
+      "id": "kakeya",
+      "name": {
+        "zh": "有限域 Kakeya 集",
+        "en": "Finite-field Kakeya set"
+      },
+      "description": {
+        "zh": "离散光点在模素数网格中排列，金色点突出一个方向的完整直线。",
+        "en": "Discrete luminous points occupy a prime-modulus grid, with a complete line in one direction highlighted in gold."
+      },
+      "modelType": "精确离散构造",
+      "route": "index.html#kakeya",
+      "screenshot": {
+        "path": "docs/screenshots/08-kakeya.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/08-kakeya.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 80938,
+        "sha256": "24178a2fcf963c567b909dc53542b8e1989fd2451e3b0de3d55ca80b4da010da"
+      },
+      "source": {
+        "scene": "src/experiments/kakeya.js",
+        "math": "src/math/kakeya.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/kakeya.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/kakeya.js"
+      },
+      "defaults": {
+        "prime": "7",
+        "direction": 0.19,
+        "scan": 0.1,
+        "spacing": 0.12
+      },
+      "capturedState": {
+        "params": {
+          "prime": "7",
+          "direction": 0.19,
+          "scan": 0.1,
+          "spacing": 0.12
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            11.5,
+            9.5,
+            13.500000000000004
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "集合点数": "129",
+          "空间占比": "37.6%",
+          "方向总数": "57",
+          "当前方向": "(1, 1, 4)"
+        }
+      },
+      "formula": "Kₚ ⊂ 𝔽ₚ³  ·  |Kₚ| = (2p³ + 7p² + 3) / 8",
+      "modelLimits": "有限域里的直线是模运算点集。白色光点按参数 t 遍历整条直线，跨边界时不会画出误导性的欧式长线。该家族不代表每个 p 的最小可能点集。",
+      "sources": [
+        {
+          "label": "Station · 新无限家族论文",
+          "url": "https://arxiv.org/abs/2608.23691"
+        },
+        {
+          "label": "精确公式与方向见证",
+          "url": "https://github.com/dualverse-ai/station_data_v2/tree/main/artifacts/finite_kakeya"
+        }
+      ],
+      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+    },
+    {
+      "id": "maxcut",
+      "name": {
+        "zh": "AI 图构造",
+        "en": "AI-discovered MAX-4-CUT graph"
+      },
+      "description": {
+        "zh": "四色节点与加权边构成空间网络，明亮边表示当前着色切过的边。",
+        "en": "Four-colored nodes and weighted edges form a spatial graph; bright edges cross the current color partition."
+      },
+      "modelType": "论文原始边表",
+      "route": "index.html#maxcut",
+      "screenshot": {
+        "path": "docs/screenshots/09-maxcut.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/09-maxcut.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 99443,
+        "sha256": "266179e51168bf2626bd69fb7febbe8c3e817196f4dc3e62c2f054d7ac95763d"
+      },
+      "source": {
+        "scene": "src/experiments/maxcut.js",
+        "math": "src/math/maxcut.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/maxcut.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/maxcut.js"
+      },
+      "defaults": {
+        "threshold": 200,
+        "auto": 0,
+        "layout": "sphere"
+      },
+      "capturedState": {
+        "params": {
+          "threshold": 200,
+          "auto": 0,
+          "layout": "sphere"
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            9,
+            6.5,
+            10.5
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "原始节点 / 边": "19 / 155",
+          "总权重": "52,941",
+          "切割权重": "42,151",
+          "切割比例": "79.62%"
+        }
+      },
+      "formula": "MAX-4-CUT:  max Σ wᵤᵥ · [cᵤ ≠ cᵥ]",
+      "modelLimits": "这张图用于近似困难性的归约证明。当前着色与局部搜索只演示目标函数，不是完整归约证明，也不保证达到全局最优。三维布局不改变图的结构。",
+      "sources": [
+        {
+          "label": "AlphaEvolve · 原论文与附录 C.1",
+          "url": "https://arxiv.org/html/2509.18057v7"
+        },
+        {
+          "label": "论文摘要与版本记录",
+          "url": "https://arxiv.org/abs/2509.18057"
+        }
+      ],
+      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+    },
+    {
+      "id": "hat",
+      "name": {
+        "zh": "Hat 非周期铺砌",
+        "en": "Aperiodic Hat tiling"
+      },
+      "description": {
+        "zh": "轻度挤出的青绿色 Hat 拼块形成有限铺砌，金色拼块标出合法镜像。",
+        "en": "Slightly extruded teal Hat tiles form a finite patch, with valid reflected tiles highlighted in gold."
+      },
+      "modelType": "正式替换规则",
+      "route": "index.html#hat",
+      "screenshot": {
+        "path": "docs/screenshots/10-hat.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/10-hat.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 139399,
+        "sha256": "2ddb4ef7a92cbdfbb5fb43fda4a6015875d1d958d0607926ed105037de9d32cf"
+      },
+      "source": {
+        "scene": "src/experiments/hat.js",
+        "math": "src/math/hat.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/hat.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/hat.js"
+      },
+      "defaults": {
+        "depth": "3",
+        "height": 0.09,
+        "growth": 0.35
+      },
+      "capturedState": {
+        "params": {
+          "depth": "3",
+          "height": 0.09,
+          "growth": 0.35
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            0,
+            9.3,
+            7.800000000000001
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "同形拼块": "1156",
+          "替换次数": "3",
+          "镜像拼块": "147",
+          "单块顶点": "13"
+        }
+      },
+      "formula": "H → 3H + T + 3P + 3F  ·  aperiodic monotile",
+      "modelLimits": "画面是无限非周期铺砌的一块有限区域；有限图案或动画本身不能证明非周期性。高度只用于展示，不属于原始平面数学定义。",
+      "sources": [
+        {
+          "label": "Hat · 作者与论文",
+          "url": "https://cs.uwaterloo.ca/~csk/hat/"
+        },
+        {
+          "label": "BSD 3-Clause 原始生成器",
+          "url": "https://github.com/isohedral/hatviz"
+        }
+      ],
+      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+    }
+  ],
+  "totalImageBytes": 1095952,
+  "validation": {
+    "allScenesReady": true,
+    "parameterDefaultsMatched": true,
+    "runtimeErrors": [],
+    "remoteRequests": [],
+    "imageBudgetBytes": 2097152
+  }
+}

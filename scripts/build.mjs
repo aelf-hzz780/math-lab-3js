@@ -1,0 +1,46 @@
+import {build, version} from 'esbuild';
+import {createHash} from 'node:crypto';
+import {mkdir, readFile, writeFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import {resolve, basename} from 'node:path';
+
+const root = fileURLToPath(new URL('..', import.meta.url));
+const result = await build({
+  absWorkingDir:root,
+  entryPoints:['src/app.js'],
+  outfile:'dist/app.js',
+  bundle:true,
+  format:'iife',
+  platform:'browser',
+  target:['chrome100', 'safari15.4', 'firefox100'],
+  minify:true,
+  legalComments:'eof',
+  metafile:true,
+  write:false,
+});
+
+const dependencies = Object.keys(result.metafile.inputs).sort();
+const externalImports = Object.values(result.metafile.outputs).flatMap(output => output.imports);
+if (externalImports.length) throw new Error(`Offline build contains runtime imports: ${JSON.stringify(externalImports)}`);
+for (const dataPath of ['data/kissing.json', 'data/maxcut.json']) {
+  if (!dependencies.includes(dataPath)) throw new Error(`Offline build omitted ${dataPath}`);
+}
+const experiments = dependencies.filter(path => /^src\/experiments\/[^/]+\.js$/.test(path)).map(path => basename(path, '.js'));
+const {catalog} = await import('../src/catalog.js');
+for (const {id} of catalog) {
+  if (!experiments.includes(id)) throw new Error(`Offline build omitted experiment ${id}`);
+}
+await mkdir(resolve(root, 'dist'), {recursive:true});
+for (const output of result.outputFiles) await writeFile(output.path, output.contents);
+const script = await readFile(resolve(root, 'dist/app.js'));
+const manifest = {
+  format:'classic-iife',
+  bundler:`esbuild ${version}`,
+  bytes:script.length,
+  sha256:createHash('sha256').update(script).digest('hex'),
+  experiments,
+  embeddedData:['data/kissing.json', 'data/maxcut.json'],
+  runtimeNetworkDependencies:[],
+};
+await writeFile(resolve(root, 'dist/manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
+console.log(`Offline bundle: ${experiments.length} experiments, ${(script.length / 1024).toFixed(0)} KiB, SHA-256 ${manifest.sha256}`);

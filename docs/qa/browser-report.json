@@ -1,0 +1,459 @@
+{
+  "started": "2026-09-10T07:52:29.383Z",
+  "browser": "152.0.7977.83",
+  "hardware": {
+    "cpu": "Apple M3 Pro",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "viewport": "1512×982, DPR 1",
+  "desktop": [
+    {
+      "id": "navier",
+      "ready": true,
+      "time": 2.4664999999999973,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "view": "sculpture",
+        "motion": "loop",
+        "concentration": 0.24,
+        "stretch": 1,
+        "winding": 1.15,
+        "speed": 0.7
+      },
+      "quality": "high",
+      "fps": 60,
+      "camera": {
+        "position": [
+          12.274548455127482,
+          2.9574000000000007,
+          15.69513174786142
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "流管": "96 根",
+        "径向比例": "0.78 ×",
+        "轴向比例": "1.09 ×",
+        "当前集中 c": "0.37",
+        "模型": "有限几何示意"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 5,
+        "textures": 3,
+        "drawCalls": 7,
+        "points": 2640,
+        "triangles": 209670
+      },
+      "overflow": false
+    },
+    {
+      "id": "vortex",
+      "ready": true,
+      "time": 1.8498999999999985,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "view": "streamlines",
+        "strain": 0.65,
+        "viscosity": 0.12,
+        "circulation": 14
+      },
+      "quality": "high",
+      "fps": 60,
+      "camera": {
+        "position": [
+          9.957138298036067,
+          3.3999999999999995,
+          11.37960442694663
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "核心半径 r꜀": "0.859",
+        "轴心涡量 ω": "6.035",
+        "拉伸率 a": "0.65",
+        "流线数": "136"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 7,
+        "textures": 3,
+        "drawCalls": 9,
+        "points": 1904,
+        "triangles": 60726
+      },
+      "overflow": false
+    },
+    {
+      "id": "quantum",
+      "ready": true,
+      "time": 1.8500000000000005,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "chi": 45,
+        "phi": 0,
+        "alpha": 45,
+        "beta": 70
+      },
+      "quality": "high",
+      "fps": 60,
+      "camera": {
+        "position": [
+          10.423777969740671,
+          8.499999999999998,
+          10.848264968996151
+        ],
+        "target": [
+          0,
+          1.2,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "纠缠度 C": "1.000",
+        "局部纯度 Tr(ρ²)": "0.500",
+        "P(++ )": "47.7%",
+        "采样 ++ / +− / −+ / −−": "0 / 0 / 0 / 0"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 18,
+        "textures": 15,
+        "drawCalls": 34,
+        "points": 0,
+        "triangles": 27302
+      },
+      "overflow": false
+    },
+    {
+      "id": "dunes",
+      "ready": true,
+      "time": 1.8166000000000013,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "wind": 25,
+        "speed": 0.15,
+        "height": 3.15,
+        "ripples": 14,
+        "sun": 12
+      },
+      "quality": "high",
+      "fps": 60,
+      "camera": {
+        "position": [
+          17.619662977752984,
+          6.800000000000001,
+          16.93085390736548
+        ],
+        "target": [
+          0,
+          0.7,
+          -8
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "沙丘高度": "3.15 m",
+        "风向": "25°",
+        "原点坡度": "24.7°",
+        "构造": "双谐波 + 两层噪声"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 4,
+        "textures": 3,
+        "drawCalls": 6,
+        "points": 440,
+        "triangles": 101318
+      },
+      "overflow": false
+    },
+    {
+      "id": "sparks",
+      "ready": true,
+      "time": 1.833200000000002,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "speed": 9,
+        "drag": 0.25,
+        "gravity": 5,
+        "rate": 700,
+        "direction": 58,
+        "spread": 30,
+        "lifetime": 2.6
+      },
+      "quality": "high",
+      "fps": 60,
+      "camera": {
+        "position": [
+          11.134781598400624,
+          6.599999999999998,
+          17.36025278254898
+        ],
+        "target": [
+          0.6,
+          1.5,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "活动粒子 / 池容量": "1458 / 2000",
+        "实际发射率": "700 / s",
+        "向下终端速率": "20.00",
+        "阻力 λ": "0.25"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 9,
+        "textures": 3,
+        "drawCalls": 11,
+        "points": 2000,
+        "triangles": 2914
+      },
+      "overflow": false
+    },
+    {
+      "id": "ocean",
+      "ready": true,
+      "time": 1.8499000000000034,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "amplitude": 0.85,
+        "speed": 2.6,
+        "turn": 0.18,
+        "body": "boat"
+      },
+      "quality": "high",
+      "fps": 60,
+      "camera": {
+        "position": [
+          13.01426712836467,
+          7.3999999999999995,
+          14.319462119311677
+        ],
+        "target": [
+          2,
+          0,
+          -1
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "航速": "2.6 m/s",
+        "四点升沉": "0.41 m",
+        "尾流泡沫": "74 粒",
+        "入水飞溅": "0 次"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 24,
+        "textures": 3,
+        "drawCalls": 27,
+        "points": 0,
+        "triangles": 108539
+      },
+      "overflow": false
+    },
+    {
+      "id": "kissing",
+      "ready": true,
+      "time": 1.8333000000000004,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "configuration": "0",
+        "rotation": 0.18,
+        "selected": 17,
+        "pointSize": 0.18
+      },
+      "quality": "high",
+      "fps": 60,
+      "camera": {
+        "position": [
+          0.8015184821917819,
+          1.2000000000000006,
+          12.47427625646895
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "精确点数": "604",
+        "原始维度": "11 D",
+        "总接触数": "19,704",
+        "选中点邻居": "67"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 6,
+        "textures": 3,
+        "drawCalls": 8,
+        "points": 604,
+        "triangles": 358
+      },
+      "overflow": false
+    },
+    {
+      "id": "kakeya",
+      "ready": true,
+      "time": 1.8332000000000024,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "prime": "7",
+        "direction": 0.19,
+        "scan": 0.1,
+        "spacing": 0.12
+      },
+      "quality": "high",
+      "fps": 60,
+      "camera": {
+        "position": [
+          12.341929544768222,
+          9.5,
+          12.734864550201442
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "集合点数": "129",
+        "空间占比": "37.6%",
+        "方向总数": "57",
+        "当前方向": "(1, 1, 5)"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 6,
+        "textures": 3,
+        "drawCalls": 8,
+        "points": 0,
+        "triangles": 11790
+      },
+      "overflow": false
+    },
+    {
+      "id": "maxcut",
+      "ready": true,
+      "time": 1.8333999999999993,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "threshold": 200,
+        "auto": 0,
+        "layout": "sphere"
+      },
+      "quality": "high",
+      "fps": 60,
+      "camera": {
+        "position": [
+          9.654789084185197,
+          6.5,
+          9.901264956554714
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "原始节点 / 边": "19 / 155",
+        "总权重": "52,941",
+        "切割权重": "42,151",
+        "切割比例": "79.62%"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 4,
+        "textures": 22,
+        "drawCalls": 126,
+        "points": 0,
+        "triangles": 7144
+      },
+      "overflow": false
+    },
+    {
+      "id": "hat",
+      "ready": true,
+      "time": 1.8499000000000008,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "depth": "3",
+        "height": 0.09,
+        "growth": 0.35
+      },
+      "quality": "high",
+      "fps": 60,
+      "camera": {
+        "position": [
+          0.5046699222292134,
+          9.3,
+          7.783656484557702
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "同形拼块": "1156",
+        "替换次数": "3",
+        "镜像拼块": "147",
+        "单块顶点": "13"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 5,
+        "textures": 3,
+        "drawCalls": 8,
+        "points": 0,
+        "triangles": 43674
+      },
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

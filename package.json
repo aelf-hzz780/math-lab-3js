@@ -1,0 +1,25 @@
+{
+  "name": "forma-math-lab",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node serve.js",
+    "test": "node --test tests/*.test.js",
+    "verify": "node --test tests/*.test.js",
+    "build": "node scripts/build.mjs",
+    "check:offline": "node scripts/offline-check.mjs",
+    "capture:examples": "node scripts/capture-examples.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  },
+  "description": "Ten interactive Three.js math experiments with offline rendering and reproducible visual examples.",
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aelf-hzz780/math-lab-3js.git"
+  }
+}

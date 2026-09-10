@@ -1,0 +1,62 @@
+{
+  "browser": "152.0.7977.83",
+  "dropped": {
+    "id": "ocean",
+    "ready": true,
+    "time": 2.0498999999999987,
+    "paused": false,
+    "seed": 42,
+    "params": {
+      "amplitude": 0.6,
+      "speed": 1.5,
+      "turn": 0.24,
+      "body": "boat"
+    },
+    "quality": "high",
+    "fps": 60,
+    "metrics": {
+      "航速": "1.5 m/s",
+      "四点升沉": "0.11 m",
+      "尾流泡沫": "79 粒",
+      "入水飞溅": "1 次"
+    },
+    "error": null,
+    "renderer": {
+      "geometries": 14,
+      "textures": 0,
+      "drawCalls": 14,
+      "points": 400,
+      "triangles": 107929
+    }
+  },
+  "variants": {
+    "id": "ocean",
+    "ready": true,
+    "time": 3.549899999999995,
+    "paused": false,
+    "seed": 42,
+    "params": {
+      "amplitude": 0.6,
+      "speed": 1.5,
+      "turn": 0.24,
+      "body": "crate"
+    },
+    "quality": "high",
+    "fps": 60,
+    "metrics": {
+      "航速": "1.5 m/s",
+      "四点升沉": "0.38 m",
+      "尾流泡沫": "150 粒",
+      "入水飞溅": "1 次"
+    },
+    "error": null,
+    "renderer": {
+      "geometries": 17,
+      "textures": 0,
+      "drawCalls": 7,
+      "points": 400,
+      "triangles": 107404
+    }
+  },
+  "errors": []
+}

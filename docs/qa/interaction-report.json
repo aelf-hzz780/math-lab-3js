@@ -1,0 +1,802 @@
+{
+  "started": "2026-09-10T07:29:07.172Z",
+  "browser": "152.0.7977.83",
+  "controls": [
+    {
+      "id": "navier",
+      "boundaryChanges": 12,
+      "actions": 1,
+      "passed": true
+    },
+    {
+      "id": "vortex",
+      "boundaryChanges": 9,
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "id": "quantum",
+      "boundaryChanges": 8,
+      "actions": 3,
+      "passed": true
+    },
+    {
+      "id": "dunes",
+      "boundaryChanges": 10,
+      "actions": 2,
+      "passed": true
+    },
+    {
+      "id": "sparks",
+      "boundaryChanges": 14,
+      "actions": 0,
+      "passed": true
+    },
+    {
+      "id": "ocean",
+      "boundaryChanges": 9,
+      "actions": 4,
+      "passed": true
+    },
+    {
+      "id": "kissing",
+      "boundaryChanges": 9,
+      "actions": 1,
+      "passed": true
+    },
+    {
+      "id": "kakeya",
+      "boundaryChanges": 9,
+      "actions": 1,
+      "passed": true
+    },
+    {
+      "id": "maxcut",
+      "boundaryChanges": 6,
+      "actions": 2,
+      "passed": true
+    },
+    {
+      "id": "hat",
+      "boundaryChanges": 8,
+      "actions": 1,
+      "passed": true
+    }
+  ],
+  "resources": [
+    {
+      "round": 0,
+      "id": "navier",
+      "geometries": 5,
+      "textures": 3,
+      "drawCalls": 7,
+      "points": 2640,
+      "triangles": 209670
+    },
+    {
+      "round": 0,
+      "id": "vortex",
+      "geometries": 7,
+      "textures": 3,
+      "drawCalls": 9,
+      "points": 1904,
+      "triangles": 60726
+    },
+    {
+      "round": 0,
+      "id": "quantum",
+      "geometries": 17,
+      "textures": 15,
+      "drawCalls": 32,
+      "points": 0,
+      "triangles": 26534
+    },
+    {
+      "round": 0,
+      "id": "dunes",
+      "geometries": 4,
+      "textures": 3,
+      "drawCalls": 6,
+      "points": 440,
+      "triangles": 101318
+    },
+    {
+      "round": 0,
+      "id": "sparks",
+      "geometries": 9,
+      "textures": 3,
+      "drawCalls": 11,
+      "points": 2000,
+      "triangles": 2914
+    },
+    {
+      "round": 0,
+      "id": "ocean",
+      "geometries": 24,
+      "textures": 3,
+      "drawCalls": 27,
+      "points": 400,
+      "triangles": 108539
+    },
+    {
+      "round": 0,
+      "id": "kissing",
+      "geometries": 6,
+      "textures": 3,
+      "drawCalls": 8,
+      "points": 604,
+      "triangles": 358
+    },
+    {
+      "round": 0,
+      "id": "kakeya",
+      "geometries": 6,
+      "textures": 3,
+      "drawCalls": 8,
+      "points": 0,
+      "triangles": 11790
+    },
+    {
+      "round": 0,
+      "id": "maxcut",
+      "geometries": 4,
+      "textures": 22,
+      "drawCalls": 126,
+      "points": 0,
+      "triangles": 7144
+    },
+    {
+      "round": 0,
+      "id": "hat",
+      "geometries": 5,
+      "textures": 3,
+      "drawCalls": 8,
+      "points": 0,
+      "triangles": 43674
+    },
+    {
+      "round": 1,
+      "id": "navier",
+      "geometries": 5,
+      "textures": 3,
+      "drawCalls": 7,
+      "points": 2640,
+      "triangles": 209670
+    },
+    {
+      "round": 1,
+      "id": "vortex",
+      "geometries": 7,
+      "textures": 3,
+      "drawCalls": 9,
+      "points": 1904,
+      "triangles": 60726
+    },
+    {
+      "round": 1,
+      "id": "quantum",
+      "geometries": 17,
+      "textures": 15,
+      "drawCalls": 32,
+      "points": 0,
+      "triangles": 26534
+    },
+    {
+      "round": 1,
+      "id": "dunes",
+      "geometries": 4,
+      "textures": 3,
+      "drawCalls": 6,
+      "points": 440,
+      "triangles": 101318
+    },
+    {
+      "round": 1,
+      "id": "sparks",
+      "geometries": 9,
+      "textures": 3,
+      "drawCalls": 11,
+      "points": 2000,
+      "triangles": 2914
+    },
+    {
+      "round": 1,
+      "id": "ocean",
+      "geometries": 24,
+      "textures": 3,
+      "drawCalls": 27,
+      "points": 400,
+      "triangles": 108539
+    },
+    {
+      "round": 1,
+      "id": "kissing",
+      "geometries": 6,
+      "textures": 3,
+      "drawCalls": 8,
+      "points": 604,
+      "triangles": 358
+    },
+    {
+      "round": 1,
+      "id": "kakeya",
+      "geometries": 6,
+      "textures": 3,
+      "drawCalls": 8,
+      "points": 0,
+      "triangles": 11790
+    },
+    {
+      "round": 1,
+      "id": "maxcut",
+      "geometries": 4,
+      "textures": 22,
+      "drawCalls": 126,
+      "points": 0,
+      "triangles": 7144
+    },
+    {
+      "round": 1,
+      "id": "hat",
+      "geometries": 5,
+      "textures": 3,
+      "drawCalls": 8,
+      "points": 0,
+      "triangles": 43674
+    },
+    {
+      "round": 2,
+      "id": "navier",
+      "geometries": 5,
+      "textures": 3,
+      "drawCalls": 7,
+      "points": 2640,
+      "triangles": 209670
+    },
+    {
+      "round": 2,
+      "id": "vortex",
+      "geometries": 7,
+      "textures": 3,
+      "drawCalls": 9,
+      "points": 1904,
+      "triangles": 60726
+    },
+    {
+      "round": 2,
+      "id": "quantum",
+      "geometries": 17,
+      "textures": 15,
+      "drawCalls": 32,
+      "points": 0,
+      "triangles": 26534
+    },
+    {
+      "round": 2,
+      "id": "dunes",
+      "geometries": 4,
+      "textures": 3,
+      "drawCalls": 6,
+      "points": 440,
+      "triangles": 101318
+    },
+    {
+      "round": 2,
+      "id": "sparks",
+      "geometries": 9,
+      "textures": 3,
+      "drawCalls": 11,
+      "points": 2000,
+      "triangles": 2914
+    },
+    {
+      "round": 2,
+      "id": "ocean",
+      "geometries": 24,
+      "textures": 3,
+      "drawCalls": 27,
+      "points": 400,
+      "triangles": 108539
+    },
+    {
+      "round": 2,
+      "id": "kissing",
+      "geometries": 6,
+      "textures": 3,
+      "drawCalls": 8,
+      "points": 604,
+      "triangles": 358
+    },
+    {
+      "round": 2,
+      "id": "kakeya",
+      "geometries": 6,
+      "textures": 3,
+      "drawCalls": 8,
+      "points": 0,
+      "triangles": 11790
+    },
+    {
+      "round": 2,
+      "id": "maxcut",
+      "geometries": 4,
+      "textures": 22,
+      "drawCalls": 126,
+      "points": 0,
+      "triangles": 7144
+    },
+    {
+      "round": 2,
+      "id": "hat",
+      "geometries": 5,
+      "textures": 3,
+      "drawCalls": 8,
+      "points": 0,
+      "triangles": 43674
+    }
+  ],
+  "mobile": [
+    {
+      "id": "navier",
+      "ready": true,
+      "time": 1.8665999999999985,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "view": "sculpture",
+        "motion": "loop",
+        "concentration": 0.24,
+        "stretch": 1,
+        "winding": 1.15,
+        "speed": 0.7
+      },
+      "quality": "low",
+      "fps": 60,
+      "camera": {
+        "position": [
+          20.857728706172082,
+          5.165212846153847,
+          27.856198399143395
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "流管": "56 根",
+        "径向比例": "0.80 ×",
+        "轴向比例": "1.08 ×",
+        "当前集中 c": "0.34",
+        "模型": "有限几何示意"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 4,
+        "textures": 0,
+        "drawCalls": 4,
+        "points": 624,
+        "triangles": 60480
+      },
+      "viewport": "390×844, DPR 2, emulation"
+    },
+    {
+      "id": "vortex",
+      "ready": true,
+      "time": 1.1666000000000003,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "view": "streamlines",
+        "strain": 0.65,
+        "viscosity": 0.12,
+        "circulation": 14
+      },
+      "quality": "low",
+      "fps": 55,
+      "camera": {
+        "position": [
+          16.91027871170667,
+          5.938230769230769,
+          20.285096794820586
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "核心半径 r꜀": "0.859",
+        "轴心涡量 ω": "6.035",
+        "拉伸率 a": "0.65",
+        "流线数": "70"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 6,
+        "textures": 0,
+        "drawCalls": 6,
+        "points": 560,
+        "triangles": 13440
+      },
+      "viewport": "390×844, DPR 2, emulation"
+    },
+    {
+      "id": "quantum",
+      "ready": true,
+      "time": 1.1831000000000007,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "chi": 45,
+        "phi": 0,
+        "alpha": 45,
+        "beta": 70
+      },
+      "quality": "low",
+      "fps": 53,
+      "camera": {
+        "position": [
+          17.758360754852795,
+          13.949730769230767,
+          19.36665663476244
+        ],
+        "target": [
+          0,
+          1.2,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "纠缠度 C": "1.000",
+        "局部纯度 Tr(ρ²)": "0.500",
+        "P(++ )": "47.7%",
+        "采样 ++ / +− / −+ / −−": "0 / 0 / 0 / 0"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 16,
+        "textures": 12,
+        "drawCalls": 29,
+        "points": 0,
+        "triangles": 10144
+      },
+      "viewport": "390×844, DPR 2, emulation"
+    },
+    {
+      "id": "dunes",
+      "ready": true,
+      "time": 0.999900000000001,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "wind": 25,
+        "speed": 0.15,
+        "height": 3.15,
+        "ripples": 14,
+        "sun": 12
+      },
+      "quality": "low",
+      "fps": 46,
+      "camera": {
+        "position": [
+          29.516371167143525,
+          11.353884615384617,
+          36.404430658634745
+        ],
+        "target": [
+          0,
+          0.7,
+          -8
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "沙丘高度": "3.15 m",
+        "风向": "25°",
+        "原点坡度": "22.5°",
+        "构造": "双谐波 + 两层噪声"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 3,
+        "textures": 0,
+        "drawCalls": 3,
+        "points": 180,
+        "triangles": 33728
+      },
+      "viewport": "390×844, DPR 2, emulation"
+    },
+    {
+      "id": "sparks",
+      "ready": true,
+      "time": 1.1500000000000008,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "speed": 9,
+        "drag": 0.25,
+        "gravity": 5,
+        "rate": 700,
+        "direction": 58,
+        "spread": 30,
+        "lifetime": 2.6
+      },
+      "quality": "low",
+      "fps": 50,
+      "camera": {
+        "position": [
+          18.269190157617917,
+          10.407346153846158,
+          30.75160581455768
+        ],
+        "target": [
+          0.6,
+          1.5,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "活动粒子 / 池容量": "553 / 700",
+        "实际发射率": "269 / s",
+        "向下终端速率": "20.00",
+        "阻力 λ": "0.25"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 8,
+        "textures": 0,
+        "drawCalls": 8,
+        "points": 700,
+        "triangles": 2908
+      },
+      "viewport": "390×844, DPR 2, emulation"
+    },
+    {
+      "id": "ocean",
+      "ready": true,
+      "time": 1.1833000000000018,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "amplitude": 0.85,
+        "speed": 2.6,
+        "turn": 0.18,
+        "body": "boat"
+      },
+      "quality": "low",
+      "fps": 60,
+      "camera": {
+        "position": [
+          20.607417454755318,
+          12.924384615384616,
+          26.197522027233727
+        ],
+        "target": [
+          2,
+          0,
+          -1
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "航速": "2.6 m/s",
+        "四点升沉": "0.43 m",
+        "尾流泡沫": "49 粒",
+        "入水飞溅": "0 次"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 23,
+        "textures": 0,
+        "drawCalls": 24,
+        "points": 160,
+        "triangles": 37589
+      },
+      "viewport": "390×844, DPR 2, emulation"
+    },
+    {
+      "id": "kissing",
+      "ready": true,
+      "time": 1.1832000000000016,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "configuration": "0",
+        "rotation": 0.18,
+        "selected": 17,
+        "pointSize": 0.18
+      },
+      "quality": "low",
+      "fps": 49,
+      "camera": {
+        "position": [
+          0.9038372430739379,
+          2.095846153846155,
+          21.813013240224517
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "精确点数": "604",
+        "原始维度": "11 D",
+        "总接触数": "19,704",
+        "选中点邻居": "67"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 5,
+        "textures": 0,
+        "drawCalls": 5,
+        "points": 604,
+        "triangles": 352
+      },
+      "viewport": "390×844, DPR 2, emulation"
+    },
+    {
+      "id": "kakeya",
+      "ready": true,
+      "time": 1.1333,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "prime": "7",
+        "direction": 0.19,
+        "scan": 0.1,
+        "spacing": 0.12
+      },
+      "quality": "low",
+      "fps": 60,
+      "camera": {
+        "position": [
+          21.004392454447526,
+          16.59211538461539,
+          22.763242905508193
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "集合点数": "129",
+        "空间占比": "37.6%",
+        "方向总数": "57",
+        "当前方向": "(1, 1, 4)"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 5,
+        "textures": 0,
+        "drawCalls": 5,
+        "points": 0,
+        "triangles": 11784
+      },
+      "viewport": "390×844, DPR 2, emulation"
+    },
+    {
+      "id": "maxcut",
+      "ready": true,
+      "time": 1.1833000000000016,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "threshold": 200,
+        "auto": 0,
+        "layout": "sphere"
+      },
+      "quality": "low",
+      "fps": 52,
+      "camera": {
+        "position": [
+          16.464654669631987,
+          11.352500000000001,
+          17.672110680592258
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "原始节点 / 边": "19 / 155",
+        "总权重": "52,941",
+        "切割权重": "42,151",
+        "切割比例": "79.62%"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 3,
+        "textures": 19,
+        "drawCalls": 123,
+        "points": 0,
+        "triangles": 7138
+      },
+      "viewport": "390×844, DPR 2, emulation"
+    },
+    {
+      "id": "hat",
+      "ready": true,
+      "time": 1.1833,
+      "paused": false,
+      "seed": 42,
+      "params": {
+        "depth": "3",
+        "height": 0.09,
+        "growth": 0.35
+      },
+      "quality": "low",
+      "fps": 51,
+      "camera": {
+        "position": [
+          0.5640420792955986,
+          16.242807692307693,
+          13.611318287836191
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "immersive": true,
+      "cameraMotion": true,
+      "metrics": {
+        "同形拼块": "1156",
+        "替换次数": "3",
+        "镜像拼块": "147",
+        "单块顶点": "13"
+      },
+      "error": null,
+      "renderer": {
+        "geometries": 4,
+        "textures": 0,
+        "drawCalls": 5,
+        "points": 0,
+        "triangles": 43668
+      },
+      "viewport": "390×844, DPR 2, emulation"
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "orbitInteraction": true,
+  "rapidSelection": true,
+  "pickSynchronization": true,
+  "directionReset": true,
+  "oceanImpact": {
+    "航速": "2.6 m/s",
+    "四点升沉": "0.42 m",
+    "尾流泡沫": "95 粒",
+    "入水飞溅": "1 次"
+  },
+  "pngExport": "forma-vortex-seed-42.png",
+  "switches": 30,
+  "reducedMotion": true,
+  "webglFallback": true,
+  "passed": true
+}

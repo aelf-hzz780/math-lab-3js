@@ -1,0 +1,27 @@
+# FORMA — Three.js Math Lab
+
+> Ten interactive, locally rendered math and physics examples. Use actual screenshots and their captured parameters to identify visual effects, then inspect the corresponding scene and pure-math source.
+
+## Entry points
+
+- [README](README.md): Bilingual overview, compact screenshot gallery, offline usage.
+- [AI guide](docs/AI_GUIDE.md): Retrieval and source navigation.
+- [Examples](docs/EXAMPLES.md): All ten rendered examples with source links and model limits.
+- [Machine-readable manifest](docs/screenshots/manifest.json): Scene IDs, bilingual descriptions, image/raw URLs, parameters, seeds, cameras, formulae, sources, and SHA-256 checksums.
+- [Architecture](docs/SDD.md): Registry, scene adapter, rendering, resource lifecycle, build.
+
+## Implementation
+
+- [Catalog](src/catalog.js): navier, vortex, quantum, dunes, sparks, ocean, kissing, kakeya, maxcut, hat.
+- [Experiments](src/experiments/): Three.js implementations, definitions, controls, presets, citations.
+- [Math](src/math/): Independently testable calculations.
+- [Exact data](data/): Published coordinates and weighted graph fixtures with upstream notices.
+- [Offline bundle](dist/manifest.json): Artifact metadata and included experiments.
+
+## Interpretation
+
+- [N–S model](docs/NS_MODEL.md): Finite geometric illustration; not a PDE or formal-proof reproduction.
+- [Constructions](docs/CONSTRUCTIONS.md): Exact construction provenance and verification.
+- [Research](docs/RESEARCH.md): Dated source claims, classic models, and visualization approximations.
+- [Validation](docs/QA_REPORT.md): Tests and browser measurements with their limits.
+- [Third-party notices](THIRD_PARTY_NOTICES.md): Bundled upstream licenses and attribution.

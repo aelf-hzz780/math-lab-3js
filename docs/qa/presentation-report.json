@@ -1,0 +1,729 @@
+{
+  "started": "2026-09-10T07:47:40.939Z",
+  "browser": "152.0.7977.83",
+  "protocol": "file:",
+  "desktopPresets": [
+    {
+      "id": "navier",
+      "label": "经典纺锤",
+      "params": {
+        "view": "sculpture",
+        "motion": "loop",
+        "concentration": 0.24,
+        "stretch": 1,
+        "winding": 1.15,
+        "speed": 0.7
+      },
+      "passed": true
+    },
+    {
+      "id": "navier",
+      "label": "集中与拉伸",
+      "params": {
+        "view": "sculpture",
+        "motion": "steady",
+        "concentration": 0.72,
+        "stretch": 1.25,
+        "winding": 1.8,
+        "speed": 1
+      },
+      "passed": true
+    },
+    {
+      "id": "navier",
+      "label": "舒展涡旋",
+      "params": {
+        "view": "sculpture",
+        "motion": "loop",
+        "concentration": 0.08,
+        "stretch": 0.75,
+        "winding": 0.55,
+        "speed": 0.5
+      },
+      "passed": true
+    },
+    {
+      "id": "vortex",
+      "label": "翡翠风暴",
+      "params": {
+        "view": "streamlines",
+        "strain": 0.65,
+        "viscosity": 0.12,
+        "circulation": 18
+      },
+      "passed": true
+    },
+    {
+      "id": "vortex",
+      "label": "金色细旋",
+      "params": {
+        "view": "streamlines",
+        "strain": 1.2,
+        "viscosity": 0.05,
+        "circulation": 22
+      },
+      "passed": true
+    },
+    {
+      "id": "vortex",
+      "label": "剖开涡心",
+      "params": {
+        "view": "section",
+        "strain": 0.85,
+        "viscosity": 0.2,
+        "circulation": 16
+      },
+      "passed": true
+    },
+    {
+      "id": "quantum",
+      "label": "完美纠缠",
+      "params": {
+        "chi": 45,
+        "phi": 0,
+        "alpha": 45,
+        "beta": 45
+      },
+      "passed": true
+    },
+    {
+      "id": "quantum",
+      "label": "相位翻转",
+      "params": {
+        "chi": 45,
+        "phi": 180,
+        "alpha": 65,
+        "beta": 115
+      },
+      "passed": true
+    },
+    {
+      "id": "quantum",
+      "label": "回到经典",
+      "params": {
+        "chi": 0,
+        "phi": 0,
+        "alpha": 45,
+        "beta": 70
+      },
+      "passed": true
+    },
+    {
+      "id": "dunes",
+      "label": "日落金海",
+      "params": {
+        "wind": 25,
+        "speed": 0.15,
+        "height": 3.15,
+        "ripples": 17,
+        "sun": 12
+      },
+      "passed": true
+    },
+    {
+      "id": "dunes",
+      "label": "蓝调沙脊",
+      "params": {
+        "wind": 115,
+        "speed": 0.08,
+        "height": 3.65,
+        "ripples": 20,
+        "sun": 7
+      },
+      "passed": true
+    },
+    {
+      "id": "dunes",
+      "label": "风过沙纹",
+      "params": {
+        "wind": 310,
+        "speed": 0.45,
+        "height": 1.5,
+        "ripples": 24,
+        "sun": 28
+      },
+      "passed": true
+    },
+    {
+      "id": "sparks",
+      "label": "金色喷泉",
+      "params": {
+        "speed": 9,
+        "drag": 0.25,
+        "gravity": 5,
+        "rate": 700,
+        "direction": 58,
+        "spread": 30,
+        "lifetime": 2.6
+      },
+      "passed": true
+    },
+    {
+      "id": "sparks",
+      "label": "失重星尘",
+      "params": {
+        "speed": 6,
+        "drag": 0.45,
+        "gravity": 0,
+        "rate": 800,
+        "direction": 40,
+        "spread": 60,
+        "lifetime": 3
+      },
+      "passed": true
+    },
+    {
+      "id": "sparks",
+      "label": "流星焊花",
+      "params": {
+        "speed": 11,
+        "drag": 0.1,
+        "gravity": 9,
+        "rate": 1000,
+        "direction": 25,
+        "spread": 15,
+        "lifetime": 1.8
+      },
+      "passed": true
+    },
+    {
+      "id": "ocean",
+      "label": "逐浪航行",
+      "params": {
+        "amplitude": 0.85,
+        "speed": 2.6,
+        "turn": 0.18,
+        "body": "boat"
+      },
+      "passed": true
+    },
+    {
+      "id": "ocean",
+      "label": "风平浪静",
+      "params": {
+        "amplitude": 0.15,
+        "speed": 1.5,
+        "turn": 0.08,
+        "body": "boat"
+      },
+      "passed": true
+    },
+    {
+      "id": "ocean",
+      "label": "大浪浮标",
+      "params": {
+        "amplitude": 1.35,
+        "speed": 0,
+        "turn": 0,
+        "body": "buoy"
+      },
+      "passed": true
+    },
+    {
+      "id": "kissing",
+      "label": "晶格星云",
+      "params": {
+        "configuration": "0",
+        "rotation": 0.22,
+        "selected": 17,
+        "pointSize": 0.18
+      },
+      "passed": true
+    },
+    {
+      "id": "kissing",
+      "label": "第二种秩序",
+      "params": {
+        "configuration": "1",
+        "rotation": 0.15,
+        "selected": 502,
+        "pointSize": 0.18
+      },
+      "passed": true
+    },
+    {
+      "id": "kissing",
+      "label": "异形对称",
+      "params": {
+        "configuration": "2",
+        "rotation": 0.28,
+        "selected": 570,
+        "pointSize": 0.16
+      },
+      "passed": true
+    },
+    {
+      "id": "kakeya",
+      "label": "七阶光晶",
+      "params": {
+        "prime": "7",
+        "direction": 0.19,
+        "scan": 0.14,
+        "spacing": 0.12
+      },
+      "passed": true
+    },
+    {
+      "id": "kakeya",
+      "label": "十一阶迷宫",
+      "params": {
+        "prime": "11",
+        "direction": 0.48,
+        "scan": 0.1,
+        "spacing": 0.08
+      },
+      "passed": true
+    },
+    {
+      "id": "kakeya",
+      "label": "十九阶宇宙",
+      "params": {
+        "prime": "19",
+        "direction": 0.63,
+        "scan": 0.07,
+        "spacing": 0.05
+      },
+      "passed": true
+    },
+    {
+      "id": "maxcut",
+      "label": "宝石网络",
+      "params": {
+        "threshold": 200,
+        "auto": 0,
+        "layout": "sphere"
+      },
+      "passed": true
+    },
+    {
+      "id": "maxcut",
+      "label": "四色星团",
+      "params": {
+        "threshold": 350,
+        "auto": 0.35,
+        "layout": "groups"
+      },
+      "passed": true
+    },
+    {
+      "id": "maxcut",
+      "label": "只看强连接",
+      "params": {
+        "threshold": 800,
+        "auto": 0,
+        "layout": "sphere"
+      },
+      "passed": true
+    },
+    {
+      "id": "hat",
+      "label": "无尽翡翠",
+      "params": {
+        "depth": "3",
+        "height": 0.09,
+        "growth": 0.35
+      },
+      "passed": true
+    },
+    {
+      "id": "hat",
+      "label": "二阶拼图",
+      "params": {
+        "depth": "2",
+        "height": 0.16,
+        "growth": 0.25
+      },
+      "passed": true
+    },
+    {
+      "id": "hat",
+      "label": "规则的种子",
+      "params": {
+        "depth": "0",
+        "height": 0.2,
+        "growth": 0.15
+      },
+      "passed": true
+    }
+  ],
+  "mobilePresets": [
+    {
+      "id": "navier",
+      "label": "经典纺锤",
+      "params": {
+        "view": "sculpture",
+        "motion": "loop",
+        "concentration": 0.24,
+        "stretch": 1,
+        "winding": 1.15,
+        "speed": 0.7
+      },
+      "passed": true
+    },
+    {
+      "id": "navier",
+      "label": "集中与拉伸",
+      "params": {
+        "view": "sculpture",
+        "motion": "steady",
+        "concentration": 0.72,
+        "stretch": 1.25,
+        "winding": 1.8,
+        "speed": 1
+      },
+      "passed": true
+    },
+    {
+      "id": "navier",
+      "label": "舒展涡旋",
+      "params": {
+        "view": "sculpture",
+        "motion": "loop",
+        "concentration": 0.08,
+        "stretch": 0.75,
+        "winding": 0.55,
+        "speed": 0.5
+      },
+      "passed": true
+    },
+    {
+      "id": "vortex",
+      "label": "翡翠风暴",
+      "params": {
+        "view": "streamlines",
+        "strain": 0.65,
+        "viscosity": 0.12,
+        "circulation": 18
+      },
+      "passed": true
+    },
+    {
+      "id": "vortex",
+      "label": "金色细旋",
+      "params": {
+        "view": "streamlines",
+        "strain": 1.2,
+        "viscosity": 0.05,
+        "circulation": 22
+      },
+      "passed": true
+    },
+    {
+      "id": "vortex",
+      "label": "剖开涡心",
+      "params": {
+        "view": "section",
+        "strain": 0.85,
+        "viscosity": 0.2,
+        "circulation": 16
+      },
+      "passed": true
+    },
+    {
+      "id": "quantum",
+      "label": "完美纠缠",
+      "params": {
+        "chi": 45,
+        "phi": 0,
+        "alpha": 45,
+        "beta": 45
+      },
+      "passed": true
+    },
+    {
+      "id": "quantum",
+      "label": "相位翻转",
+      "params": {
+        "chi": 45,
+        "phi": 180,
+        "alpha": 65,
+        "beta": 115
+      },
+      "passed": true
+    },
+    {
+      "id": "quantum",
+      "label": "回到经典",
+      "params": {
+        "chi": 0,
+        "phi": 0,
+        "alpha": 45,
+        "beta": 70
+      },
+      "passed": true
+    },
+    {
+      "id": "dunes",
+      "label": "日落金海",
+      "params": {
+        "wind": 25,
+        "speed": 0.15,
+        "height": 3.15,
+        "ripples": 17,
+        "sun": 12
+      },
+      "passed": true
+    },
+    {
+      "id": "dunes",
+      "label": "蓝调沙脊",
+      "params": {
+        "wind": 115,
+        "speed": 0.08,
+        "height": 3.65,
+        "ripples": 20,
+        "sun": 7
+      },
+      "passed": true
+    },
+    {
+      "id": "dunes",
+      "label": "风过沙纹",
+      "params": {
+        "wind": 310,
+        "speed": 0.45,
+        "height": 1.5,
+        "ripples": 24,
+        "sun": 28
+      },
+      "passed": true
+    },
+    {
+      "id": "sparks",
+      "label": "金色喷泉",
+      "params": {
+        "speed": 9,
+        "drag": 0.25,
+        "gravity": 5,
+        "rate": 700,
+        "direction": 58,
+        "spread": 30,
+        "lifetime": 2.6
+      },
+      "passed": true
+    },
+    {
+      "id": "sparks",
+      "label": "失重星尘",
+      "params": {
+        "speed": 6,
+        "drag": 0.45,
+        "gravity": 0,
+        "rate": 800,
+        "direction": 40,
+        "spread": 60,
+        "lifetime": 3
+      },
+      "passed": true
+    },
+    {
+      "id": "sparks",
+      "label": "流星焊花",
+      "params": {
+        "speed": 11,
+        "drag": 0.1,
+        "gravity": 9,
+        "rate": 1000,
+        "direction": 25,
+        "spread": 15,
+        "lifetime": 1.8
+      },
+      "passed": true
+    },
+    {
+      "id": "ocean",
+      "label": "逐浪航行",
+      "params": {
+        "amplitude": 0.85,
+        "speed": 2.6,
+        "turn": 0.18,
+        "body": "boat"
+      },
+      "passed": true
+    },
+    {
+      "id": "ocean",
+      "label": "风平浪静",
+      "params": {
+        "amplitude": 0.15,
+        "speed": 1.5,
+        "turn": 0.08,
+        "body": "boat"
+      },
+      "passed": true
+    },
+    {
+      "id": "ocean",
+      "label": "大浪浮标",
+      "params": {
+        "amplitude": 1.35,
+        "speed": 0,
+        "turn": 0,
+        "body": "buoy"
+      },
+      "passed": true
+    },
+    {
+      "id": "kissing",
+      "label": "晶格星云",
+      "params": {
+        "configuration": "0",
+        "rotation": 0.22,
+        "selected": 17,
+        "pointSize": 0.18
+      },
+      "passed": true
+    },
+    {
+      "id": "kissing",
+      "label": "第二种秩序",
+      "params": {
+        "configuration": "1",
+        "rotation": 0.15,
+        "selected": 502,
+        "pointSize": 0.18
+      },
+      "passed": true
+    },
+    {
+      "id": "kissing",
+      "label": "异形对称",
+      "params": {
+        "configuration": "2",
+        "rotation": 0.28,
+        "selected": 570,
+        "pointSize": 0.16
+      },
+      "passed": true
+    },
+    {
+      "id": "kakeya",
+      "label": "七阶光晶",
+      "params": {
+        "prime": "7",
+        "direction": 0.19,
+        "scan": 0.14,
+        "spacing": 0.12
+      },
+      "passed": true
+    },
+    {
+      "id": "kakeya",
+      "label": "十一阶迷宫",
+      "params": {
+        "prime": "11",
+        "direction": 0.48,
+        "scan": 0.1,
+        "spacing": 0.08
+      },
+      "passed": true
+    },
+    {
+      "id": "kakeya",
+      "label": "十九阶宇宙",
+      "params": {
+        "prime": "19",
+        "direction": 0.63,
+        "scan": 0.07,
+        "spacing": 0.05
+      },
+      "passed": true
+    },
+    {
+      "id": "maxcut",
+      "label": "宝石网络",
+      "params": {
+        "threshold": 200,
+        "auto": 0,
+        "layout": "sphere"
+      },
+      "passed": true
+    },
+    {
+      "id": "maxcut",
+      "label": "四色星团",
+      "params": {
+        "threshold": 350,
+        "auto": 0.35,
+        "layout": "groups"
+      },
+      "passed": true
+    },
+    {
+      "id": "maxcut",
+      "label": "只看强连接",
+      "params": {
+        "threshold": 800,
+        "auto": 0,
+        "layout": "sphere"
+      },
+      "passed": true
+    },
+    {
+      "id": "hat",
+      "label": "无尽翡翠",
+      "params": {
+        "depth": "3",
+        "height": 0.09,
+        "growth": 0.35
+      },
+      "passed": true
+    },
+    {
+      "id": "hat",
+      "label": "二阶拼图",
+      "params": {
+        "depth": "2",
+        "height": 0.16,
+        "growth": 0.25
+      },
+      "passed": true
+    },
+    {
+      "id": "hat",
+      "label": "规则的种子",
+      "params": {
+        "depth": "0",
+        "height": 0.2,
+        "growth": 0.15
+      },
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "remoteRequests": [],
+  "presentationModes": {
+    "initialImmersive": true,
+    "workbench": true,
+    "libraryDrawer": true,
+    "inspectorDrawer": true,
+    "escapeCloses": true
+  },
+  "cameraPolicy": {
+    "pausedTimeStable": true,
+    "pausedCameraStable": true,
+    "disabledCameraStable": true,
+    "enabledCameraMoves": true,
+    "manualDragChangesCamera": true,
+    "manualHoldStableMilliseconds": 600
+  },
+  "pngExport": {
+    "filename": "forma-hat-seed-42.png",
+    "bytes": 94189,
+    "signatureValid": true
+  },
+  "mobile": {
+    "viewport": "390×844, DPR 2, touch emulation",
+    "presetTouches": 30,
+    "overflow": false,
+    "theoryDrawer": true,
+    "modeSwitch": true
+  },
+  "reducedMotion": {
+    "paused": true,
+    "automaticCamera": false,
+    "time": 0,
+    "cameraStable": true
+  },
+  "passed": true
+}

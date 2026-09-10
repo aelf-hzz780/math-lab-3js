@@ -1,0 +1,23 @@
+{
+  "format": "classic-iife",
+  "bundler": "esbuild 0.25.10",
+  "bytes": 798552,
+  "sha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf",
+  "experiments": [
+    "dunes",
+    "hat",
+    "kakeya",
+    "kissing",
+    "maxcut",
+    "navier",
+    "ocean",
+    "quantum",
+    "sparks",
+    "vortex"
+  ],
+  "embeddedData": [
+    "data/kissing.json",
+    "data/maxcut.json"
+  ],
+  "runtimeNetworkDependencies": []
+}

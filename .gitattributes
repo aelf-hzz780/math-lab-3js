@@ -1,0 +1,4 @@
+# Preserve upstream formatting and keep generated/vendor code out of primary source reviews.
+vendor/** linguist-vendored -whitespace
+dist/** linguist-generated -whitespace
+data/STATION-* -whitespace

@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+playwright-report/
+test-results/
+# Full-resolution QA captures are regenerated locally. Curated JPEG examples are tracked.
+docs/qa/*.png
+docs/qa/*.jpg
+docs/qa/*.webp
