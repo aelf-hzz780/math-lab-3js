@@ -1,6 +1,6 @@
 {
-  "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf",
-  "started": "2026-09-10T07:54:17.420Z",
+  "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c",
+  "started": "2026-09-10T09:29:04.689Z",
   "browser": "152.0.7977.83",
   "protocol": "file:",
   "scenes": [
@@ -53,6 +53,41 @@
       "id": "hat",
       "ready": true,
       "error": null
+    },
+    {
+      "id": "real-kakeya",
+      "ready": true,
+      "error": null
+    },
+    {
+      "id": "boltzmann",
+      "ready": true,
+      "error": null
+    },
+    {
+      "id": "torus-knot",
+      "ready": true,
+      "error": null
+    },
+    {
+      "id": "moduli",
+      "ready": true,
+      "error": null
+    },
+    {
+      "id": "noperthedron",
+      "ready": true,
+      "error": null
+    },
+    {
+      "id": "e8",
+      "ready": true,
+      "error": null
+    },
+    {
+      "id": "matroid",
+      "ready": true,
+      "error": null
     }
   ],
   "failureChecks": [
@@ -60,13 +95,13 @@
       "failure": "missing-bundle",
       "loadingHidden": true,
       "recoveryVisible": true,
-      "message": "离线脚本未找到，请重新生成 dist/app.js。 · 参考编号 forma-boot-5acc45ec"
+      "message": "离线脚本未找到，请重新生成 dist/app.js。 · 参考编号 forma-boot-27c2926e"
     },
     {
       "failure": "invalid-bundle",
       "loadingHidden": true,
       "recoveryVisible": true,
-      "message": "Unexpected token '{' · 参考编号 forma-boot-5daf98bb"
+      "message": "Unexpected token '{' · 参考编号 forma-boot-d1c363c5"
     }
   ],
   "errors": [],

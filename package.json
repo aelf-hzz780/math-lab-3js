@@ -1,7 +1,7 @@
 {
   "name": "forma-math-lab",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "start": "node serve.js",
@@ -14,7 +14,7 @@
   "devDependencies": {
     "esbuild": "0.25.10"
   },
-  "description": "Ten interactive Three.js math experiments with offline rendering and reproducible visual examples.",
+  "description": "Seventeen interactive Three.js math experiments with Fields Medal topics, offline rendering and reproducible visual examples.",
   "engines": {
     "node": ">=22"
   },

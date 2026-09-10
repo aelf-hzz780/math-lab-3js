@@ -41,6 +41,8 @@ function reportError(error,context='experiment'){
 }
 
 function renderCatalog(){
+  $('experiment-count').textContent=`${catalog.length} 个交互实验`;
+  $('catalog-count').textContent=`INDEX / ${catalog.length}`;
   const list=$('experiment-list');
   catalog.forEach((item,index)=>{
     if(item.section)list.append(element('div','nav-group-label',item.section));
@@ -195,6 +197,8 @@ async function selectExperiment(id,force=false){
   clock.reset();metricValues={};$('metrics').replaceChildren();$('loading').hidden=false;$('error').hidden=true;
   document.querySelectorAll('[data-experiment]').forEach(node=>node.setAttribute('aria-current',String(node.dataset.experiment===id)));
   document.querySelectorAll('[data-scene]').forEach(node=>node.setAttribute('aria-current',String(node.dataset.scene===id)));
+  const rail=$('scene-rail'),activeChip=rail.querySelector('[aria-current="true"]');
+  if(activeChip)rail.scrollLeft=activeChip.offsetLeft-(rail.clientWidth-activeChip.clientWidth)/2;
   $('scene-presets').hidden=true;
   $('experiment-title').textContent=catalog.find(item=>item.id===id).title;document.title=`${catalog.find(item=>item.id===id).title} · FORMA 数学实验室`;
   try{

@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "repository": "https://github.com/aelf-hzz780/math-lab-3js",
   "title": {
-    "zh": "FORMA 数学实验室：十个可复现示例",
-    "en": "FORMA math lab: ten reproducible examples"
+    "zh": "FORMA 数学实验室：17 个可复现示例",
+    "en": "FORMA math lab: 17 reproducible examples"
   },
-  "capturedAt": "2026-09-10T08:16:59.689Z",
+  "capturedAt": "2026-09-10T09:29:30.053Z",
   "browser": "152.0.7977.83",
   "bundle": {
     "path": "dist/app.js",
-    "sha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf",
-    "bytes": 798552
+    "sha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c",
+    "bytes": 884852
   },
   "capture": {
     "viewport": {
@@ -26,8 +26,8 @@
     "seed": 42,
     "protocol": "file:",
     "virtualClock": "Playwright clock paused at 2026-09-10T00:00:00Z; only explicitly requested virtual time is advanced",
-    "pixelReproducibility": "GPU, browser version, and installed fonts can change pixels; model state and image hashes are recorded.",
-    "performanceMeasurement": false
+    "performanceMeasurement": false,
+    "pixelReproducibility": "GPU, browser version, and installed fonts can change pixels; model state and image hashes are recorded."
   },
   "examples": [
     {
@@ -47,8 +47,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/01-navier.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 115470,
-        "sha256": "70b394f38e0acde8cf7ab2594e92e7b9604b00e2a1e9c24fe44989fbcb6189b0"
+        "bytes": 115468,
+        "sha256": "8f2157fde74adae4d4cc459034f227d1e07dfaf0fa3d964b1e6709d3c9a2a5cd"
       },
       "source": {
         "scene": "src/experiments/navier.js",
@@ -112,7 +112,7 @@
           "url": "https://www.claymath.org/millennium/navier-stokes-equation/"
         }
       ],
-      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
     },
     {
       "id": "vortex",
@@ -131,8 +131,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/02-vortex.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 150519,
-        "sha256": "ad01bd0a379f596cb361d288ad1648ff5d7196cc7df6e09ba325598c15310323"
+        "bytes": 150526,
+        "sha256": "07531030caafdab0ad9414def3841e36780ae90e831b2dba593ad29556fac30a"
       },
       "source": {
         "scene": "src/experiments/vortex.js",
@@ -195,7 +195,7 @@
           "url": "https://www.claymath.org/millennium/navier-stokes-equation/"
         }
       ],
-      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
     },
     {
       "id": "quantum",
@@ -214,8 +214,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/03-quantum.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 77938,
-        "sha256": "6ad60d05e5d6a583130f78c992ad8b96b1a83f44816244861fbed88b574d6337"
+        "bytes": 77932,
+        "sha256": "0677657d8ce0c7f73f7117b16e4720c602c30e1d9c91535d2b2b9af56b041ad2"
       },
       "source": {
         "scene": "src/experiments/quantum.js",
@@ -270,7 +270,7 @@
           "url": "https://doi.org/10.1103/PhysicsPhysiqueFizika.1.195"
         }
       ],
-      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
     },
     {
       "id": "dunes",
@@ -289,8 +289,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/04-dunes.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 92886,
-        "sha256": "a9180b16a6eaa1ce3a9cfb0f276a483f5eb6caac85cee90e2efc4ff91f8acece"
+        "bytes": 92818,
+        "sha256": "22d319541978ac24a9bf4885d849d88ed9af749b818bc08b5e59596db57f1a3c"
       },
       "source": {
         "scene": "src/experiments/dunes.js",
@@ -351,7 +351,7 @@
           "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-5-implementing-improved-perlin-noise"
         }
       ],
-      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
     },
     {
       "id": "sparks",
@@ -370,8 +370,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/05-sparks.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 120401,
-        "sha256": "de33565432054cd28d1bf416865b723a6a7bb261353b37fff4ce5a8ff5804278"
+        "bytes": 120454,
+        "sha256": "9b00c36e5b79367540f95d63c887c19b5991e25ee76df0a95a35279c7d7d1b11"
       },
       "source": {
         "scene": "src/experiments/sparks.js",
@@ -432,7 +432,7 @@
           "url": "https://en.wikipedia.org/wiki/Projectile_motion#Trajectory_of_a_projectile_with_air_resistance"
         }
       ],
-      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
     },
     {
       "id": "ocean",
@@ -451,8 +451,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/06-ocean.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 119850,
-        "sha256": "c41d302060acb2a25d38f5095ce266741666f7f92038d660d802d65bbfb97246"
+        "bytes": 119873,
+        "sha256": "a0f57dda693cd86e965d73082d4078563cd3b20e2d5992a9aa454ace8fc713a6"
       },
       "source": {
         "scene": "src/experiments/ocean.js",
@@ -515,7 +515,7 @@
           "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models"
         }
       ],
-      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
     },
     {
       "id": "kissing",
@@ -534,8 +534,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/07-kissing.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 99108,
-        "sha256": "27e3f1cc28e11c11af14e4c58ab8bbbe2cbd7ec76b881f8b9054433420ccf3c6"
+        "bytes": 99299,
+        "sha256": "68db6dd0386e5b50c2d7344de938111b21976513168cad79fc2ba4b886bb49ba"
       },
       "source": {
         "scene": "src/experiments/kissing.js",
@@ -594,7 +594,7 @@
           "url": "https://github.com/dualverse-ai/station_data_v2/tree/main/artifacts/kissing_number"
         }
       ],
-      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
     },
     {
       "id": "kakeya",
@@ -613,8 +613,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/08-kakeya.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 80938,
-        "sha256": "24178a2fcf963c567b909dc53542b8e1989fd2451e3b0de3d55ca80b4da010da"
+        "bytes": 81216,
+        "sha256": "aabafc7d51fb8cde6503dc8f6833ffe1560082a84b81c60e9e513328ed9fa8a6"
       },
       "source": {
         "scene": "src/experiments/kakeya.js",
@@ -673,7 +673,7 @@
           "url": "https://github.com/dualverse-ai/station_data_v2/tree/main/artifacts/finite_kakeya"
         }
       ],
-      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
     },
     {
       "id": "maxcut",
@@ -692,8 +692,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/09-maxcut.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 99443,
-        "sha256": "266179e51168bf2626bd69fb7febbe8c3e817196f4dc3e62c2f054d7ac95763d"
+        "bytes": 99993,
+        "sha256": "1fdd27ff791a83f70499f27be6410225629b0ca73eb5abe1ce30fe47eeadb32b"
       },
       "source": {
         "scene": "src/experiments/maxcut.js",
@@ -750,7 +750,7 @@
           "url": "https://arxiv.org/abs/2509.18057"
         }
       ],
-      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
     },
     {
       "id": "hat",
@@ -769,8 +769,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/10-hat.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 139399,
-        "sha256": "2ddb4ef7a92cbdfbb5fb43fda4a6015875d1d958d0607926ed105037de9d32cf"
+        "bytes": 140084,
+        "sha256": "d2c3f9927f201e2e03af53c92a27deb618ff973e36bffa0ef5ff9aad13b9cd40"
       },
       "source": {
         "scene": "src/experiments/hat.js",
@@ -827,15 +827,627 @@
           "url": "https://github.com/isohedral/hatviz"
         }
       ],
-      "bundleSha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf"
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
+    },
+    {
+      "id": "real-kakeya",
+      "name": {
+        "zh": "实数三维 Kakeya",
+        "en": "Real-space three-dimensional Kakeya tubes"
+      },
+      "description": {
+        "zh": "多方向的彩色细管在实数空间中交织，管径与重叠控制揭示体积和方向之间的关系。",
+        "en": "Colored tubes in real three-dimensional space reveal direction, thickness, overlap, and sampled occupied volume."
+      },
+      "modelType": "有限管束教学模型",
+      "route": "index.html#real-kakeya",
+      "screenshot": {
+        "path": "docs/screenshots/11-real-kakeya.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/11-real-kakeya.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 87025,
+        "sha256": "6128414a1350ed26f8ac83aef157471f8c6d977ce0d56688a0ad1a235ae87aae"
+      },
+      "source": {
+        "scene": "src/experiments/real-kakeya.js",
+        "math": "src/math/real-kakeya.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/real-kakeya.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/real-kakeya.js"
+      },
+      "defaults": {
+        "count": 96,
+        "layout": "hairbrush",
+        "packing": 0.38,
+        "radius": 0.027,
+        "direction": 0.22,
+        "scan": 0.12
+      },
+      "capturedState": {
+        "params": {
+          "count": 96,
+          "layout": "hairbrush",
+          "packing": 0.38,
+          "radius": 0.027,
+          "direction": 0.22,
+          "scan": 0.12
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            11.999999999999996,
+            8.500000000000004,
+            17.499999999999996
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "有限方向": "96 个",
+          "管半径 δ": "0.027",
+          "并集体积估计": "≈ 0.163",
+          "重叠倍率估计": "≈ 1.40 ×"
+        }
+      },
+      "formula": "Tδ(a,v) = {x ∈ ℝ³ : dist(x, a + [−½,½]v) ≤ δ}\n|v| = 1    V̂ = Vbox · Ninside / Nsample\n2025 定理：dimH K = dimM K = 3（K ⊂ ℝ³ 为 Kakeya 集）",
+      "modelLimits": "这里只采样有限方向，显示的是有限半径管束；不是一个包含全部方向的无限 Kakeya 集，不构成新极值构造、反例或定理证明。有限体积估计不能推出 Hausdorff 维数，也不能把“维数 3”理解为“必须有正体积”。Halton 求积存在离散误差，尤其在很细的管径下；画面模型长度统一为 1。",
+      "sources": [
+        {
+          "label": "IMU · 2026 Fields Medal 官方名单与王虹颁奖词",
+          "url": "https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2026"
+        },
+        {
+          "label": "Wang–Zahl · 三维 Kakeya 论文（2025）",
+          "url": "https://arxiv.org/abs/2502.17655"
+        }
+      ],
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
+    },
+    {
+      "id": "boltzmann",
+      "name": {
+        "zh": "碰撞如何成为气体",
+        "en": "Hard spheres and collision histories"
+      },
+      "description": {
+        "zh": "发光硬球在箱中碰撞，一旁的历史图记录粒子间的相遇，连接微观运动与统计描述。",
+        "en": "Luminous hard spheres collide in a box while a history diagram records encounters and connects dynamics to statistics."
+      },
+      "modelType": "硬球与碰撞历史",
+      "route": "index.html#boltzmann",
+      "screenshot": {
+        "path": "docs/screenshots/12-boltzmann.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/12-boltzmann.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 86816,
+        "sha256": "cd4768d4fad3950b9b620c66a83de70dda42eceb97f7c3824b10b07f6a1c566b"
+      },
+      "source": {
+        "scene": "src/experiments/boltzmann.js",
+        "math": "src/math/boltzmann.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/boltzmann.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/boltzmann.js"
+      },
+      "defaults": {
+        "count": 64,
+        "temperature": 1.15,
+        "radius": 0.24,
+        "speed": 0.75,
+        "view": "both",
+        "history": 64,
+        "tracked": 0.12
+      },
+      "capturedState": {
+        "params": {
+          "count": 64,
+          "temperature": 1.15,
+          "radius": 0.24,
+          "speed": 0.75,
+          "view": "both",
+          "history": 64,
+          "tracked": 0.12
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            14.500000000000002,
+            8.499999999999998,
+            22
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 2.0000000000000013,
+        "initialGasWarmupSeconds": 2.4,
+        "requestedRunningMilliseconds": 2000,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "硬球 / 记忆节点": "64 / 64",
+          "粒子碰撞次数": "92",
+          "相对能量误差": "8.9e-16",
+          "含墙面动量误差": "5.8e-15"
+        }
+      },
+      "formula": "vᵢ′ = vᵢ − [(vᵢ − vⱼ)·n]n    vⱼ′ = vⱼ + [(vᵢ − vⱼ)·n]n\nE = ½Σ|vᵢ|²    Pgas + Pwall = constant\n固定步长 Δt = 1/240 s（必要时细分）",
+      "modelLimits": "有限数量、有限时间步的弹性硬球教学模型，不是 Boltzmann–Grad 极限、分子混沌证明或完整的论文 molecules。接触时刻与位置存在步长误差，重叠用局部修正处理；能量与含墙面交换的动量按弹性规则守恒。反转速度用于实验，不保证有限步算法逐帧严格可逆。历史只显示最近指定数量的碰撞，超出窗口的父节点连线省略。图的布局不是粒子的空间位置。",
+      "sources": [
+        {
+          "label": "IMU · 2026 Fields Medal 官方名单与邓煜颁奖词",
+          "url": "https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2026"
+        },
+        {
+          "label": "Deng–Hani–Ma · 硬球到 Boltzmann（v3, 2025）",
+          "url": "https://arxiv.org/abs/2408.07818v3"
+        },
+        {
+          "label": "Deng–Hani–Ma · 从牛顿力学到流体方程（2025）",
+          "url": "https://arxiv.org/abs/2503.01800"
+        }
+      ],
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
+    },
+    {
+      "id": "torus-knot",
+      "name": {
+        "zh": "环面结与扭曲度",
+        "en": "Torus knots and distortion"
+      },
+      "description": {
+        "zh": "彩色管状结绕过环面，选定两点的短弧与弦展示路径绕行程度。",
+        "en": "A colored tubular knot wraps a torus; the shorter arc and chord between selected points reveal detour distance."
+      },
+      "modelType": "拓扑与数值测量",
+      "route": "index.html#torus-knot",
+      "screenshot": {
+        "path": "docs/screenshots/13-torus-knot.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/13-torus-knot.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 83422,
+        "sha256": "7d62ff408dc1b1dc0096cfc865bf39b3c4c604a767d0b756a07ec35284e3d982"
+      },
+      "source": {
+        "scene": "src/experiments/torus-knot.js",
+        "math": "src/math/torus-knot.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/torus-knot.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/torus-knot.js"
+      },
+      "defaults": {
+        "p": 3,
+        "q": 5,
+        "minor": 0.85,
+        "first": 0.06,
+        "second": 0.39,
+        "carrier": "show"
+      },
+      "capturedState": {
+        "params": {
+          "p": 3,
+          "q": 5,
+          "minor": 0.85,
+          "first": 0.06,
+          "second": 0.39,
+          "carrier": "show"
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            9.100000000000001,
+            7,
+            12.9
+          ],
+          "target": [
+            0.55,
+            0,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "结 / link 分支": "1 · knot",
+          "所选短弧 s": "16.897",
+          "空间弦长 c": "1.524",
+          "此点对 s / c": "11.090"
+        }
+      },
+      "formula": "γ(t) = ((R+r cos qt) cos pt, r sin qt, (R+r cos qt) sin pt)\nδ(γ) = supₓ≠ᵧ dγ(x,y) / ‖x−y‖",
+      "modelLimits": "当前数值是一个选定点对的短弧/弦长比，不是该曲线的全局 distortion，也不是结型在所有嵌入中的最优值。管壁厚度仅为显示；测量对象是管的中心曲线。多分支 link 的测量始终在同一分支内。有限管面网格和弧长积分有数值误差；本实验不复现 Pardon 的证明。",
+      "sources": [
+        {
+          "label": "Pardon · On the distortion of knots on embedded surfaces (2011)",
+          "url": "https://annals.math.princeton.edu/2011/174-1/p21"
+        },
+        {
+          "label": "原始预印本 arXiv:1010.1972",
+          "url": "https://arxiv.org/abs/1010.1972"
+        },
+        {
+          "label": "IMU · 2026 Fields Medals",
+          "url": "https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2026"
+        }
+      ],
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
+    },
+    {
+      "id": "moduli",
+      "name": {
+        "zh": "复环面与模空间",
+        "en": "Complex tori and elliptic-curve moduli"
+      },
+      "description": {
+        "zh": "复数参数控制晶格形状，基本域与特殊点对应三维环面的教学示意。",
+        "en": "A complex parameter changes a lattice; a fundamental domain and special points accompany an illustrative torus."
+      },
+      "modelType": "g = 1 教学切片",
+      "route": "index.html#moduli",
+      "screenshot": {
+        "path": "docs/screenshots/14-moduli.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/14-moduli.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 82191,
+        "sha256": "e99338df4b1a093c2ed2f81f447d50e972a06c04bf5e9f7f666e9348e5848e22"
+      },
+      "source": {
+        "scene": "src/experiments/moduli.js",
+        "math": "src/math/moduli.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/moduli.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/moduli.js"
+      },
+      "defaults": {
+        "tauReal": 0,
+        "tauImag": 1,
+        "extent": 4,
+        "surface": "surface"
+      },
+      "capturedState": {
+        "params": {
+          "tauReal": 0,
+          "tauImag": 1,
+          "extent": 4,
+          "surface": "surface"
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            0.5,
+            1.7000000000000002,
+            15.4
+          ],
+          "target": [
+            0.3,
+            -0.1,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "当前 τ": "0.00 + 1.00i",
+          "晶格基本胞面积": "1.000",
+          "已标记 CM": "D = -4",
+          "当前 SL₂ 基变换": "[1 0; 0 1]"
+        }
+      },
+      "formula": "Eτ = ℂ / (ℤ + τℤ),  Im τ > 0\nτ ↦ (aτ+b)/(cτ+d),  ad−bc = 1\nℱ = { |Re τ| ≤ ½, |τ| ≥ 1 }",
+      "modelLimits": "三维甜甜圈不是平坦复环面的等距嵌入，不能从外形量出复结构。晶格为了容纳在画面中会统一缩放，指标面积 1 指未显示缩放前的数学晶格。基本域上方在有限高度截断；CM 标记仅识别 i、ρ、i√2 及其模群等价点，“未标注”不表示不是 CM 点。这里没有计算所有特殊点，也不复现 A_g 的 André–Oort 证明。",
+      "sources": [
+        {
+          "label": "Tsimerman · The André–Oort conjecture for A_g (v5)",
+          "url": "https://arxiv.org/abs/1506.01466v5"
+        },
+        {
+          "label": "Modular group · 基本域与生成元",
+          "url": "https://en.wikipedia.org/wiki/Modular_group"
+        },
+        {
+          "label": "Complex multiplication · 算术特殊点",
+          "url": "https://en.wikipedia.org/wiki/Complex_multiplication"
+        },
+        {
+          "label": "IMU · 2026 Fields Medals",
+          "url": "https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2026"
+        }
+      ],
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
+    },
+    {
+      "id": "noperthedron",
+      "name": {
+        "zh": "穿不过自己的多面体",
+        "en": "Noperthedron and Rupert projection test"
+      },
+      "description": {
+        "zh": "青色与金色多面体呈现两个姿态，下方叠加正交投影，实时测试严格包含余量。",
+        "en": "Teal and gold polyhedra show two poses; overlaid orthogonal silhouettes measure strict containment clearance."
+      },
+      "modelType": "原始坐标与投影测试",
+      "route": "index.html#noperthedron",
+      "screenshot": {
+        "path": "docs/screenshots/15-noperthedron.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/15-noperthedron.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 92413,
+        "sha256": "ccb1294cac3a6b69555acc7362f88c1b6df85ba686de2b982dce9b91d0f7602b"
+      },
+      "source": {
+        "scene": "src/experiments/noperthedron.js",
+        "math": "src/math/noperthedron.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/noperthedron.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/noperthedron.js"
+      },
+      "defaults": {
+        "solid": "nop",
+        "outerTheta": 0.78,
+        "outerPhi": 0.96,
+        "innerTheta": 0.2,
+        "innerPhi": 0.6,
+        "spin": 0.18,
+        "scale": 1,
+        "scan": 0.1
+      },
+      "capturedState": {
+        "params": {
+          "solid": "nop",
+          "outerTheta": 0.78,
+          "outerPhi": 0.96,
+          "innerTheta": 0.2,
+          "innerPhi": 0.6,
+          "spin": 0.18,
+          "scale": 1,
+          "scan": 0.1
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            0,
+            2.8000000000000003,
+            17
+          ],
+          "target": [
+            0,
+            -0.15,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "顶点数": "90",
+          "副本比例": "1.00 ×",
+          "投影余量": "-0.0234",
+          "当前姿态": "投影越界"
+        }
+      },
+      "formula": "Rα πᵤ(sP) ⊂ int(πᵥ(P))  ·  同尺寸条件 s = 1",
+      "modelLimits": "Noperthedron 来自 Steininger–Yurkevich 2025 预印本（2026 v2），不属菲尔兹奖成果。原始整数系数保留，三角函数及投影测试使用浮点数；这里的有限姿态搜索不替代论文的计算机辅助全局证明。s < 1 时允许缩小副本，不能当成同尺寸穿越。",
+      "sources": [
+        {
+          "label": "Steininger & Yurkevich · 原论文 v2",
+          "url": "https://arxiv.org/abs/2508.18475v2"
+        },
+        {
+          "label": "作者的 90 顶点坐标 · 固定版本",
+          "url": "https://github.com/Jakob256/Rupert/blob/1009a4c451dbdbb1a1705d18461cbabd534a0a6c/src/noperthedron.py"
+        },
+        {
+          "label": "作者的验证 Notebook",
+          "url": "https://github.com/Jakob256/Rupert/blob/1009a4c451dbdbb1a1705d18461cbabd534a0a6c/src/noperthedron_verification.ipynb"
+        }
+      ],
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
+    },
+    {
+      "id": "e8",
+      "name": {
+        "zh": "E8 · 八维对称",
+        "en": "E8 root system in eight dimensions"
+      },
+      "description": {
+        "zh": "240 个根的三维投影呈现晶格对称，选中根的真实八维邻接关系被高亮。",
+        "en": "A projection of 240 roots reveals E8 symmetry, highlighting genuine eight-dimensional neighbors of a selected root."
+      },
+      "modelType": "精确根系的三维投影",
+      "route": "index.html#e8",
+      "screenshot": {
+        "path": "docs/screenshots/16-e8.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/16-e8.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 120541,
+        "sha256": "1f199053a3a2d696eada77ac3a4e575b9ec5612a97194adc801d3d4cb389261d"
+      },
+      "source": {
+        "scene": "src/experiments/e8.js",
+        "math": "src/math/e8.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/e8.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/e8.js"
+      },
+      "defaults": {
+        "plane": "03",
+        "angle": 25,
+        "speed": 0.17,
+        "selected": 126,
+        "edges": 0.35,
+        "size": 0.08
+      },
+      "capturedState": {
+        "params": {
+          "plane": "03",
+          "angle": 25,
+          "speed": 0.17,
+          "selected": 126,
+          "edges": 0.35,
+          "size": 0.08
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            0,
+            1.9999999999999993,
+            14.000000000000002
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "精确根 / 维度": "240 / 8D",
+          "选中根邻居": "56",
+          "最近距离²": "2",
+          "最密填充密度": "π⁴/384 ≈ 0.25367"
+        }
+      },
+      "formula": "R(E₈) = {排列(±1,±1,0⁶)} ∪ {(±½)⁸ : 负号数为偶数}\n|R| = 112 + 128 = 240    ‖r‖² = 2\nrᵢ · rⱼ = 1 ⇔ ‖rᵢ − rⱼ‖² = 2",
+      "modelLimits": "这是 E8 晶格最短向量构成的有限根系，不是完整无限晶格。投影丢失五个维度，画面重叠和距离不代表八维距离；球点半径为显示大小。演示没有复现 Viazovska 的 Fourier 分析最优性证明，也不把 2016 年定理标为 2026 年新发现。",
+      "sources": [
+        {
+          "label": "IMU · 2022 Fields Medal / Viazovska",
+          "url": "https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2022"
+        },
+        {
+          "label": "Viazovska 2016 · The sphere packing problem in dimension 8",
+          "url": "https://arxiv.org/abs/1603.04246"
+        },
+        {
+          "label": "Annals of Mathematics · 2017 正式论文",
+          "url": "https://annals.math.princeton.edu/2017/185-3/p07"
+        }
+      ],
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
+    },
+    {
+      "id": "matroid",
+      "name": {
+        "zh": "拟阵与 Lorentzian",
+        "en": "Graphic matroid and Lorentzian basis polynomial"
+      },
+      "description": {
+        "zh": "四面体图中的选边呈现独立集与生成树，权重改变基多项式的对数曲面；特征值柱展示 Lorentzian 符号。",
+        "en": "Selected tetrahedral graph edges reveal independent sets and spanning trees; weights change a log-polynomial surface, while eigenvalue bars show its Lorentzian signature."
+      },
+      "modelType": "组合结构与多项式",
+      "route": "index.html#matroid",
+      "screenshot": {
+        "path": "docs/screenshots/17-matroid.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/17-matroid.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 77786,
+        "sha256": "0a6e152c1d0bb9ee41ce6e3b5b974549fc919265a80fbd20b15686ccfe63721c"
+      },
+      "source": {
+        "scene": "src/experiments/matroid.js",
+        "math": "src/math/matroid.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/matroid.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/matroid.js"
+      },
+      "defaults": {
+        "selection": 7,
+        "edge": "0",
+        "weightA": 1.2,
+        "weightB": 1.8,
+        "others": 1,
+        "view": "both"
+      },
+      "capturedState": {
+        "params": {
+          "selection": 7,
+          "edge": "0",
+          "weightA": 1.2,
+          "weightB": 1.8,
+          "others": 1,
+          "view": "both"
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            8.1,
+            6.8999999999999995,
+            11.9
+          ],
+          "target": [
+            0,
+            -0.15,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "选边 / 秩": "3 / 3",
+          "独立性": "基 · 生成树",
+          "全部基多项式 b": "24.480",
+          "Lorentzian 谱": "1 正 / 2 负 / 3 零"
+        }
+      },
+      "formula": "b(w) = Σₜ∈生成树 ∏ₑ∈ₜ wₑ    b(1,1,1,1,1,1) = 16\nr(A) = 4 − 连通分量数    A 独立 ⇔ |A| = r(A)\nz = log b(x,y,λ,λ,λ,λ)    Hess(log b) ⪯ 0",
+      "modelLimits": "K₄ 是经典的小型图拟阵，三维四面体布局只是图的画法。右侧只是六变量多项式的二维正权重截面，图像或有限采样本身不证明普遍对数凹性。实验采用生成树枚举和解析导数；谱值的数值计算与已知精确值对照，不复现全部 Hodge 理论或 Lorentzian 定理证明。这里的 Lorentzian 不表示物理时空或相对论。",
+      "sources": [
+        {
+          "label": "IMU · June Huh / 2022 Fields Medal",
+          "url": "https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2022"
+        },
+        {
+          "label": "Brändén–Huh · Lorentzian polynomials",
+          "url": "https://arxiv.org/abs/1902.03719"
+        },
+        {
+          "label": "IMU · Huh 获奖工作详述",
+          "url": "https://www.mathunion.org/fileadmin/IMU/Prizes/Fields/2022/IMU_Fields22_Huh_citation.pdf"
+        }
+      ],
+      "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c"
     }
   ],
-  "totalImageBytes": 1095952,
+  "totalImageBytes": 1727857,
   "validation": {
     "allScenesReady": true,
     "parameterDefaultsMatched": true,
     "runtimeErrors": [],
     "remoteRequests": [],
-    "imageBudgetBytes": 2097152
+    "imageBudgetBytes": 3145728
   }
 }

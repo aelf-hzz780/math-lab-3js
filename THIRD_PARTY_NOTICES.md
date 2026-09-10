@@ -30,3 +30,13 @@ All remaining illustrations, scene geometry, terrain, water, icons and interface
 
 - 固定开发依赖 0.25.10，MIT 许可；许可证随 `node_modules/esbuild/LICENSE.md` 提供。
 - 构建产物不会嵌入 esbuild 运行时。Three.js 与 Hat 的原许可继续适用于 dist/app.js 中打包的相应代码，原许可证保留在 vendor/。
+
+## Noperthedron mathematical coordinates
+
+Mathematical seed coordinates and the 15-fold rotation/central-inversion rule are attributed to Jakob Steininger and Sergey Yurkevich, *A convex polyhedron without Rupert's property*, arXiv:2508.18475v2 (2026-01-28). The reference is `Jakob256/Rupert`, commit `1009a4c451dbdbb1a1705d18461cbabd534a0a6c`, `src/noperthedron.py`. Provenance and integer coefficients are retained in `data/noperthedron.json`.
+
+No repository license was declared when checked on 2026-09-10. This app transcribes mathematical constants and independently implements construction/rendering; it does not redistribute or relicense the upstream Python program or proof notebook. The interactive floating-point projection test is not the authors' computer-assisted certificate.
+
+## Fields Medal teaching models
+
+The new Kakeya, hard-sphere, torus-knot, moduli, E8, and graphic-matroid scenes are project implementations of cited mathematical definitions and teaching models. No paper illustrations, award photographs, or upstream solver implementation are bundled. Research authors, dates, model limits, and original sources are recorded in `docs/ADDITIONS.md` and each scene definition. No endorsement or AI-discovery attribution is implied.

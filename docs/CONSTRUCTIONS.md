@@ -48,6 +48,24 @@ David Smith、Joseph Samuel Myers、Craig S. Kaplan、Chaim Goodman-Strauss，20
 
 ## 验证与资源
 
+### 2026-09-10 新增构造 / Added constructions
+
+Noperthedron 在 `data/noperthedron.json` 保留三组有理坐标的整数分子、分母以及 15 重旋转和中心反演规则，来源固定到 `Jakob256/Rupert` 的 commit `1009a4c451dbdbb1a1705d18461cbabd534a0a6c`。顶点编号与作者一致，90 顶点、152 支持面通过对称性与 Euler 特征验证。投影、支持面及包含余量使用浮点数，未移植论文的区间算术证明。源码仓库未声明许可证，仅转录数学数据并独立实现；没有分发作者程序。
+
+`data/noperthedron.json` retains three exact rational seed triples as integer numerators/denominators and the 15-fold rotation/central-inversion rule, pinned to the upstream commit above. Vertex ordering matches the author. Tests verify 90 vertices, 152 supporting faces, symmetry, and Euler characteristic. Projections, supporting planes, and containment margins use floating point, not the paper's interval certificate. Only mathematical data is transcribed; no upstream implementation is distributed or relicensed.
+
+E8 由 112 个整数根和 128 个偶负号半整数根组成；这些二进制浮点可精确表示的坐标用于验证范数平方 2、6,720 条最近邻边、每根 56 邻居，以及根反射闭包。这里显示有限根壳的三维正交投影，八维最密无限球堆积的密度是理论背景。
+
+E8 consists of 112 integer roots and 128 half-integer roots with even negative-sign parity. These dyadic coordinates are represented exactly in binary floating point and verify squared norm 2, 6,720 nearest-neighbor edges, degree 56, and closure under root reflections. Rendering projects the finite root shell; optimal infinite 8D packing density is theoretical context.
+
+K4 图拟阵完整枚举 16 个基（生成树），用 Matrix–Tree 定理独立验证基生成多项式。正权重切片计算 `log b` 的 Hessian；各一阶偏导的 Hessian 特征值为 `1+√5, 1−√5, −2, 0, 0, 0`，展示该实例的 Lorentzian 符号。
+
+The K4 graphic matroid enumerates all 16 bases (spanning trees), with its polynomial independently checked against the Matrix–Tree theorem. A positive-weight slice computes the Hessian of `log b`; each first derivative has Hessian eigenvalues `1+√5, 1−√5, −2, 0, 0, 0`, illustrating the Lorentzian signature for this instance.
+
+其余新增专题属于有界教学模型，来源与范围见 [ADDITIONS.md](ADDITIONS.md) 及 `models/` 下的说明。
+
+Other additions are bounded teaching models; see [ADDITIONS.md](ADDITIONS.md) and the notes in `models/` for sources and scope.
+
 从项目目录运行 `node --test tests/kissing.test.js tests/kakeya.test.js tests/maxcut.test.js tests/hat.test.js`。本组实现遵循先写失败测试再实现的流程。
 
 604 点全配对验证按构型缓存，每个构型在本次实例中首次选择时验证；逐帧仅投影与更新所选接触边。Kakeya 构造在素数变化时重建，运行时从显式见证选取方向。MAXCUT 每次着色的评分线性扫描 155 条边。Hat 最高深度限制为 3，几何合并到一个 Mesh。实验 dispose 释放 geometry、material、texture 与场景 group；没有独立定时器或全局监听器。

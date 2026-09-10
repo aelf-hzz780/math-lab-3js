@@ -1,5 +1,6 @@
 {
-  "started": "2026-09-10T07:47:40.939Z",
+  "started": "2026-09-10T09:28:16.947Z",
+  "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c",
   "browser": "152.0.7977.83",
   "protocol": "file:",
   "desktopPresets": [
@@ -342,6 +343,282 @@
         "depth": "0",
         "height": 0.2,
         "growth": 0.15
+      },
+      "passed": true
+    },
+    {
+      "id": "real-kakeya",
+      "label": "万向星芒",
+      "params": {
+        "count": 96,
+        "layout": "bush",
+        "packing": 0.05,
+        "radius": 0.021,
+        "direction": 0.22,
+        "scan": 0.12
+      },
+      "passed": true
+    },
+    {
+      "id": "real-kakeya",
+      "label": "光的织体",
+      "params": {
+        "count": 144,
+        "layout": "sheets",
+        "packing": 0.72,
+        "radius": 0.027,
+        "direction": 0.4,
+        "scan": 0.12
+      },
+      "passed": true
+    },
+    {
+      "id": "real-kakeya",
+      "label": "挤进一点",
+      "params": {
+        "count": 144,
+        "layout": "hairbrush",
+        "packing": 0,
+        "radius": 0.014,
+        "direction": 0.65,
+        "scan": 0.18
+      },
+      "passed": true
+    },
+    {
+      "id": "boltzmann",
+      "label": "看见记忆",
+      "params": {
+        "count": 64,
+        "temperature": 1.15,
+        "radius": 0.24,
+        "speed": 0.75,
+        "view": "both",
+        "history": 64,
+        "tracked": 0.12
+      },
+      "passed": true
+    },
+    {
+      "id": "boltzmann",
+      "label": "热闹的气体",
+      "params": {
+        "count": 96,
+        "temperature": 1.8,
+        "radius": 0.28,
+        "speed": 0.65,
+        "view": "gas",
+        "history": 96,
+        "tracked": 0.4
+      },
+      "passed": true
+    },
+    {
+      "id": "boltzmann",
+      "label": "因果星图",
+      "params": {
+        "count": 64,
+        "temperature": 1.5,
+        "radius": 0.28,
+        "speed": 0.6,
+        "view": "history",
+        "history": 96,
+        "tracked": 0.66
+      },
+      "passed": true
+    },
+    {
+      "id": "torus-knot",
+      "label": "三叶结",
+      "params": {
+        "p": 2,
+        "q": 3,
+        "minor": 0.85,
+        "first": 0.08,
+        "second": 0.58,
+        "carrier": "show"
+      },
+      "passed": true
+    },
+    {
+      "id": "torus-knot",
+      "label": "层层绕行",
+      "params": {
+        "p": 5,
+        "q": 7,
+        "minor": 0.65,
+        "first": 0.04,
+        "second": 0.24,
+        "carrier": "hide"
+      },
+      "passed": true
+    },
+    {
+      "id": "torus-knot",
+      "label": "双分支 link",
+      "params": {
+        "p": 4,
+        "q": 6,
+        "minor": 1.05,
+        "first": 0.12,
+        "second": 0.62,
+        "carrier": "show"
+      },
+      "passed": true
+    },
+    {
+      "id": "moduli",
+      "label": "方形 CM 晶格",
+      "params": {
+        "tauReal": 0,
+        "tauImag": 1,
+        "extent": 4,
+        "surface": "surface"
+      },
+      "passed": true
+    },
+    {
+      "id": "moduli",
+      "label": "六角 CM 晶格",
+      "params": {
+        "tauReal": -0.5,
+        "tauImag": 0.8660254037844386,
+        "extent": 4,
+        "surface": "surface"
+      },
+      "passed": true
+    },
+    {
+      "id": "moduli",
+      "label": "剪切后的基底",
+      "params": {
+        "tauReal": 1.35,
+        "tauImag": 0.65,
+        "extent": 5,
+        "surface": "cycles"
+      },
+      "passed": true
+    },
+    {
+      "id": "noperthedron",
+      "label": "不可能的穿越",
+      "params": {
+        "solid": "nop",
+        "outerTheta": 0.78,
+        "outerPhi": 0.96,
+        "innerTheta": 0.2,
+        "innerPhi": 0.6,
+        "spin": 0.18,
+        "scale": 1,
+        "scan": 0.1
+      },
+      "passed": true
+    },
+    {
+      "id": "noperthedron",
+      "label": "立方体的秘密",
+      "params": {
+        "solid": "cube",
+        "outerTheta": 0.7853981633974483,
+        "outerPhi": 0.9553166181245092,
+        "innerTheta": 0,
+        "innerPhi": 0,
+        "spin": 0,
+        "scale": 1,
+        "scan": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "noperthedron",
+      "label": "缩小以后",
+      "params": {
+        "solid": "nop",
+        "outerTheta": 0.78,
+        "outerPhi": 0.96,
+        "innerTheta": 0.78,
+        "innerPhi": 0.96,
+        "spin": 0,
+        "scale": 0.85,
+        "scan": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "e8",
+      "label": "八维星图",
+      "params": {
+        "plane": "03",
+        "angle": 25,
+        "speed": 0.17,
+        "selected": 126,
+        "edges": 0.35,
+        "size": 0.08
+      },
+      "passed": true
+    },
+    {
+      "id": "e8",
+      "label": "邻居的秘密",
+      "params": {
+        "plane": "25",
+        "angle": 130,
+        "speed": 0.08,
+        "selected": 17,
+        "edges": 0.1,
+        "size": 0.1
+      },
+      "passed": true
+    },
+    {
+      "id": "e8",
+      "label": "紫晶转生",
+      "params": {
+        "plane": "47",
+        "angle": 210,
+        "speed": 0.27,
+        "selected": 203,
+        "edges": 0.5,
+        "size": 0.07
+      },
+      "passed": true
+    },
+    {
+      "id": "matroid",
+      "label": "十六棵生成树",
+      "params": {
+        "selection": 7,
+        "edge": "0",
+        "weightA": 1.2,
+        "weightB": 1.8,
+        "others": 1,
+        "view": "both"
+      },
+      "passed": true
+    },
+    {
+      "id": "matroid",
+      "label": "环为何不独立",
+      "params": {
+        "selection": 11,
+        "edge": "3",
+        "weightA": 0.45,
+        "weightB": 2.8,
+        "others": 0.6,
+        "view": "both"
+      },
+      "passed": true
+    },
+    {
+      "id": "matroid",
+      "label": "单一正方向",
+      "params": {
+        "selection": 38,
+        "edge": "5",
+        "weightA": 2.6,
+        "weightB": 0.5,
+        "others": 1.8,
+        "view": "surface"
       },
       "passed": true
     }
@@ -688,6 +965,282 @@
         "growth": 0.15
       },
       "passed": true
+    },
+    {
+      "id": "real-kakeya",
+      "label": "万向星芒",
+      "params": {
+        "count": 96,
+        "layout": "bush",
+        "packing": 0.05,
+        "radius": 0.021,
+        "direction": 0.22,
+        "scan": 0.12
+      },
+      "passed": true
+    },
+    {
+      "id": "real-kakeya",
+      "label": "光的织体",
+      "params": {
+        "count": 144,
+        "layout": "sheets",
+        "packing": 0.72,
+        "radius": 0.027,
+        "direction": 0.4,
+        "scan": 0.12
+      },
+      "passed": true
+    },
+    {
+      "id": "real-kakeya",
+      "label": "挤进一点",
+      "params": {
+        "count": 144,
+        "layout": "hairbrush",
+        "packing": 0,
+        "radius": 0.014,
+        "direction": 0.65,
+        "scan": 0.18
+      },
+      "passed": true
+    },
+    {
+      "id": "boltzmann",
+      "label": "看见记忆",
+      "params": {
+        "count": 64,
+        "temperature": 1.15,
+        "radius": 0.24,
+        "speed": 0.75,
+        "view": "both",
+        "history": 64,
+        "tracked": 0.12
+      },
+      "passed": true
+    },
+    {
+      "id": "boltzmann",
+      "label": "热闹的气体",
+      "params": {
+        "count": 96,
+        "temperature": 1.8,
+        "radius": 0.28,
+        "speed": 0.65,
+        "view": "gas",
+        "history": 96,
+        "tracked": 0.4
+      },
+      "passed": true
+    },
+    {
+      "id": "boltzmann",
+      "label": "因果星图",
+      "params": {
+        "count": 64,
+        "temperature": 1.5,
+        "radius": 0.28,
+        "speed": 0.6,
+        "view": "history",
+        "history": 96,
+        "tracked": 0.66
+      },
+      "passed": true
+    },
+    {
+      "id": "torus-knot",
+      "label": "三叶结",
+      "params": {
+        "p": 2,
+        "q": 3,
+        "minor": 0.85,
+        "first": 0.08,
+        "second": 0.58,
+        "carrier": "show"
+      },
+      "passed": true
+    },
+    {
+      "id": "torus-knot",
+      "label": "层层绕行",
+      "params": {
+        "p": 5,
+        "q": 7,
+        "minor": 0.65,
+        "first": 0.04,
+        "second": 0.24,
+        "carrier": "hide"
+      },
+      "passed": true
+    },
+    {
+      "id": "torus-knot",
+      "label": "双分支 link",
+      "params": {
+        "p": 4,
+        "q": 6,
+        "minor": 1.05,
+        "first": 0.12,
+        "second": 0.62,
+        "carrier": "show"
+      },
+      "passed": true
+    },
+    {
+      "id": "moduli",
+      "label": "方形 CM 晶格",
+      "params": {
+        "tauReal": 0,
+        "tauImag": 1,
+        "extent": 4,
+        "surface": "surface"
+      },
+      "passed": true
+    },
+    {
+      "id": "moduli",
+      "label": "六角 CM 晶格",
+      "params": {
+        "tauReal": -0.5,
+        "tauImag": 0.8660254037844386,
+        "extent": 4,
+        "surface": "surface"
+      },
+      "passed": true
+    },
+    {
+      "id": "moduli",
+      "label": "剪切后的基底",
+      "params": {
+        "tauReal": 1.35,
+        "tauImag": 0.65,
+        "extent": 5,
+        "surface": "cycles"
+      },
+      "passed": true
+    },
+    {
+      "id": "noperthedron",
+      "label": "不可能的穿越",
+      "params": {
+        "solid": "nop",
+        "outerTheta": 0.78,
+        "outerPhi": 0.96,
+        "innerTheta": 0.2,
+        "innerPhi": 0.6,
+        "spin": 0.18,
+        "scale": 1,
+        "scan": 0.1
+      },
+      "passed": true
+    },
+    {
+      "id": "noperthedron",
+      "label": "立方体的秘密",
+      "params": {
+        "solid": "cube",
+        "outerTheta": 0.7853981633974483,
+        "outerPhi": 0.9553166181245092,
+        "innerTheta": 0,
+        "innerPhi": 0,
+        "spin": 0,
+        "scale": 1,
+        "scan": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "noperthedron",
+      "label": "缩小以后",
+      "params": {
+        "solid": "nop",
+        "outerTheta": 0.78,
+        "outerPhi": 0.96,
+        "innerTheta": 0.78,
+        "innerPhi": 0.96,
+        "spin": 0,
+        "scale": 0.85,
+        "scan": 0
+      },
+      "passed": true
+    },
+    {
+      "id": "e8",
+      "label": "八维星图",
+      "params": {
+        "plane": "03",
+        "angle": 25,
+        "speed": 0.17,
+        "selected": 126,
+        "edges": 0.35,
+        "size": 0.08
+      },
+      "passed": true
+    },
+    {
+      "id": "e8",
+      "label": "邻居的秘密",
+      "params": {
+        "plane": "25",
+        "angle": 130,
+        "speed": 0.08,
+        "selected": 17,
+        "edges": 0.1,
+        "size": 0.1
+      },
+      "passed": true
+    },
+    {
+      "id": "e8",
+      "label": "紫晶转生",
+      "params": {
+        "plane": "47",
+        "angle": 210,
+        "speed": 0.27,
+        "selected": 203,
+        "edges": 0.5,
+        "size": 0.07
+      },
+      "passed": true
+    },
+    {
+      "id": "matroid",
+      "label": "十六棵生成树",
+      "params": {
+        "selection": 7,
+        "edge": "0",
+        "weightA": 1.2,
+        "weightB": 1.8,
+        "others": 1,
+        "view": "both"
+      },
+      "passed": true
+    },
+    {
+      "id": "matroid",
+      "label": "环为何不独立",
+      "params": {
+        "selection": 11,
+        "edge": "3",
+        "weightA": 0.45,
+        "weightB": 2.8,
+        "others": 0.6,
+        "view": "both"
+      },
+      "passed": true
+    },
+    {
+      "id": "matroid",
+      "label": "单一正方向",
+      "params": {
+        "selection": 38,
+        "edge": "5",
+        "weightA": 2.6,
+        "weightB": 0.5,
+        "others": 1.8,
+        "view": "surface"
+      },
+      "passed": true
     }
   ],
   "errors": [],
@@ -708,13 +1261,13 @@
     "manualHoldStableMilliseconds": 600
   },
   "pngExport": {
-    "filename": "forma-hat-seed-42.png",
-    "bytes": 94189,
+    "filename": "forma-matroid-seed-42.png",
+    "bytes": 184560,
     "signatureValid": true
   },
   "mobile": {
     "viewport": "390×844, DPR 2, touch emulation",
-    "presetTouches": 30,
+    "presetTouches": 51,
     "overflow": false,
     "theoryDrawer": true,
     "modeSwitch": true

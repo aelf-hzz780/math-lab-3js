@@ -24,6 +24,13 @@ const descriptions = {
   kakeya:{en:'Finite-field Kakeya set', zh:'离散光点在模素数网格中排列，金色点突出一个方向的完整直线。', visualEn:'Discrete luminous points occupy a prime-modulus grid, with a complete line in one direction highlighted in gold.'},
   maxcut:{en:'AI-discovered MAX-4-CUT graph', zh:'四色节点与加权边构成空间网络，明亮边表示当前着色切过的边。', visualEn:'Four-colored nodes and weighted edges form a spatial graph; bright edges cross the current color partition.'},
   hat:{en:'Aperiodic Hat tiling', zh:'轻度挤出的青绿色 Hat 拼块形成有限铺砌，金色拼块标出合法镜像。', visualEn:'Slightly extruded teal Hat tiles form a finite patch, with valid reflected tiles highlighted in gold.'},
+  'real-kakeya':{en:'Real-space three-dimensional Kakeya tubes',zh:'多方向的彩色细管在实数空间中交织，管径与重叠控制揭示体积和方向之间的关系。',visualEn:'Colored tubes in real three-dimensional space reveal direction, thickness, overlap, and sampled occupied volume.'},
+  boltzmann:{en:'Hard spheres and collision histories',zh:'发光硬球在箱中碰撞，一旁的历史图记录粒子间的相遇，连接微观运动与统计描述。',visualEn:'Luminous hard spheres collide in a box while a history diagram records encounters and connects dynamics to statistics.'},
+  'torus-knot':{en:'Torus knots and distortion',zh:'彩色管状结绕过环面，选定两点的短弧与弦展示路径绕行程度。',visualEn:'A colored tubular knot wraps a torus; the shorter arc and chord between selected points reveal detour distance.'},
+  moduli:{en:'Complex tori and elliptic-curve moduli',zh:'复数参数控制晶格形状，基本域与特殊点对应三维环面的教学示意。',visualEn:'A complex parameter changes a lattice; a fundamental domain and special points accompany an illustrative torus.'},
+  noperthedron:{en:'Noperthedron and Rupert projection test',zh:'青色与金色多面体呈现两个姿态，下方叠加正交投影，实时测试严格包含余量。',visualEn:'Teal and gold polyhedra show two poses; overlaid orthogonal silhouettes measure strict containment clearance.'},
+  e8:{en:'E8 root system in eight dimensions',zh:'240 个根的三维投影呈现晶格对称，选中根的真实八维邻接关系被高亮。',visualEn:'A projection of 240 roots reveals E8 symmetry, highlighting genuine eight-dimensional neighbors of a selected root.'},
+  matroid:{en:'Graphic matroid and Lorentzian basis polynomial',zh:'四面体图中的选边呈现独立集与生成树，权重改变基多项式的对数曲面；特征值柱展示 Lorentzian 符号。',visualEn:'Selected tetrahedral graph edges reveal independent sets and spanning trees; weights change a log-polynomial surface, while eigenvalue bars show its Lorentzian signature.'},
 };
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const bundleBytes = await readFile(resolve(root, 'dist/app.js'));
@@ -36,7 +43,7 @@ const errors = [], remoteRequests = [];
 const manifest = {
   schemaVersion:1,
   repository,
-  title:{zh:'FORMA 数学实验室：十个可复现示例', en:'FORMA math lab: ten reproducible examples'},
+  title:{zh:`FORMA 数学实验室：${catalog.length} 个可复现示例`, en:`FORMA math lab: ${catalog.length} reproducible examples`},
   capturedAt:new Date().toISOString(),
   browser:await browser.version(),
   bundle:{path:'dist/app.js', sha256:bundleManifest.sha256, bytes:bundleBytes.length},
@@ -67,7 +74,7 @@ try {
     await page.goto(`${new URL('../index.html', import.meta.url).href}#${id}`, {waitUntil:'load'});
     await ready(page, id);
     await page.clock.runFor(32);
-    const runMilliseconds = id === 'ocean' ? 2000 : 0;
+    const runMilliseconds = ['ocean','boltzmann'].includes(id) ? 2000 : 0;
     if (runMilliseconds) {
       await page.locator('#play-button').evaluate(button => button.click());
       await page.clock.runFor(runMilliseconds);
@@ -94,7 +101,7 @@ try {
       screenshot:{path:screenshotPath, rawUrl:`${rawRoot}/${screenshotPath}`, ...dimensions, bytes:bytes.length, sha256:hash(bytes)},
       source:{scene:`src/experiments/${id}.js`, math:`src/math/${id}.js`, sceneUrl:`${repository}/blob/main/src/experiments/${id}.js`, mathUrl:`${repository}/blob/main/src/math/${id}.js`},
       defaults:defaultParameters,
-      capturedState:{params:state.params, seed:state.seed, camera:state.camera, simulationTimeSeconds:state.time, requestedRunningMilliseconds:runMilliseconds, paused:state.paused, automaticCamera:state.cameraMotion, quality:state.quality, immersive:state.immersive, metrics:state.metrics},
+      capturedState:{params:state.params, seed:state.seed, camera:state.camera, simulationTimeSeconds:state.time, ...(id==='boltzmann'?{initialGasWarmupSeconds:2.4}:{}), requestedRunningMilliseconds:runMilliseconds, paused:state.paused, automaticCamera:state.cameraMotion, quality:state.quality, immersive:state.immersive, metrics:state.metrics},
       formula:definition.formula,
       modelLimits:definition.limitations,
       sources:definition.sources,
@@ -106,12 +113,12 @@ try {
   assert.deepEqual(errors, []);
   assert.deepEqual(remoteRequests, []);
   manifest.totalImageBytes = manifest.examples.reduce((total, example) => total + example.screenshot.bytes, 0);
-  assert(manifest.totalImageBytes < 2 * 1024 * 1024, 'Screenshot set exceeds the 2 MiB budget');
-  manifest.validation = {allScenesReady:true, parameterDefaultsMatched:true, runtimeErrors:errors, remoteRequests, imageBudgetBytes:2*1024*1024};
+  assert(manifest.totalImageBytes < 3 * 1024 * 1024, 'Screenshot set exceeds the 3 MiB budget');
+  manifest.validation = {allScenesReady:true, parameterDefaultsMatched:true, runtimeErrors:errors, remoteRequests, imageBudgetBytes:3*1024*1024};
   await writeFile(resolve(destination, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
 
   const lines = [
-    '# FORMA · 十个真实示例 / Ten real examples',
+    `# FORMA · ${catalog.length} 个真实示例 / ${catalog.length} real examples`,
     '',
     '以下图片直接截取自本仓库的 Three.js 应用，包含实际界面与渲染结果。每张为 1280 × 800 的 JPEG；共用 seed 42、默认参数、高画质和固定镜头。它们不是原始上传照片，也不是生成式效果图。',
     '',
@@ -139,9 +146,9 @@ try {
     'node scripts/capture-examples.mjs',
     '```',
     '',
-    '脚本开启低动态偏好，暂停自动镜头与模拟；海水单独推进 2,000 ms 的浏览器虚拟时间后暂停，以呈现航行尾流。实际模拟时间与相机坐标逐图记录在索引中。其他九项取时间 0；火花在时间 0 已按模型说明预热粒子池。',
+    '脚本开启低动态偏好，暂停自动镜头与模拟；海水与硬球碰撞单独推进 2,000 ms 的浏览器虚拟时间后暂停，以呈现尾流和碰撞历史。界面模拟时间与相机坐标逐图记录在索引中。硬球初态另含固定的 2.4 模型秒预演，记录为 initialGasWarmupSeconds；其余场景取界面时间 0，火花预热按模型说明进行。',
     '',
-    'The script enables reduced motion and pauses both the camera and simulation. Only the ocean advances by 2,000 ms of browser virtual time before pausing to reveal its wake. The index records the actual simulation time and camera coordinates for each image. The other nine scenes use time 0; the particle model prewarms its pool as described in the app.',
+    'The script enables reduced motion and pauses camera and simulation. Ocean and hard spheres advance by 2,000 ms of browser virtual time before pausing. The index records UI simulation time and camera coordinates. Gas initialization also includes a fixed 2.4-model-second warmup, recorded as initialGasWarmupSeconds. Other scenes use UI time 0; sparks are prewarmed as described in the app.',
     '',
   ];
   for (let index=0; index<manifest.examples.length; index++) {

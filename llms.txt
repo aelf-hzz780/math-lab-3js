@@ -1,18 +1,19 @@
 # FORMA — Three.js Math Lab
 
-> Ten interactive, locally rendered math and physics examples. Use actual screenshots and their captured parameters to identify visual effects, then inspect the corresponding scene and pure-math source.
+> Seventeen interactive, locally rendered math and physics examples, including Fields Medal teaching topics and recent geometric constructions. Use actual screenshots and captured parameters to identify visual effects, then inspect the scene and pure-math source.
 
 ## Entry points
 
 - [README](README.md): Bilingual overview, compact screenshot gallery, offline usage.
 - [AI guide](docs/AI_GUIDE.md): Retrieval and source navigation.
-- [Examples](docs/EXAMPLES.md): All ten rendered examples with source links and model limits.
+- [Examples](docs/EXAMPLES.md): All 17 rendered examples with source links and model limits.
+- [Fields and new structures](docs/ADDITIONS.md): Seven additions, research dates, original papers, and model boundaries.
 - [Machine-readable manifest](docs/screenshots/manifest.json): Scene IDs, bilingual descriptions, image/raw URLs, parameters, seeds, cameras, formulae, sources, and SHA-256 checksums.
 - [Architecture](docs/SDD.md): Registry, scene adapter, rendering, resource lifecycle, build.
 
 ## Implementation
 
-- [Catalog](src/catalog.js): navier, vortex, quantum, dunes, sparks, ocean, kissing, kakeya, maxcut, hat.
+- [Catalog](src/catalog.js): navier, vortex, quantum, dunes, sparks, ocean, kissing, kakeya, maxcut, hat, real-kakeya, boltzmann, torus-knot, moduli, noperthedron, e8, matroid.
 - [Experiments](src/experiments/): Three.js implementations, definitions, controls, presets, citations.
 - [Math](src/math/): Independently testable calculations.
 - [Exact data](data/): Published coordinates and weighted graph fixtures with upstream notices.
