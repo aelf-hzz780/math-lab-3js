@@ -1,0 +1,460 @@
+{
+  "started": "2026-09-10T09:26:42.787Z",
+  "browser": "152.0.7977.83",
+  "hardware": {
+    "cpu": "Apple M3 Pro",
+    "arch": "arm64",
+    "platform": "darwin"
+  },
+  "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c",
+  "protocol": "file:",
+  "desktop": [
+    {
+      "id": "real-kakeya",
+      "parameterCases": 14,
+      "actions": [
+        "next",
+        "axis"
+      ],
+      "exports": 1,
+      "fps": 60,
+      "quality": "high",
+      "metrics": {
+        "有限方向": "96 个",
+        "管半径 δ": "0.027",
+        "并集体积估计": "≈ 0.163",
+        "重叠倍率估计": "≈ 1.40 ×"
+      },
+      "pngBytes": 357566,
+      "sourceCount": 2
+    },
+    {
+      "id": "boltzmann",
+      "parameterCases": 17,
+      "actions": [
+        "collision",
+        "reverse"
+      ],
+      "exports": 1,
+      "fps": 60,
+      "quality": "high",
+      "metrics": {
+        "硬球 / 记忆节点": "64 / 64",
+        "粒子碰撞次数": "93",
+        "相对能量误差": "1.0e-15",
+        "含墙面动量误差": "5.7e-15"
+      },
+      "pngBytes": 224601,
+      "sourceCount": 3
+    },
+    {
+      "id": "torus-knot",
+      "parameterCases": 12,
+      "actions": [
+        "opposite",
+        "component"
+      ],
+      "exports": 1,
+      "fps": 60,
+      "quality": "high",
+      "metrics": {
+        "结 / link 分支": "1 · knot",
+        "所选短弧 s": "16.897",
+        "空间弦长 c": "1.524",
+        "此点对 s / c": "11.090"
+      },
+      "pngBytes": 244631,
+      "sourceCount": 3
+    },
+    {
+      "id": "moduli",
+      "parameterCases": 8,
+      "actions": [
+        "S",
+        "T",
+        "reduce",
+        "cm"
+      ],
+      "exports": 1,
+      "repeatedTransformCount": 129,
+      "fps": 60,
+      "quality": "high",
+      "metrics": {
+        "当前 τ": "0.00 + 1.00i",
+        "晶格基本胞面积": "1.000",
+        "已标记 CM": "D = -4",
+        "当前 SL₂ 基变换": "[1 0; 0 1]"
+      },
+      "pngBytes": 148448,
+      "sourceCount": 4
+    },
+    {
+      "id": "noperthedron",
+      "parameterCases": 16,
+      "actions": [
+        "equal",
+        "align"
+      ],
+      "exports": 1,
+      "fps": 60,
+      "quality": "high",
+      "metrics": {
+        "顶点数": "90",
+        "副本比例": "1.00 ×",
+        "投影余量": "-0.0234",
+        "当前姿态": "投影越界"
+      },
+      "pngBytes": 190173,
+      "sourceCount": 3
+    },
+    {
+      "id": "e8",
+      "parameterCases": 15,
+      "actions": [
+        "projection",
+        "neighbor"
+      ],
+      "exports": 1,
+      "fps": 60,
+      "quality": "high",
+      "metrics": {
+        "精确根 / 维度": "240 / 8D",
+        "选中根邻居": "56",
+        "最近距离²": "2",
+        "最密填充密度": "π⁴/384 ≈ 0.25367"
+      },
+      "pngBytes": 560986,
+      "sourceCount": 3
+    },
+    {
+      "id": "matroid",
+      "parameterCases": 17,
+      "actions": [
+        "toggle",
+        "next-basis",
+        "clear"
+      ],
+      "exports": 1,
+      "fps": 60,
+      "quality": "high",
+      "metrics": {
+        "选边 / 秩": "3 / 3",
+        "独立性": "基 · 生成树",
+        "全部基多项式 b": "24.480",
+        "Lorentzian 谱": "1 正 / 2 负 / 3 零"
+      },
+      "pngBytes": 158429,
+      "sourceCount": 3
+    }
+  ],
+  "resourceRounds": [
+    [
+      {
+        "id": "navier",
+        "geometries": 5,
+        "textures": 3
+      },
+      {
+        "id": "vortex",
+        "geometries": 7,
+        "textures": 3
+      },
+      {
+        "id": "quantum",
+        "geometries": 18,
+        "textures": 15
+      },
+      {
+        "id": "dunes",
+        "geometries": 4,
+        "textures": 3
+      },
+      {
+        "id": "sparks",
+        "geometries": 9,
+        "textures": 3
+      },
+      {
+        "id": "ocean",
+        "geometries": 24,
+        "textures": 3
+      },
+      {
+        "id": "kissing",
+        "geometries": 6,
+        "textures": 3
+      },
+      {
+        "id": "kakeya",
+        "geometries": 6,
+        "textures": 3
+      },
+      {
+        "id": "maxcut",
+        "geometries": 4,
+        "textures": 22
+      },
+      {
+        "id": "hat",
+        "geometries": 5,
+        "textures": 3
+      },
+      {
+        "id": "real-kakeya",
+        "geometries": 7,
+        "textures": 3
+      },
+      {
+        "id": "boltzmann",
+        "geometries": 12,
+        "textures": 6
+      },
+      {
+        "id": "torus-knot",
+        "geometries": 11,
+        "textures": 6
+      },
+      {
+        "id": "moduli",
+        "geometries": 73,
+        "textures": 12
+      },
+      {
+        "id": "noperthedron",
+        "geometries": 11,
+        "textures": 3
+      },
+      {
+        "id": "e8",
+        "geometries": 6,
+        "textures": 3
+      },
+      {
+        "id": "matroid",
+        "geometries": 10,
+        "textures": 19
+      }
+    ],
+    [
+      {
+        "id": "navier",
+        "geometries": 5,
+        "textures": 3
+      },
+      {
+        "id": "vortex",
+        "geometries": 7,
+        "textures": 3
+      },
+      {
+        "id": "quantum",
+        "geometries": 18,
+        "textures": 15
+      },
+      {
+        "id": "dunes",
+        "geometries": 4,
+        "textures": 3
+      },
+      {
+        "id": "sparks",
+        "geometries": 9,
+        "textures": 3
+      },
+      {
+        "id": "ocean",
+        "geometries": 24,
+        "textures": 3
+      },
+      {
+        "id": "kissing",
+        "geometries": 6,
+        "textures": 3
+      },
+      {
+        "id": "kakeya",
+        "geometries": 6,
+        "textures": 3
+      },
+      {
+        "id": "maxcut",
+        "geometries": 4,
+        "textures": 22
+      },
+      {
+        "id": "hat",
+        "geometries": 5,
+        "textures": 3
+      },
+      {
+        "id": "real-kakeya",
+        "geometries": 7,
+        "textures": 3
+      },
+      {
+        "id": "boltzmann",
+        "geometries": 12,
+        "textures": 6
+      },
+      {
+        "id": "torus-knot",
+        "geometries": 11,
+        "textures": 6
+      },
+      {
+        "id": "moduli",
+        "geometries": 73,
+        "textures": 12
+      },
+      {
+        "id": "noperthedron",
+        "geometries": 11,
+        "textures": 3
+      },
+      {
+        "id": "e8",
+        "geometries": 6,
+        "textures": 3
+      },
+      {
+        "id": "matroid",
+        "geometries": 10,
+        "textures": 19
+      }
+    ],
+    [
+      {
+        "id": "navier",
+        "geometries": 5,
+        "textures": 3
+      },
+      {
+        "id": "vortex",
+        "geometries": 7,
+        "textures": 3
+      },
+      {
+        "id": "quantum",
+        "geometries": 18,
+        "textures": 15
+      },
+      {
+        "id": "dunes",
+        "geometries": 4,
+        "textures": 3
+      },
+      {
+        "id": "sparks",
+        "geometries": 9,
+        "textures": 3
+      },
+      {
+        "id": "ocean",
+        "geometries": 24,
+        "textures": 3
+      },
+      {
+        "id": "kissing",
+        "geometries": 6,
+        "textures": 3
+      },
+      {
+        "id": "kakeya",
+        "geometries": 6,
+        "textures": 3
+      },
+      {
+        "id": "maxcut",
+        "geometries": 4,
+        "textures": 22
+      },
+      {
+        "id": "hat",
+        "geometries": 5,
+        "textures": 3
+      },
+      {
+        "id": "real-kakeya",
+        "geometries": 7,
+        "textures": 3
+      },
+      {
+        "id": "boltzmann",
+        "geometries": 12,
+        "textures": 6
+      },
+      {
+        "id": "torus-knot",
+        "geometries": 11,
+        "textures": 6
+      },
+      {
+        "id": "moduli",
+        "geometries": 73,
+        "textures": 12
+      },
+      {
+        "id": "noperthedron",
+        "geometries": 11,
+        "textures": 3
+      },
+      {
+        "id": "e8",
+        "geometries": 6,
+        "textures": 3
+      },
+      {
+        "id": "matroid",
+        "geometries": 10,
+        "textures": 19
+      }
+    ]
+  ],
+  "mobile": [
+    {
+      "id": "real-kakeya",
+      "ready": true,
+      "quality": "low",
+      "overflow": false
+    },
+    {
+      "id": "boltzmann",
+      "ready": true,
+      "quality": "low",
+      "overflow": false
+    },
+    {
+      "id": "torus-knot",
+      "ready": true,
+      "quality": "low",
+      "overflow": false
+    },
+    {
+      "id": "moduli",
+      "ready": true,
+      "quality": "low",
+      "overflow": false
+    },
+    {
+      "id": "noperthedron",
+      "ready": true,
+      "quality": "low",
+      "overflow": false
+    },
+    {
+      "id": "e8",
+      "ready": true,
+      "quality": "low",
+      "overflow": false
+    },
+    {
+      "id": "matroid",
+      "ready": true,
+      "quality": "low",
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "remoteRequests": [],
+  "passed": true
+}

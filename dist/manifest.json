@@ -1,23 +1,31 @@
 {
   "format": "classic-iife",
   "bundler": "esbuild 0.25.10",
-  "bytes": 798552,
-  "sha256": "9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf",
+  "bytes": 884852,
+  "sha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c",
   "experiments": [
+    "boltzmann",
     "dunes",
+    "e8",
     "hat",
     "kakeya",
     "kissing",
+    "matroid",
     "maxcut",
+    "moduli",
     "navier",
+    "noperthedron",
     "ocean",
     "quantum",
+    "real-kakeya",
     "sparks",
+    "torus-knot",
     "vortex"
   ],
   "embeddedData": [
     "data/kissing.json",
-    "data/maxcut.json"
+    "data/maxcut.json",
+    "data/noperthedron.json"
   ],
   "runtimeNetworkDependencies": []
 }

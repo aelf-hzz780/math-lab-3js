@@ -1,66 +1,77 @@
-# FORMA 验收报告
+# FORMA 1.1 验收报告 / Validation Report
 
-验收日期：2026-09-10。**10/10 实验运行，49/49 数学与状态测试通过。** 此版本修复 Chrome 双击页面永久停在“正在构建数学空间”的问题，新增 N–S 流管实验，并升级为观赏/实验台两种模式。
+验收日期：2026-09-10。**17/17 实验运行，89/89 数学与状态测试通过。** 新增七项专题，最终离线包、截图与三个浏览器验收报告使用同一 SHA-256。上一版验收保留在 [QA_BASELINE_1.0.md](QA_BASELINE_1.0.md)。
 
-## 环境与测量
+Validated on 2026-09-10. **All 17 experiments run and all 89 math/state tests pass.** The seven additions, final offline bundle, screenshots, and three browser reports share the same bundle checksum. The previous report is preserved separately.
 
-Apple M3 Pro，macOS arm64，Node.js v26.5.0，Chrome 152.0.7977.83。桌面 1512×982、DPR 1、高画质，包含共享辉光和 4× MSAA；手机为同一台 Mac 的 390×844、DPR 2 触控模拟，低画质渲染 DPR 上限 1。FPS 是约一秒窗口的短时采样，不能视为手机真机或长期热稳定性测量。
+## 结果 / Results
 
-| 实验 | 桌面 FPS | 手机模拟 FPS | 桌面几何 / 纹理 | 渲染 |
-|---|---:|---:|---:|---|
-| N–S · 涡旋之心 | 60 | 60 | 5 / 3 | 通过 |
-| 有限核涡旋 | 60 | 55 | 7 / 3 | 通过 |
-| 量子纠缠 | 60 | 53 | 18 / 15 | 通过 |
-| 风成沙丘 | 60 | 46 | 4 / 3 | 通过 |
-| 火花与轨迹 | 60 | 50 | 9 / 3 | 通过 |
-| 海水与浮力 | 60 | 60 | 24 / 3 | 通过 |
-| 11 维接吻构型 | 60 | 49 | 6 / 3 | 通过 |
-| 有限域 Kakeya | 60 | 60 | 6 / 3 | 通过 |
-| AI 图构造 | 60 | 52 | 4 / 22 | 通过 |
-| Hat 铺砌 | 60 | 51 | 5 / 3 | 通过 |
+- 17/17 场景在 Chrome `file://` 离线加载，0 运行期 HTTP(S) 请求、0 页面/着色器错误。 / All 17 scenes load offline with zero runtime HTTP(S) requests or page/shader errors.
+- 51 个预设分别在桌面点击、390×844 触屏模拟点击，共 102 次，参数逐项匹配。 / 51 presets each passed desktop and touch-emulated interaction, 102 activations with matching parameters.
+- 新增七项共 99 次独立参数边界/选项检查，17 个动作入口；语义断言覆盖选中方向、测量点、模变换、投影 seed、图选边等。 / The additions passed 99 independent parameter cases and 17 actions, with semantic assertions for selected directions, measurement points, transformations, seeds, and edges.
+- 新增七项均真实导出 PNG，校验文件签名与非空内容。 / Each new scene exported a real PNG with a valid signature and nonempty content.
+- 3 轮 × 17 项 = 51 次连续目录切换，后两轮每项 geometry/texture 数量完全一致。 / After 51 switches, per-scene geometry/texture counts matched between the last two rounds.
+- 手机触控预设、抽屉、原理面板、模式切换、低动态偏好和无水平溢出检查通过。 / Touch presets, drawers, theory panels, presentation modes, reduced motion, and horizontal overflow checks pass.
+- 模拟 bundle 缺失和语法损坏均显示 Trace ID 与恢复入口，没有永久加载提示。 / Missing and malformed bundles produce a Trace ID and recovery UI rather than a permanent loading screen.
 
-桌面截图为最后一版场景与渲染设置。手机数字来自完整交互回归期间；之后量子网格和海水水花做了定向修正，最终桌面截图与离线入口已再次检查。
+## 环境与性能 / Environment and Performance
 
-## Chrome 本地文件启动
+Apple M3 Pro，macOS arm64，Node.js v26.5.0，Chrome 152.0.7977.83。新增场景测量为 1280×800、DPR 1、高画质；每项播放约 1.8 秒，读取约一秒 FPS 窗口。全部七项采样为 60 FPS。触屏验收是同一台 Mac 的 390×844、DPR 2 模拟，应用低画质 DPR 上限 1，不能当作 iOS/Android 真机或长期热稳定性测量。
 
-旧入口使用 module script，Chrome 的 file:// 限制阻止它和 JSON 数据加载；错误处理在未执行的模块内部，因而 spinner 永久保留。现在使用固定 esbuild 生成的普通 IIFE，内嵌所有场景和数据。独立 bootstrap 在 bundle 前启动，捕获语法错误、Promise 拒绝和超时，并显示 Trace ID 与重新加载入口。
+Apple M3 Pro, macOS arm64, Node.js v26.5.0, Chrome 152.0.7977.83. New-scene measurements use 1280×800, DPR 1, high quality, and roughly 1.8 seconds of playback with an approximately one-second FPS window. All seven sampled 60 FPS. Touch checks emulate 390×844 at DPR 2 on the same Mac, with app rendering capped at DPR 1 in low quality; these are not mobile-device or sustained thermal measurements.
 
-真实 Chrome file:// 验收十个场景均 ready，运行期无 HTTP(S) 请求；额外模拟主脚本缺失与语法损坏，均撤掉加载提示并提供恢复入口。4 个 bootstrap 行为测试覆盖成功交接、错误、Promise 拒绝和超时。
+| 实验 / Scene | FPS | 参数检查 / Parameter cases | 动作 / Actions | PNG bytes |
+|---|---:|---:|---:|---:|
+| `real-kakeya` | 60 | 14 | 2 | 357,566 |
+| `boltzmann` | 60 | 17 | 2 | 224,601 |
+| `torus-knot` | 60 | 12 | 2 | 244,631 |
+| `moduli` | 60 | 8 | 4 | 148,448 |
+| `noperthedron` | 60 | 16 | 2 | 190,173 |
+| `e8` | 60 | 15 | 2 | 560,986 |
+| `matroid` | 60 | 17 | 3 | 158,429 |
 
-最终离线包大小 798,552 bytes，SHA-256：
+资源检查针对 renderer 记录的几何与纹理计数，不替代完整堆内存、驱动泄漏或后台长时间压力测试。
 
-`9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf`
+Resource checks cover renderer geometry/texture counts, not exhaustive heap, driver-leak, or long-running background stress analysis.
 
-## 数学与物理回归
+## 数学与交互回归 / Mathematical and Interaction Regressions
 
-保留原 37 项验证：三套 604 点构造的全部精确约束、Kakeya 全方向覆盖、MAXCUT 完整边权评分和数据校验、正式 Hat 替换计数及镜像，Burgers 解析流场、Born 归一/边缘概率/CHSH、粒子解析轨迹、确定沙丘、浮力平衡、深水色散与固定步积分。
+E8 验证 240 根、范数、56 邻居与反射闭包；K4 验证 16 个基、交换公理、Matrix–Tree 独立评分、对数凹与 Lorentzian 谱。Noperthedron 验证作者编号的 90 顶点、152 支持面、对称性、Euler 特征、正交投影和立方体严格包含见证。其余测试验证硬球能量与含墙动量守恒、帧率一致性、Kakeya 估计、曲线积分及模变换。
 
-新增 5 项 N–S 几何测试：极端参数/端点有限、集中收拢、内层相对转速、单独拉伸的行列式为 1、有界且可重复的集中循环、非法输入拒绝。该图是有限几何机制示意，不是 PDE/Lean 复现。
+E8 tests verify 240 roots, norms, degree 56, and reflection closure. K4 tests verify 16 bases, basis exchange, the Matrix–Tree theorem, log concavity, and Lorentzian signatures. Noperthedron tests verify 90 ordered vertices, 152 supporting faces, symmetry, Euler characteristic, orthogonal projections, and a strict cube-containment witness. Other tests cover collisions, gas-plus-wall momentum, frame consistency, tube estimates, curve integration, and modular transformations.
 
-新增 2 项镜头状态测试：暂停、拖动、5 秒停留期、低动态偏好与大 delta 限制。新增海水场景回归：第一帧后投放，动态水面仍触发入水；可见水花点数 0 → 48 → 0，重置无残留，dispose 后场景为空。火花固定预热使首帧可观赏，seed42 重置数组一致的定向检查通过。
+独立复核发现并修复：模空间连续 T 操作导致网格增长、显示选项意外清空变换、环面结拾取将弧长 UV 当作原参数。新增回归分别先复现失败再通过；网格线预算 ≤40，浏览器另检查连续 129 次 T 操作与显示参数保持变换。
 
-## 交互、视觉与资源
+Independent review found and fixed unbounded modular-grid growth, display options clearing transformations, and knot picking confusing arc-length UV with curve phase. Regressions reproduced the failures before passing. Grid lines are capped at 40; browser checks additionally cover 129 T operations and transform preservation under display changes.
 
-- 全部十项合计 94 次参数边界/选项变更、15 个动作入口通过；每项说明和来源可访问。
-- 30 个命名预设各在桌面与触屏真实点击一次，共 60 次；实际参数逐项匹配声明。
-- 沉浸/实验台切换、桌面及手机抽屉、Escape 关闭、暂停、旋转/缩放、相机复位、种子同步和 PNG 实际下载通过。
-- 自动镜头可关闭；暂停时镜头与时间均停止，拖动后停留；低动态偏好默认暂停且关闭自动镜头。
-- 30 次目录切换后，同一实验各轮 geometry/texture 数量一致；共享后处理固定增加 3 个纹理，无持续增长。该检查不替代全面堆内存或 GPU 驱动泄漏分析。
-- 快速切换最终落在正确实验；接吻点选同步滑块；种子 unsigned 32-bit 环绕正确；Kakeya 重置保留方向。
-- 手机 390×844 无水平溢出。WebGL 不可用时可阅读原理与来源，界面提供恢复入口。
-- 最终截图确认 N–S 流管与光点、量子稀疏网格及彩色测量截线、增强火花喷泉、海水高光与尾流。首轮海水远处黑条在最终全序列截图中未再出现；没有把不能复现的图形现象写成已证明的单一根因。
-- 所有验收记录无未处理页面/着色器错误，无运行期远程请求。
+## 截图与产物 / Screenshots and Artifacts
 
-## 证据与复现
+17 张真实 JPEG，1280×800、质量 82，共 1,727,857 bytes（1.65 MiB）。固定 seed 42 与相机。海水与硬球播放 2 秒后暂停；硬球另含初始 2.4 模型秒预演。截图使用虚拟时钟，画面 FPS 不作为性能数据。图像尺寸、SHA-256、源码路径、来源和模拟状态见 [manifest](screenshots/manifest.json)。
 
-- `qa/browser-report.json`：最终十项桌面渲染、相机、帧率和资源记录。
-- `qa/interaction-report.json`：94 次参数变更、15 动作、30 次切换、手机模拟和原交互回归。
-- `qa/presentation-report.json`：60 次预设、双模式、镜头策略、触控、PNG 和低动态偏好。
-- `qa/offline-report.json`：最终 file:// 运行及缺失/损坏脚本恢复。
-- 历史全尺寸 QA PNG 由浏览器脚本在本地重新生成，不纳入仓库；公开效果示例在 [EXAMPLES.md](EXAMPLES.md) 与 `screenshots/manifest.json`。
+17 actual JPEG screenshots at 1280×800, quality 82, totaling 1,727,857 bytes (1.65 MiB), with seed 42 and fixed cameras. Ocean and gas advance for two seconds; gas also includes its initial 2.4-model-second warmup. Screenshot clocks are virtual and displayed FPS values are not performance evidence. The manifest records image dimensions, checksums, source paths, citations, and captured state.
 
-`npm test` 验证数学与状态，`npm run build` 更新离线产物。四个浏览器脚本的运行方式见 README。
+Offline bundle: 884,852 bytes. SHA-256:
 
-## 交付边界
+`f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c`
 
-当前仓库公开代码、离线产物与效果截图，未发布托管站点。未进行 iOS/Android 真机、Safari 或长期电池/热量检查。精确构造坐标未作艺术变形；高维投影距离、物理近似与 N–S 几何图的适用范围仍在对应页面说明。
+## 证据与复现 / Evidence and Reproduction
+
+- [新增参数、动作、资源与窄屏 / Additions checks](qa/additions-report.json)
+- [预设、真实触控与镜头策略 / Presets, touch, camera policy](qa/presentation-report.json)
+- [离线启动与错误恢复 / Offline startup and recovery](qa/offline-report.json)
+- [效果图集 / Gallery](EXAMPLES.md) · [研究边界 / Research boundaries](ADDITIONS.md)
+
+```sh
+npm ci
+npm test
+npm run build
+# Install Playwright and Chrome as described in README, or set PLAYWRIGHT_MODULE.
+node scripts/additions-check.mjs
+node scripts/presentation-check.mjs
+npm run check:offline
+npm run capture:examples
+```
+
+公开交付为源码、离线应用与示例仓库。未部署托管站点，也未进行 Safari 或手机真机验收。数学近似和证明范围按各场景说明保留。
+
+Delivery includes source, the offline application, and examples. No hosted site deployment, Safari acceptance, or physical mobile-device test is claimed. Each scene retains its mathematical approximations and proof boundaries.

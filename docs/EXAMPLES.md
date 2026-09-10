@@ -1,4 +1,4 @@
-# FORMA · 十个真实示例 / Ten real examples
+# FORMA · 17 个真实示例 / 17 real examples
 
 以下图片直接截取自本仓库的 Three.js 应用，包含实际界面与渲染结果。每张为 1280 × 800 的 JPEG；共用 seed 42、默认参数、高画质和固定镜头。它们不是原始上传照片，也不是生成式效果图。
 
@@ -8,7 +8,7 @@ These images are actual screenshots of this repository’s Three.js application,
 
 The machine-readable index includes bilingual names, parameters, model limits, research sources, source paths, raw image URLs, and SHA-256 hashes. The same seed and parameters reproduce model state; GPU, browser, and font differences can affect pixels.
 
-截图使用虚拟时钟，画面中的 FPS 不作为性能测量；性能条件见 [QA_REPORT.md](QA_REPORT.md)。
+截图使用虚拟时钟，画面中的 FPS 不作为性能测量；性能条件见 QA_REPORT.md。
 
 Captures use a virtual clock; the displayed FPS is not a performance measurement. See QA_REPORT.md for measured conditions.
 
@@ -26,9 +26,9 @@ npm run build
 node scripts/capture-examples.mjs
 ```
 
-脚本开启低动态偏好，暂停自动镜头与模拟；海水单独推进 2,000 ms 的浏览器虚拟时间后暂停，以呈现航行尾流。实际模拟时间与相机坐标逐图记录在索引中。其他九项取时间 0；火花在时间 0 已按模型说明预热粒子池。
+脚本开启低动态偏好，暂停自动镜头与模拟；海水与硬球碰撞单独推进 2,000 ms 的浏览器虚拟时间后暂停，以呈现尾流和碰撞历史。界面模拟时间与相机坐标逐图记录在索引中。硬球初态另含固定的 2.4 模型秒预演，记录为 initialGasWarmupSeconds；其余场景取界面时间 0，火花预热按模型说明进行。
 
-The script enables reduced motion and pauses both the camera and simulation. Only the ocean advances by 2,000 ms of browser virtual time before pausing to reveal its wake. The index records the actual simulation time and camera coordinates for each image. The other nine scenes use time 0; the particle model prewarms its pool as described in the app.
+The script enables reduced motion and pauses camera and simulation. Ocean and hard spheres advance by 2,000 ms of browser virtual time before pausing. The index records UI simulation time and camera coordinates. Gas initialization also includes a fixed 2.4-model-second warmup, recorded as initialGasWarmupSeconds. Other scenes use UI time 0; sparks are prewarmed as described in the app.
 
 ## 01 · N–S · 涡旋之心 / Navier–Stokes vortex concentration
 
@@ -200,4 +200,130 @@ Slightly extruded teal Hat tiles form a finite patch, with valid reflected tiles
 - [Hat · 作者与论文](https://cs.uwaterloo.ca/~csk/hat/)
 - [BSD 3-Clause 原始生成器](https://github.com/isohedral/hatviz)
 
-图像总大小 / Total image size: 1070 KiB. Bundle SHA-256: `9d5659452338acfa92ae1d198fa42a9ee937ba2937749f509f1b4d59bac7cadf`.
+## 11 · 实数三维 Kakeya / Real-space three-dimensional Kakeya tubes
+
+![实数三维 Kakeya / Real-space three-dimensional Kakeya tubes](screenshots/11-real-kakeya.jpg)
+
+多方向的彩色细管在实数空间中交织，管径与重叠控制揭示体积和方向之间的关系。
+
+Colored tubes in real three-dimensional space reveal direction, thickness, overlap, and sampled occupied volume.
+
+模型边界：这里只采样有限方向，显示的是有限半径管束；不是一个包含全部方向的无限 Kakeya 集，不构成新极值构造、反例或定理证明。有限体积估计不能推出 Hausdorff 维数，也不能把“维数 3”理解为“必须有正体积”。Halton 求积存在离散误差，尤其在很细的管径下；画面模型长度统一为 1。
+
+打开 / Open: `index.html#real-kakeya` · t = 0.000 s · seed = 42.
+
+[场景 / Scene](../src/experiments/real-kakeya.js) · [数学 / Math](../src/math/real-kakeya.js) · [原始图片 / Raw JPEG](https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/11-real-kakeya.jpg)
+
+- [IMU · 2026 Fields Medal 官方名单与王虹颁奖词](https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2026)
+- [Wang–Zahl · 三维 Kakeya 论文（2025）](https://arxiv.org/abs/2502.17655)
+
+## 12 · 碰撞如何成为气体 / Hard spheres and collision histories
+
+![碰撞如何成为气体 / Hard spheres and collision histories](screenshots/12-boltzmann.jpg)
+
+发光硬球在箱中碰撞，一旁的历史图记录粒子间的相遇，连接微观运动与统计描述。
+
+Luminous hard spheres collide in a box while a history diagram records encounters and connects dynamics to statistics.
+
+模型边界：有限数量、有限时间步的弹性硬球教学模型，不是 Boltzmann–Grad 极限、分子混沌证明或完整的论文 molecules。接触时刻与位置存在步长误差，重叠用局部修正处理；能量与含墙面交换的动量按弹性规则守恒。反转速度用于实验，不保证有限步算法逐帧严格可逆。历史只显示最近指定数量的碰撞，超出窗口的父节点连线省略。图的布局不是粒子的空间位置。
+
+打开 / Open: `index.html#boltzmann` · t = 2.000 s · seed = 42.
+
+[场景 / Scene](../src/experiments/boltzmann.js) · [数学 / Math](../src/math/boltzmann.js) · [原始图片 / Raw JPEG](https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/12-boltzmann.jpg)
+
+- [IMU · 2026 Fields Medal 官方名单与邓煜颁奖词](https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2026)
+- [Deng–Hani–Ma · 硬球到 Boltzmann（v3, 2025）](https://arxiv.org/abs/2408.07818v3)
+- [Deng–Hani–Ma · 从牛顿力学到流体方程（2025）](https://arxiv.org/abs/2503.01800)
+
+## 13 · 环面结与扭曲度 / Torus knots and distortion
+
+![环面结与扭曲度 / Torus knots and distortion](screenshots/13-torus-knot.jpg)
+
+彩色管状结绕过环面，选定两点的短弧与弦展示路径绕行程度。
+
+A colored tubular knot wraps a torus; the shorter arc and chord between selected points reveal detour distance.
+
+模型边界：当前数值是一个选定点对的短弧/弦长比，不是该曲线的全局 distortion，也不是结型在所有嵌入中的最优值。管壁厚度仅为显示；测量对象是管的中心曲线。多分支 link 的测量始终在同一分支内。有限管面网格和弧长积分有数值误差；本实验不复现 Pardon 的证明。
+
+打开 / Open: `index.html#torus-knot` · t = 0.000 s · seed = 42.
+
+[场景 / Scene](../src/experiments/torus-knot.js) · [数学 / Math](../src/math/torus-knot.js) · [原始图片 / Raw JPEG](https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/13-torus-knot.jpg)
+
+- [Pardon · On the distortion of knots on embedded surfaces (2011)](https://annals.math.princeton.edu/2011/174-1/p21)
+- [原始预印本 arXiv:1010.1972](https://arxiv.org/abs/1010.1972)
+- [IMU · 2026 Fields Medals](https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2026)
+
+## 14 · 复环面与模空间 / Complex tori and elliptic-curve moduli
+
+![复环面与模空间 / Complex tori and elliptic-curve moduli](screenshots/14-moduli.jpg)
+
+复数参数控制晶格形状，基本域与特殊点对应三维环面的教学示意。
+
+A complex parameter changes a lattice; a fundamental domain and special points accompany an illustrative torus.
+
+模型边界：三维甜甜圈不是平坦复环面的等距嵌入，不能从外形量出复结构。晶格为了容纳在画面中会统一缩放，指标面积 1 指未显示缩放前的数学晶格。基本域上方在有限高度截断；CM 标记仅识别 i、ρ、i√2 及其模群等价点，“未标注”不表示不是 CM 点。这里没有计算所有特殊点，也不复现 A_g 的 André–Oort 证明。
+
+打开 / Open: `index.html#moduli` · t = 0.000 s · seed = 42.
+
+[场景 / Scene](../src/experiments/moduli.js) · [数学 / Math](../src/math/moduli.js) · [原始图片 / Raw JPEG](https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/14-moduli.jpg)
+
+- [Tsimerman · The André–Oort conjecture for A_g (v5)](https://arxiv.org/abs/1506.01466v5)
+- [Modular group · 基本域与生成元](https://en.wikipedia.org/wiki/Modular_group)
+- [Complex multiplication · 算术特殊点](https://en.wikipedia.org/wiki/Complex_multiplication)
+- [IMU · 2026 Fields Medals](https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2026)
+
+## 15 · 穿不过自己的多面体 / Noperthedron and Rupert projection test
+
+![穿不过自己的多面体 / Noperthedron and Rupert projection test](screenshots/15-noperthedron.jpg)
+
+青色与金色多面体呈现两个姿态，下方叠加正交投影，实时测试严格包含余量。
+
+Teal and gold polyhedra show two poses; overlaid orthogonal silhouettes measure strict containment clearance.
+
+模型边界：Noperthedron 来自 Steininger–Yurkevich 2025 预印本（2026 v2），不属菲尔兹奖成果。原始整数系数保留，三角函数及投影测试使用浮点数；这里的有限姿态搜索不替代论文的计算机辅助全局证明。s < 1 时允许缩小副本，不能当成同尺寸穿越。
+
+打开 / Open: `index.html#noperthedron` · t = 0.000 s · seed = 42.
+
+[场景 / Scene](../src/experiments/noperthedron.js) · [数学 / Math](../src/math/noperthedron.js) · [原始图片 / Raw JPEG](https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/15-noperthedron.jpg)
+
+- [Steininger & Yurkevich · 原论文 v2](https://arxiv.org/abs/2508.18475v2)
+- [作者的 90 顶点坐标 · 固定版本](https://github.com/Jakob256/Rupert/blob/1009a4c451dbdbb1a1705d18461cbabd534a0a6c/src/noperthedron.py)
+- [作者的验证 Notebook](https://github.com/Jakob256/Rupert/blob/1009a4c451dbdbb1a1705d18461cbabd534a0a6c/src/noperthedron_verification.ipynb)
+
+## 16 · E8 · 八维对称 / E8 root system in eight dimensions
+
+![E8 · 八维对称 / E8 root system in eight dimensions](screenshots/16-e8.jpg)
+
+240 个根的三维投影呈现晶格对称，选中根的真实八维邻接关系被高亮。
+
+A projection of 240 roots reveals E8 symmetry, highlighting genuine eight-dimensional neighbors of a selected root.
+
+模型边界：这是 E8 晶格最短向量构成的有限根系，不是完整无限晶格。投影丢失五个维度，画面重叠和距离不代表八维距离；球点半径为显示大小。演示没有复现 Viazovska 的 Fourier 分析最优性证明，也不把 2016 年定理标为 2026 年新发现。
+
+打开 / Open: `index.html#e8` · t = 0.000 s · seed = 42.
+
+[场景 / Scene](../src/experiments/e8.js) · [数学 / Math](../src/math/e8.js) · [原始图片 / Raw JPEG](https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/16-e8.jpg)
+
+- [IMU · 2022 Fields Medal / Viazovska](https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2022)
+- [Viazovska 2016 · The sphere packing problem in dimension 8](https://arxiv.org/abs/1603.04246)
+- [Annals of Mathematics · 2017 正式论文](https://annals.math.princeton.edu/2017/185-3/p07)
+
+## 17 · 拟阵与 Lorentzian / Graphic matroid and Lorentzian basis polynomial
+
+![拟阵与 Lorentzian / Graphic matroid and Lorentzian basis polynomial](screenshots/17-matroid.jpg)
+
+四面体图中的选边呈现独立集与生成树，权重改变基多项式的对数曲面；特征值柱展示 Lorentzian 符号。
+
+Selected tetrahedral graph edges reveal independent sets and spanning trees; weights change a log-polynomial surface, while eigenvalue bars show its Lorentzian signature.
+
+模型边界：K₄ 是经典的小型图拟阵，三维四面体布局只是图的画法。右侧只是六变量多项式的二维正权重截面，图像或有限采样本身不证明普遍对数凹性。实验采用生成树枚举和解析导数；谱值的数值计算与已知精确值对照，不复现全部 Hodge 理论或 Lorentzian 定理证明。这里的 Lorentzian 不表示物理时空或相对论。
+
+打开 / Open: `index.html#matroid` · t = 0.000 s · seed = 42.
+
+[场景 / Scene](../src/experiments/matroid.js) · [数学 / Math](../src/math/matroid.js) · [原始图片 / Raw JPEG](https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/17-matroid.jpg)
+
+- [IMU · June Huh / 2022 Fields Medal](https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2022)
+- [Brändén–Huh · Lorentzian polynomials](https://arxiv.org/abs/1902.03719)
+- [IMU · Huh 获奖工作详述](https://www.mathunion.org/fileadmin/IMU/Prizes/Fields/2022/IMU_Fields22_Huh_citation.pdf)
+
+图像总大小 / Total image size: 1687 KiB. Bundle SHA-256: `f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c`.

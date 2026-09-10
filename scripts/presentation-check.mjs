@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {mkdir, writeFile} from 'node:fs/promises';
+import {mkdir, writeFile, readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {catalog} from '../src/catalog.js';
 
@@ -10,7 +10,8 @@ await mkdir(output, {recursive:true});
 const definitions = new Map(await Promise.all(catalog.map(async ({id}) => [id, (await import(`../src/experiments/${id}.js`)).definition])));
 const browser = await chromium.launch({headless:true, channel:'chrome', args:['--enable-webgl', '--ignore-gpu-blocklist']});
 const errors = [], remoteRequests = [];
-const report = {started:new Date().toISOString(), browser:await browser.version(), protocol:'file:', desktopPresets:[], mobilePresets:[], errors, remoteRequests};
+const bundle=JSON.parse(await readFile(new URL('../dist/manifest.json',import.meta.url)));
+const report = {started:new Date().toISOString(), bundleSha256:bundle.sha256, browser:await browser.version(), protocol:'file:', desktopPresets:[], mobilePresets:[], errors, remoteRequests};
 
 function observe(page) {
   page.on('pageerror', error => errors.push(error.message));

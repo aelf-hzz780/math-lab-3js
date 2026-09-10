@@ -22,7 +22,7 @@ const result = await build({
 const dependencies = Object.keys(result.metafile.inputs).sort();
 const externalImports = Object.values(result.metafile.outputs).flatMap(output => output.imports);
 if (externalImports.length) throw new Error(`Offline build contains runtime imports: ${JSON.stringify(externalImports)}`);
-for (const dataPath of ['data/kissing.json', 'data/maxcut.json']) {
+for (const dataPath of ['data/kissing.json', 'data/maxcut.json', 'data/noperthedron.json']) {
   if (!dependencies.includes(dataPath)) throw new Error(`Offline build omitted ${dataPath}`);
 }
 const experiments = dependencies.filter(path => /^src\/experiments\/[^/]+\.js$/.test(path)).map(path => basename(path, '.js'));
@@ -39,7 +39,7 @@ const manifest = {
   bytes:script.length,
   sha256:createHash('sha256').update(script).digest('hex'),
   experiments,
-  embeddedData:['data/kissing.json', 'data/maxcut.json'],
+  embeddedData:dependencies.filter(path=>path.startsWith('data/')&&path.endsWith('.json')),
   runtimeNetworkDependencies:[],
 };
 await writeFile(resolve(root, 'dist/manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);

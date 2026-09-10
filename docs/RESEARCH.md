@@ -2,6 +2,10 @@
 
 研究资料核验基线：2026-09-09。精确数据下载与实现审计：2026-09-10。以下采用可定位的原始来源；来源中的声称、数学数据的本地验证与页面中的可视化模型分别说明。
 
+2026-09-10 增加的七项专题见 [ADDITIONS.md](ADDITIONS.md)：2026 菲尔兹奖相关的实数 Kakeya、硬球碰撞、环面结和模空间，以及 Noperthedron、E8、拟阵与 Lorentzian 多项式。各项分别标注研究年份、获奖背景和教学边界。
+
+See [ADDITIONS.md](ADDITIONS.md) for the seven topics added on 2026-09-10: real Kakeya, hard-sphere collisions, torus knots, and moduli associated with Fields 2026, plus Noperthedron, E8, and matroids/Lorentzian polynomials. Research dates, award context, and teaching limits are distinguished.
+
 ## 最新流体研究与截图
 
 [OpenAI 2026-09-08 公告](https://openai.com/index/navier-stokes-solution/)声明给出了光滑外力条件下、从静止光滑初态出发的 Navier–Stokes 有限时间奇点构造，以及 Lean 形式化。声明针对官方问题的 C/D 分支。公告描述了径向汇聚、旋转加速、轴向拉伸与收缩区域中保持有限能量的机制。

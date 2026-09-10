@@ -9,6 +9,13 @@ export const catalog = [
   {id:'kakeya',title:'有限域 Kakeya 集',en:'Finite-field Kakeya',type:'精确离散构造',icon:'kakeya'},
   {id:'maxcut',title:'AI 图构造',en:'MAX-4-CUT gadget',type:'论文原始边表',icon:'maxcut'},
   {id:'hat',title:'Hat 非周期铺砌',en:'Aperiodic monotile',type:'正式替换规则',icon:'hat'},
+  {id:'real-kakeya',title:'实数三维 Kakeya',en:'Every direction in space',section:'03 / FIELDS MEDAL 2026',type:'有限管束教学模型',icon:'vortex'},
+  {id:'boltzmann',title:'碰撞如何成为气体',en:'From collisions to gas',type:'硬球与碰撞历史',icon:'sparks'},
+  {id:'torus-knot',title:'环面结与扭曲度',en:'Knots & distortion',type:'拓扑与数值测量',icon:'quantum'},
+  {id:'moduli',title:'复环面与模空间',en:'A universe of tori',type:'g = 1 教学切片',icon:'hat'},
+  {id:'noperthedron',title:'穿不过自己的多面体',en:'The impossible passage',section:'04 / NEW GEOMETRY 2025–26',type:'原始坐标与投影测试',icon:'maxcut'},
+  {id:'e8',title:'E8 · 八维对称',en:'240 roots of symmetry',section:'05 / FIELDS MEDAL 2022',type:'精确根系的三维投影',icon:'kissing'},
+  {id:'matroid',title:'拟阵与 Lorentzian',en:'The shape of independence',type:'组合结构与多项式',icon:'maxcut'},
 ];
 
 const paths = {

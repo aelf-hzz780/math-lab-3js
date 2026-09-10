@@ -1,0 +1,15 @@
+{
+  "name": "Noperthedron",
+  "authors": ["Jakob Steininger", "Sergey Yurkevich"],
+  "paper": "https://arxiv.org/abs/2508.18475v2",
+  "paperVersion": "2026-01-28",
+  "source": "https://github.com/Jakob256/Rupert/blob/1009a4c451dbdbb1a1705d18461cbabd534a0a6c/src/noperthedron.py",
+  "sourceCommit": "1009a4c451dbdbb1a1705d18461cbabd534a0a6c",
+  "verifiedAt": "2026-09-10",
+  "licenseNote": "No repository license was declared at verification. Only mathematical coordinates and construction metadata are transcribed; upstream program code is not bundled or relicensed.",
+  "numerators": [[152024884,0,210152163],[6632738028,6106948881,3980949609],[8193990033,5298215096,1230614493]],
+  "denominators": [259375205,10000000000,10000000000],
+  "rule": "v[k+15*i+45*l] = (-1)^l Rz(2*pi*k/15) C_i; i=0..2, k=0..14, l=0..1",
+  "vertexCount": 90,
+  "renderingArithmetic": "Exact integer seed coefficients retained. Trigonometric rotations, convex hulls and projection margins use double precision; this is not the paper's interval-arithmetic certificate."
+}

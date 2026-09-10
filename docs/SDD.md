@@ -2,9 +2,9 @@
 
 ## 目标与边界 / Scope
 
-FORMA 是独立的静态 Three.js 数学实验室，包含十个可运行、可交互、可解释的实验。此公开仓库已启用 Git，未使用 Spec Kitty。应用没有账户、后端、模型 API 或运行时外部资源依赖；研究来源链接仅在主动打开时访问外部网站。
+FORMA 是独立的静态 Three.js 数学实验室，包含 17 个可运行、可交互、可解释的实验。此公开仓库已启用 Git，未使用 Spec Kitty。应用没有账户、后端、模型 API 或运行时外部资源依赖；研究来源链接仅在主动打开时访问外部网站。
 
-FORMA is a standalone static Three.js mathematics lab with ten runnable, interactive and documented experiments. This public repository uses Git and does not use Spec Kitty. The application has no accounts, backend, model API or external runtime dependencies. Research links open external sites only when followed.
+FORMA is a standalone static Three.js mathematics lab with 17 runnable, interactive and documented experiments. This public repository uses Git and does not use Spec Kitty. The application has no accounts, backend, model API or external runtime dependencies. Research links open external sites only when followed.
 
 ## 分层与设计选择 / Layers and Design Choices
 
@@ -57,6 +57,10 @@ Kissing configurations retain exact coefficients for all three 604-point constru
 
 ## 性能与资源生命周期 / Performance and Resource Lifecycle
 
+新增七项的研究日期、有限模型边界、一次性凸包与固定步长碰撞设计见 [ADDITIONS.md](ADDITIONS.md)。E8 邻接来自精确根坐标，拟阵基来自完整生成树枚举；它们的三维表现不得改变组合关系。
+
+See [ADDITIONS.md](ADDITIONS.md) for the seven additions, research dates, finite-model boundaries, one-time hull construction, and fixed-step collisions. E8 adjacency uses exact root coordinates, and matroid bases use complete spanning-tree enumeration; rendering must preserve these combinatorial relations.
+
 应用共享一个 renderer，同一时间只运行一个实验。高画质 DPR 上限 1.75，低画质上限 1，并减少网格、流管或粒子数。几何采用合并、实例化和固定容量缓冲；高频更新保持线性规模。接吻构型的 O(n²) 精确审计仅限首次加载并缓存，n 固定为 604，不在动画循环全配对。MAX-4-CUT 的评分始终扫描完整 155 条边，边权过滤只影响显示。
 
 The application shares one renderer and runs one experiment at a time. Pixel ratio is capped at 1.75 in high quality and 1 in low quality, which also reduces grids, tubes or particle counts. Geometry uses merging, instancing and fixed-capacity buffers; frequent updates remain linear in scene size. The O(n²) exact audit of kissing configurations is limited to initial loading and cached, with n fixed at 604; it never runs as all-pairs work per frame. MAX-4-CUT scoring always includes all 155 edges; filtering only changes their display.
@@ -79,9 +83,9 @@ Hidden pages stop simulation advancement and rendering, and reset the wall-clock
 
 The application catches errors from loading, parameters, actions, picking and frame updates, with explicit paths for WebGL context loss and shader compilation. There are no distributed services, so local Trace IDs use a Web Crypto UUID or a local fallback suffix. The UI shows the identifier and the console records details. Disposal errors are logged while cleanup continues for the remaining scene resources.
 
-`npm ci` 安装锁定的构建工具，`npm run build` 重新生成 `dist/app.js` 和 `dist/manifest.json`。构建验证全部注册实验、两份 JSON 数据已打包且没有外部运行时 imports，清单保存 SHA-256。源码更改后必须重新构建。完整目录可以直接打开 `index.html`，也可通过 `npm start` 在 `127.0.0.1:4174` 预览。`serve.js` 只处理 GET/HEAD，并检查路径边界和 realpath。
+`npm ci` 安装锁定的构建工具，`npm run build` 重新生成 `dist/app.js` 和 `dist/manifest.json`。构建验证全部注册实验、必需 JSON 数据已打包且没有外部运行时 imports，清单保存 SHA-256 及实际嵌入的数据列表。源码更改后必须重新构建。完整目录可以直接打开 `index.html`，也可通过 `npm start` 在 `127.0.0.1:4174` 预览。`serve.js` 只处理 GET/HEAD，并检查路径边界和 realpath。
 
-`npm ci` installs the locked build tool, and `npm run build` regenerates `dist/app.js` and `dist/manifest.json`. The build verifies that every registered experiment and both JSON datasets are embedded, with no external runtime imports, and records a SHA-256 checksum. Source changes require rebuilding. Open `index.html` from the complete directory, or run `npm start` for a preview at `127.0.0.1:4174`. `serve.js` handles GET/HEAD only and checks path containment and real paths.
+`npm ci` installs the locked build tool, and `npm run build` regenerates `dist/app.js` and `dist/manifest.json`. The build verifies every registered experiment and required JSON dataset, with no external runtime imports, recording a SHA-256 checksum and actual embedded data list. Source changes require rebuilding. Open `index.html` from the complete directory, or run `npm start` for a preview at `127.0.0.1:4174`. `serve.js` handles GET/HEAD only and checks path containment and real paths.
 
 ## 验证与发布 / Validation and Delivery
 

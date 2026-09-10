@@ -22,6 +22,13 @@ Routes use `index.html#<id>`. Each ID maps to a scene at `src/experiments/<id>.j
 | `kakeya` | 有限域、模网格、直线覆盖 / finite field, modular grid, line coverage | [kakeya.js](../src/experiments/kakeya.js) | [kakeya.js](../src/math/kakeya.js) |
 | `maxcut` | 四色加权图、节点、跨组边 / four-color weighted graph, cut edges | [maxcut.js](../src/experiments/maxcut.js) | [maxcut.js](../src/math/maxcut.js) |
 | `hat` | 非周期铺砌、帽子单块、镜像 / aperiodic Hat tiles, reflections | [hat.js](../src/experiments/hat.js) | [hat.js](../src/math/hat.js) |
+| `real-kakeya` | 王虹、实数方向、管束、重叠 / Hong Wang, real directions, tube overlap | [real-kakeya.js](../src/experiments/real-kakeya.js) | [real-kakeya.js](../src/math/real-kakeya.js) |
+| `boltzmann` | 邓煜、硬球、碰撞 DAG、统计 / Yu Deng, hard spheres, collision DAG | [boltzmann.js](../src/experiments/boltzmann.js) | [boltzmann.js](../src/math/boltzmann.js) |
+| `torus-knot` | Pardon、环面结、短弧、弦、link / Pardon, knots, arcs, chords, links | [torus-knot.js](../src/experiments/torus-knot.js) | [torus-knot.js](../src/math/torus-knot.js) |
+| `moduli` | Tsimerman、复环面、晶格、CM、基本域 / Tsimerman, complex tori, lattices, CM | [moduli.js](../src/experiments/moduli.js) | [moduli.js](../src/math/moduli.js) |
+| `noperthedron` | 多面体、Rupert、穿越、投影 / polyhedron, Rupert, passage, projections | [noperthedron.js](../src/experiments/noperthedron.js) | [noperthedron.js](../src/math/noperthedron.js) |
+| `e8` | Viazovska、八维、240根、对称 / Viazovska, eight dimensions, 240 roots | [e8.js](../src/experiments/e8.js) | [e8.js](../src/math/e8.js) |
+| `matroid` | June Huh、拟阵、生成树、Lorentzian、Hessian / matroids, spanning trees, Lorentzian | [matroid.js](../src/experiments/matroid.js) | [matroid.js](../src/math/matroid.js) |
 
 共享交互在 [`src/app.js`](../src/app.js)，材质与几何主要在各场景文件，共享泛光在 [`src/core/glow.js`](../src/core/glow.js)，镜头策略在 [`src/core/presentation.js`](../src/core/presentation.js)，布局在 [`style.css`](../style.css)。增加实验时接入注册表与统一生命周期；完整接口见 [`SDD.md`](SDD.md)。
 
@@ -45,6 +52,10 @@ PLAYWRIGHT_MODULE=/path/to/playwright/index.mjs node scripts/capture-examples.mj
 The application requires neither an npm server nor a model API: open `index.html` from the complete directory, or use `npm start` for a local HTTP preview. Three.js, the Hat generator and research datasets are fixed local assets. Do not edit `dist/app.js` manually; rebuild source and retain the build verification information in [`dist/manifest.json`](../dist/manifest.json).
 
 ## 保持数学边界 / Preserve Mathematical Boundaries
+
+新增研究和获奖年份见 [ADDITIONS.md](ADDITIONS.md)。实数 Kakeya 与有限域 Kakeya 是不同实验。Pardon 的环面结结果是 2011 年，Tsimerman 的论文为 2015 v5，E8 最密证明为 2016 年；不能把获奖年份写成结构发明年份。硬球碰撞历史不是原论文 molecule 切割算法，三维环面不是平坦复环面的等距嵌入。七项均不归因于 AI 发现。
+
+See [ADDITIONS.md](ADDITIONS.md) for research and award dates. Real-space and finite-field Kakeya are separate experiments. Pardon's knot result dates to 2011, Tsimerman's paper to 2015 v5, and E8 optimal packing to 2016; award dates are not invention dates. Collision histories do not implement the paper's molecule-cutting algorithm, and the embedded torus is not an isometric flat complex torus. No AI-discovery attribution is made for these seven topics.
 
 N–S 画面是有限的教学机制示意，不是论文速度场、PDE 求解器或奇点证明。研究声明必须保留来源与核验日期，见 [`RESEARCH.md`](RESEARCH.md) 和 [`NS_MODEL.md`](NS_MODEL.md)。接吻构型精确系数、Kakeya 生成规则、完整 MAX-4-CUT 边表与 Hat substitution rules 不可为了视觉风格变形；可以改灯光、配色、相机和显示密度，但必须保持数学测量及来源说明正确。
 
