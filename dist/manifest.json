@@ -1,8 +1,8 @@
 {
   "format": "classic-iife",
   "bundler": "esbuild 0.25.10",
-  "bytes": 908289,
-  "sha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151",
+  "bytes": 909919,
+  "sha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1",
   "experiments": [
     "boltzmann",
     "dunes",
@@ -30,8 +30,8 @@
   ],
   "terrainWorker": {
     "format": "inline-blob-iife",
-    "bytes": 3808,
-    "sha256": "642f17dadab036c2a2e05f02a5e4872e7f65d12c6feea4faafb2f0e6df1dbbe4",
+    "bytes": 4461,
+    "sha256": "e608f41b2096eb2e2bb9aa8f2fe439bececdd7df0eec0b20278128ce64755327",
     "runtimeNetworkDependencies": []
   },
   "runtimeNetworkDependencies": []

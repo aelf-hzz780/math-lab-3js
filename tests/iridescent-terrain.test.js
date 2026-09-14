@@ -9,23 +9,45 @@ test('density is reproducible, seed-dependent and contains separated vertical ro
   const first = Array.from({length:161},(_,i)=>terrainDensity(5,-10+i/8,7));
   assert.deepEqual(first,Array.from({length:161},(_,i)=>terrainDensity(5,-10+i/8,7)));
   assert.notDeepEqual(first,Array.from({length:161},(_,i)=>terrainDensity(5,-10+i/8,7,{seed:43})));
-  const starts=first.filter((v,i)=>v>0 && (i===0 || first[i-1]<=0));
-  assert.ok(starts.length>=3,'a vertical line intersects at least three separated sheets');
+  let maximumLayers=0;
   for (let x=-12;x<=12;x+=3) for (let z=0;z<=24;z+=3) {
     assert.ok(terrainDensity(x,-10,z)<0);
     assert.ok(terrainDensity(x,10,z)<0);
+    let layers=0,previous=0;
+    for(let y=-10;y<=10;y+=.125) {
+      const density=terrainDensity(x,y,z);
+      if(density>0 && previous<=0) layers++;
+      previous=density;
+    }
+    maximumLayers=Math.max(maximumLayers,layers);
   }
+  assert.ok(maximumLayers>=3,'the default field contains at least three layers');
 });
 
 test('chunk generation is deterministic with bounded indexed typed-array geometry', () => {
   const a=generateTerrainChunk(base),b=generateTerrainChunk(base);
   assert.ok(a.positions instanceof Float32Array && a.normals instanceof Float32Array && a.indices instanceof Uint32Array);
   assert.deepEqual(a.positions,b.positions); assert.deepEqual(a.indices,b.indices); assert.deepEqual(a.normals,b.normals);
+  assert.deepEqual(a.occlusion,b.occlusion);
   assert.notDeepEqual(a.positions,generateTerrainChunk({...base,seed:43}).positions);
   assert.equal(a.triangleCount,a.indices.length/3);
   assert.ok(a.triangleCount>200 && a.triangleCount<=12*base.resolution**3);
   assert.ok(a.positions.length/3<a.indices.length,'surface vertices are shared');
   assert.deepEqual(a.bounds,{min:[0,-10,0],max:[24,10,24]});
+});
+
+test('ambient occlusion is bounded, finite and distinguishes covered from sky-facing surfaces', () => {
+  const mesh=generateTerrainChunk(base),{positions,normals,occlusion}=mesh;
+  assert.ok(occlusion instanceof Float32Array);
+  assert.equal(occlusion.length,positions.length/3);
+  let upward=0,upCount=0,downward=0,downCount=0;
+  for(let i=0;i<occlusion.length;i++) {
+    assert.ok(Number.isFinite(occlusion[i]) && occlusion[i]>=.25 && occlusion[i]<=1);
+    if(normals[i*3+1]>.75) {upward+=occlusion[i];upCount++;}
+    if(normals[i*3+1]<-.75) {downward+=occlusion[i];downCount++;}
+  }
+  assert.ok(upCount>100 && downCount>100);
+  assert.ok(upward/upCount>downward/downCount+.025,'sky-facing surface receives more ambient light on average');
 });
 
 test('layer density increases vertical occupancy while hole scale changes perforation', () => {
@@ -40,22 +62,60 @@ test('layer density increases vertical occupancy while hole scale changes perfor
   }
 });
 
-test('central rock bands leave substantial open gaps across their projected footprint', () => {
+test('rounded strata retain holes and contain vertically substantial continuous bodies', () => {
   let air=0,total=0;
+  const widths=[];
   for(let x=-24;x<24;x+=1.5) for(let z=0;z<48;z+=1.5) {
-    let rock=false;
-    for(let y=-2.5;y<=2.5;y+=.125) if(terrainDensity(x,y,z)>0) {rock=true;break;}
-    air+=Number(!rock); total++;
+    let run=0,longest=0;
+    for(let y=-3;y<=3;y+=.125) {
+      run=terrainDensity(x,y,z)>0?run+.125:0;
+      longest=Math.max(longest,run);
+    }
+    if(longest>0) widths.push(longest);
+    air+=Number(longest===0); total++;
   }
-  assert.ok(air/total>=.4 && air/total<=.8,`central-band air coverage ${air/total}`);
+  widths.sort((a,b)=>a-b);
+  assert.ok(air/total>.08 && air/total<.65,`central-band air coverage ${air/total}`);
+  assert.ok(widths[Math.floor(widths.length/2)]>=1.75,'typical bodies span more than two low-quality vertical cells');
 });
 
-test('surface faces are finite, nondegenerate and face their outward unit normals', () => {
+test('surface density gradients change continuously across nearby samples', () => {
+  const gradient=(x,y,z)=>{
+    const e=.0001;
+    return [(terrainDensity(x+e,y,z)-terrainDensity(x-e,y,z))/(2*e),
+      (terrainDensity(x,y+e,z)-terrainDensity(x,y-e,z))/(2*e),
+      (terrainDensity(x,y,z+e)-terrainDensity(x,y,z-e))/(2*e)];
+  };
+  let maximumChange=0,crossings=0;
+  for(let x=-8;x<=8;x+=.5) for(let z=0;z<=16;z+=.5) {
+    let previous=terrainDensity(x,-8,z);
+    for(let y=-7.75;y<=8;y+=.25) {
+      const current=terrainDensity(x,y,z);
+      if(current*previous<0) {
+        let lo=y-.25,hi=y;
+        for(let i=0;i<12;i++) {
+          const mid=(lo+hi)/2;
+          if(terrainDensity(x,mid,z)*previous>0) lo=mid; else hi=mid;
+        }
+        const middle=(lo+hi)/2,a=gradient(x-.006,middle,z),b=gradient(x+.006,middle,z);
+        maximumChange=Math.max(maximumChange,Math.hypot(...a.map((value,i)=>value-b[i])));
+        crossings++;
+      }
+      previous=current;
+    }
+  }
+  assert.ok(crossings>1000);
+  assert.ok(maximumChange<.08,`nearby gradient change ${maximumChange} would introduce a lighting crease`);
+});
+
+test('surface geometry is finite and nondegenerate with field-outward unit shading normals', () => {
   const {positions:p,normals:n,indices:ids}=generateTerrainChunk(base);
   for (let i=0;i<p.length;i+=3) {
     assert.ok(Number.isFinite(p[i]) && Number.isFinite(p[i+1]) && Number.isFinite(p[i+2]));
     assert.ok(p[i]>=0 && p[i]<=24 && p[i+1]>=-10 && p[i+1]<=10 && p[i+2]>=0 && p[i+2]<=24);
     assert.ok(near(Math.hypot(n[i],n[i+1],n[i+2]),1));
+    const x=p[i]-12,y=p[i+1],z=p[i+2],e=.01;
+    assert.ok(terrainDensity(x+e*n[i],y+e*n[i+1],z+e*n[i+2])<terrainDensity(x-e*n[i],y-e*n[i+1],z-e*n[i+2]),'shading normal points toward decreasing solid density');
   }
   for (let i=0;i<ids.length;i+=3) {
     const a=ids[i]*3,b=ids[i+1]*3,c=ids[i+2]*3;
@@ -64,7 +124,6 @@ test('surface faces are finite, nondegenerate and face their outward unit normal
     const vx=p[c]-p[a],vy=p[c+1]-p[a+1],vz=p[c+2]-p[a+2];
     const nx=uy*vz-uz*vy,ny=uz*vx-ux*vz,nz=ux*vy-uy*vx;
     assert.ok(Math.hypot(nx,ny,nz)>1e-9,'no zero-area triangle');
-    assert.ok(nx*(n[a]+n[b]+n[c])+ny*(n[a+1]+n[b+1]+n[c+1])+nz*(n[a+2]+n[b+2]+n[c+2])>0,'outward winding');
   }
 });
 
@@ -76,7 +135,7 @@ test('adjacent x and z chunks share exactly the same boundary positions and norm
       const points=new Map();
       for(let i=0;i<mesh.positions.length;i+=3) if(mesh.positions[i+axis]===value) {
         const xyz=[...mesh.positions.subarray(i,i+3)]; xyz[axis]=0;
-        points.set(xyz.join(','),[...mesh.normals.subarray(i,i+3)]);
+        points.set(xyz.join(','),[...mesh.normals.subarray(i,i+3),mesh.occlusion[i/3]]);
       }
       return [...points].sort((u,v)=>u[0].localeCompare(v[0]));
     };
@@ -96,6 +155,21 @@ test('the conforming surface has no open interior mesh edges', () => {
     const [a,b]=key.split(',').map(Number);
     const boundary=[0,2].some(axis=>[0,24].some(value=>p[a*3+axis]===value && p[b*3+axis]===value));
     assert.equal(count,boundary?1:2,`edge ${key} must close or terminate at a chunk boundary`);
+  }
+});
+
+test('interior shared mesh edges have opposite directions in their two incident faces', () => {
+  for(const resolution of [16,24]) {
+    const {positions:p,indices}=generateTerrainChunk({...base,resolution}),edges=new Map();
+    for(let i=0;i<indices.length;i+=3) for(const [a,b] of [[indices[i],indices[i+1]],[indices[i+1],indices[i+2]],[indices[i+2],indices[i]]]) {
+      const key=a<b?`${a},${b}`:`${b},${a}`;
+      edges.set(key,(edges.get(key)??0)+(a<b?1:-1));
+    }
+    for(const [key,direction] of edges) {
+      const [a,b]=key.split(',').map(Number);
+      const boundary=[0,2].some(axis=>[0,24].some(value=>p[a*3+axis]===value && p[b*3+axis]===value));
+      if(!boundary) assert.equal(direction,0,`shared edge ${key} must be traversed once in each direction`);
+    }
   }
 });
 

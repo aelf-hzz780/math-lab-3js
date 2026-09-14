@@ -61,9 +61,17 @@ Kissing configurations retain exact coefficients for all three 604-point constru
 
 ## 性能与资源生命周期 / Performance and Resource Lifecycle
 
-虹彩异境使用三维分层密度场及一致的四面体拆分抽取等值面，采用世界坐标梯度计算法线。场景分块加载与回收，不保存整条飞行路径的网格；块只在进入可见区域或结构参数改变时生成。相较逐像素体积 raymarch，网格可复用现有物理材质、环境光与导出流程，代价是形状细节受采样分辨率限制。详见 [虹彩地形模型](models/iridescent-terrain.md)。
+虹彩异境使用低频扭曲的余弦体积层和平滑交集生成圆润实体，采用一致的四面体拆分抽取等值面。三角形绕序按四面体的实体到空气方向确定，光照法线另由世界坐标梯度计算，避免非线性梯度误翻转粗网格三角形。场景分块加载与回收，不保存整条飞行路径的网格；块只在进入可见区域或结构参数改变时生成。相较逐像素体积 raymarch，网格可复用物理材质、环境光与导出流程，代价是形状细节受采样分辨率限制。详见 [虹彩地形模型](models/iridescent-terrain.md)。
 
-Iridescent Strata extracts a layered 3D density isosurface using a consistent tetrahedral decomposition, with normals from world-coordinate gradients. Chunks stream in and are recycled instead of retaining the entire flight path; geometry is generated when chunks enter the view or structural parameters change. Compared with per-pixel volume raymarching, meshes reuse physical materials, environment lighting and export, at the cost of sampling-limited detail. See the [terrain model](models/iridescent-terrain.md).
+Iridescent Strata forms rounded solids from low-frequency warped cosine layers and smooth intersections, then extracts an isosurface through a consistent tetrahedral decomposition. Winding follows the tetrahedron's solid-to-air direction, while shading normals use world-coordinate gradients, preventing nonlinear gradients from incorrectly flipping coarse triangles. Chunks stream in and are recycled instead of retaining the entire flight path; geometry is generated when chunks enter the view or structural parameters change. Compared with per-pixel volume raymarching, meshes reuse physical materials, environment lighting and export, at the cost of sampling-limited detail. See the [terrain model](models/iridescent-terrain.md).
+
+材质采用沿世界坐标缓慢混合的雾蓝、淡紫与浅桃色，搭配低金属度、较高粗糙度和宽环境照明。主配色不随视角循环，微表面不添加高频颗粒扰动。`iridescence` 参数键保留，但主要控制色彩晕染，物理薄膜项缩放为 0.08 倍。云屿外观来自实体表面和距离雾，不包含真实云雾的体积散射模拟。
+
+The material slowly blends mist blue, lavender and pale peach in world coordinates, with low metalness, higher roughness and broad environment light. Its main palette does not cycle with viewing angle, and no high-frequency grain perturbs the micro-surface. The `iridescence` key remains but primarily controls pastel blending; physical thin-film intensity is scaled by 0.08. The cloudlike appearance comes from solid surfaces and distance fog, without cloud volumetric-scattering simulation.
+
+几何层在每个网格顶点的外法线与世界向上方向各做四次密度采样，生成局部覆盖系数 AO。八次探测始终使用原始世界坐标，结果与网格一起存储和转移；Worker 的 transfer list 包含 `occlusion.buffer`。场景通过 `strataOcclusion` 属性把它交给材质插值，避免每帧重算或增加屏幕空间渲染目标。它用于艺术化地加深层底与凹处，不是光线追踪阴影或体积光照。采样距离、权重和适用范围见模型文档。
+
+The geometry layer performs four density probes along the outward normal and four along world-up at each mesh vertex, producing a local-coverage AO coefficient. All eight probes use original world coordinates; results are stored and transferred with the mesh, including `occlusion.buffer` in the Worker transfer list. The scene exposes it as `strataOcclusion` for material interpolation, avoiding per-frame recomputation or extra screen-space render targets. This artistically darkens undersides and recesses; it is not ray-traced shadows or volumetric lighting. The model note records distances, weights and limits.
 
 网格生成优先使用从本地 bundle 创建的 Blob Worker，保持 `file://` 离线入口；Worker 不可用时使用本地回退路径。密度场、网格提取和场景材质分别管理，避免将图形资源传入数学层。过时任务的结果不得重新挂回活动场景，销毁时终止 Worker 并释放 Blob URL、块网格与环境资源。飞行通过世界平移呈现低空视差，保持全局轨道相机可操作。
 
@@ -114,3 +122,7 @@ The repository delivers source, built assets, provenance and validation records.
 相机适配器支持 `setCamera(position, target, {fitAspect:false})`。悬浮地形使用固定观察距离，避免竖屏把相机拉到雾外；其他场景保留默认的宽高比适配。镜头复位保留该选项。材质独立于几何，位于 `src/rendering/strata-material.js`。
 
 The camera adapter accepts `setCamera(position, target, {fitAspect:false})`. Floating terrain keeps a fixed viewing distance so portrait layouts do not move the camera beyond the fog. Other scenes retain aspect fitting, and camera reset preserves the policy. Terrain material is separate from geometry in `src/rendering/strata-material.js`.
+
+连续飞行会在每个区块行程的中点（距下一边界 12 m）预加载下一排，最多暂存 3 块，仍只显示 15 块。后台生成期间继续移动；只有抵达边界而下一排仍未完成时才暂缓，整排就绪后原子替换。结构参数整体重建仍保留当前可见集合再替换。
+
+Continuous flight prefetches the next row halfway through each chunk interval, 12 m before the next boundary. At most three chunks are staged while only 15 remain mounted. Movement continues during generation and pauses only at a boundary if the next row is incomplete; completed rows swap atomically. Full structural regeneration still retains the current visible set until its replacement is ready.

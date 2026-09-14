@@ -1,49 +1,55 @@
-# FORMA 1.2 验收报告 / Validation Report
+# FORMA 1.2.1 验收报告 / Validation Report
 
-验收日期：2026-09-14。**18/18 实验离线运行，112/112 数学与状态测试通过。** 新增「虹彩异境」程序化悬浮地形。离线构建、18 张截图、下列三个浏览器验收报告使用相同 SHA-256。历史验收保留在 [1.1](QA_BASELINE_1.1.md) 和 [1.0](QA_BASELINE_1.0.md)。
+验收日期：2026-09-14。**18/18 实验离线运行，118/118 数学与状态测试通过。** 本版修复虹彩地形的面片朝向与接缝观感，采用圆润体积层、连续淡彩、宽高光和局部遮蔽，并提前加载前方地形。[前后对比](comparisons/iridescent-terrain.jpg) 使用同一相机、seed 42 和暂停时间 0；两边均为本应用截图。历史结果保留在 [1.2](QA_BASELINE_1.2.md)、[1.1](QA_BASELINE_1.1.md) 和 [1.0](QA_BASELINE_1.0.md)。
 
-Validated on 2026-09-14. **All 18 scenes run offline and all 112 math/state tests pass.** This version adds Iridescent Strata, a procedural floating landscape. The offline bundle, 18 screenshots and the three browser reports below share the same SHA-256. Historical 1.1 and 1.0 reports are preserved separately.
+Validated on 2026-09-14. **All 18 scenes run offline and all 118 math/state tests pass.** This version fixes terrain face orientation, adds rounded volumes, continuous pastels, broad highlights and local occlusion, and prefetches terrain ahead. The [before/after comparison](comparisons/iridescent-terrain.jpg) uses the same camera, seed 42 and paused time 0; both sides are actual application captures. Historical results are preserved separately.
 
-## 结果 / Results
+## 改动与验证 / Changes and Validation
 
-| 验收 / Check | 结果 / Result | 记录 / Evidence |
+旧算法按光照法线逐三角面翻转，导致部分内部共享边方向重复，背面剔除后形成三角缺口。先加入失败用例，再按四面体实体到空气方向固定面片绕序。共享边现在反向配对，光照法线不会改变拓扑。平滑交集、低频与中尺度密度起伏取代薄硬层片；顶点位置、法线和新增遮蔽值在相邻区块边界一致。
+
+The previous extractor flipped each triangle using shading normals, producing same-direction interior edges and triangular gaps under backface culling. A failing regression preceded the fix: face winding now follows the tetrahedron's solid-to-air direction. Interior edges pair in opposite directions, and lighting normals do not alter topology. Smooth intersections and low/medium-scale density replace thin, hard shelves; positions, normals and occlusion match at chunk boundaries.
+
+颜色由两个低频空间场连续混合，删除循环色带与高频颗粒法线。金属度从 0.88 降至 0.06，薄膜虹彩实际值为控件的 0.08 倍；默认粗糙度 0.68。高/低画质使用 48/32 个单元。新增 AO 每顶点采样八次世界密度，仅在区块生成时计算；它不是实时阴影或真实体积散射。
+
+Two low-frequency spatial fields blend color continuously, replacing cyclic bands and high-frequency grain normals. Metalness drops from 0.88 to 0.06, physical iridescence is scaled to 0.08 of its control, and default roughness is 0.68. High/low quality use 48/32 cells. New vertex occlusion uses eight world-density probes during chunk generation; it is not real-time shadowing or volumetric scattering.
+
+新预加载在边界前 12 m 启动，生成期间继续飞行。只挂载 15 块、最多暂存下一排 3 块；到边界时整排原子替换。只有下一排未完成时才暂缓，避免进入未生成区域。状态测试覆盖预加载时继续移动、慢任务边界等待、整排交换、重置/退出释放和过期任务。
+
+Prefetch starts 12 m before the next boundary while flight continues. Only 15 chunks are mounted, with at most three next-row chunks staged. Rows swap atomically at the boundary. Incomplete rows temporarily hold travel there. State regressions cover continued movement, slow-worker boundary waits, atomic swaps, reset/disposal and stale tasks.
+
+## 浏览器结果 / Browser Results
+
+| 检查 / Check | 结果 / Result | 记录 / Evidence |
 | --- | --- | --- |
-| 离线加载 / Offline loading | 18/18；零运行期 HTTP(S) 请求，零页面/着色器错误 / zero runtime requests or page/shader errors | [offline-report.json](qa/offline-report.json) |
-| 预设 / Presets | 54 桌面 + 54 触控模拟，共 108 次 / 108 activations | [presentation-report.json](qa/presentation-report.json) |
-| 虹彩地形 / Terrain | 3 预设、10 参数边界、动作、seed 与 reset PNG 哈希复现 / presets, bounds, actions and reproducible exports | [terrain-report.json](qa/terrain-report.json) |
-| 流式生成 / Streaming | 72.3 m，常驻最多 15 块 / at most 15 resident chunks | [terrain-report.json](qa/terrain-report.json) |
-| 切换与清理 / Switching and cleanup | 20 次目录切换、4 次加载中止；37 Worker 创建 = 37 终止 / 20 switches, 4 load aborts, all workers terminated | [terrain-report.json](qa/terrain-report.json) |
-| 手机与恢复 / Mobile and recovery | 390×844 触控、横竖屏相机复位、无横向溢出、PNG、低动态与 Worker 回退 / touch, framing, PNG, reduced motion, worker fallback | [terrain-report.json](qa/terrain-report.json) |
+| 离线启动 / Offline | 18/18，零远程请求与错误 / no remote requests or errors | [offline](qa/offline-report.json) |
+| 预设 / Presets | 54 桌面 + 54 触控模拟 / desktop + touch | [presentation](qa/presentation-report.json) |
+| 地形参数 / Terrain parameters | 3 预设、10 边界，seed/reset PNG 哈希复现 / presets, bounds, reproducible PNG | [terrain](qa/terrain-report.json) |
+| 连续飞行 / Travel | 75.3 m；20 次目录切换资源稳定 / stable resources over 20 switches | [terrain](qa/terrain-report.json) |
+| 取消与回退 / Cancellation and fallback | 4 次加载中止；37 Worker 创建 = 37 终止；无 Worker 回退通过 / 4 aborts, all workers terminated, fallback passes | [terrain](qa/terrain-report.json) |
+| 手机 / Mobile | 390×844、触控、横竖屏相机复位、PNG、无横向溢出 / touch, framing, PNG, no overflow | [terrain](qa/terrain-report.json) |
 
-预设参数均与声明匹配。删除或损坏 bundle 的模拟均显示 Trace ID 和恢复入口，不会永久显示加载提示。虚拟时钟检查确认暂停时间及相机稳定。返回原 seed 后、重置后，地形画布导出的 PNG 与原始 PNG 在同一浏览器会话逐字节一致；不同 GPU/浏览器不承诺像素一致。
+当前离线包、图集和三个最终浏览器报告使用同一 bundle SHA。缺失/损坏 bundle 的故障检查仍显示 Trace ID 和恢复入口。源 seed 恢复与 reset 的 PNG 在同一浏览器会话逐字节一致；不承诺跨 GPU/浏览器像素相同。浅色地形上的测量文字新增深色衬底，并在最终截图中检查可读性。
 
-Preset parameters match their declarations. Missing or malformed bundles display a Trace ID and recovery UI. Virtual-clock checks confirm pause and camera stability. Restoring the terrain seed and resetting reproduce identical canvas PNG bytes within the same browser session; cross-GPU/browser pixel identity is not promised.
+The current bundle, gallery and three final browser reports share one bundle hash. Missing/malformed bundles still show a Trace ID and recovery UI. Restored-seed and reset PNGs match byte-for-byte within one browser session; cross-GPU/browser pixel identity is not promised. Dark backplates maintain measurement-text contrast over the pale terrain and were checked in final captures.
 
-## 数学与资源 / Mathematics and Resources
+## 性能与范围 / Performance and Scope
 
-新增 23 个测试覆盖：三维密度的多层占据、孔洞比例、固定 seed、有限输入、外向非退化三角形、内部网格闭合与相邻块位置/法线一致；分块窗口边界、队列上限、真实 Worker 消息传输、降级、错误与取消；场景原子替换、长距离重置和过期任务失效。原有 89 个数学与状态测试仍通过。
+Apple M3 Pro，macOS arm64，Chrome 152.0.7977.83，headless，1280×800、DPR 1、高画质。独立真实时钟播放 5.346 秒，末尾短窗口采样 **56 FPS**，采样时正在预载前方地形。更细的网格与遮蔽计算提高一次性生成成本，交换时不重新计算整幅几何。
 
-The 23 new tests cover multivalued density, open-gap coverage, seed determinism, input bounds, nondegenerate outward triangles, interior closure, matching chunk boundaries/normals, bounded planning and queues, real worker transfer, fallback, cancellation, atomic scene replacement and long-distance reset. The preceding 89 tests remain green.
+Apple M3 Pro, macOS arm64, headless Chrome 152.0.7977.83, 1280×800, DPR 1, high quality. A separate real-clock page ran for 5.346 seconds and sampled **56 FPS** in its final short window, while prefetching terrain. Finer grids and occlusion increase chunk-generation cost; row exchanges do not rebuild the entire world.
 
-渲染只挂载 15 块；换结构参数时旧集合保持可见，后台替换集合完成后原子提交。生成较慢时穿行暂停以保持窗口完整。10 次返回地形后的已预热 GPU 计数固定为 23 geometries / 6 textures；穿行时计数可随裁剪和首次上传变化，但没有持续增长。共享 PMREM 临时资源属于 renderer 缓存，环境纹理与场景 Worker 随切换释放。
+手机验收是同一 Mac 的触控模拟，不是 iOS/Android 真机或长期热稳定性测试。渲染资源计数检查不替代完整堆/驱动泄漏分析。云屿仍为实体表面近似，未模拟真实云雾的体积散射；小于网格尺度的特征可能消失。手动镜头可离开有限窗口，极长距离的材质噪声受浮点精度限制。作者原算法尚未核验。
 
-Only 15 chunks are mounted. Structural changes retain the visible set until a replacement commits atomically, with travel paused while generation catches up. Ten returns to terrain each recorded the same warmed GPU counts: 23 geometries and 6 textures. Travel counts can vary with culling and first upload but did not grow without bound. Shared PMREM scratch resources belong to the renderer cache; environment textures and scene workers are released on switching.
+Mobile checks emulate touch on the same Mac, not physical devices or sustained thermal behavior. Renderer counts do not replace exhaustive heap/driver analysis. Floating forms remain a solid-surface approximation without cloud volumetric scattering. Fine features can disappear below grid resolution; manual cameras can leave the window and long-distance material noise loses floating-point precision. The reference author's algorithm remains unverified.
 
-## 环境与性能 / Environment and Performance
+## 产物 / Artifacts
 
-Apple M3 Pro，macOS arm64，Node.js v26.5.0，Google Chrome 152.0.7977.83，headless。虹彩地形默认参数、1280×800、DPR 1、高画质，在独立真实时钟页面播放 5.348 秒，末尾短窗口采样为 **60 FPS**。此测量没有同时运行其他浏览器测试。触屏验收在同一台 Mac 模拟 390×844、DPR 2，应用低画质 DPR 上限 1。
+18 张 1280×800 JPEG，共 1,807,237 bytes；另有一张 1600×544 的前后对比图，163,365 bytes。索引记录图像哈希、参数、相机、来源与源码。截图使用虚拟时钟，画面 FPS 不作为性能证据。
 
-Apple M3 Pro, macOS arm64, Node.js v26.5.0 and headless Google Chrome 152.0.7977.83. Default terrain at 1280×800, DPR 1 and high quality played for 5.348 seconds on a separate real-clock page, with a final short-window sample of **60 FPS**. No other browser suite ran during this measurement. Touch checks emulate 390×844 at DPR 2 on the same Mac; low-quality rendering is capped at DPR 1.
+18 JPEGs at 1280×800 total 1,807,237 bytes, plus a 1600×544 comparison of 163,365 bytes. Indexes record hashes, parameters, cameras, citations and source paths. Captures use virtual time; displayed FPS is not performance evidence.
 
-这不是 iOS/Android 真机或长期热稳定性测试，也不替代堆内存和驱动泄漏分析。完整细孔与岩片轮廓受采样分辨率影响；手动镜头可以离开可见窗口，系统没有碰撞避障。极长距离的材质噪声受浮点精度限制。参考视频的作者算法未经取得或核验，本实验不主张逐像素复现。
-
-These are not physical iOS/Android or sustained thermal measurements, nor exhaustive heap/driver-leak tests. Grid resolution limits small holes and silhouettes. Manual views can leave the visible window; no collision avoidance is provided. Very long travel affects material-noise precision. The reference author's algorithm has not been obtained or verified, so this is not a pixel-exact reconstruction.
-
-## 截图与复现 / Screenshots and Reproduction
-
-18 张真实 JPEG，1280×800、质量 82，总计 1,911,777 bytes（1.82 MiB），低于 3 MiB 预算。新增地形图为 185,321 bytes。固定 seed 42、默认参数及镜头；虚拟时钟 FPS 不作为性能依据。参数、图像 SHA、来源与源码路径见 [截图索引](screenshots/manifest.json) 和 [图集](EXAMPLES.md)。
-
-18 actual JPEG screenshots at 1280×800 and quality 82 total 1,911,777 bytes (1.82 MiB), within the 3 MiB budget. The terrain image is 185,321 bytes. Captures use seed 42, default parameters and fixed cameras; virtual-clock FPS is not performance evidence. The manifest records parameters, image hashes, sources and code paths.
+[图集 / Gallery](EXAMPLES.md) · [截图索引 / Screenshot manifest](screenshots/manifest.json) · [对比来源 / Comparison provenance](comparisons/iridescent-terrain.json)
 
 ```sh
 npm test
@@ -52,10 +58,9 @@ PLAYWRIGHT_MODULE=/path/to/playwright/index.mjs node scripts/terrain-check.mjs
 PLAYWRIGHT_MODULE=/path/to/playwright/index.mjs node scripts/offline-check.mjs
 PLAYWRIGHT_MODULE=/path/to/playwright/index.mjs node scripts/presentation-check.mjs
 PLAYWRIGHT_MODULE=/path/to/playwright/index.mjs node scripts/capture-examples.mjs
+python3 scripts/compare-terrain.py  # Pillow required
 ```
 
-Offline bundle: 908,289 bytes. SHA-256:
+Offline bundle: 909,919 bytes. SHA-256:
 
-`a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151`
-
-Worker: 3,808 bytes, embedded Blob IIFE; no runtime network dependency.
+`eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1`

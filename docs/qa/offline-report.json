@@ -1,6 +1,6 @@
 {
-  "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151",
-  "started": "2026-09-14T04:59:25.107Z",
+  "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1",
+  "started": "2026-09-14T11:24:02.358Z",
   "browser": "152.0.7977.83",
   "protocol": "file:",
   "scenes": [
@@ -100,13 +100,13 @@
       "failure": "missing-bundle",
       "loadingHidden": true,
       "recoveryVisible": true,
-      "message": "离线脚本未找到，请重新生成 dist/app.js。 · 参考编号 forma-boot-7c9d8bc1"
+      "message": "离线脚本未找到，请重新生成 dist/app.js。 · 参考编号 forma-boot-e4ee9dc6"
     },
     {
       "failure": "invalid-bundle",
       "loadingHidden": true,
       "recoveryVisible": true,
-      "message": "Unexpected token '{' · 参考编号 forma-boot-b394fa74"
+      "message": "Unexpected token '{' · 参考编号 forma-boot-95973c5a"
     }
   ],
   "errors": [],

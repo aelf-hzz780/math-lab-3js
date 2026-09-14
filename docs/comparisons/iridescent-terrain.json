@@ -1,0 +1,58 @@
+{
+  "description": {
+    "zh": "同一 seed、时间与相机；旧版与柔和版应用的真实截图，仅缩放并并排排版。",
+    "en": "Actual old/new application screenshots with the same seed, time and camera; only resized and placed side by side."
+  },
+  "before": {
+    "commit": "264088b14963a23a3c5bcea3e6ec94b7cacdcd64",
+    "source": "docs/screenshots/18-iridescent-terrain.jpg",
+    "sha256": "1e7078a4c48fe9182b8be5188b23b8fe6c8bc2467ec1d17bbb7936959f678fff"
+  },
+  "after": {
+    "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1",
+    "source": "docs/screenshots/18-iridescent-terrain.jpg",
+    "sha256": "aeaa78782380955c1faabc87d06b7097d53d60b2b73ccdb1e765376ce26959bb",
+    "state": {
+      "params": {
+        "layers": 1,
+        "holes": 1.1,
+        "iridescence": 0.8,
+        "roughness": 0.68,
+        "speed": 2.4
+      },
+      "seed": 42,
+      "camera": {
+        "position": [
+          15.000000000000004,
+          13,
+          25.000000000000007
+        ],
+        "target": [
+          0,
+          -1,
+          -16
+        ]
+      },
+      "simulationTimeSeconds": 0,
+      "requestedRunningMilliseconds": 0,
+      "paused": true,
+      "automaticCamera": false,
+      "quality": "high",
+      "immersive": true,
+      "metrics": {
+        "已穿行": "0.0 m",
+        "常驻地层": "15 区块",
+        "表面三角形": "1,336,904",
+        "生成状态": "后台生成 · 就绪"
+      }
+    }
+  },
+  "comparison": {
+    "path": "docs/comparisons/iridescent-terrain.jpg",
+    "width": 1600,
+    "height": 544,
+    "bytes": 163365,
+    "sha256": "326bfc208869f5a807c0bbd7f9bad70fc07bc3b3fe79a74cdedef3860edd1ee3"
+  },
+  "reproduce": "python3 scripts/compare-terrain.py (Pillow required; the 1.2.0 commit must be available locally)"
+}

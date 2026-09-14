@@ -1,6 +1,6 @@
 {
-  "started": "2026-09-14T04:59:24.177Z",
-  "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151",
+  "started": "2026-09-14T11:24:01.977Z",
+  "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1",
   "browser": "152.0.7977.83",
   "protocol": "file:",
   "desktopPresets": [
@@ -624,36 +624,36 @@
     },
     {
       "id": "iridescent-terrain",
-      "label": "虹彩群岛",
+      "label": "晨雾云屿",
       "params": {
         "layers": 1,
         "holes": 1.1,
-        "iridescence": 0.95,
-        "roughness": 0.3,
+        "iridescence": 0.8,
+        "roughness": 0.68,
         "speed": 2.4
       },
       "passed": true
     },
     {
       "id": "iridescent-terrain",
-      "label": "深紫迷宫",
+      "label": "层叠梦境",
       "params": {
-        "layers": 1.45,
-        "holes": 0.75,
+        "layers": 1.4,
+        "holes": 0.85,
         "iridescence": 1,
-        "roughness": 0.24,
+        "roughness": 0.75,
         "speed": 1.7
       },
       "passed": true
     },
     {
       "id": "iridescent-terrain",
-      "label": "水银遗迹",
+      "label": "月白浮岛",
       "params": {
         "layers": 0.7,
         "holes": 1.65,
         "iridescence": 0.25,
-        "roughness": 0.18,
+        "roughness": 0.58,
         "speed": 3.8
       },
       "passed": true
@@ -1280,36 +1280,36 @@
     },
     {
       "id": "iridescent-terrain",
-      "label": "虹彩群岛",
+      "label": "晨雾云屿",
       "params": {
         "layers": 1,
         "holes": 1.1,
-        "iridescence": 0.95,
-        "roughness": 0.3,
+        "iridescence": 0.8,
+        "roughness": 0.68,
         "speed": 2.4
       },
       "passed": true
     },
     {
       "id": "iridescent-terrain",
-      "label": "深紫迷宫",
+      "label": "层叠梦境",
       "params": {
-        "layers": 1.45,
-        "holes": 0.75,
+        "layers": 1.4,
+        "holes": 0.85,
         "iridescence": 1,
-        "roughness": 0.24,
+        "roughness": 0.75,
         "speed": 1.7
       },
       "passed": true
     },
     {
       "id": "iridescent-terrain",
-      "label": "水银遗迹",
+      "label": "月白浮岛",
       "params": {
         "layers": 0.7,
         "holes": 1.65,
         "iridescence": 0.25,
-        "roughness": 0.18,
+        "roughness": 0.58,
         "speed": 3.8
       },
       "passed": true
@@ -1334,7 +1334,7 @@
   },
   "pngExport": {
     "filename": "forma-iridescent-terrain-seed-42.png",
-    "bytes": 2080961,
+    "bytes": 601267,
     "signatureValid": true
   },
   "mobile": {

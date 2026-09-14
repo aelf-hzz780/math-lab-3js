@@ -8,11 +8,13 @@
 
 ## 效果画廊 / Gallery
 
-最新加入 **虹彩异境 / Iridescent Strata**：在黑色空间中穿行于多层虹彩岩片之间，调节层间结构、孔洞与材质。视觉参考 Cristian Peñas（@ilumine_ai）于 2026-09-11 发布的 [X 视频](https://x.com/ilumine_ai/status/2098342499865821654)。本仓库使用独立编写的密度场和 Marching tetrahedra；作者原算法未公开核验，不归类为新的数学发现或 AI 生成结果。见 [模型与来源](docs/models/iridescent-terrain.md)。
+**虹彩异境 / Iridescent Strata**：穿行于圆润连绵的悬浮云屿之间，观察雾蓝、淡紫与浅桃色沿表面缓缓交融，调节层间结构、孔洞与色彩。视觉参考 Cristian Peñas（@ilumine_ai）于 2026-09-11 发布的 [X 视频](https://x.com/ilumine_ai/status/2098342499865821654)。本仓库使用独立编写的平滑密度场和 Marching tetrahedra；这是一种云团般的实体表面近似，不求解体积散射，也不归类为新的数学发现或 AI 生成结果。作者原算法尚未取得或核验。见 [模型与来源](docs/models/iridescent-terrain.md)。
 
-The latest addition, **Iridescent Strata**, travels among layered iridescent rock shelves in a black void, with adjustable structure, holes and material. Its visual reference is Cristian Peñas (@ilumine_ai)'s [X video](https://x.com/ilumine_ai/status/2098342499865821654), published on 2026-09-11. This repository uses independently written density fields and Marching tetrahedra. The author's original algorithm has not been verified; this is not presented as a new mathematical discovery or an AI-generated result. See the [model and source note](docs/models/iridescent-terrain.md).
+**Iridescent Strata** travels among rounded, layered floating forms, with mist blue, lavender and pale peach blending slowly across their surfaces. Structure, holes and color are adjustable. Its visual reference is Cristian Peñas (@ilumine_ai)'s [X video](https://x.com/ilumine_ai/status/2098342499865821654), published on 2026-09-11. This repository uses independently written smooth density fields and Marching tetrahedra. It is a cloudlike solid-surface approximation without volumetric scattering, not a claim of new mathematics or an AI-generated result. The author's original algorithm has not been obtained or verified. See the [model and source note](docs/models/iridescent-terrain.md).
 
-[![虹彩异境：悬浮岩片、孔洞与虹彩高光 / Iridescent Strata: floating shelves, holes and iridescent highlights](docs/screenshots/18-iridescent-terrain.jpg)](docs/screenshots/18-iridescent-terrain.jpg)
+[![虹彩异境：圆润云屿、连续淡彩与柔和光照 / Iridescent Strata: rounded floating forms, continuous pastels and soft lighting](docs/screenshots/18-iridescent-terrain.jpg)](docs/screenshots/18-iridescent-terrain.jpg)
+
+[同镜头前后对比 / Same-camera before and after](docs/comparisons/iridescent-terrain.jpg) · [对比图来源 / Comparison provenance](docs/comparisons/iridescent-terrain.json)
 
 新增七项：实数三维 Kakeya、硬球与碰撞历史、环面结、复环面模空间、Noperthedron、E8、拟阵与 Lorentzian 多项式。来源年份和教学范围见 [新增专题说明](docs/ADDITIONS.md)。
 
@@ -109,9 +111,9 @@ npm test
 npm run build
 ```
 
-验证包括数学、状态、预设、参数边界、离线启动、PNG 导出与资源切换检查。112 项数学与状态测试及 18 项浏览器验收的环境和结果见 [验收报告](docs/QA_REPORT.md)；虹彩地形的模型边界见 [独立说明](docs/models/iridescent-terrain.md)。
+验证包括数学、状态、预设、参数边界、离线启动、PNG 导出与资源切换检查。测试数量、构建版本及 18 项浏览器验收的环境和结果见 [验收报告](docs/QA_REPORT.md)；虹彩地形的模型边界见 [独立说明](docs/models/iridescent-terrain.md)。
 
-Validation covers mathematics, state, presets, parameter bounds, offline startup, PNG exports, and resource switching. The [validation report](docs/QA_REPORT.md) records 112 math/state tests and browser checks for 18 scenes; see the [terrain note](docs/models/iridescent-terrain.md) for model limits.
+Validation covers mathematics, state, presets, parameter bounds, offline startup, PNG exports, and resource switching. The [validation report](docs/QA_REPORT.md) records test counts, build versions and browser checks for 18 scenes; see the [terrain note](docs/models/iridescent-terrain.md) for model limits.
 
 浏览器验收与截图需要 Google Chrome 和 Playwright 1.62.1；它们不是应用运行依赖。
 

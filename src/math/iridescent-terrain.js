@@ -1,5 +1,9 @@
 const smooth = t => t*t*(3-2*t);
 const mix = (a,b,t) => a+(b-a)*t;
+const smoothMinimum = (a,b,radius) => {
+  const blend=Math.max(radius-Math.abs(a-b),0)/radius;
+  return Math.min(a,b)-blend*blend*radius*.25;
+};
 
 function hash(x,y,z,seed) {
   let h=Math.imul(x,374761393)^Math.imul(y,668265263)^Math.imul(z,2147483647)^seed;
@@ -26,20 +30,23 @@ function validateField({seed=42,layers=1,holes=1,height=20}={}) {
 
 /** Positive density is solid. This field is not a signed distance function. */
 function fieldSampler({seed,layers,holes,height}) {
-  const spacing=5.2/layers,holeFrequency=1/(4.5*holes);
+  const spacing=5.2/layers,holeFrequency=1/(7*holes);
+  const lastLayer=Math.floor(Math.max(0,height/2-2.25)/spacing)*spacing;
   return (x,y,z) => {
-    const broad=noise(x*.075,0,z*.075,seed);
-    const warp=1.5*Math.sin(x*.18+z*.095+seed*.001)+1.1*broad;
-    const detail=noise(x*.62,y*.42,z*.62,seed^0x6d2b79f5);
-    const warpedY=y+warp+.32*noise(x*.21,y*.18,z*.21,seed^0x41c64e6d)+.15*noise(x*.8,y*.65,z*.8,seed^0x85ebca6b);
-    const thickness=.58+.22*noise(x*.22,0,z*.22,seed^0x12345)+.15*detail;
-    const sheet=thickness-Math.abs(Math.sin(Math.PI*warpedY/spacing))*spacing/Math.PI;
-    const perforation=noise(x*holeFrequency,y*.24,z*holeFrequency,seed^0x1b873593)
-      +.22*noise(x*holeFrequency*2.3,y*.49,z*holeFrequency*2.3,seed^0x27d4eb2d)-.10;
+    const qx=x+2.2*noise(x*.07,y*.08,z*.07,seed^0x85ebca6b);
+    const qz=z+2.2*noise(x*.07+19,y*.08,z*.07-7,seed^0x6d2b79f5);
+    const warp=1.55*Math.sin(qx*.14+qz*.075+seed*.001)+1.2*noise(qx*.09,y*.10,qz*.09,seed);
+    const warpedY=y+warp+.55*noise(qx*.18,y*.15,qz*.18,seed^0x41c64e6d)
+      +.75*noise(qx*.28,y*.24,qz*.28,seed^0x27d4eb2d);
+    const lobes=noise(qx*.13,y*.12,qz*.13,seed^0x12345)
+      +.4*noise(qx*.26,y*.22,qz*.26,seed^0x41c6ce57);
+    const sheet=(Math.cos(2*Math.PI*warpedY/spacing)+.12+.72*lobes)*spacing/(2*Math.PI);
+    const perforation=(noise(qx*holeFrequency,y*.12,qz*holeFrequency,seed^0x1b873593)-.03)*4;
     const envelope=height/2-.8-Math.abs(y);
+    const bandLimit=lastLayer+spacing*.45-Math.abs(warpedY);
     // A narrow air corridor keeps the default low flight path between the rocks.
     const corridor=Math.hypot(x-.7*Math.sin(z*.035),y-2.2-.18*Math.cos(z*.07))-1.05;
-    return Math.min(sheet,perforation*2.2,envelope,corridor);
+    return smoothMinimum(smoothMinimum(smoothMinimum(smoothMinimum(sheet,perforation,.9),bandLimit,.7),envelope,.7),corridor,.65);
   };
 }
 
@@ -70,6 +77,22 @@ function outwardNormal(sample,x,y,z) {
   return [dx/length,dy/length,dz/length];
 }
 
+const AO_DISTANCES=[.65,1.5,3,5];
+const AO_WEIGHTS=[.34,.28,.22,.16];
+const occupied = density => smooth(Math.max(0,Math.min(1,density/.65)));
+
+/** Eight world-space density probes approximate ambient coverage, not shadows. */
+function ambientOcclusion(sample,x,y,z,normal) {
+  const px=x+normal[0]*.08,py=y+normal[1]*.08,pz=z+normal[2]*.08;
+  let normalCoverage=0,skyCoverage=0;
+  for(let i=0;i<AO_DISTANCES.length;i++) {
+    const distance=AO_DISTANCES[i],weight=AO_WEIGHTS[i];
+    normalCoverage+=weight*occupied(sample(px+normal[0]*distance,py+normal[1]*distance,pz+normal[2]*distance));
+    skyCoverage+=weight*occupied(sample(px,py+distance,pz));
+  }
+  return Math.max(.25,Math.min(1,1-.75*(.42*normalCoverage+.58*skyCoverage)));
+}
+
 /**
  * An indexed, conforming Marching Tetrahedra isosurface. Sampling is O(r³),
  * surface storage is bounded by the requested lattice and shared edge cache.
@@ -86,7 +109,7 @@ export function generateTerrainChunk(options={}) {
     coordinates[id*3]=x; coordinates[id*3+1]=y; coordinates[id*3+2]=z;
     densities[id]=sample(originX+x,y,originZ+z);
   }
-  const positions=[],normals=[],indices=[],vertices=new Map();
+  const positions=[],normals=[],occlusion=[],indices=[],vertices=new Map(),outward=[0,0,0];
   const vertex=(one,two)=>{
     const a=Math.min(one,two),b=Math.max(one,two),key=a*count+b;
     const cached=vertices.get(key);
@@ -97,7 +120,9 @@ export function generateTerrainChunk(options={}) {
     const z=mix(coordinates[a*3+2],coordinates[b*3+2],t);
     const index=positions.length/3;
     positions.push(Math.fround(x),Math.fround(y),Math.fround(z));
-    normals.push(...outwardNormal(sample,originX+x,y,originZ+z).map(Math.fround));
+    const normal=outwardNormal(sample,originX+x,y,originZ+z);
+    normals.push(...normal.map(Math.fround));
+    occlusion.push(ambientOcclusion(sample,originX+x,y,originZ+z,normal));
     vertices.set(key,index);
     return index;
   };
@@ -107,7 +132,9 @@ export function generateTerrainChunk(options={}) {
     const vx=positions[ci]-positions[ai],vy=positions[ci+1]-positions[ai+1],vz=positions[ci+2]-positions[ai+2];
     const nx=uy*vz-uz*vy,ny=uz*vx-ux*vz,nz=ux*vy-uy*vx;
     if(nx*nx+ny*ny+nz*nz<1e-24) return;
-    const facing=nx*(normals[ai]+normals[bi]+normals[ci])+ny*(normals[ai+1]+normals[bi+1]+normals[ci+1])+nz*(normals[ai+2]+normals[bi+2]+normals[ci+2]);
+    // Use the tetrahedron's solid→air direction, not shading normals. Nonlinear
+    // gradients can disagree with a coarse linear cell and must not flip faces.
+    const facing=nx*outward[0]+ny*outward[1]+nz*outward[2];
     if(facing<0) indices.push(a,c,b); else indices.push(a,b,c);
   };
   const corners=new Uint32Array(8),inside=[],outside=[];
@@ -120,6 +147,8 @@ export function generateTerrainChunk(options={}) {
     for(const tetra of TETRAHEDRA) {
       inside.length=0; outside.length=0;
       for(const corner of tetra) (densities[corners[corner]]>0?inside:outside).push(corners[corner]);
+      if(inside.length===0||outside.length===0) continue;
+      for(let axis=0;axis<3;axis++) outward[axis]=coordinates[outside[0]*3+axis]-coordinates[inside[0]*3+axis];
       if(inside.length===1) {
         triangle(vertex(inside[0],outside[0]),vertex(inside[0],outside[1]),vertex(inside[0],outside[2]));
       } else if(inside.length===3) {
@@ -131,7 +160,7 @@ export function generateTerrainChunk(options={}) {
     }
   }
   return {
-    positions:new Float32Array(positions),normals:new Float32Array(normals),indices:new Uint32Array(indices),
+    positions:new Float32Array(positions),normals:new Float32Array(normals),occlusion:new Float32Array(occlusion),indices:new Uint32Array(indices),
     triangleCount:indices.length/3,bounds:{min:[0,-height/2,0],max:[size,height/2,size]},
   };
 }
