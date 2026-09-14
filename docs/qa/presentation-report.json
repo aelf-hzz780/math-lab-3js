@@ -1,6 +1,6 @@
 {
-  "started": "2026-09-10T09:28:16.947Z",
-  "bundleSha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c",
+  "started": "2026-09-14T04:59:24.177Z",
+  "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151",
   "browser": "152.0.7977.83",
   "protocol": "file:",
   "desktopPresets": [
@@ -619,6 +619,42 @@
         "weightB": 0.5,
         "others": 1.8,
         "view": "surface"
+      },
+      "passed": true
+    },
+    {
+      "id": "iridescent-terrain",
+      "label": "虹彩群岛",
+      "params": {
+        "layers": 1,
+        "holes": 1.1,
+        "iridescence": 0.95,
+        "roughness": 0.3,
+        "speed": 2.4
+      },
+      "passed": true
+    },
+    {
+      "id": "iridescent-terrain",
+      "label": "深紫迷宫",
+      "params": {
+        "layers": 1.45,
+        "holes": 0.75,
+        "iridescence": 1,
+        "roughness": 0.24,
+        "speed": 1.7
+      },
+      "passed": true
+    },
+    {
+      "id": "iridescent-terrain",
+      "label": "水银遗迹",
+      "params": {
+        "layers": 0.7,
+        "holes": 1.65,
+        "iridescence": 0.25,
+        "roughness": 0.18,
+        "speed": 3.8
       },
       "passed": true
     }
@@ -1241,6 +1277,42 @@
         "view": "surface"
       },
       "passed": true
+    },
+    {
+      "id": "iridescent-terrain",
+      "label": "虹彩群岛",
+      "params": {
+        "layers": 1,
+        "holes": 1.1,
+        "iridescence": 0.95,
+        "roughness": 0.3,
+        "speed": 2.4
+      },
+      "passed": true
+    },
+    {
+      "id": "iridescent-terrain",
+      "label": "深紫迷宫",
+      "params": {
+        "layers": 1.45,
+        "holes": 0.75,
+        "iridescence": 1,
+        "roughness": 0.24,
+        "speed": 1.7
+      },
+      "passed": true
+    },
+    {
+      "id": "iridescent-terrain",
+      "label": "水银遗迹",
+      "params": {
+        "layers": 0.7,
+        "holes": 1.65,
+        "iridescence": 0.25,
+        "roughness": 0.18,
+        "speed": 3.8
+      },
+      "passed": true
     }
   ],
   "errors": [],
@@ -1261,13 +1333,13 @@
     "manualHoldStableMilliseconds": 600
   },
   "pngExport": {
-    "filename": "forma-matroid-seed-42.png",
-    "bytes": 184560,
+    "filename": "forma-iridescent-terrain-seed-42.png",
+    "bytes": 2080961,
     "signatureValid": true
   },
   "mobile": {
     "viewport": "390×844, DPR 2, touch emulation",
-    "presetTouches": 51,
+    "presetTouches": 54,
     "overflow": false,
     "theoryDrawer": true,
     "modeSwitch": true

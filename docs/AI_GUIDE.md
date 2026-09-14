@@ -29,6 +29,7 @@ Routes use `index.html#<id>`. Each ID maps to a scene at `src/experiments/<id>.j
 | `noperthedron` | 多面体、Rupert、穿越、投影 / polyhedron, Rupert, passage, projections | [noperthedron.js](../src/experiments/noperthedron.js) | [noperthedron.js](../src/math/noperthedron.js) |
 | `e8` | Viazovska、八维、240根、对称 / Viazovska, eight dimensions, 240 roots | [e8.js](../src/experiments/e8.js) | [e8.js](../src/math/e8.js) |
 | `matroid` | June Huh、拟阵、生成树、Lorentzian、Hessian / matroids, spanning trees, Lorentzian | [matroid.js](../src/experiments/matroid.js) | [matroid.js](../src/math/matroid.js) |
+| `iridescent-terrain` | 虹彩、金属、悬浮岩片、孔洞、黑色空间、飞行 / iridescence, metal, floating strata, holes, black void, flight | [iridescent-terrain.js](../src/experiments/iridescent-terrain.js) | [iridescent-terrain.js](../src/math/iridescent-terrain.js) |
 
 共享交互在 [`src/app.js`](../src/app.js)，材质与几何主要在各场景文件，共享泛光在 [`src/core/glow.js`](../src/core/glow.js)，镜头策略在 [`src/core/presentation.js`](../src/core/presentation.js)，布局在 [`style.css`](../style.css)。增加实验时接入注册表与统一生命周期；完整接口见 [`SDD.md`](SDD.md)。
 
@@ -52,6 +53,10 @@ PLAYWRIGHT_MODULE=/path/to/playwright/index.mjs node scripts/capture-examples.mj
 The application requires neither an npm server nor a model API: open `index.html` from the complete directory, or use `npm start` for a local HTTP preview. Three.js, the Hat generator and research datasets are fixed local assets. Do not edit `dist/app.js` manually; rebuild source and retain the build verification information in [`dist/manifest.json`](../dist/manifest.json).
 
 ## 保持数学边界 / Preserve Mathematical Boundaries
+
+虹彩异境是基于三维分层密度场、Marching tetrahedra 分块网格与薄膜虹彩材质的程序化图形实验。它的参考是 Cristian Peñas（@ilumine_ai）的 X 视频；参考仅限画面特征，不证明作者使用了相同算法、神经网络或某种新数学结构。不要把视频标题中的 “latent space” 自动解释为本仓库使用机器学习。检索入口为 `#iridescent-terrain`、`18-iridescent-terrain.jpg` 和 [模型说明](models/iridescent-terrain.md)。
+
+Iridescent Strata is a procedural graphics experiment using layered 3D density fields, chunk meshes extracted with Marching tetrahedra, and thin-film iridescence. Cristian Peñas (@ilumine_ai)'s X video is a visual reference, not evidence of the author's use of the same algorithm, a neural network or a new mathematical structure. The phrase “latent space” does not imply machine learning in this repository. Retrieve it through `#iridescent-terrain`, `18-iridescent-terrain.jpg` and the [model note](models/iridescent-terrain.md).
 
 新增研究和获奖年份见 [ADDITIONS.md](ADDITIONS.md)。实数 Kakeya 与有限域 Kakeya 是不同实验。Pardon 的环面结结果是 2011 年，Tsimerman 的论文为 2015 v5，E8 最密证明为 2016 年；不能把获奖年份写成结构发明年份。硬球碰撞历史不是原论文 molecule 切割算法，三维环面不是平坦复环面的等距嵌入。七项均不归因于 AI 发现。
 

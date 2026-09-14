@@ -1,13 +1,14 @@
 {
   "format": "classic-iife",
   "bundler": "esbuild 0.25.10",
-  "bytes": 884852,
-  "sha256": "f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c",
+  "bytes": 908289,
+  "sha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151",
   "experiments": [
     "boltzmann",
     "dunes",
     "e8",
     "hat",
+    "iridescent-terrain",
     "kakeya",
     "kissing",
     "matroid",
@@ -27,5 +28,11 @@
     "data/maxcut.json",
     "data/noperthedron.json"
   ],
+  "terrainWorker": {
+    "format": "inline-blob-iife",
+    "bytes": 3808,
+    "sha256": "642f17dadab036c2a2e05f02a5e4872e7f65d12c6feea4faafb2f0e6df1dbbe4",
+    "runtimeNetworkDependencies": []
+  },
   "runtimeNetworkDependencies": []
 }

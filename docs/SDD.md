@@ -2,9 +2,9 @@
 
 ## 目标与边界 / Scope
 
-FORMA 是独立的静态 Three.js 数学实验室，包含 17 个可运行、可交互、可解释的实验。此公开仓库已启用 Git，未使用 Spec Kitty。应用没有账户、后端、模型 API 或运行时外部资源依赖；研究来源链接仅在主动打开时访问外部网站。
+FORMA 是独立的静态 Three.js 数学实验室，包含 18 个可运行、可交互、可解释的数学、物理与程序化图形实验。此公开仓库已启用 Git，未使用 Spec Kitty。应用没有账户、后端、模型 API 或运行时外部资源依赖；研究来源链接仅在主动打开时访问外部网站。
 
-FORMA is a standalone static Three.js mathematics lab with 17 runnable, interactive and documented experiments. This public repository uses Git and does not use Spec Kitty. The application has no accounts, backend, model API or external runtime dependencies. Research links open external sites only when followed.
+FORMA is a standalone static Three.js lab with 18 runnable, interactive and documented mathematics, physics and procedural graphics experiments. This public repository uses Git and does not use Spec Kitty. The application has no accounts, backend, model API or external runtime dependencies. Research links open external sites only when followed.
 
 ## 分层与设计选择 / Layers and Design Choices
 
@@ -31,7 +31,7 @@ export const definition = {
 };
 
 export function createExperiment({
-  scene, camera, quality, seed, params, onMetrics, setCamera
+  scene, camera, quality, seed, params, onMetrics, setCamera, signal, onError
 }) {
   return {update, setParameters, reset, dispose, action, pick};
 }
@@ -45,6 +45,10 @@ export function createExperiment({
 
 Parameters pass shared finite-value, range and option validation; select values retain their declared string or number type. Seeds are unsigned 32-bit integers. Experiment controls are disabled during loading. An incrementing epoch rejects stale asynchronous results, measurements and camera callbacks, and stale instances are disposed. Presets use the same validation path as manual controls.
 
+`signal` 与 `onError` 为异步实验提供可选的中止和错误通道。应用在切换或清理场景时中止 signal，实验负责在中止时清理尚未返回实例的 Worker 和资源。后台任务可通过 `onError(error)` 报告失败，不必等待下一次播放帧；回调也受加载 epoch 保护。
+
+The optional `signal` and `onError` channels support asynchronous experiments. The application aborts the signal when switching or cleaning up, and experiments release workers and resources even if their instance has not yet been returned. Background tasks can call `onError(error)` without waiting for another playback frame; the callback is also guarded by the loading epoch.
+
 ## 数学与视觉边界 / Mathematical and Visual Boundaries
 
 物理实验采用各自标明的简化模型：Burgers 解析流场、Born rule 概率、阻力下的解析火花轨迹、程序化沙丘、深水波叠加与多点浮力。尾流、水花和发光属于明确标注的视觉近似。N–S 纺锤实验仅是有限参数的机制示意，不能用于推断原论文速度场、PDE 不可压缩性、有限能量或奇点证明；来源和公式见 [NS_MODEL.md](NS_MODEL.md)。
@@ -56,6 +60,14 @@ Physical experiments use their stated simplified models: a Burgers analytic fiel
 Kissing configurations retain exact coefficients for all three 604-point constructions. Kakeya uses finite-field generation rules, MAX-4-CUT uses the complete weighted table of 19 nodes and 155 edges, and Hat uses the formal substitution rules. Visual changes may adjust lighting, materials and cameras, but must not distort these exact constructions for style. High-dimensional projection must disclose distance distortion, and finite patches must be distinguished from infinite aperiodic tilings. Sources, versions and verification details are in [CONSTRUCTIONS.md](CONSTRUCTIONS.md), [RESEARCH.md](RESEARCH.md) and [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
 
 ## 性能与资源生命周期 / Performance and Resource Lifecycle
+
+虹彩异境使用三维分层密度场及一致的四面体拆分抽取等值面，采用世界坐标梯度计算法线。场景分块加载与回收，不保存整条飞行路径的网格；块只在进入可见区域或结构参数改变时生成。相较逐像素体积 raymarch，网格可复用现有物理材质、环境光与导出流程，代价是形状细节受采样分辨率限制。详见 [虹彩地形模型](models/iridescent-terrain.md)。
+
+Iridescent Strata extracts a layered 3D density isosurface using a consistent tetrahedral decomposition, with normals from world-coordinate gradients. Chunks stream in and are recycled instead of retaining the entire flight path; geometry is generated when chunks enter the view or structural parameters change. Compared with per-pixel volume raymarching, meshes reuse physical materials, environment lighting and export, at the cost of sampling-limited detail. See the [terrain model](models/iridescent-terrain.md).
+
+网格生成优先使用从本地 bundle 创建的 Blob Worker，保持 `file://` 离线入口；Worker 不可用时使用本地回退路径。密度场、网格提取和场景材质分别管理，避免将图形资源传入数学层。过时任务的结果不得重新挂回活动场景，销毁时终止 Worker 并释放 Blob URL、块网格与环境资源。飞行通过世界平移呈现低空视差，保持全局轨道相机可操作。
+
+Mesh generation prefers a Blob Worker created from the local bundle, preserving the offline `file://` entry, with a local fallback when workers are unavailable. Density fields, extraction and scene materials remain separate, keeping graphics resources out of the math layer. Stale tasks must not reattach to the active scene; disposal terminates the worker and releases its Blob URL, chunk meshes and environment resources. Flight uses world translation for low-altitude parallax while keeping the shared orbit camera interactive.
 
 新增七项的研究日期、有限模型边界、一次性凸包与固定步长碰撞设计见 [ADDITIONS.md](ADDITIONS.md)。E8 邻接来自精确根坐标，拟阵基来自完整生成树枚举；它们的三维表现不得改变组合关系。
 
@@ -96,3 +108,9 @@ The application catches errors from loading, parameters, actions, picking and fr
 仓库交付包含源码、构建产物、来源与验证资料。部署为静态站点时应发布完整的同一版本目录，回滚恢复上一版本；不需要数据库迁移。研究状态是固定日期快照，后续更新必须重新核验引用文献与构造，不能静默替换数据或把公告声明升级为已独立验证的结论。
 
 The repository delivers source, built assets, provenance and validation records. Static hosting should deploy a complete, consistent version and roll back by restoring the prior version; no database migration is required. Research status is a dated snapshot. Updates must recheck cited literature and constructions, without silently replacing data or presenting announced claims as independently verified conclusions.
+
+### 地形取景 / Terrain framing
+
+相机适配器支持 `setCamera(position, target, {fitAspect:false})`。悬浮地形使用固定观察距离，避免竖屏把相机拉到雾外；其他场景保留默认的宽高比适配。镜头复位保留该选项。材质独立于几何，位于 `src/rendering/strata-material.js`。
+
+The camera adapter accepts `setCamera(position, target, {fitAspect:false})`. Floating terrain keeps a fixed viewing distance so portrait layouts do not move the camera beyond the fog. Other scenes retain aspect fitting, and camera reset preserves the policy. Terrain material is separate from geometry in `src/rendering/strata-material.js`.

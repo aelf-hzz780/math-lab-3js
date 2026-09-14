@@ -12,6 +12,7 @@ const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
 clock.paused=reducedMotion;
 const cameraMotion=new CameraMotion({enabled:!reducedMotion});
 let renderer,glow,scene,camera,orbit,current,definition,currentId,params={},seed=42,epoch=0;
+let sceneAbort;
 let cameraPreset={position:[9,6,11],target:[0,0,0]},dirty=true,frameId,quality='high',resizeObserver,viewScale=1;
 let fps=0,metricValues={},lastError=null,toastTimer,previousTime=performance.now(),fpsStart=performance.now(),fpsFrames=0;
 const savedStates=new Map();
@@ -90,13 +91,13 @@ function resize(){
   glow?.resize();
   camera.aspect=Math.max(1,rect.width)/Math.max(1,rect.height);camera.updateProjectionMatrix();dirty=true;
   const nextScale=Math.max(1,.95/camera.aspect);
-  if(orbit&&nextScale!==viewScale){orbit.spherical.radius*=nextScale/viewScale;orbit.apply();}
+  if(orbit&&cameraPreset.fitAspect!==false&&nextScale!==viewScale){orbit.spherical.radius*=nextScale/viewScale;orbit.apply();}
   viewScale=nextScale;
 }
 
-function setCamera(position,target){
-  cameraPreset={position:[...position],target:[...target]};
-  orbit.set(position.map((value,i)=>target[i]+(value-target[i])*viewScale),target);
+function setCamera(position,target,{fitAspect=true}={}){
+  cameraPreset={position:[...position],target:[...target],fitAspect};
+  orbit.set(position.map((value,i)=>target[i]+(value-target[i])*(fitAspect?viewScale:1)),target);
 }
 
 function displayMetrics(values){
@@ -182,6 +183,7 @@ function renderParameters(){
 
 function saveState(){if(currentId&&definition)savedStates.set(currentId,{params:{...params},seed});}
 function cleanScene(){
+  sceneAbort?.abort();sceneAbort=null;
   try{current?.dispose();}catch(error){console.error('[forma-dispose]',error);}
   current=null;
   if(scene){disposeGroup(scene);scene.clear();scene=null;}
@@ -210,12 +212,15 @@ async function selectExperiment(id,force=false){
     if(!renderer){$('loading').hidden=true;$('error').hidden=false;return;}
     quality=selectedQuality();glow.enabled=quality==='high';resize();
     const nextScene=new THREE.Scene();scene=nextScene;
+    sceneAbort=new AbortController();
     scene.add(new THREE.HemisphereLight(0xb6d9cd,0x182322,2));
     const light=new THREE.DirectionalLight(0xffebc5,3);light.position.set(5,9,4);scene.add(light);
     orbit.set([9,6,11],[0,0,0]);
     const next=await module.createExperiment({scene:nextScene,camera,quality,seed,params:{...params},
+      signal:sceneAbort.signal,
+      onError:error=>{if(version===epoch)reportError(error,'async');},
       onMetrics:values=>{if(version===epoch)displayMetrics(values);},
-      setCamera:(position,target)=>{if(version===epoch)setCamera(position,target);}
+      setCamera:(position,target,options)=>{if(version===epoch)setCamera(position,target,options);}
     });
     if(version!==epoch){next?.dispose();disposeGroup(nextScene);return;}
     current=next;current.update(0,0);dirty=true;$('loading').hidden=true;enableExperimentControls(true);saveState();
@@ -246,7 +251,7 @@ function bindControls(){
   listen($('camera-motion'),'click',()=>{cameraMotion.enabled=!cameraMotion.enabled;$('camera-motion').setAttribute('aria-pressed',String(cameraMotion.enabled));});
   listen($('play-button'),'click',()=>{clock.paused=!clock.paused;updatePlayback();});
   listen($('reset-button'),'click',reset);
-  listen($('camera-reset'),'click',()=>{if(orbit)setCamera(cameraPreset.position,cameraPreset.target);});
+  listen($('camera-reset'),'click',()=>{if(orbit)setCamera(cameraPreset.position,cameraPreset.target,cameraPreset);});
   listen($('defaults-button'),'click',()=>{savedStates.delete(currentId);params={};seed=42;definition=null;selectExperiment(currentId,true);toast('已恢复默认参数和随机种子');});
   listen($('seed'),'change',()=>{const value=Number($('seed').value);if(!Number.isInteger(value)||value<0||value>4294967295){$('seed').value=seed;toast('随机种子应为 0 到 4294967295 的整数');return;}seed=value;saveState();reset();});
   listen($('quality'),'change',()=>selectExperiment(currentId,true));

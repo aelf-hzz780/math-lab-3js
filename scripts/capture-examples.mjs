@@ -31,6 +31,7 @@ const descriptions = {
   noperthedron:{en:'Noperthedron and Rupert projection test',zh:'青色与金色多面体呈现两个姿态，下方叠加正交投影，实时测试严格包含余量。',visualEn:'Teal and gold polyhedra show two poses; overlaid orthogonal silhouettes measure strict containment clearance.'},
   e8:{en:'E8 root system in eight dimensions',zh:'240 个根的三维投影呈现晶格对称，选中根的真实八维邻接关系被高亮。',visualEn:'A projection of 240 roots reveals E8 symmetry, highlighting genuine eight-dimensional neighbors of a selected root.'},
   matroid:{en:'Graphic matroid and Lorentzian basis polynomial',zh:'四面体图中的选边呈现独立集与生成树，权重改变基多项式的对数曲面；特征值柱展示 Lorentzian 符号。',visualEn:'Selected tetrahedral graph edges reveal independent sets and spanning trees; weights change a log-polynomial surface, while eigenvalue bars show its Lorentzian signature.'},
+  'iridescent-terrain':{en:'Iridescent Strata',zh:'黑色空间中的多层悬浮岩片带有孔洞与分离碎片，蓝紫粉金高光随视角变化；分块密度场支持低空穿行。',visualEn:'Layered floating rock shelves, holes and detached fragments occupy a black void; blue, violet, pink and gold highlights shift with the view as streamed density-field meshes support low flight.'},
 };
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const bundleBytes = await readFile(resolve(root, 'dist/app.js'));

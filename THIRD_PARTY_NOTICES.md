@@ -40,3 +40,7 @@ No repository license was declared when checked on 2026-09-10. This app transcri
 ## Fields Medal teaching models
 
 The new Kakeya, hard-sphere, torus-knot, moduli, E8, and graphic-matroid scenes are project implementations of cited mathematical definitions and teaching models. No paper illustrations, award photographs, or upstream solver implementation are bundled. Research authors, dates, model limits, and original sources are recorded in `docs/ADDITIONS.md` and each scene definition. No endorsement or AI-discovery attribution is implied.
+
+## Iridescent Strata visual reference
+
+Visual inspiration: Cristian Peñas (@ilumine_ai), [X post](https://x.com/ilumine_ai/status/2098342499865821654), September 11, 2026, and the related Unity/procedural-latent-space post. The author's algorithm has not been verified. No video, extracted frame, texture, source code, or Unity asset from these posts is bundled. All terrain density, mesh extraction, environment lighting and material artwork are implemented procedurally in this project. Repository screenshots show the running project, not the reference video.

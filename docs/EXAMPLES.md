@@ -1,4 +1,4 @@
-# FORMA · 17 个真实示例 / 17 real examples
+# FORMA · 18 个真实示例 / 18 real examples
 
 以下图片直接截取自本仓库的 Three.js 应用，包含实际界面与渲染结果。每张为 1280 × 800 的 JPEG；共用 seed 42、默认参数、高画质和固定镜头。它们不是原始上传照片，也不是生成式效果图。
 
@@ -326,4 +326,23 @@ Selected tetrahedral graph edges reveal independent sets and spanning trees; wei
 - [Brändén–Huh · Lorentzian polynomials](https://arxiv.org/abs/1902.03719)
 - [IMU · Huh 获奖工作详述](https://www.mathunion.org/fileadmin/IMU/Prizes/Fields/2022/IMU_Fields22_Huh_citation.pdf)
 
-图像总大小 / Total image size: 1687 KiB. Bundle SHA-256: `f34a76e9d27182f7b2896cb990c5adac5f24c8acd4466aff55fced7539464a4c`.
+## 18 · 虹彩异境 / Iridescent Strata
+
+![虹彩异境 / Iridescent Strata](screenshots/18-iridescent-terrain.jpg)
+
+黑色空间中的多层悬浮岩片带有孔洞与分离碎片，蓝紫粉金高光随视角变化；分块密度场支持低空穿行。
+
+Layered floating rock shelves, holes and detached fragments occupy a black void; blue, violet, pink and gold highlights shift with the view as streamed density-field meshes support low flight.
+
+模型边界：这是受 Cristian Peñas 的程序化地形视频启发的原创图形实验。我们尚未取得或核验作者的具体算法，不声称复现其 Unity 实现，也不把它作为 AI 发现的新数学结构。孔洞由有限网格近似，小于网格的细节可能消失；虹彩包含艺术化着色，并非测量所得矿物光谱。持续生成只覆盖相机附近的有限窗口，手动远离该窗口可能看到边缘；不模拟碰撞、岩石物理或地质演化。
+
+打开 / Open: `index.html#iridescent-terrain` · t = 0.000 s · seed = 42.
+
+[场景 / Scene](../src/experiments/iridescent-terrain.js) · [数学 / Math](../src/math/iridescent-terrain.js) · [原始图片 / Raw JPEG](https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/18-iridescent-terrain.jpg)
+
+- [视觉参考 · Cristian Peñas / @ilumine_ai · 2026-09-11](https://x.com/ilumine_ai/status/2098342499865821654)
+- [作者相关说明 · procedural latent space / Unity](https://x.com/ilumine_ai/status/2098052245900448127)
+- [Paul Bourke · Polygonising a scalar field / tetrahedrons](https://paulbourke.net/geometry/polygonise/)
+- [Three.js · MeshPhysicalMaterial / iridescence](https://threejs.org/docs/#api/en/materials/MeshPhysicalMaterial)
+
+图像总大小 / Total image size: 1867 KiB. Bundle SHA-256: `a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151`.
