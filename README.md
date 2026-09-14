@@ -1,12 +1,18 @@
 # FORMA · 数学实验室 / Math Lab
 
-17 个可以旋转、调参、测量的 Three.js 数学与物理实验。包含菲尔兹奖相关专题、离线应用、精确构造数据、51 个视觉预设与真实效果截图。
+18 个可以旋转、调参、测量的 Three.js 数学、物理与程序化图形实验。包含菲尔兹奖相关专题、虹彩悬浮地形、离线应用、精确构造数据、54 个视觉预设与真实效果截图。
 
-17 interactive Three.js experiments with Fields Medal topics, an offline app, exact construction data, 51 visual presets, and screenshots captured from the running application.
+18 interactive Three.js experiments in mathematics, physics and procedural graphics, with Fields Medal topics, iridescent floating terrain, an offline app, exact construction data, 54 visual presets, and screenshots captured from the running application.
 
 **[效果示例 / Examples](docs/EXAMPLES.md) · [AI 导航 / AI guide](docs/AI_GUIDE.md) · [JSON 示例索引 / Example manifest](docs/screenshots/manifest.json) · [设计 / Architecture](docs/SDD.md)**
 
 ## 效果画廊 / Gallery
+
+最新加入 **虹彩异境 / Iridescent Strata**：在黑色空间中穿行于多层虹彩岩片之间，调节层间结构、孔洞与材质。视觉参考 Cristian Peñas（@ilumine_ai）于 2026-09-11 发布的 [X 视频](https://x.com/ilumine_ai/status/2098342499865821654)。本仓库使用独立编写的密度场和 Marching tetrahedra；作者原算法未公开核验，不归类为新的数学发现或 AI 生成结果。见 [模型与来源](docs/models/iridescent-terrain.md)。
+
+The latest addition, **Iridescent Strata**, travels among layered iridescent rock shelves in a black void, with adjustable structure, holes and material. Its visual reference is Cristian Peñas (@ilumine_ai)'s [X video](https://x.com/ilumine_ai/status/2098342499865821654), published on 2026-09-11. This repository uses independently written density fields and Marching tetrahedra. The author's original algorithm has not been verified; this is not presented as a new mathematical discovery or an AI-generated result. See the [model and source note](docs/models/iridescent-terrain.md).
+
+[![虹彩异境：悬浮岩片、孔洞与虹彩高光 / Iridescent Strata: floating shelves, holes and iridescent highlights](docs/screenshots/18-iridescent-terrain.jpg)](docs/screenshots/18-iridescent-terrain.jpg)
 
 新增七项：实数三维 Kakeya、硬球与碰撞历史、环面结、复环面模空间、Noperthedron、E8、拟阵与 Lorentzian 多项式。来源年份和教学范围见 [新增专题说明](docs/ADDITIONS.md)。
 
@@ -67,7 +73,7 @@ npm start
 
 - 拖动旋转，滚轮或双指缩放；右上角可以导出 PNG。 / Drag to orbit; use the wheel or pinch to zoom; export a PNG from the upper right.
 - “进入实验台”展开参数与数学原理；观赏模式提供预设和快速导航。 / Switch to the workbench for parameters and theory; the gallery offers presets and quick navigation.
-- `Space` 播放/暂停，`R` 重置，`F` 切换模式；目录可访问全部 17 项，`1–9` 和 `0` 选择前十项。 / `Space` plays or pauses, `R` resets, `F` switches modes; navigation accesses all 17 scenes, while `1–9` plus `0` select the first ten.
+- `Space` 播放/暂停，`R` 重置，`F` 切换模式；目录可访问全部 18 项，`1–9` 和 `0` 选择前十项。 / `Space` plays or pauses, `R` resets, `F` switches modes; navigation accesses all 18 scenes, while `1–9` plus `0` select the first ten.
 - 自动镜头可关闭，拖动后停留 5 秒；低动态偏好默认暂停。 / Automatic camera motion can be disabled, yields for 5 seconds after input, and starts disabled with reduced-motion preferences.
 
 | ID / URL hash | 实验 / Experiment | 场景源码 / Scene |
@@ -89,6 +95,7 @@ npm start
 | `#noperthedron` | 90 顶点与穿越判据 / 90 vertices and passage criterion | [noperthedron.js](src/experiments/noperthedron.js) |
 | `#e8` | 八维 240 根与邻接 / 240 roots and 8D adjacency | [e8.js](src/experiments/e8.js) |
 | `#matroid` | 图拟阵与基多项式 / Graphic matroid and basis polynomial | [matroid.js](src/experiments/matroid.js) |
+| `#iridescent-terrain` | 虹彩异境、分层密度场 / Iridescent Strata and layered density fields | [iridescent-terrain.js](src/experiments/iridescent-terrain.js) |
 
 ## 修改、测试与截图 / Build, test, and capture
 
@@ -102,9 +109,9 @@ npm test
 npm run build
 ```
 
-当前基线覆盖 17/17 离线场景，以及数学、状态、预设、参数边界、PNG 导出与资源切换检查。测试数量、环境和结果见 [验收报告](docs/QA_REPORT.md)。
+验证包括数学、状态、预设、参数边界、离线启动、PNG 导出与资源切换检查。112 项数学与状态测试及 18 项浏览器验收的环境和结果见 [验收报告](docs/QA_REPORT.md)；虹彩地形的模型边界见 [独立说明](docs/models/iridescent-terrain.md)。
 
-The baseline covers all 17 offline scenes, mathematics, state, presets, parameter bounds, PNG exports, and resource switching. See the validation report for counts, conditions, and results.
+Validation covers mathematics, state, presets, parameter bounds, offline startup, PNG exports, and resource switching. The [validation report](docs/QA_REPORT.md) records 112 math/state tests and browser checks for 18 scenes; see the [terrain note](docs/models/iridescent-terrain.md) for model limits.
 
 浏览器验收与截图需要 Google Chrome 和 Playwright 1.62.1；它们不是应用运行依赖。
 
@@ -117,6 +124,7 @@ npx playwright install chrome
 npm run capture:examples
 npm run check:offline
 node scripts/additions-check.mjs
+node scripts/terrain-check.mjs
 ```
 
 已有 Playwright 时，可设置 `PLAYWRIGHT_MODULE` 为模块入口。完整交互验收使用 `node scripts/interaction-check.mjs`（需要本地服务在 4174 运行），观赏交互验收使用 `node scripts/presentation-check.mjs`（直接使用离线入口）。
@@ -126,7 +134,8 @@ Set `PLAYWRIGHT_MODULE` to an existing module entry if needed. Run `node scripts
 ## 资料与来源 / Documentation and sources
 
 - [AI_GUIDE.md](docs/AI_GUIDE.md) · 示例检索与源码地图 / Retrieval and source map.
-- [EXAMPLES.md](docs/EXAMPLES.md) · 17 项完整截图与复现信息 / Full screenshots and reproduction details.
+- [EXAMPLES.md](docs/EXAMPLES.md) · 18 项完整截图与复现信息 / Full screenshots and reproduction details.
+- [iridescent-terrain.md](docs/models/iridescent-terrain.md) · 虹彩地形的来源、密度场与图形边界 / Terrain reference, density fields and rendering limits.
 - [ADDITIONS.md](docs/ADDITIONS.md) · 菲尔兹奖与七项新专题 / Fields Medal context and seven additions.
 - [SDD.md](docs/SDD.md) · 中英架构与生命周期 / Bilingual architecture and lifecycle.
 - [CONSTRUCTIONS.md](docs/CONSTRUCTIONS.md) · 精确坐标、规则、哈希 / Exact coordinates, rules, and hashes.

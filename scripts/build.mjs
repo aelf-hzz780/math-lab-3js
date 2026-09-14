@@ -5,6 +5,22 @@ import {fileURLToPath} from 'node:url';
 import {resolve, basename} from 'node:path';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
+const workerResult = await build({
+  absWorkingDir:root,
+  entryPoints:['src/workers/terrain-worker.js'],
+  bundle:true,
+  format:'iife',
+  platform:'browser',
+  target:['chrome100', 'safari15.4', 'firefox100'],
+  minify:true,
+  legalComments:'eof',
+  metafile:true,
+  write:false,
+});
+if (Object.values(workerResult.metafile.outputs).some(output=>output.imports.length)) {
+  throw new Error('Terrain worker contains runtime imports');
+}
+const workerSource=workerResult.outputFiles[0].text;
 const result = await build({
   absWorkingDir:root,
   entryPoints:['src/app.js'],
@@ -17,6 +33,7 @@ const result = await build({
   legalComments:'eof',
   metafile:true,
   write:false,
+  define:{__TERRAIN_WORKER_SOURCE__:JSON.stringify(workerSource)},
 });
 
 const dependencies = Object.keys(result.metafile.inputs).sort();
@@ -40,6 +57,12 @@ const manifest = {
   sha256:createHash('sha256').update(script).digest('hex'),
   experiments,
   embeddedData:dependencies.filter(path=>path.startsWith('data/')&&path.endsWith('.json')),
+  terrainWorker:{
+    format:'inline-blob-iife',
+    bytes:Buffer.byteLength(workerSource),
+    sha256:createHash('sha256').update(workerSource).digest('hex'),
+    runtimeNetworkDependencies:[],
+  },
   runtimeNetworkDependencies:[],
 };
 await writeFile(resolve(root, 'dist/manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);

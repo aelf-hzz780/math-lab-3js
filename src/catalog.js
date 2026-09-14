@@ -16,6 +16,7 @@ export const catalog = [
   {id:'noperthedron',title:'穿不过自己的多面体',en:'The impossible passage',section:'04 / NEW GEOMETRY 2025–26',type:'原始坐标与投影测试',icon:'maxcut'},
   {id:'e8',title:'E8 · 八维对称',en:'240 roots of symmetry',section:'05 / FIELDS MEDAL 2022',type:'精确根系的三维投影',icon:'kissing'},
   {id:'matroid',title:'拟阵与 Lorentzian',en:'The shape of independence',type:'组合结构与多项式',icon:'maxcut'},
+  {id:'iridescent-terrain',title:'虹彩异境',en:'Iridescent strata',section:'06 / PROCEDURAL WORLDS',type:'三维密度场 · 程序化图形',icon:'dunes'},
 ];
 
 const paths = {
