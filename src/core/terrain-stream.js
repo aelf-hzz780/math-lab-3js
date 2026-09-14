@@ -57,7 +57,8 @@ function remoteError(payload) {
 function validMesh(result) {
   return result?.positions instanceof Float32Array && result.normals instanceof Float32Array &&
     result.indices instanceof Uint32Array && result.positions.length % 3 === 0 &&
-    result.normals.length === result.positions.length && result.indices.length % 3 === 0;
+    result.normals.length === result.positions.length && result.indices.length % 3 === 0 &&
+    (result.occlusion === undefined || (result.occlusion instanceof Float32Array && result.occlusion.length === result.positions.length / 3));
 }
 
 /** A bounded job service. The main-thread fallback yields once before each chunk. */

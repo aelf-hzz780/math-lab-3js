@@ -330,11 +330,11 @@ Selected tetrahedral graph edges reveal independent sets and spanning trees; wei
 
 ![虹彩异境 / Iridescent Strata](screenshots/18-iridescent-terrain.jpg)
 
-黑色空间中的多层悬浮岩片带有孔洞与分离碎片，蓝紫粉金高光随视角变化；分块密度场支持低空穿行。
+圆润的悬浮云屿与孔洞在暗色空间中层叠，雾蓝、淡紫和浅桃沿表面连续晕染；宽光源与分块密度场支持柔和的穿行体验。
 
-Layered floating rock shelves, holes and detached fragments occupy a black void; blue, violet, pink and gold highlights shift with the view as streamed density-field meshes support low flight.
+Rounded floating forms and openings layer through a dark space, with mist blue, lavender and pale peach blending continuously across their surfaces; broad lighting and streamed density meshes create a soft flight experience.
 
-模型边界：这是受 Cristian Peñas 的程序化地形视频启发的原创图形实验。我们尚未取得或核验作者的具体算法，不声称复现其 Unity 实现，也不把它作为 AI 发现的新数学结构。孔洞由有限网格近似，小于网格的细节可能消失；虹彩包含艺术化着色，并非测量所得矿物光谱。持续生成只覆盖相机附近的有限窗口，手动远离该窗口可能看到边缘；不模拟碰撞、岩石物理或地质演化。
+模型边界：这是受 Cristian Peñas 的程序化地形视频启发的原创图形实验。我们尚未取得或核验作者的具体算法，不声称复现其 Unity 实现，也不把它作为 AI 发现的新数学结构。孔洞由有限网格近似，小于网格的细节可能消失；虹彩包含艺术化着色，并非测量所得物理光谱。这是云团般的表面近似，不计算真实云雾的体积散射。持续生成只覆盖相机附近的有限窗口，手动远离该窗口可能看到边缘；不模拟碰撞、岩石物理或地质演化。
 
 打开 / Open: `index.html#iridescent-terrain` · t = 0.000 s · seed = 42.
 
@@ -345,4 +345,4 @@ Layered floating rock shelves, holes and detached fragments occupy a black void;
 - [Paul Bourke · Polygonising a scalar field / tetrahedrons](https://paulbourke.net/geometry/polygonise/)
 - [Three.js · MeshPhysicalMaterial / iridescence](https://threejs.org/docs/#api/en/materials/MeshPhysicalMaterial)
 
-图像总大小 / Total image size: 1867 KiB. Bundle SHA-256: `a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151`.
+图像总大小 / Total image size: 1765 KiB. Bundle SHA-256: `eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1`.

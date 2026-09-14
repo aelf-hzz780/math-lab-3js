@@ -159,6 +159,9 @@ test('the bundled worker generates a real chunk through the transferable message
     assert.equal(service.backend,'worker');
     assert.ok(result.positions.length>0);
     assert.equal(result.normals.length,result.positions.length);
+    assert.ok(result.occlusion instanceof Float32Array);
+    assert.equal(result.occlusion.length,result.positions.length/3);
+    assert.ok(result.occlusion.every(value=>Number.isFinite(value)&&value>=.25&&value<=1));
     assert.equal(result.indices.length/3,result.triangleCount);
     assert.ok(result.indices.every(index=>index<result.positions.length/3));
     assert.equal(service.pendingCount,0);

@@ -1,7 +1,7 @@
 {
-  "started": "2026-09-14T04:51:21.133Z",
+  "started": "2026-09-14T10:56:17.146Z",
   "browser": "152.0.7977.83",
-  "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151",
+  "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1",
   "hardware": {
     "cpu": "Apple M3 Pro",
     "arch": "arm64",
@@ -27,50 +27,50 @@
   },
   "presets": [
     {
-      "label": "虹彩群岛",
+      "label": "晨雾云屿",
       "params": {
         "layers": 1,
         "holes": 1.1,
-        "iridescence": 0.95,
-        "roughness": 0.3,
+        "iridescence": 0.8,
+        "roughness": 0.68,
         "speed": 2.4
       },
       "metrics": {
         "已穿行": "0.0 m",
         "常驻地层": "15 区块",
-        "表面三角形": "661,508",
+        "表面三角形": "1,336,904",
         "生成状态": "后台生成 · 就绪"
       }
     },
     {
-      "label": "深紫迷宫",
+      "label": "层叠梦境",
       "params": {
-        "layers": 1.45,
-        "holes": 0.75,
+        "layers": 1.4,
+        "holes": 0.85,
         "iridescence": 1,
-        "roughness": 0.24,
+        "roughness": 0.75,
         "speed": 1.7
       },
       "metrics": {
         "已穿行": "0.0 m",
         "常驻地层": "15 区块",
-        "表面三角形": "1,052,396",
+        "表面三角形": "1,923,344",
         "生成状态": "后台生成 · 就绪"
       }
     },
     {
-      "label": "水银遗迹",
+      "label": "月白浮岛",
       "params": {
         "layers": 0.7,
         "holes": 1.65,
         "iridescence": 0.25,
-        "roughness": 0.18,
+        "roughness": 0.58,
         "speed": 3.8
       },
       "metrics": {
         "已穿行": "0.0 m",
         "常驻地层": "15 区块",
-        "表面三角形": "557,333",
+        "表面三角形": "1,408,986",
         "生成状态": "后台生成 · 就绪"
       }
     }
@@ -80,15 +80,15 @@
       "key": "layers",
       "value": 0.65,
       "resources": {
-        "geometries": 24,
+        "geometries": 23,
         "textures": 6,
-        "triangles": 495052,
-        "drawCalls": 17
+        "triangles": 430684,
+        "drawCalls": 16
       },
       "metrics": {
         "已穿行": "0.0 m",
         "常驻地层": "15 区块",
-        "表面三角形": "531,026",
+        "表面三角形": "502,460",
         "生成状态": "后台生成 · 就绪"
       }
     },
@@ -98,13 +98,13 @@
       "resources": {
         "geometries": 24,
         "textures": 6,
-        "triangles": 1025866,
+        "triangles": 1836420,
         "drawCalls": 17
       },
       "metrics": {
         "已穿行": "0.0 m",
         "常驻地层": "15 区块",
-        "表面三角形": "1,096,300",
+        "表面三角形": "1,960,962",
         "生成状态": "后台生成 · 就绪"
       }
     },
@@ -114,13 +114,13 @@
       "resources": {
         "geometries": 24,
         "textures": 6,
-        "triangles": 670632,
+        "triangles": 1338991,
         "drawCalls": 17
       },
       "metrics": {
         "已穿行": "0.0 m",
         "常驻地层": "15 区块",
-        "表面三角形": "714,344",
+        "表面三角形": "1,428,573",
         "生成状态": "后台生成 · 就绪"
       }
     },
@@ -128,15 +128,15 @@
       "key": "holes",
       "value": 1.8,
       "resources": {
-        "geometries": 24,
+        "geometries": 23,
         "textures": 6,
-        "triangles": 609132,
-        "drawCalls": 17
+        "triangles": 1184116,
+        "drawCalls": 16
       },
       "metrics": {
         "已穿行": "0.0 m",
         "常驻地层": "15 区块",
-        "表面三角形": "648,460",
+        "表面三角形": "1,402,877",
         "生成状态": "后台生成 · 就绪"
       }
     },
@@ -144,15 +144,15 @@
       "key": "iridescence",
       "value": 0,
       "resources": {
-        "geometries": 23,
+        "geometries": 24,
         "textures": 6,
-        "triangles": 577378,
-        "drawCalls": 16
+        "triangles": 1250940,
+        "drawCalls": 17
       },
       "metrics": {
         "已穿行": "0.0 m",
         "常驻地层": "15 区块",
-        "表面三角形": "661,508",
+        "表面三角形": "1,336,904",
         "生成状态": "后台生成 · 就绪"
       }
     },
@@ -160,47 +160,47 @@
       "key": "iridescence",
       "value": 1,
       "resources": {
-        "geometries": 23,
+        "geometries": 24,
         "textures": 6,
-        "triangles": 577378,
-        "drawCalls": 16
+        "triangles": 1250940,
+        "drawCalls": 17
       },
       "metrics": {
         "已穿行": "0.0 m",
         "常驻地层": "15 区块",
-        "表面三角形": "661,508",
+        "表面三角形": "1,336,904",
         "生成状态": "后台生成 · 就绪"
       }
     },
     {
       "key": "roughness",
-      "value": 0.15,
+      "value": 0.3,
       "resources": {
-        "geometries": 23,
+        "geometries": 24,
         "textures": 6,
-        "triangles": 577378,
-        "drawCalls": 16
+        "triangles": 1250940,
+        "drawCalls": 17
       },
       "metrics": {
         "已穿行": "0.0 m",
         "常驻地层": "15 区块",
-        "表面三角形": "661,508",
+        "表面三角形": "1,336,904",
         "生成状态": "后台生成 · 就绪"
       }
     },
     {
       "key": "roughness",
-      "value": 0.65,
+      "value": 0.9,
       "resources": {
-        "geometries": 23,
+        "geometries": 24,
         "textures": 6,
-        "triangles": 577378,
-        "drawCalls": 16
+        "triangles": 1250940,
+        "drawCalls": 17
       },
       "metrics": {
         "已穿行": "0.0 m",
         "常驻地层": "15 区块",
-        "表面三角形": "661,508",
+        "表面三角形": "1,336,904",
         "生成状态": "后台生成 · 就绪"
       }
     },
@@ -208,15 +208,15 @@
       "key": "speed",
       "value": 0,
       "resources": {
-        "geometries": 23,
+        "geometries": 24,
         "textures": 6,
-        "triangles": 577378,
-        "drawCalls": 16
+        "triangles": 1250940,
+        "drawCalls": 17
       },
       "metrics": {
         "已穿行": "0.0 m",
         "常驻地层": "15 区块",
-        "表面三角形": "661,508",
+        "表面三角形": "1,336,904",
         "生成状态": "后台生成 · 就绪"
       }
     },
@@ -224,15 +224,15 @@
       "key": "speed",
       "value": 6,
       "resources": {
-        "geometries": 23,
+        "geometries": 24,
         "textures": 6,
-        "triangles": 577378,
-        "drawCalls": 16
+        "triangles": 1250940,
+        "drawCalls": 17
       },
       "metrics": {
         "已穿行": "0.0 m",
         "常驻地层": "15 区块",
-        "表面三角形": "661,508",
+        "表面三角形": "1,336,904",
         "生成状态": "后台生成 · 就绪"
       }
     }
@@ -241,9 +241,9 @@
     {
       "distance": 4,
       "time": 0.6880000000000005,
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 577378,
+      "triangles": 1152524,
       "drawCalls": 16,
       "workers": {
         "created": 25,
@@ -255,9 +255,9 @@
     {
       "distance": 7.2,
       "time": 1.2160000000000009,
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 531034,
+      "triangles": 1047680,
       "drawCalls": 15,
       "workers": {
         "created": 25,
@@ -269,9 +269,9 @@
     {
       "distance": 10.5,
       "time": 1.7440000000000013,
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 531034,
+      "triangles": 1047680,
       "drawCalls": 15,
       "workers": {
         "created": 25,
@@ -281,68 +281,12 @@
       }
     },
     {
-      "distance": 13.6,
-      "time": 2.2880000000000016,
-      "geometries": 23,
-      "textures": 6,
-      "triangles": 487946,
-      "drawCalls": 14,
-      "workers": {
-        "created": 25,
-        "terminated": 24,
-        "active": 1,
-        "maximum": 1
-      }
-    },
-    {
-      "distance": 16.8,
-      "time": 2.816000000000002,
-      "geometries": 23,
-      "textures": 6,
-      "triangles": 487946,
-      "drawCalls": 14,
-      "workers": {
-        "created": 25,
-        "terminated": 24,
-        "active": 1,
-        "maximum": 1
-      }
-    },
-    {
-      "distance": 20.1,
-      "time": 3.3440000000000025,
-      "geometries": 23,
-      "textures": 6,
-      "triangles": 487946,
-      "drawCalls": 14,
-      "workers": {
-        "created": 25,
-        "terminated": 24,
-        "active": 1,
-        "maximum": 1
-      }
-    },
-    {
-      "distance": 23.2,
-      "time": 3.872000000000003,
-      "geometries": 23,
-      "textures": 6,
-      "triangles": 487946,
-      "drawCalls": 14,
-      "workers": {
-        "created": 25,
-        "terminated": 24,
-        "active": 1,
-        "maximum": 1
-      }
-    },
-    {
       "distance": 24,
-      "time": 4.656000000000003,
+      "time": 4.448000000000003,
       "geometries": 25,
       "textures": 6,
-      "triangles": 570718,
-      "drawCalls": 16,
+      "triangles": 1200026,
+      "drawCalls": 17,
       "workers": {
         "created": 25,
         "terminated": 24,
@@ -352,10 +296,10 @@
     },
     {
       "distance": 27.3,
-      "time": 5.184000000000004,
+      "time": 4.9760000000000035,
       "geometries": 25,
       "textures": 6,
-      "triangles": 570718,
+      "triangles": 1102464,
       "drawCalls": 16,
       "workers": {
         "created": 25,
@@ -366,10 +310,10 @@
     },
     {
       "distance": 30.4,
-      "time": 5.712000000000004,
+      "time": 5.504000000000004,
       "geometries": 25,
       "textures": 6,
-      "triangles": 518690,
+      "triangles": 1012474,
       "drawCalls": 15,
       "workers": {
         "created": 25,
@@ -380,10 +324,10 @@
     },
     {
       "distance": 33.7,
-      "time": 6.240000000000005,
+      "time": 6.0320000000000045,
       "geometries": 25,
       "textures": 6,
-      "triangles": 518690,
+      "triangles": 1012474,
       "drawCalls": 15,
       "workers": {
         "created": 25,
@@ -393,81 +337,11 @@
       }
     },
     {
-      "distance": 36.9,
-      "time": 6.784000000000005,
+      "distance": 48,
+      "time": 8.736000000000006,
       "geometries": 25,
       "textures": 6,
-      "triangles": 468204,
-      "drawCalls": 14,
-      "workers": {
-        "created": 25,
-        "terminated": 24,
-        "active": 1,
-        "maximum": 1
-      }
-    },
-    {
-      "distance": 40,
-      "time": 7.312000000000006,
-      "geometries": 25,
-      "textures": 6,
-      "triangles": 468204,
-      "drawCalls": 14,
-      "workers": {
-        "created": 25,
-        "terminated": 24,
-        "active": 1,
-        "maximum": 1
-      }
-    },
-    {
-      "distance": 43.3,
-      "time": 7.840000000000006,
-      "geometries": 25,
-      "textures": 6,
-      "triangles": 468204,
-      "drawCalls": 14,
-      "workers": {
-        "created": 25,
-        "terminated": 24,
-        "active": 1,
-        "maximum": 1
-      }
-    },
-    {
-      "distance": 46.5,
-      "time": 8.368000000000006,
-      "geometries": 25,
-      "textures": 6,
-      "triangles": 468204,
-      "drawCalls": 14,
-      "workers": {
-        "created": 25,
-        "terminated": 24,
-        "active": 1,
-        "maximum": 1
-      }
-    },
-    {
-      "distance": 48.3,
-      "time": 9.264000000000006,
-      "geometries": 25,
-      "textures": 6,
-      "triangles": 599104,
-      "drawCalls": 17,
-      "workers": {
-        "created": 25,
-        "terminated": 24,
-        "active": 1,
-        "maximum": 1
-      }
-    },
-    {
-      "distance": 51.5,
-      "time": 9.792000000000007,
-      "geometries": 25,
-      "textures": 6,
-      "triangles": 555210,
+      "triangles": 1087278,
       "drawCalls": 16,
       "workers": {
         "created": 25,
@@ -477,11 +351,25 @@
       }
     },
     {
-      "distance": 54.6,
-      "time": 10.336000000000007,
+      "distance": 51.3,
+      "time": 9.264000000000006,
       "geometries": 25,
       "textures": 6,
-      "triangles": 505678,
+      "triangles": 1087278,
+      "drawCalls": 16,
+      "workers": {
+        "created": 25,
+        "terminated": 24,
+        "active": 1,
+        "maximum": 1
+      }
+    },
+    {
+      "distance": 54.4,
+      "time": 9.792000000000007,
+      "geometries": 25,
+      "textures": 6,
+      "triangles": 1001298,
       "drawCalls": 15,
       "workers": {
         "created": 25,
@@ -491,11 +379,11 @@
       }
     },
     {
-      "distance": 57.9,
-      "time": 10.864000000000008,
+      "distance": 57.7,
+      "time": 10.320000000000007,
       "geometries": 25,
       "textures": 6,
-      "triangles": 505678,
+      "triangles": 1001298,
       "drawCalls": 15,
       "workers": {
         "created": 25,
@@ -505,68 +393,26 @@
       }
     },
     {
-      "distance": 61.1,
-      "time": 11.392000000000008,
+      "distance": 72,
+      "time": 12.78400000000001,
       "geometries": 25,
       "textures": 6,
-      "triangles": 465274,
-      "drawCalls": 14,
-      "workers": {
-        "created": 25,
-        "terminated": 24,
-        "active": 1,
-        "maximum": 1
-      }
-    },
-    {
-      "distance": 64.2,
-      "time": 11.920000000000009,
-      "geometries": 25,
-      "textures": 6,
-      "triangles": 465274,
-      "drawCalls": 14,
-      "workers": {
-        "created": 25,
-        "terminated": 24,
-        "active": 1,
-        "maximum": 1
-      }
-    },
-    {
-      "distance": 67.5,
-      "time": 12.46400000000001,
-      "geometries": 25,
-      "textures": 6,
-      "triangles": 465274,
-      "drawCalls": 14,
-      "workers": {
-        "created": 25,
-        "terminated": 24,
-        "active": 1,
-        "maximum": 1
-      }
-    },
-    {
-      "distance": 70.7,
-      "time": 12.99200000000001,
-      "geometries": 25,
-      "textures": 6,
-      "triangles": 465274,
-      "drawCalls": 14,
-      "workers": {
-        "created": 25,
-        "terminated": 24,
-        "active": 1,
-        "maximum": 1
-      }
-    },
-    {
-      "distance": 72.3,
-      "time": 13.88800000000001,
-      "geometries": 25,
-      "textures": 6,
-      "triangles": 590558,
+      "triangles": 1122016,
       "drawCalls": 17,
+      "workers": {
+        "created": 25,
+        "terminated": 24,
+        "active": 1,
+        "maximum": 1
+      }
+    },
+    {
+      "distance": 75.3,
+      "time": 13.31200000000001,
+      "geometries": 25,
+      "textures": 6,
+      "triangles": 1033262,
+      "drawCalls": 16,
       "workers": {
         "created": 25,
         "terminated": 24,
@@ -593,10 +439,10 @@
     {
       "index": 1,
       "id": "iridescent-terrain",
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 577378,
-      "drawCalls": 16,
+      "triangles": 1250940,
+      "drawCalls": 17,
       "workers": {
         "created": 28,
         "terminated": 27,
@@ -621,10 +467,10 @@
     {
       "index": 3,
       "id": "iridescent-terrain",
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 577378,
-      "drawCalls": 16,
+      "triangles": 1250940,
+      "drawCalls": 17,
       "workers": {
         "created": 29,
         "terminated": 28,
@@ -649,10 +495,10 @@
     {
       "index": 5,
       "id": "iridescent-terrain",
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 577378,
-      "drawCalls": 16,
+      "triangles": 1250940,
+      "drawCalls": 17,
       "workers": {
         "created": 30,
         "terminated": 29,
@@ -677,10 +523,10 @@
     {
       "index": 7,
       "id": "iridescent-terrain",
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 577378,
-      "drawCalls": 16,
+      "triangles": 1250940,
+      "drawCalls": 17,
       "workers": {
         "created": 31,
         "terminated": 30,
@@ -705,10 +551,10 @@
     {
       "index": 9,
       "id": "iridescent-terrain",
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 577378,
-      "drawCalls": 16,
+      "triangles": 1250940,
+      "drawCalls": 17,
       "workers": {
         "created": 32,
         "terminated": 31,
@@ -733,10 +579,10 @@
     {
       "index": 11,
       "id": "iridescent-terrain",
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 577378,
-      "drawCalls": 16,
+      "triangles": 1250940,
+      "drawCalls": 17,
       "workers": {
         "created": 33,
         "terminated": 32,
@@ -761,10 +607,10 @@
     {
       "index": 13,
       "id": "iridescent-terrain",
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 577378,
-      "drawCalls": 16,
+      "triangles": 1250940,
+      "drawCalls": 17,
       "workers": {
         "created": 34,
         "terminated": 33,
@@ -789,10 +635,10 @@
     {
       "index": 15,
       "id": "iridescent-terrain",
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 577378,
-      "drawCalls": 16,
+      "triangles": 1250940,
+      "drawCalls": 17,
       "workers": {
         "created": 35,
         "terminated": 34,
@@ -817,10 +663,10 @@
     {
       "index": 17,
       "id": "iridescent-terrain",
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 577378,
-      "drawCalls": 16,
+      "triangles": 1250940,
+      "drawCalls": 17,
       "workers": {
         "created": 36,
         "terminated": 35,
@@ -845,10 +691,10 @@
     {
       "index": 19,
       "id": "iridescent-terrain",
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 577378,
-      "drawCalls": 16,
+      "triangles": 1250940,
+      "drawCalls": 17,
       "workers": {
         "created": 37,
         "terminated": 36,
@@ -889,21 +735,21 @@
     "params": {
       "layers": 1,
       "holes": 1.1,
-      "iridescence": 0.95,
-      "roughness": 0.3,
+      "iridescence": 0.8,
+      "roughness": 0.68,
       "speed": 2.4
     },
     "metrics": {
       "已穿行": "0.0 m",
       "常驻地层": "15 区块",
-      "表面三角形": "661,508",
+      "表面三角形": "1,336,904",
       "生成状态": "后台生成 · 就绪"
     },
     "resources": {
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 577378,
-      "drawCalls": 16
+      "triangles": 1250940,
+      "drawCalls": 17
     },
     "workers": {
       "created": 1,
@@ -915,23 +761,23 @@
   "reproducibility": {
     "original": {
       "filename": "forma-iridescent-terrain-seed-42.png",
-      "bytes": 1552723,
-      "sha256": "00cbf2e6bb9434ee384bcea9c9fee69d794e1abc1ca40cc2b515aa4105fe689c"
+      "bytes": 489451,
+      "sha256": "a9c487faa4a6717d1c3728ad9060ae1ffeb7266847930a1b688900fdcfbf2e71"
     },
     "changed": {
       "filename": "forma-iridescent-terrain-seed-314159.png",
-      "bytes": 1489662,
-      "sha256": "12e07f77ce2aa76b80ef928c504060c863a6e7e847525dcb5d00112faa4e6061"
+      "bytes": 510377,
+      "sha256": "ee53e68722c05280bbb5cedd36f114ffffb0a3b098c3b3d950c78c33123ec6d8"
     },
     "restored": {
       "filename": "forma-iridescent-terrain-seed-42.png",
-      "bytes": 1552723,
-      "sha256": "00cbf2e6bb9434ee384bcea9c9fee69d794e1abc1ca40cc2b515aa4105fe689c"
+      "bytes": 489451,
+      "sha256": "a9c487faa4a6717d1c3728ad9060ae1ffeb7266847930a1b688900fdcfbf2e71"
     },
     "reset": {
       "filename": "forma-iridescent-terrain-seed-42.png",
-      "bytes": 1552723,
-      "sha256": "00cbf2e6bb9434ee384bcea9c9fee69d794e1abc1ca40cc2b515aa4105fe689c"
+      "bytes": 489451,
+      "sha256": "a9c487faa4a6717d1c3728ad9060ae1ffeb7266847930a1b688900fdcfbf2e71"
     },
     "seed": 42,
     "camera": {
@@ -950,8 +796,8 @@
   },
   "newWorldSeed": 2654435803,
   "pauseAndReset": {
-    "heldTime": 13.88800000000001,
-    "heldDistance": "72.3 m",
+    "heldTime": 13.31200000000001,
+    "heldDistance": "75.3 m",
     "resetDistance": "0.0 m",
     "stableCamera": true
   },
@@ -959,32 +805,32 @@
     "quality": "low",
     "presets": [
       {
-        "label": "虹彩群岛",
+        "label": "晨雾云屿",
         "params": {
           "layers": 1,
           "holes": 1.1,
-          "iridescence": 0.95,
-          "roughness": 0.3,
+          "iridescence": 0.8,
+          "roughness": 0.68,
           "speed": 2.4
         }
       },
       {
-        "label": "深紫迷宫",
+        "label": "层叠梦境",
         "params": {
-          "layers": 1.45,
-          "holes": 0.75,
+          "layers": 1.4,
+          "holes": 0.85,
           "iridescence": 1,
-          "roughness": 0.24,
+          "roughness": 0.75,
           "speed": 1.7
         }
       },
       {
-        "label": "水银遗迹",
+        "label": "月白浮岛",
         "params": {
           "layers": 0.7,
           "holes": 1.65,
           "iridescence": 0.25,
-          "roughness": 0.18,
+          "roughness": 0.58,
           "speed": 3.8
         }
       }
@@ -994,14 +840,14 @@
     "horizontalOverflow": false,
     "png": {
       "filename": "forma-iridescent-terrain-seed-42.png",
-      "bytes": 437348,
-      "sha256": "e9b86c5dccf9f75cdf2531c81030dcad92242fcb95802df0500b99020aee17fa"
+      "bytes": 155468,
+      "sha256": "63cc4f58a52a1dfcd23e6be7d8ec0356b0f3ff52c705b1ed5c526aff6bca32bd"
     },
     "resources": {
-      "geometries": 20,
+      "geometries": 21,
       "textures": 3,
-      "triangles": 214856,
-      "drawCalls": 11
+      "triangles": 467724,
+      "drawCalls": 12
     },
     "camera": {
       "desktopDefault": {
@@ -1075,7 +921,7 @@
     "metrics": {
       "已穿行": "0.0 m",
       "常驻地层": "15 区块",
-      "表面三角形": "288,742",
+      "表面三角形": "589,432",
       "生成状态": "兼容生成 · 就绪"
     },
     "workers": {
@@ -1086,9 +932,9 @@
     }
   },
   "performance": {
-    "wallMilliseconds": 5348,
-    "simulationSeconds": 5.183100000000012,
-    "fpsSample": 60,
+    "wallMilliseconds": 5346,
+    "simulationSeconds": 5.166500000000002,
+    "fpsSample": 56,
     "quality": "high",
     "viewport": {
       "width": 1280,
@@ -1097,16 +943,16 @@
     "deviceScaleFactor": 1,
     "headless": true,
     "resources": {
-      "geometries": 23,
+      "geometries": 24,
       "textures": 6,
-      "triangles": 487946,
+      "triangles": 941892,
       "drawCalls": 14
     },
     "metrics": {
-      "已穿行": "12.4 m",
+      "已穿行": "12.2 m",
       "常驻地层": "15 区块",
-      "表面三角形": "661,508",
-      "生成状态": "后台生成 · 就绪"
+      "表面三角形": "1,336,904",
+      "生成状态": "预载前方地层…"
     },
     "scope": "Approximately five seconds of real-clock headless Chrome playback; the app FPS is a short rolling sample, not a sustained-device guarantee."
   },
@@ -1117,5 +963,5 @@
     "maximum": 1
   },
   "passed": true,
-  "finished": "2026-09-14T04:52:17.222Z"
+  "finished": "2026-09-14T10:59:25.335Z"
 }

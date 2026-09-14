@@ -5,12 +5,12 @@
     "zh": "FORMA 数学实验室：18 个可复现示例",
     "en": "FORMA math lab: 18 reproducible examples"
   },
-  "capturedAt": "2026-09-14T05:06:41.745Z",
+  "capturedAt": "2026-09-14T11:28:23.436Z",
   "browser": "152.0.7977.83",
   "bundle": {
     "path": "dist/app.js",
-    "sha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151",
-    "bytes": 908289
+    "sha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1",
+    "bytes": 909919
   },
   "capture": {
     "viewport": {
@@ -112,7 +112,7 @@
           "url": "https://www.claymath.org/millennium/navier-stokes-equation/"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "vortex",
@@ -131,8 +131,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/02-vortex.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 150526,
-        "sha256": "648265d291692a3984e3fab0cc78534d182f25e35c4c416260d4335305190d5f"
+        "bytes": 150524,
+        "sha256": "2555b3287268b0654fa7631cc746dbb53dffe1fc2329c5ea07b1e0fa99651693"
       },
       "source": {
         "scene": "src/experiments/vortex.js",
@@ -195,7 +195,7 @@
           "url": "https://www.claymath.org/millennium/navier-stokes-equation/"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "quantum",
@@ -270,7 +270,7 @@
           "url": "https://doi.org/10.1103/PhysicsPhysiqueFizika.1.195"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "dunes",
@@ -351,7 +351,7 @@
           "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-5-implementing-improved-perlin-noise"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "sparks",
@@ -432,7 +432,7 @@
           "url": "https://en.wikipedia.org/wiki/Projectile_motion#Trajectory_of_a_projectile_with_air_resistance"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "ocean",
@@ -515,7 +515,7 @@
           "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "kissing",
@@ -594,7 +594,7 @@
           "url": "https://github.com/dualverse-ai/station_data_v2/tree/main/artifacts/kissing_number"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "kakeya",
@@ -613,8 +613,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/08-kakeya.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 81193,
-        "sha256": "e3abaa8cf9f8d70bb82417304a3befcddebe88b5cee7aaaecd89a14021422349"
+        "bytes": 81200,
+        "sha256": "e1daa1ad5f0fe4d8a6dc1d6670eb6e97efa493cb0b65a4b4b420fa887895a5f9"
       },
       "source": {
         "scene": "src/experiments/kakeya.js",
@@ -673,7 +673,7 @@
           "url": "https://github.com/dualverse-ai/station_data_v2/tree/main/artifacts/finite_kakeya"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "maxcut",
@@ -750,7 +750,7 @@
           "url": "https://arxiv.org/abs/2509.18057"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "hat",
@@ -827,7 +827,7 @@
           "url": "https://github.com/isohedral/hatviz"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "real-kakeya",
@@ -910,7 +910,7 @@
           "url": "https://arxiv.org/abs/2502.17655"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "boltzmann",
@@ -1000,7 +1000,7 @@
           "url": "https://arxiv.org/abs/2503.01800"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "torus-knot",
@@ -1087,7 +1087,7 @@
           "url": "https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2026"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "moduli",
@@ -1174,7 +1174,7 @@
           "url": "https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2026"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "noperthedron",
@@ -1265,7 +1265,7 @@
           "url": "https://github.com/Jakob256/Rupert/blob/1009a4c451dbdbb1a1705d18461cbabd534a0a6c/src/noperthedron_verification.ipynb"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "e8",
@@ -1352,7 +1352,7 @@
           "url": "https://annals.math.princeton.edu/2017/185-3/p07"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "matroid",
@@ -1439,7 +1439,7 @@
           "url": "https://www.mathunion.org/fileadmin/IMU/Prizes/Fields/2022/IMU_Fields22_Huh_citation.pdf"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     },
     {
       "id": "iridescent-terrain",
@@ -1448,8 +1448,8 @@
         "en": "Iridescent Strata"
       },
       "description": {
-        "zh": "黑色空间中的多层悬浮岩片带有孔洞与分离碎片，蓝紫粉金高光随视角变化；分块密度场支持低空穿行。",
-        "en": "Layered floating rock shelves, holes and detached fragments occupy a black void; blue, violet, pink and gold highlights shift with the view as streamed density-field meshes support low flight."
+        "zh": "圆润的悬浮云屿与孔洞在暗色空间中层叠，雾蓝、淡紫和浅桃沿表面连续晕染；宽光源与分块密度场支持柔和的穿行体验。",
+        "en": "Rounded floating forms and openings layer through a dark space, with mist blue, lavender and pale peach blending continuously across their surfaces; broad lighting and streamed density meshes create a soft flight experience."
       },
       "modelType": "三维密度场 · 程序化图形",
       "route": "index.html#iridescent-terrain",
@@ -1458,8 +1458,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/18-iridescent-terrain.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 185321,
-        "sha256": "1e7078a4c48fe9182b8be5188b23b8fe6c8bc2467ec1d17bbb7936959f678fff"
+        "bytes": 80776,
+        "sha256": "aeaa78782380955c1faabc87d06b7097d53d60b2b73ccdb1e765376ce26959bb"
       },
       "source": {
         "scene": "src/experiments/iridescent-terrain.js",
@@ -1470,16 +1470,16 @@
       "defaults": {
         "layers": 1,
         "holes": 1.1,
-        "iridescence": 0.95,
-        "roughness": 0.3,
+        "iridescence": 0.8,
+        "roughness": 0.68,
         "speed": 2.4
       },
       "capturedState": {
         "params": {
           "layers": 1,
           "holes": 1.1,
-          "iridescence": 0.95,
-          "roughness": 0.3,
+          "iridescence": 0.8,
+          "roughness": 0.68,
           "speed": 2.4
         },
         "seed": 42,
@@ -1504,12 +1504,12 @@
         "metrics": {
           "已穿行": "0.0 m",
           "常驻地层": "15 区块",
-          "表面三角形": "661,508",
+          "表面三角形": "1,336,904",
           "生成状态": "后台生成 · 就绪"
         }
       },
-      "formula": "F(x,y,z) = min(layer bands + warped noise, perforations, envelope)；surface: F = 0",
-      "modelLimits": "这是受 Cristian Peñas 的程序化地形视频启发的原创图形实验。我们尚未取得或核验作者的具体算法，不声称复现其 Unity 实现，也不把它作为 AI 发现的新数学结构。孔洞由有限网格近似，小于网格的细节可能消失；虹彩包含艺术化着色，并非测量所得矿物光谱。持续生成只覆盖相机附近的有限窗口，手动远离该窗口可能看到边缘；不模拟碰撞、岩石物理或地质演化。",
+      "formula": "F = smoothMin(volume bands, openings, envelope)；surface: F(x,y,z) = 0",
+      "modelLimits": "这是受 Cristian Peñas 的程序化地形视频启发的原创图形实验。我们尚未取得或核验作者的具体算法，不声称复现其 Unity 实现，也不把它作为 AI 发现的新数学结构。孔洞由有限网格近似，小于网格的细节可能消失；虹彩包含艺术化着色，并非测量所得物理光谱。这是云团般的表面近似，不计算真实云雾的体积散射。持续生成只覆盖相机附近的有限窗口，手动远离该窗口可能看到边缘；不模拟碰撞、岩石物理或地质演化。",
       "sources": [
         {
           "label": "视觉参考 · Cristian Peñas / @ilumine_ai · 2026-09-11",
@@ -1528,10 +1528,10 @@
           "url": "https://threejs.org/docs/#api/en/materials/MeshPhysicalMaterial"
         }
       ],
-      "bundleSha256": "a245862eb225b082fda822e8c70fcff5f2c8bbd8db21b64c475eb2ad7be9c151"
+      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
     }
   ],
-  "totalImageBytes": 1911777,
+  "totalImageBytes": 1807237,
   "validation": {
     "allScenesReady": true,
     "parameterDefaultsMatched": true,

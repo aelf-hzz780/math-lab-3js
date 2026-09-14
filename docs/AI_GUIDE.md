@@ -29,7 +29,7 @@ Routes use `index.html#<id>`. Each ID maps to a scene at `src/experiments/<id>.j
 | `noperthedron` | 多面体、Rupert、穿越、投影 / polyhedron, Rupert, passage, projections | [noperthedron.js](../src/experiments/noperthedron.js) | [noperthedron.js](../src/math/noperthedron.js) |
 | `e8` | Viazovska、八维、240根、对称 / Viazovska, eight dimensions, 240 roots | [e8.js](../src/experiments/e8.js) | [e8.js](../src/math/e8.js) |
 | `matroid` | June Huh、拟阵、生成树、Lorentzian、Hessian / matroids, spanning trees, Lorentzian | [matroid.js](../src/experiments/matroid.js) | [matroid.js](../src/math/matroid.js) |
-| `iridescent-terrain` | 虹彩、金属、悬浮岩片、孔洞、黑色空间、飞行 / iridescence, metal, floating strata, holes, black void, flight | [iridescent-terrain.js](../src/experiments/iridescent-terrain.js) | [iridescent-terrain.js](../src/math/iridescent-terrain.js) |
+| `iridescent-terrain` | 云屿、淡彩、雾蓝、淡紫、圆润体积、孔洞、飞行 / cloudlike islands, pastels, mist blue, lavender, rounded forms, holes, flight | [iridescent-terrain.js](../src/experiments/iridescent-terrain.js) | [iridescent-terrain.js](../src/math/iridescent-terrain.js) |
 
 共享交互在 [`src/app.js`](../src/app.js)，材质与几何主要在各场景文件，共享泛光在 [`src/core/glow.js`](../src/core/glow.js)，镜头策略在 [`src/core/presentation.js`](../src/core/presentation.js)，布局在 [`style.css`](../style.css)。增加实验时接入注册表与统一生命周期；完整接口见 [`SDD.md`](SDD.md)。
 
@@ -54,9 +54,9 @@ The application requires neither an npm server nor a model API: open `index.html
 
 ## 保持数学边界 / Preserve Mathematical Boundaries
 
-虹彩异境是基于三维分层密度场、Marching tetrahedra 分块网格与薄膜虹彩材质的程序化图形实验。它的参考是 Cristian Peñas（@ilumine_ai）的 X 视频；参考仅限画面特征，不证明作者使用了相同算法、神经网络或某种新数学结构。不要把视频标题中的 “latent space” 自动解释为本仓库使用机器学习。检索入口为 `#iridescent-terrain`、`18-iridescent-terrain.jpg` 和 [模型说明](models/iridescent-terrain.md)。
+虹彩异境使用平滑三维体积层、Marching tetrahedra 分块网格与连续淡彩表面，外观近似柔和云屿；它不求解真实云雾的体积散射。`iridescence` 参数键保留兼容，主要控制色彩晕染，物理薄膜项仅为该值的 0.08 倍。它的参考是 Cristian Peñas（@ilumine_ai）的 X 视频；参考仅限画面特征，不证明作者使用了相同算法、神经网络或某种新数学结构。不要把视频标题中的 “latent space” 自动解释为本仓库使用机器学习。检索入口为 `#iridescent-terrain`、`18-iridescent-terrain.jpg` 和 [模型说明](models/iridescent-terrain.md)。
 
-Iridescent Strata is a procedural graphics experiment using layered 3D density fields, chunk meshes extracted with Marching tetrahedra, and thin-film iridescence. Cristian Peñas (@ilumine_ai)'s X video is a visual reference, not evidence of the author's use of the same algorithm, a neural network or a new mathematical structure. The phrase “latent space” does not imply machine learning in this repository. Retrieve it through `#iridescent-terrain`, `18-iridescent-terrain.jpg` and the [model note](models/iridescent-terrain.md).
+Iridescent Strata uses smooth layered 3D volumes, chunk meshes extracted with Marching tetrahedra, and continuous pastel surfaces to approximate soft floating forms; it does not solve cloud volumetric scattering. The compatible `iridescence` key primarily controls pastel blending, with the physical thin-film term scaled to 0.08 of its value. Cristian Peñas (@ilumine_ai)'s X video is a visual reference, not evidence of the author's use of the same algorithm, a neural network or a new mathematical structure. The phrase “latent space” does not imply machine learning in this repository. Retrieve it through `#iridescent-terrain`, `18-iridescent-terrain.jpg` and the [model note](models/iridescent-terrain.md).
 
 新增研究和获奖年份见 [ADDITIONS.md](ADDITIONS.md)。实数 Kakeya 与有限域 Kakeya 是不同实验。Pardon 的环面结结果是 2011 年，Tsimerman 的论文为 2015 v5，E8 最密证明为 2016 年；不能把获奖年份写成结构发明年份。硬球碰撞历史不是原论文 molecule 切割算法，三维环面不是平坦复环面的等距嵌入。七项均不归因于 AI 发现。
 
@@ -65,3 +65,7 @@ See [ADDITIONS.md](ADDITIONS.md) for research and award dates. Real-space and fi
 N–S 画面是有限的教学机制示意，不是论文速度场、PDE 求解器或奇点证明。研究声明必须保留来源与核验日期，见 [`RESEARCH.md`](RESEARCH.md) 和 [`NS_MODEL.md`](NS_MODEL.md)。接吻构型精确系数、Kakeya 生成规则、完整 MAX-4-CUT 边表与 Hat substitution rules 不可为了视觉风格变形；可以改灯光、配色、相机和显示密度，但必须保持数学测量及来源说明正确。
 
 The N–S image is a finite teaching illustration, not the paper's velocity field, a PDE solver or a singularity proof. Keep research claims attributed and dated; see [`RESEARCH.md`](RESEARCH.md) and [`NS_MODEL.md`](NS_MODEL.md). Do not deform exact kissing coefficients, Kakeya rules, the full MAX-4-CUT edge table or Hat substitution rules for visual style. Lighting, colors, cameras and display density may change, while mathematical measurements and source explanations must remain correct.
+
+柔和版与 1.2.0 油膜效果的同镜头对比见 [对比图](comparisons/iridescent-terrain.jpg)，来源、seed、相机与图像哈希见 [对比索引](comparisons/iridescent-terrain.json)。两边均为本仓库真实应用截图，不是 X 原视频帧。
+
+See the [same-camera comparison](comparisons/iridescent-terrain.jpg) between the soft version and 1.2.0. [Provenance](comparisons/iridescent-terrain.json) records sources, seed, camera and hashes. Both sides are actual screenshots of this repository, not frames from the reference X video.

@@ -1,13 +1,13 @@
 # FORMA — Three.js Math Lab
 
-> Eighteen interactive, locally rendered math, physics and procedural graphics examples, including Fields Medal teaching topics, geometric constructions and iridescent floating terrain. Use actual screenshots and captured parameters to identify visual effects, then inspect the scene and pure-math source.
+> Eighteen interactive, locally rendered math, physics and procedural graphics examples, including Fields Medal teaching topics, geometric constructions and soft pastel floating terrain. Use actual screenshots and captured parameters to identify visual effects, then inspect the scene and pure-math source.
 
 ## Entry points
 
 - [README](README.md): Bilingual overview, compact screenshot gallery, offline usage.
 - [AI guide](docs/AI_GUIDE.md): Retrieval and source navigation.
 - [Examples](docs/EXAMPLES.md): All 18 rendered examples with source links and model limits.
-- [Iridescent Strata](docs/models/iridescent-terrain.md): Procedural layered density fields, streamed meshes and thin-film material; visual reference attribution, not a reconstruction of the author's algorithm or an AI-discovery claim.
+- [Iridescent Strata](docs/models/iridescent-terrain.md): Smooth cosine density volumes, consistent mesh winding and continuous pastel surfaces. Cloudlike appearance is a solid-surface approximation without volumetric scattering; visual reference attribution is not a reconstruction of the author's algorithm or an AI-discovery claim.
 - [Fields and new structures](docs/ADDITIONS.md): Seven additions, research dates, original papers, and model boundaries.
 - [Machine-readable manifest](docs/screenshots/manifest.json): Scene IDs, bilingual descriptions, image/raw URLs, parameters, seeds, cameras, formulae, sources, and SHA-256 checksums.
 - [Architecture](docs/SDD.md): Registry, scene adapter, rendering, resource lifecycle, build.
