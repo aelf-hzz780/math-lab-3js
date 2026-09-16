@@ -2,18 +2,18 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0b1013"><meta name="description" content="FORMA 数学实验室：18 个可交互、可解释的 Three.js 实验，含菲尔兹奖相关结构、E8、Noperthedron 与虹彩异境。">
+  <meta name="theme-color" content="#0b1013"><meta name="description" content="FORMA 数学实验室：20 个可交互、可解释的 Three.js 实验，含菲尔兹奖相关结构、E8、虹彩异境、流彩粒子画与液态玻璃。">
   <title>FORMA — 数学实验室</title><link rel="icon" href="./assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css">
 </head>
 <body class="immersive">
   <header class="topbar">
     <a class="brand" href="#navier" aria-label="FORMA 数学实验室首页"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 3 33 29H3Z M18 12 27 29 M9 19h18 M18 3v26"/></svg><span>FORMA<span class="brand-sub">数学实验室</span></span></a>
     <div class="top-caption">AN EXPLORATION OF MATHEMATICAL BEAUTY</div>
-    <div class="top-right"><span class="live-dot"></span><span id="experiment-count">18 个交互实验</span><button id="view-mode" class="view-mode" aria-pressed="true">进入实验台 ↗</button><button id="about-button" class="icon-button" aria-label="关于实验室">?</button></div>
+    <div class="top-right"><span class="live-dot"></span><span id="experiment-count">20 个交互实验</span><button id="view-mode" class="view-mode" aria-pressed="true">进入实验台 ↗</button><button id="about-button" class="icon-button" aria-label="关于实验室">?</button></div>
   </header>
   <main class="workspace">
     <aside class="library" id="library" aria-label="实验目录">
-      <div class="sidebar-heading"><span>探索目录</span><span class="mono" id="catalog-count">INDEX / 18</span><button class="drawer-close" data-close="library" aria-label="关闭实验目录">×</button></div>
+      <div class="sidebar-heading"><span>探索目录</span><span class="mono" id="catalog-count">INDEX / 20</span><button class="drawer-close" data-close="library" aria-label="关闭实验目录">×</button></div>
       <div id="experiment-list"></div>
       <div class="library-footer"><div class="orbit-mark">⌘</div><p>从公式，到可触摸的形状。</p><span>拖动视角 · 改变参数 · 发现规律</span><div class="edition mono">RESEARCH EDITION <b>2026.09</b></div></div>
     </aside>
@@ -51,7 +51,7 @@
     <div class="quality-bar"><button id="camera-motion" class="motion-button" aria-pressed="true" title="自动环绕；拖动后停留 5 秒">自动镜头</button><label for="quality">画质</label><select id="quality"><option value="auto">自动</option><option value="high">高</option><option value="low">低</option></select><span class="fps mono" id="fps">— FPS</span></div>
   </footer>
   <div id="drawer-backdrop" hidden></div><div id="toast" role="status" hidden></div>
-  <dialog id="about"><button id="about-close" class="icon-button dialog-close" aria-label="关闭关于">×</button><span class="eyebrow">FORMA / RESEARCH EDITION</span><h2>数学，可以亲手探索。</h2><p>这里收集了 18 个数学、物理与程序化图形实验：从 N–S 涡旋，到菲尔兹奖相关研究、E8 对称、AI 辅助发现的组合构造和虹彩悬浮地形。</p><p>每幅图像都来自可解释的模型。三维投影、数值近似与程序化效果在对应实验中单独说明，研究来源可随时查阅。观赏模式中的镜头与辉光不改变模型。</p><div class="about-shortcuts"><span><kbd>Space</kbd> 播放 / 暂停</span><span><kbd>R</kbd> 重置实验</span><span><kbd>1–9 / 0</kbd> 前十项实验</span><span><kbd>F</kbd> 观赏 / 实验台</span></div><p class="verified">Three.js r180 · 可双击离线运行 · 虹彩异境 2026-09-14</p></dialog>
+  <dialog id="about"><button id="about-close" class="icon-button dialog-close" aria-label="关闭关于">×</button><span class="eyebrow">FORMA / RESEARCH EDITION</span><h2>数学，可以亲手探索。</h2><p>这里收集了 20 个数学、物理与程序化图形实验：从 N–S 涡旋，到菲尔兹奖相关研究、E8 对称、AI 辅助发现的组合构造、虹彩悬浮地形、流彩粒子画与液态玻璃。</p><p>每幅图像都来自可解释的模型。三维投影、数值近似与程序化效果在对应实验中单独说明，研究来源可随时查阅。观赏模式中的镜头与辉光不改变模型。</p><div class="about-shortcuts"><span><kbd>Space</kbd> 播放 / 暂停</span><span><kbd>R</kbd> 重置实验</span><span><kbd>1–9 / 0</kbd> 前十项实验</span><span><kbd>F</kbd> 观赏 / 实验台</span></div><p class="verified">Three.js r180 · 可双击离线运行 · 互动新作 2026-09-16</p></dialog>
   <script src="./src/bootstrap.js"></script>
   <script defer src="./dist/app.js" onerror="window.__FORMA_BOOT__.fail('离线脚本未找到，请重新生成 dist/app.js。')"></script>
 </body>

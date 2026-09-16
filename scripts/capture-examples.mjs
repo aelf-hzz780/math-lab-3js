@@ -31,6 +31,8 @@ const descriptions = {
   noperthedron:{en:'Noperthedron and Rupert projection test',zh:'青色与金色多面体呈现两个姿态，下方叠加正交投影，实时测试严格包含余量。',visualEn:'Teal and gold polyhedra show two poses; overlaid orthogonal silhouettes measure strict containment clearance.'},
   e8:{en:'E8 root system in eight dimensions',zh:'240 个根的三维投影呈现晶格对称，选中根的真实八维邻接关系被高亮。',visualEn:'A projection of 240 roots reveals E8 symmetry, highlighting genuine eight-dimensional neighbors of a selected root.'},
   matroid:{en:'Graphic matroid and Lorentzian basis polynomial',zh:'四面体图中的选边呈现独立集与生成树，权重改变基多项式的对数曲面；特征值柱展示 Lorentzian 符号。',visualEn:'Selected tetrahedral graph edges reveal independent sets and spanning trees; weights change a log-polynomial surface, while eigenvalue bars show its Lorentzian signature.'},
+  'particle-paint':{en:'Living particle canvas',zh:'画框内的细密彩色笔触组成有纵深的流动构图，珊瑚、淡紫与雾蓝粒子在三种形态间连续迁移，可用鼠标或触控拨动。',visualEn:'Fine colored strokes form a deep, flowing composition inside a frame; coral, lavender and blue particles continuously morph between three forms and respond to mouse or touch.'},
+  'liquid-glass':{en:'Liquid glass',zh:'透明液态形体在灰色云幕前融合、流动和回弹，曲面折射背景，边缘呈现柔和高光与克制的色散。',visualEn:'Transparent liquid forms merge, flow and spring back against gray procedural clouds, refracting the backdrop with soft highlights and restrained dispersion.'},
   'iridescent-terrain':{en:'Iridescent Strata',zh:'圆润的悬浮云屿与孔洞在暗色空间中层叠，雾蓝、淡紫和浅桃沿表面连续晕染；宽光源与分块密度场支持柔和的穿行体验。',visualEn:'Rounded floating forms and openings layer through a dark space, with mist blue, lavender and pale peach blending continuously across their surfaces; broad lighting and streamed density meshes create a soft flight experience.'},
 };
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');

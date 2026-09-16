@@ -1,0 +1,1202 @@
+{
+  "started": "2026-09-16T07:41:52.780Z",
+  "browser": "152.0.7977.83",
+  "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699",
+  "hardware": {
+    "cpu": "Apple M3 Pro",
+    "arch": "arm64",
+    "platform": "darwin"
+  },
+  "protocol": "file:",
+  "conditions": {
+    "headless": true,
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "deviceScaleFactor": 1
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "deviceScaleFactor": 2,
+      "touchEmulation": true
+    },
+    "functionalClock": "Playwright virtual clock; these runs are not performance evidence.",
+    "performanceClock": "Separate page and real wall-clock animation after functional pages close.",
+    "limitations": "Touch is emulated on this desktop with Chrome touch events. No physical phone, iOS compatibility or sustained thermal performance is claimed."
+  },
+  "desktop": [
+    {
+      "id": "particle-paint",
+      "quality": "high",
+      "defaultParams": {
+        "composition": 0,
+        "morph": 0.65,
+        "flow": 0.8,
+        "depth": 1.1,
+        "brush": 1,
+        "particles": 240000
+      },
+      "defaultCamera": {
+        "position": [
+          3.5000000000000004,
+          0.3500000000000011,
+          12.5
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "initialResources": {
+        "geometries": 8,
+        "textures": 3,
+        "drawCalls": 10,
+        "points": 0,
+        "triangles": 480068
+      },
+      "presets": [
+        {
+          "label": "绛紫花潮",
+          "params": {
+            "composition": 0,
+            "morph": 0.65,
+            "flow": 0.8,
+            "depth": 1.1,
+            "brush": 1,
+            "particles": 240000
+          }
+        },
+        {
+          "label": "蓝调绸带",
+          "params": {
+            "composition": 1,
+            "morph": 0.4,
+            "flow": 1.1,
+            "depth": 1.4,
+            "brush": 1.15,
+            "particles": 300000
+          }
+        },
+        {
+          "label": "珊瑚漩涡",
+          "params": {
+            "composition": 2,
+            "morph": 0.5,
+            "flow": 0.65,
+            "depth": 0.8,
+            "brush": 0.85,
+            "particles": 360000
+          }
+        }
+      ],
+      "parameterCases": [
+        {
+          "key": "composition",
+          "value": 0,
+          "resources": {
+            "geometries": 8,
+            "textures": 3,
+            "drawCalls": 10,
+            "points": 0,
+            "triangles": 480068
+          }
+        },
+        {
+          "key": "composition",
+          "value": 2,
+          "resources": {
+            "geometries": 8,
+            "textures": 3,
+            "drawCalls": 10,
+            "points": 0,
+            "triangles": 480068
+          }
+        },
+        {
+          "key": "morph",
+          "value": 0,
+          "resources": {
+            "geometries": 8,
+            "textures": 3,
+            "drawCalls": 10,
+            "points": 0,
+            "triangles": 480068
+          }
+        },
+        {
+          "key": "morph",
+          "value": 1,
+          "resources": {
+            "geometries": 8,
+            "textures": 3,
+            "drawCalls": 10,
+            "points": 0,
+            "triangles": 480068
+          }
+        },
+        {
+          "key": "flow",
+          "value": 0,
+          "resources": {
+            "geometries": 8,
+            "textures": 3,
+            "drawCalls": 10,
+            "points": 0,
+            "triangles": 480068
+          }
+        },
+        {
+          "key": "flow",
+          "value": 1.5,
+          "resources": {
+            "geometries": 8,
+            "textures": 3,
+            "drawCalls": 10,
+            "points": 0,
+            "triangles": 480068
+          }
+        },
+        {
+          "key": "depth",
+          "value": 0.3,
+          "resources": {
+            "geometries": 8,
+            "textures": 3,
+            "drawCalls": 10,
+            "points": 0,
+            "triangles": 480068
+          }
+        },
+        {
+          "key": "depth",
+          "value": 1.8,
+          "resources": {
+            "geometries": 8,
+            "textures": 3,
+            "drawCalls": 10,
+            "points": 0,
+            "triangles": 480068
+          }
+        },
+        {
+          "key": "brush",
+          "value": 0.5,
+          "resources": {
+            "geometries": 8,
+            "textures": 3,
+            "drawCalls": 10,
+            "points": 0,
+            "triangles": 480068
+          }
+        },
+        {
+          "key": "brush",
+          "value": 2,
+          "resources": {
+            "geometries": 8,
+            "textures": 3,
+            "drawCalls": 10,
+            "points": 0,
+            "triangles": 480068
+          }
+        },
+        {
+          "key": "particles",
+          "value": 60000,
+          "resources": {
+            "geometries": 8,
+            "textures": 3,
+            "drawCalls": 10,
+            "points": 0,
+            "triangles": 120068
+          }
+        },
+        {
+          "key": "particles",
+          "value": 2000000,
+          "resources": {
+            "geometries": 8,
+            "textures": 3,
+            "drawCalls": 10,
+            "points": 0,
+            "triangles": 4000068
+          }
+        }
+      ],
+      "actions": [
+        {
+          "key": "next-art",
+          "params": {
+            "composition": 1,
+            "morph": 0.65,
+            "flow": 0.8,
+            "depth": 1.1,
+            "brush": 1,
+            "particles": 240000
+          },
+          "metrics": {
+            "绘画粒子": "24 万",
+            "当前构图": "花潮",
+            "空间深度": "1.10 ×",
+            "交互力场": "待触碰"
+          }
+        },
+        {
+          "key": "front",
+          "params": {
+            "composition": 0,
+            "morph": 0.65,
+            "flow": 0.8,
+            "depth": 1.1,
+            "brush": 1,
+            "particles": 240000
+          },
+          "metrics": {
+            "绘画粒子": "24 万",
+            "当前构图": "花潮",
+            "空间深度": "1.10 ×",
+            "交互力场": "待触碰"
+          }
+        },
+        {
+          "key": "detail",
+          "params": {
+            "composition": 0,
+            "morph": 0.65,
+            "flow": 0.8,
+            "depth": 1.1,
+            "brush": 1,
+            "particles": 240000
+          },
+          "metrics": {
+            "绘画粒子": "24 万",
+            "当前构图": "花潮",
+            "空间深度": "1.10 ×",
+            "交互力场": "待触碰"
+          }
+        }
+      ],
+      "passed": true,
+      "pause": {
+        "time": 0,
+        "png": {
+          "filename": "forma-particle-paint-seed-42.png",
+          "bytes": 372772,
+          "sha256": "afc8831a0851180ec099b0b4e5f02ffe23b8497e0a050088637f03a2ee63ecda"
+        }
+      },
+      "interaction": {
+        "pausedPointerFrozen": true,
+        "simulationSeconds": 1.0240000000000007,
+        "unperturbed": {
+          "filename": "forma-particle-paint-seed-42.png",
+          "bytes": 372603,
+          "sha256": "ea65c53e2c2e6590ece3fd563be4435511194706211200451cbb540d73919eb6"
+        },
+        "interacted": {
+          "filename": "forma-particle-paint-seed-42.png",
+          "bytes": 371024,
+          "sha256": "0f75b36b73bb45cfa7eb243a4657f8fbd9154cab89b630a772d217e4b066fdf6"
+        },
+        "reset": {
+          "filename": "forma-particle-paint-seed-42.png",
+          "bytes": 372772,
+          "sha256": "afc8831a0851180ec099b0b4e5f02ffe23b8497e0a050088637f03a2ee63ecda"
+        },
+        "cameraUnchangedDuringField": true,
+        "cameraGestures": [
+          {
+            "gesture": "Shift",
+            "camera": {
+              "position": [
+                -0.025559949009248375,
+                1.9656413505172596,
+                12.835813210316802
+              ],
+              "target": [
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          {
+            "gesture": "right",
+            "camera": {
+              "position": [
+                -0.025559949009248375,
+                1.9656413505172596,
+                12.835813210316802
+              ],
+              "target": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "label": "视觉参考 · @Cora_Mat（所提供截图，原帖未核验）",
+          "url": "https://x.com/Cora_Mat"
+        },
+        {
+          "label": "Bridson et al. · Curl-Noise for Procedural Fluid Flow · 2007",
+          "url": "https://www.cs.ubc.ca/~rbridson/docs/bridson-siggraph2007-curlnoise.pdf"
+        },
+        {
+          "label": "Three.js · InstancedBufferGeometry",
+          "url": "https://threejs.org/docs/#api/en/core/InstancedBufferGeometry"
+        }
+      ],
+      "screenshot": "particle-paint-desktop.png",
+      "metrics": {
+        "绘画粒子": "24 万",
+        "当前构图": "花潮",
+        "空间深度": "1.10 ×",
+        "交互力场": "待触碰"
+      }
+    },
+    {
+      "id": "liquid-glass",
+      "quality": "high",
+      "defaultParams": {
+        "shape": "mirror",
+        "flow": 0.45,
+        "viscosity": 0.85,
+        "ior": 1.36,
+        "dispersion": 0.25
+      },
+      "defaultCamera": {
+        "position": [
+          -1.3499999999999999,
+          0.1199999999999996,
+          9.65
+        ],
+        "target": [
+          -1.65,
+          -0.05,
+          0
+        ]
+      },
+      "initialResources": {
+        "geometries": 2,
+        "textures": 4,
+        "drawCalls": 4,
+        "points": 0,
+        "triangles": 8
+      },
+      "presets": [
+        {
+          "label": "云镜交融",
+          "params": {
+            "shape": "mirror",
+            "flow": 0.45,
+            "viscosity": 0.85,
+            "ior": 1.36,
+            "dispersion": 0.25
+          }
+        },
+        {
+          "label": "流环相拥",
+          "params": {
+            "shape": "ribbons",
+            "flow": 0.7,
+            "viscosity": 0.45,
+            "ior": 1.46,
+            "dispersion": 0.4
+          }
+        },
+        {
+          "label": "银雨悬浮",
+          "params": {
+            "shape": "rain",
+            "flow": 0.3,
+            "viscosity": 1.6,
+            "ior": 1.25,
+            "dispersion": 0.15
+          }
+        }
+      ],
+      "parameterCases": [
+        {
+          "key": "shape",
+          "value": "mirror",
+          "resources": {
+            "geometries": 2,
+            "textures": 4,
+            "drawCalls": 4,
+            "points": 0,
+            "triangles": 8
+          }
+        },
+        {
+          "key": "shape",
+          "value": "ribbons",
+          "resources": {
+            "geometries": 2,
+            "textures": 4,
+            "drawCalls": 4,
+            "points": 0,
+            "triangles": 8
+          }
+        },
+        {
+          "key": "shape",
+          "value": "rain",
+          "resources": {
+            "geometries": 2,
+            "textures": 4,
+            "drawCalls": 4,
+            "points": 0,
+            "triangles": 8
+          }
+        },
+        {
+          "key": "flow",
+          "value": 0,
+          "resources": {
+            "geometries": 2,
+            "textures": 4,
+            "drawCalls": 4,
+            "points": 0,
+            "triangles": 8
+          }
+        },
+        {
+          "key": "flow",
+          "value": 1.5,
+          "resources": {
+            "geometries": 2,
+            "textures": 4,
+            "drawCalls": 4,
+            "points": 0,
+            "triangles": 8
+          }
+        },
+        {
+          "key": "viscosity",
+          "value": 0.2,
+          "resources": {
+            "geometries": 2,
+            "textures": 4,
+            "drawCalls": 4,
+            "points": 0,
+            "triangles": 8
+          }
+        },
+        {
+          "key": "viscosity",
+          "value": 2,
+          "resources": {
+            "geometries": 2,
+            "textures": 4,
+            "drawCalls": 4,
+            "points": 0,
+            "triangles": 8
+          }
+        },
+        {
+          "key": "ior",
+          "value": 1.05,
+          "resources": {
+            "geometries": 2,
+            "textures": 4,
+            "drawCalls": 4,
+            "points": 0,
+            "triangles": 8
+          }
+        },
+        {
+          "key": "ior",
+          "value": 1.8,
+          "resources": {
+            "geometries": 2,
+            "textures": 4,
+            "drawCalls": 4,
+            "points": 0,
+            "triangles": 8
+          }
+        },
+        {
+          "key": "dispersion",
+          "value": 0,
+          "resources": {
+            "geometries": 2,
+            "textures": 4,
+            "drawCalls": 4,
+            "points": 0,
+            "triangles": 8
+          }
+        },
+        {
+          "key": "dispersion",
+          "value": 1,
+          "resources": {
+            "geometries": 2,
+            "textures": 4,
+            "drawCalls": 4,
+            "points": 0,
+            "triangles": 8
+          }
+        }
+      ],
+      "actions": [
+        {
+          "key": "pulse",
+          "params": {
+            "shape": "mirror",
+            "flow": 0.45,
+            "viscosity": 0.85,
+            "ior": 1.36,
+            "dispersion": 0.25
+          },
+          "metrics": {
+            "折射率": "IOR 1.36",
+            "形态": "云镜",
+            "牵引": "0.00 m",
+            "黏滞感": "0.85"
+          }
+        },
+        {
+          "key": "front",
+          "params": {
+            "shape": "mirror",
+            "flow": 0.45,
+            "viscosity": 0.85,
+            "ior": 1.36,
+            "dispersion": 0.25
+          },
+          "metrics": {
+            "折射率": "IOR 1.36",
+            "形态": "云镜",
+            "牵引": "0.00 m",
+            "黏滞感": "0.85"
+          }
+        },
+        {
+          "key": "new-clouds",
+          "params": {
+            "shape": "mirror",
+            "flow": 0.45,
+            "viscosity": 0.85,
+            "ior": 1.36,
+            "dispersion": 0.25
+          },
+          "metrics": {
+            "折射率": "IOR 1.36",
+            "形态": "云镜",
+            "牵引": "0.00 m",
+            "黏滞感": "0.85"
+          }
+        }
+      ],
+      "passed": true,
+      "pause": {
+        "time": 0,
+        "png": {
+          "filename": "forma-liquid-glass-seed-42.png",
+          "bytes": 1140030,
+          "sha256": "37c85609eff02960fab7344c769500b7317a24bf38a187b97e40feebdc217c21"
+        }
+      },
+      "interaction": {
+        "pausedPointerFrozen": true,
+        "simulationSeconds": 1.0240000000000007,
+        "unperturbed": {
+          "filename": "forma-liquid-glass-seed-42.png",
+          "bytes": 1144314,
+          "sha256": "817e111ab4fa248c7d16f07a8fee1fa1383a7b966eb9eb4e149e27f82c2c123c"
+        },
+        "interacted": {
+          "filename": "forma-liquid-glass-seed-42.png",
+          "bytes": 1116092,
+          "sha256": "eed14a82c55b27714070db9d9911500553804d67d8d7da3f42800df4f3143470"
+        },
+        "reset": {
+          "filename": "forma-liquid-glass-seed-42.png",
+          "bytes": 1140030,
+          "sha256": "37c85609eff02960fab7344c769500b7317a24bf38a187b97e40feebdc217c21"
+        },
+        "cameraUnchangedDuringField": true,
+        "cameraGestures": [
+          {
+            "gesture": "Shift",
+            "camera": {
+              "position": [
+                -3.9583889404490744,
+                1.3223660249587805,
+                9.275200913896757
+              ],
+              "target": [
+                -1.65,
+                -0.05,
+                0
+              ]
+            }
+          },
+          {
+            "gesture": "right",
+            "camera": {
+              "position": [
+                -3.9583889404490744,
+                1.3223660249587805,
+                9.275200913896757
+              ],
+              "target": [
+                -1.65,
+                -0.05,
+                0
+              ]
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "label": "视觉参考 · Shader Development Studio / @shadersweden · 用户提供截图",
+          "url": "https://x.com/shadersweden"
+        },
+        {
+          "label": "Inigo Quilez · distance functions / smooth union",
+          "url": "https://iquilezles.org/articles/distfunctions/"
+        },
+        {
+          "label": "Physically Based Rendering · dielectric reflection and refraction",
+          "url": "https://pbr-book.org/4ed/Reflection_Models/Dielectric_BSDF"
+        }
+      ],
+      "screenshot": "liquid-glass-desktop.png",
+      "metrics": {
+        "折射率": "IOR 1.36",
+        "形态": "云镜",
+        "牵引": "0.00 m",
+        "黏滞感": "0.85"
+      }
+    }
+  ],
+  "mobile": [
+    {
+      "id": "particle-paint",
+      "quality": "low",
+      "defaultCamera": {
+        "position": [
+          6.1128846153846155,
+          0.6112884615384634,
+          21.831730769230766
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "interaction": {
+        "input": "Chrome CDP touchStart/touchMove/touchEnd",
+        "pausedTouchFrozen": true,
+        "simulationSeconds": 1.0240000000000007,
+        "unperturbed": {
+          "filename": "forma-particle-paint-seed-42.png",
+          "bytes": 132336,
+          "sha256": "6c1de3afbe54df350b2269a449304854b2ffd31818b9e289ee14025edb74a61a"
+        },
+        "interacted": {
+          "filename": "forma-particle-paint-seed-42.png",
+          "bytes": 131170,
+          "sha256": "6b71cf5b3d16ee5a3809c5ee56d04ac85c56a65aafa743df1e2fb0673d8fb859"
+        },
+        "reset": {
+          "filename": "forma-particle-paint-seed-42.png",
+          "bytes": 132337,
+          "sha256": "cbedc827d445597d03ed5c9e736835724e098c78cea3823b3aa3daab868d684f"
+        },
+        "cameraUnchangedDuringField": true,
+        "pinchCamera": {
+          "position": [
+            3.3960470085470087,
+            0.3396047008547019,
+            12.128739316239315
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "cameraReset": true
+      },
+      "presets": [
+        {
+          "label": "绛紫花潮",
+          "params": {
+            "composition": 0,
+            "morph": 0.65,
+            "flow": 0.8,
+            "depth": 1.1,
+            "brush": 1,
+            "particles": 240000
+          }
+        },
+        {
+          "label": "蓝调绸带",
+          "params": {
+            "composition": 1,
+            "morph": 0.4,
+            "flow": 1.1,
+            "depth": 1.4,
+            "brush": 1.15,
+            "particles": 300000
+          }
+        },
+        {
+          "label": "珊瑚漩涡",
+          "params": {
+            "composition": 2,
+            "morph": 0.5,
+            "flow": 0.65,
+            "depth": 0.8,
+            "brush": 0.85,
+            "particles": 360000
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "视觉参考 · @Cora_Mat（所提供截图，原帖未核验）",
+          "url": "https://x.com/Cora_Mat"
+        },
+        {
+          "label": "Bridson et al. · Curl-Noise for Procedural Fluid Flow · 2007",
+          "url": "https://www.cs.ubc.ca/~rbridson/docs/bridson-siggraph2007-curlnoise.pdf"
+        },
+        {
+          "label": "Three.js · InstancedBufferGeometry",
+          "url": "https://threejs.org/docs/#api/en/core/InstancedBufferGeometry"
+        }
+      ],
+      "horizontalOverflow": false,
+      "screenshot": "particle-paint-mobile.png",
+      "resources": {
+        "geometries": 7,
+        "textures": 0,
+        "drawCalls": 7,
+        "points": 0,
+        "triangles": 240062
+      }
+    },
+    {
+      "id": "liquid-glass",
+      "quality": "low",
+      "defaultCamera": {
+        "position": [
+          0.5239615384615386,
+          0.2469115384615378,
+          16.854096153846157
+        ],
+        "target": [
+          0,
+          -0.05,
+          0
+        ]
+      },
+      "interaction": {
+        "input": "Chrome CDP touchStart/touchMove/touchEnd",
+        "pausedTouchFrozen": true,
+        "simulationSeconds": 1.0240000000000007,
+        "unperturbed": {
+          "filename": "forma-liquid-glass-seed-42.png",
+          "bytes": 377042,
+          "sha256": "c9afc35f940f34497a3c6881d41a69999724b00f428991814d10650fabbc46f7"
+        },
+        "interacted": {
+          "filename": "forma-liquid-glass-seed-42.png",
+          "bytes": 374915,
+          "sha256": "28148d5b73707dfd4f83155510921c5786a17e172745e0b038ce12d1b2dc3700"
+        },
+        "reset": {
+          "filename": "forma-liquid-glass-seed-42.png",
+          "bytes": 374330,
+          "sha256": "04e20b82020cdc3b2640b88643a1233a960c3ac7ade5d91896ed0a0e993da376"
+        },
+        "cameraUnchangedDuringField": true,
+        "pinchCamera": {
+          "position": [
+            0.29108974358974365,
+            0.11495085470085432,
+            9.363386752136755
+          ],
+          "target": [
+            0,
+            -0.05,
+            0
+          ]
+        },
+        "cameraReset": true
+      },
+      "presets": [
+        {
+          "label": "云镜交融",
+          "params": {
+            "shape": "mirror",
+            "flow": 0.45,
+            "viscosity": 0.85,
+            "ior": 1.36,
+            "dispersion": 0.25
+          }
+        },
+        {
+          "label": "流环相拥",
+          "params": {
+            "shape": "ribbons",
+            "flow": 0.7,
+            "viscosity": 0.45,
+            "ior": 1.46,
+            "dispersion": 0.4
+          }
+        },
+        {
+          "label": "银雨悬浮",
+          "params": {
+            "shape": "rain",
+            "flow": 0.3,
+            "viscosity": 1.6,
+            "ior": 1.25,
+            "dispersion": 0.15
+          }
+        }
+      ],
+      "sources": [
+        {
+          "label": "视觉参考 · Shader Development Studio / @shadersweden · 用户提供截图",
+          "url": "https://x.com/shadersweden"
+        },
+        {
+          "label": "Inigo Quilez · distance functions / smooth union",
+          "url": "https://iquilezles.org/articles/distfunctions/"
+        },
+        {
+          "label": "Physically Based Rendering · dielectric reflection and refraction",
+          "url": "https://pbr-book.org/4ed/Reflection_Models/Dielectric_BSDF"
+        }
+      ],
+      "horizontalOverflow": false,
+      "screenshot": "liquid-glass-mobile.png",
+      "resources": {
+        "geometries": 1,
+        "textures": 1,
+        "drawCalls": 1,
+        "points": 0,
+        "triangles": 2
+      }
+    }
+  ],
+  "switches": [
+    {
+      "index": 0,
+      "id": "particle-paint",
+      "geometries": 8,
+      "textures": 3,
+      "drawCalls": 10,
+      "points": 0,
+      "triangles": 480068
+    },
+    {
+      "index": 1,
+      "id": "liquid-glass",
+      "geometries": 2,
+      "textures": 4,
+      "drawCalls": 4,
+      "points": 0,
+      "triangles": 8
+    },
+    {
+      "index": 2,
+      "id": "vortex",
+      "geometries": 7,
+      "textures": 3,
+      "drawCalls": 9,
+      "points": 1904,
+      "triangles": 60726
+    },
+    {
+      "index": 3,
+      "id": "particle-paint",
+      "geometries": 8,
+      "textures": 3,
+      "drawCalls": 10,
+      "points": 0,
+      "triangles": 480068
+    },
+    {
+      "index": 4,
+      "id": "liquid-glass",
+      "geometries": 2,
+      "textures": 4,
+      "drawCalls": 4,
+      "points": 0,
+      "triangles": 8
+    },
+    {
+      "index": 5,
+      "id": "vortex",
+      "geometries": 7,
+      "textures": 3,
+      "drawCalls": 9,
+      "points": 1904,
+      "triangles": 60726
+    },
+    {
+      "index": 6,
+      "id": "particle-paint",
+      "geometries": 8,
+      "textures": 3,
+      "drawCalls": 10,
+      "points": 0,
+      "triangles": 480068
+    },
+    {
+      "index": 7,
+      "id": "liquid-glass",
+      "geometries": 2,
+      "textures": 4,
+      "drawCalls": 4,
+      "points": 0,
+      "triangles": 8
+    },
+    {
+      "index": 8,
+      "id": "vortex",
+      "geometries": 7,
+      "textures": 3,
+      "drawCalls": 9,
+      "points": 1904,
+      "triangles": 60726
+    },
+    {
+      "index": 9,
+      "id": "particle-paint",
+      "geometries": 8,
+      "textures": 3,
+      "drawCalls": 10,
+      "points": 0,
+      "triangles": 480068
+    },
+    {
+      "index": 10,
+      "id": "liquid-glass",
+      "geometries": 2,
+      "textures": 4,
+      "drawCalls": 4,
+      "points": 0,
+      "triangles": 8
+    },
+    {
+      "index": 11,
+      "id": "vortex",
+      "geometries": 7,
+      "textures": 3,
+      "drawCalls": 9,
+      "points": 1904,
+      "triangles": 60726
+    },
+    {
+      "index": 12,
+      "id": "particle-paint",
+      "geometries": 8,
+      "textures": 3,
+      "drawCalls": 10,
+      "points": 0,
+      "triangles": 480068
+    },
+    {
+      "index": 13,
+      "id": "liquid-glass",
+      "geometries": 2,
+      "textures": 4,
+      "drawCalls": 4,
+      "points": 0,
+      "triangles": 8
+    },
+    {
+      "index": 14,
+      "id": "vortex",
+      "geometries": 7,
+      "textures": 3,
+      "drawCalls": 9,
+      "points": 1904,
+      "triangles": 60726
+    },
+    {
+      "index": 15,
+      "id": "particle-paint",
+      "geometries": 8,
+      "textures": 3,
+      "drawCalls": 10,
+      "points": 0,
+      "triangles": 480068
+    },
+    {
+      "index": 16,
+      "id": "liquid-glass",
+      "geometries": 2,
+      "textures": 4,
+      "drawCalls": 4,
+      "points": 0,
+      "triangles": 8
+    },
+    {
+      "index": 17,
+      "id": "vortex",
+      "geometries": 7,
+      "textures": 3,
+      "drawCalls": 9,
+      "points": 1904,
+      "triangles": 60726
+    },
+    {
+      "index": 18,
+      "id": "particle-paint",
+      "geometries": 8,
+      "textures": 3,
+      "drawCalls": 10,
+      "points": 0,
+      "triangles": 480068
+    },
+    {
+      "index": 19,
+      "id": "liquid-glass",
+      "geometries": 2,
+      "textures": 4,
+      "drawCalls": 4,
+      "points": 0,
+      "triangles": 8
+    },
+    {
+      "index": 20,
+      "id": "vortex",
+      "geometries": 7,
+      "textures": 3,
+      "drawCalls": 9,
+      "points": 1904,
+      "triangles": 60726
+    },
+    {
+      "index": 21,
+      "id": "particle-paint",
+      "geometries": 8,
+      "textures": 3,
+      "drawCalls": 10,
+      "points": 0,
+      "triangles": 480068
+    },
+    {
+      "index": 22,
+      "id": "liquid-glass",
+      "geometries": 2,
+      "textures": 4,
+      "drawCalls": 4,
+      "points": 0,
+      "triangles": 8
+    },
+    {
+      "index": 23,
+      "id": "vortex",
+      "geometries": 7,
+      "textures": 3,
+      "drawCalls": 9,
+      "points": 1904,
+      "triangles": 60726
+    }
+  ],
+  "performanceSamples": [
+    {
+      "id": "particle-paint",
+      "wallMilliseconds": 5164,
+      "simulationSeconds": 5.083200000000004,
+      "fpsSample": 60,
+      "quality": "high",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "deviceScaleFactor": 1,
+      "headless": true,
+      "resources": {
+        "geometries": 8,
+        "textures": 3,
+        "drawCalls": 10,
+        "points": 0,
+        "triangles": 480068
+      },
+      "metrics": {
+        "绘画粒子": "24 万",
+        "当前构图": "花潮 → 绸带",
+        "空间深度": "1.10 ×",
+        "交互力场": "待触碰"
+      },
+      "scope": "Approximately five seconds of real-clock headless Chrome playback, with no other acceptance page open. The reported app FPS is a short rolling sample, not a sustained-device guarantee."
+    },
+    {
+      "id": "liquid-glass",
+      "wallMilliseconds": 5160,
+      "simulationSeconds": 5.066500000000009,
+      "fpsSample": 60,
+      "quality": "high",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "deviceScaleFactor": 1,
+      "headless": true,
+      "resources": {
+        "geometries": 2,
+        "textures": 4,
+        "drawCalls": 4,
+        "points": 0,
+        "triangles": 8
+      },
+      "metrics": {
+        "折射率": "IOR 1.36",
+        "形态": "云镜",
+        "牵引": "0.00 m",
+        "黏滞感": "0.85"
+      },
+      "scope": "Approximately five seconds of real-clock headless Chrome playback, with no other acceptance page open. The reported app FPS is a short rolling sample, not a sustained-device guarantee."
+    }
+  ],
+  "errors": [],
+  "remoteRequests": [],
+  "performance": {
+    "id": "liquid-glass",
+    "wallMilliseconds": 5160,
+    "simulationSeconds": 5.066500000000009,
+    "fpsSample": 60,
+    "quality": "high",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "deviceScaleFactor": 1,
+    "headless": true,
+    "resources": {
+      "geometries": 2,
+      "textures": 4,
+      "drawCalls": 4,
+      "points": 0,
+      "triangles": 8
+    },
+    "metrics": {
+      "折射率": "IOR 1.36",
+      "形态": "云镜",
+      "牵引": "0.00 m",
+      "黏滞感": "0.85"
+    },
+    "scope": "Approximately five seconds of real-clock headless Chrome playback, with no other acceptance page open. The reported app FPS is a short rolling sample, not a sustained-device guarantee."
+  },
+  "passed": true,
+  "finished": "2026-09-16T07:43:00.747Z"
+}

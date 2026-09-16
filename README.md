@@ -1,12 +1,24 @@
 # FORMA · 数学实验室 / Math Lab
 
-18 个可以旋转、调参、测量的 Three.js 数学、物理与程序化图形实验。包含菲尔兹奖相关专题、虹彩悬浮地形、离线应用、精确构造数据、54 个视觉预设与真实效果截图。
+20 个可以旋转、调参、测量的 Three.js 数学、物理与程序化图形实验。包含菲尔兹奖相关专题、虹彩悬浮地形、流彩粒子画、液态玻璃、离线应用、精确构造数据、60 个视觉预设与真实效果截图。
 
-18 interactive Three.js experiments in mathematics, physics and procedural graphics, with Fields Medal topics, iridescent floating terrain, an offline app, exact construction data, 54 visual presets, and screenshots captured from the running application.
+20 interactive Three.js experiments in mathematics, physics and procedural graphics, with Fields Medal topics, iridescent floating terrain, particle paintings, liquid glass, an offline app, exact construction data, 60 visual presets, and screenshots captured from the running application.
 
 **[效果示例 / Examples](docs/EXAMPLES.md) · [AI 导航 / AI guide](docs/AI_GUIDE.md) · [JSON 示例索引 / Example manifest](docs/screenshots/manifest.json) · [设计 / Architecture](docs/SDD.md)**
 
 ## 效果画廊 / Gallery
+
+**流彩粒子画与液态玻璃 / Particle painting and liquid glass**：两项新作分别把有深度的彩色细笔触和流动的折射形体变成可触摸的画面。移动或按住鼠标／触摸以扰动，Shift 或右键拖动旋转，滚轮／双指缩放。各有三种预设，支持暂停、seed 重置和 PNG 导出。
+
+The two additions turn fine colored strokes and flowing refractive forms into interactive scenes. Move or hold the mouse/touch to perturb the effect; Shift/right drag orbits, and wheel/pinch zooms. Each has three presets, pause, seeded reset and PNG export.
+
+| 流彩粒子画 / Living particle canvas | 液态玻璃 / Liquid glass |
+|---|---|
+| [![流彩粒子画](docs/screenshots/19-particle-paint.jpg)](docs/screenshots/19-particle-paint.jpg) | [![液态玻璃](docs/screenshots/20-liquid-glass.jpg)](docs/screenshots/20-liquid-glass.jpg) |
+
+视觉参考来自 2026-09-16 提供的两张社交媒体截图，分别署名 @Cora_Mat 与 @shadersweden。原帖视频和源码尚未取得；这些是独立编写的图形近似，不声称复现原作者算法。粒子构图为程序化生成，液态形体不求解 Navier–Stokes 或 TSL 流体模拟。模型与性能边界见 [粒子画](docs/models/particle-paint.md)、[液态玻璃](docs/models/liquid-glass.md) 和 [验收报告](docs/QA_REPORT.md)。
+
+The visual references are two social-media screenshots provided on 2026-09-16, attributed to @Cora_Mat and @shadersweden. Original videos and source code have not been obtained; these are independently authored graphical approximations. Particle compositions are procedural, and the liquid effect does not solve Navier–Stokes or a TSL fluid simulation. See the [particle model](docs/models/particle-paint.md), [glass model](docs/models/liquid-glass.md) and [QA report](docs/QA_REPORT.md) for their limits.
 
 **虹彩异境 / Iridescent Strata**：穿行于圆润连绵的悬浮云屿之间，观察雾蓝、淡紫与浅桃色沿表面缓缓交融，调节层间结构、孔洞与色彩。视觉参考 Cristian Peñas（@ilumine_ai）于 2026-09-11 发布的 [X 视频](https://x.com/ilumine_ai/status/2098342499865821654)。本仓库使用独立编写的平滑密度场和 Marching tetrahedra；这是一种云团般的实体表面近似，不求解体积散射，也不归类为新的数学发现或 AI 生成结果。作者原算法尚未取得或核验。见 [模型与来源](docs/models/iridescent-terrain.md)。
 
@@ -98,6 +110,8 @@ npm start
 | `#e8` | 八维 240 根与邻接 / 240 roots and 8D adjacency | [e8.js](src/experiments/e8.js) |
 | `#matroid` | 图拟阵与基多项式 / Graphic matroid and basis polynomial | [matroid.js](src/experiments/matroid.js) |
 | `#iridescent-terrain` | 虹彩异境、分层密度场 / Iridescent Strata and layered density fields | [iridescent-terrain.js](src/experiments/iridescent-terrain.js) |
+| `#particle-paint` | 流彩粒子画、连续构图变形 / Flowing strokes and composition morphing | [particle-paint.js](src/experiments/particle-paint.js) |
+| `#liquid-glass` | 液态形体、背景折射 / Liquid forms and background refraction | [liquid-glass.js](src/experiments/liquid-glass.js) |
 
 ## 修改、测试与截图 / Build, test, and capture
 
@@ -111,9 +125,9 @@ npm test
 npm run build
 ```
 
-验证包括数学、状态、预设、参数边界、离线启动、PNG 导出与资源切换检查。测试数量、构建版本及 18 项浏览器验收的环境和结果见 [验收报告](docs/QA_REPORT.md)；虹彩地形的模型边界见 [独立说明](docs/models/iridescent-terrain.md)。
+验证包括数学、状态、预设、参数边界、离线启动、PNG 导出与资源切换检查。测试数量、构建版本及 20 项浏览器验收的环境和结果见 [验收报告](docs/QA_REPORT.md)；虹彩地形的模型边界见 [独立说明](docs/models/iridescent-terrain.md)。
 
-Validation covers mathematics, state, presets, parameter bounds, offline startup, PNG exports, and resource switching. The [validation report](docs/QA_REPORT.md) records test counts, build versions and browser checks for 18 scenes; see the [terrain note](docs/models/iridescent-terrain.md) for model limits.
+Validation covers mathematics, state, presets, parameter bounds, offline startup, PNG exports, and resource switching. The [validation report](docs/QA_REPORT.md) records test counts, build versions and browser checks for 20 scenes; see the [terrain note](docs/models/iridescent-terrain.md) for model limits.
 
 浏览器验收与截图需要 Google Chrome 和 Playwright 1.62.1；它们不是应用运行依赖。
 
@@ -127,6 +141,7 @@ npm run capture:examples
 npm run check:offline
 node scripts/additions-check.mjs
 node scripts/terrain-check.mjs
+node scripts/effects-check.mjs
 ```
 
 已有 Playwright 时，可设置 `PLAYWRIGHT_MODULE` 为模块入口。完整交互验收使用 `node scripts/interaction-check.mjs`（需要本地服务在 4174 运行），观赏交互验收使用 `node scripts/presentation-check.mjs`（直接使用离线入口）。
@@ -136,7 +151,7 @@ Set `PLAYWRIGHT_MODULE` to an existing module entry if needed. Run `node scripts
 ## 资料与来源 / Documentation and sources
 
 - [AI_GUIDE.md](docs/AI_GUIDE.md) · 示例检索与源码地图 / Retrieval and source map.
-- [EXAMPLES.md](docs/EXAMPLES.md) · 18 项完整截图与复现信息 / Full screenshots and reproduction details.
+- [EXAMPLES.md](docs/EXAMPLES.md) · 20 项完整截图与复现信息 / Full screenshots and reproduction details.
 - [iridescent-terrain.md](docs/models/iridescent-terrain.md) · 虹彩地形的来源、密度场与图形边界 / Terrain reference, density fields and rendering limits.
 - [ADDITIONS.md](docs/ADDITIONS.md) · 菲尔兹奖与七项新专题 / Fields Medal context and seven additions.
 - [SDD.md](docs/SDD.md) · 中英架构与生命周期 / Bilingual architecture and lifecycle.

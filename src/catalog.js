@@ -17,6 +17,8 @@ export const catalog = [
   {id:'e8',title:'E8 · 八维对称',en:'240 roots of symmetry',section:'05 / FIELDS MEDAL 2022',type:'精确根系的三维投影',icon:'kissing'},
   {id:'matroid',title:'拟阵与 Lorentzian',en:'The shape of independence',type:'组合结构与多项式',icon:'maxcut'},
   {id:'iridescent-terrain',title:'虹彩异境',en:'Iridescent strata',section:'06 / PROCEDURAL WORLDS',type:'三维密度场 · 程序化图形',icon:'dunes'},
+  {id:'particle-paint',title:'流彩粒子画',en:'Living particle canvas',section:'07 / INTERACTIVE MATTER',type:'GPU 粒子 · 流场绘画',icon:'sparks'},
+  {id:'liquid-glass',title:'液态玻璃',en:'Liquid glass',type:'连续形体 · 折射光学',icon:'ocean'},
 ];
 
 const paths = {

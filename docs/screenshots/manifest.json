@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "repository": "https://github.com/aelf-hzz780/math-lab-3js",
   "title": {
-    "zh": "FORMA 数学实验室：18 个可复现示例",
-    "en": "FORMA math lab: 18 reproducible examples"
+    "zh": "FORMA 数学实验室：20 个可复现示例",
+    "en": "FORMA math lab: 20 reproducible examples"
   },
-  "capturedAt": "2026-09-14T11:28:23.436Z",
+  "capturedAt": "2026-09-16T07:39:05.593Z",
   "browser": "152.0.7977.83",
   "bundle": {
     "path": "dist/app.js",
-    "sha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1",
-    "bytes": 909919
+    "sha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699",
+    "bytes": 938084
   },
   "capture": {
     "viewport": {
@@ -47,8 +47,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/01-navier.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 115460,
-        "sha256": "1458a039870eb0972458dd136e1c1264a592422bc3810d9204decf692b460afe"
+        "bytes": 115247,
+        "sha256": "6a2d284c515d19bb9047a1a86b2cf56d660166e30d9f722ca9c2a9155a5b17e6"
       },
       "source": {
         "scene": "src/experiments/navier.js",
@@ -112,7 +112,7 @@
           "url": "https://www.claymath.org/millennium/navier-stokes-equation/"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "vortex",
@@ -131,8 +131,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/02-vortex.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 150524,
-        "sha256": "2555b3287268b0654fa7631cc746dbb53dffe1fc2329c5ea07b1e0fa99651693"
+        "bytes": 150314,
+        "sha256": "1bf859e094f0b48facf0e5118357693ed889a5ffdeb556fc5a146b81e7eb6c2e"
       },
       "source": {
         "scene": "src/experiments/vortex.js",
@@ -195,7 +195,7 @@
           "url": "https://www.claymath.org/millennium/navier-stokes-equation/"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "quantum",
@@ -214,8 +214,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/03-quantum.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 77951,
-        "sha256": "4e6d783b582348957479c69be014554793a85c83975816e8b0786bd072481d18"
+        "bytes": 77710,
+        "sha256": "9ea95afb974b788da1254296788836bd5917ca4482a1d2c371eb2c4a13b57f60"
       },
       "source": {
         "scene": "src/experiments/quantum.js",
@@ -270,7 +270,7 @@
           "url": "https://doi.org/10.1103/PhysicsPhysiqueFizika.1.195"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "dunes",
@@ -289,8 +289,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/04-dunes.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 92825,
-        "sha256": "56732a7ce2d3475518f96cf395c1db24b7dcfaffc7830c8d09c6ee87e7391979"
+        "bytes": 92762,
+        "sha256": "746e3a6c592c147f8baa8f2b03920538e8d3769b6397993c110b17bd29dccff2"
       },
       "source": {
         "scene": "src/experiments/dunes.js",
@@ -351,7 +351,7 @@
           "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-5-implementing-improved-perlin-noise"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "sparks",
@@ -370,8 +370,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/05-sparks.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 120446,
-        "sha256": "d1d6c31c71c4cae29f3538b926086614d0d95d84608431466dd592be7f33e7b1"
+        "bytes": 120245,
+        "sha256": "8e4db5498b8c57e01c89d598aa232cd7f2426eb70b5f3c18c7757999517beaed"
       },
       "source": {
         "scene": "src/experiments/sparks.js",
@@ -432,7 +432,7 @@
           "url": "https://en.wikipedia.org/wiki/Projectile_motion#Trajectory_of_a_projectile_with_air_resistance"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "ocean",
@@ -451,8 +451,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/06-ocean.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 119883,
-        "sha256": "045ec9b29474bb8f003936dacf20267b58ded32dea005bd95a753aec1a3052e9"
+        "bytes": 119742,
+        "sha256": "b6088dc9badd8da1fb77185bb0086ab4090afc80ead26b0d8e97dc86b0304e0c"
       },
       "source": {
         "scene": "src/experiments/ocean.js",
@@ -515,7 +515,7 @@
           "url": "https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "kissing",
@@ -534,8 +534,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/07-kissing.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 99293,
-        "sha256": "89df92a2b78599dfab118a86f2f08091d1da074318cc9ec69bbaac8dd60f5754"
+        "bytes": 99081,
+        "sha256": "b5e5a988f5db9b0c93d524d069d13b196743e8ce9fcce7c694592266807395db"
       },
       "source": {
         "scene": "src/experiments/kissing.js",
@@ -594,7 +594,7 @@
           "url": "https://github.com/dualverse-ai/station_data_v2/tree/main/artifacts/kissing_number"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "kakeya",
@@ -613,8 +613,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/08-kakeya.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 81200,
-        "sha256": "e1daa1ad5f0fe4d8a6dc1d6670eb6e97efa493cb0b65a4b4b420fa887895a5f9"
+        "bytes": 80985,
+        "sha256": "2bd11c6ab33da5a874d1c252acc820d3e3cca58acc0fef40554870fd8a817917"
       },
       "source": {
         "scene": "src/experiments/kakeya.js",
@@ -673,7 +673,7 @@
           "url": "https://github.com/dualverse-ai/station_data_v2/tree/main/artifacts/finite_kakeya"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "maxcut",
@@ -692,8 +692,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/09-maxcut.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 99984,
-        "sha256": "06a65f010af431f292d258803f38e7a110df9be2473e4d8e427abe5fce5cffa5"
+        "bytes": 99676,
+        "sha256": "2b60f7f7471280f0c506bb687e2c25bbbec0cccf1e516172e75b6d9da51453ab"
       },
       "source": {
         "scene": "src/experiments/maxcut.js",
@@ -750,7 +750,7 @@
           "url": "https://arxiv.org/abs/2509.18057"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "hat",
@@ -769,8 +769,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/10-hat.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 140089,
-        "sha256": "1275e8207cd21cac8e0890a87ff6d6627a2a7035809ac091c236c39249eed7d5"
+        "bytes": 139863,
+        "sha256": "dd95af9fc5a7617f324b6aeb8c37f38cf44914204ef633bf328dbb4c222b6ae8"
       },
       "source": {
         "scene": "src/experiments/hat.js",
@@ -827,7 +827,7 @@
           "url": "https://github.com/isohedral/hatviz"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "real-kakeya",
@@ -846,8 +846,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/11-real-kakeya.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 87038,
-        "sha256": "2aba975e3250f31e2cbd7b9152714643e5c0d71cb549c86ffa5c37940ce7487c"
+        "bytes": 86788,
+        "sha256": "afab6992e112530a453c88031b31b8ae8ea80a92286b52ccf23a897c4b18ed24"
       },
       "source": {
         "scene": "src/experiments/real-kakeya.js",
@@ -910,7 +910,7 @@
           "url": "https://arxiv.org/abs/2502.17655"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "boltzmann",
@@ -929,8 +929,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/12-boltzmann.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 86824,
-        "sha256": "c3eea6864822c5cb9d844faecd3176d5050b2becffa34905155cbf251524ce8c"
+        "bytes": 86608,
+        "sha256": "b184ce2454206fd2f2af82fe9cac95b3b8dc0ef7d1a809f27ae87aae3e8ceb13"
       },
       "source": {
         "scene": "src/experiments/boltzmann.js",
@@ -1000,7 +1000,7 @@
           "url": "https://arxiv.org/abs/2503.01800"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "torus-knot",
@@ -1019,8 +1019,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/13-torus-knot.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 82958,
-        "sha256": "1bdd59714cb0068506e4d494bc263288b6ed7520312ea16b1152eff44721c061"
+        "bytes": 82747,
+        "sha256": "30d9f97a0f0aecd442fb534576165a143e86ea845baafc7f2da1452cdd09a6ba"
       },
       "source": {
         "scene": "src/experiments/torus-knot.js",
@@ -1087,7 +1087,7 @@
           "url": "https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2026"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "moduli",
@@ -1106,8 +1106,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/14-moduli.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 81952,
-        "sha256": "fc5d5433a2cb8b90fa62962460da0448ac3a2d0166ff74252bf2ad018dc57175"
+        "bytes": 81494,
+        "sha256": "be8fe7a9f3f756cdab54e1c713e4ad02ac930c0b54010845884b5bd86bf9504c"
       },
       "source": {
         "scene": "src/experiments/moduli.js",
@@ -1174,7 +1174,7 @@
           "url": "https://www.mathunion.org/imu-awards/fields-medal/fields-medals-2026"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "noperthedron",
@@ -1193,8 +1193,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/15-noperthedron.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 92163,
-        "sha256": "36fe123fc0f809308d943fe74926109bc0f7513990d8d2cfa32312b490aa2368"
+        "bytes": 91697,
+        "sha256": "fe3a06c91493b5842cedbd5a9b2f12e8d93f2e7b7ba6b62eda7373f01213eb41"
       },
       "source": {
         "scene": "src/experiments/noperthedron.js",
@@ -1265,7 +1265,7 @@
           "url": "https://github.com/Jakob256/Rupert/blob/1009a4c451dbdbb1a1705d18461cbabd534a0a6c/src/noperthedron_verification.ipynb"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "e8",
@@ -1284,8 +1284,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/16-e8.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 120345,
-        "sha256": "14e6a7711c5019a1bd04f105fd14bb9bde4c81f05c0671cf76052ca147874d3b"
+        "bytes": 120049,
+        "sha256": "5f9029853ec1bf2234d12f5d98b823ff6219f8c725c163ee7605f80bb1e6daad"
       },
       "source": {
         "scene": "src/experiments/e8.js",
@@ -1352,7 +1352,7 @@
           "url": "https://annals.math.princeton.edu/2017/185-3/p07"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "matroid",
@@ -1371,8 +1371,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/17-matroid.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 77526,
-        "sha256": "6f949c101ea99dcea4cce6a9598dcd6b54d9c9651231af69b4bb2e5f9b179eb5"
+        "bytes": 77165,
+        "sha256": "c6be921f9087b55e3d9c4b3274513d526d171b4a1e860775d409a9f25ab8bab3"
       },
       "source": {
         "scene": "src/experiments/matroid.js",
@@ -1439,7 +1439,7 @@
           "url": "https://www.mathunion.org/fileadmin/IMU/Prizes/Fields/2022/IMU_Fields22_Huh_citation.pdf"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     },
     {
       "id": "iridescent-terrain",
@@ -1458,8 +1458,8 @@
         "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/18-iridescent-terrain.jpg",
         "width": 1280,
         "height": 800,
-        "bytes": 80776,
-        "sha256": "aeaa78782380955c1faabc87d06b7097d53d60b2b73ccdb1e765376ce26959bb"
+        "bytes": 80433,
+        "sha256": "6b8e9b4f92b937bb183f20c27dd6d73b0c44285e51cc871d8ea53761635b060c"
       },
       "source": {
         "scene": "src/experiments/iridescent-terrain.js",
@@ -1528,10 +1528,182 @@
           "url": "https://threejs.org/docs/#api/en/materials/MeshPhysicalMaterial"
         }
       ],
-      "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1"
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
+    },
+    {
+      "id": "particle-paint",
+      "name": {
+        "zh": "流彩粒子画",
+        "en": "Living particle canvas"
+      },
+      "description": {
+        "zh": "画框内的细密彩色笔触组成有纵深的流动构图，珊瑚、淡紫与雾蓝粒子在三种形态间连续迁移，可用鼠标或触控拨动。",
+        "en": "Fine colored strokes form a deep, flowing composition inside a frame; coral, lavender and blue particles continuously morph between three forms and respond to mouse or touch."
+      },
+      "modelType": "GPU 粒子 · 流场绘画",
+      "route": "index.html#particle-paint",
+      "screenshot": {
+        "path": "docs/screenshots/19-particle-paint.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/19-particle-paint.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 99452,
+        "sha256": "a91fb99cffc272accbd1a8bc0dcec87e0f3d6f25c1913d32b589c6c0f1f412b9"
+      },
+      "source": {
+        "scene": "src/experiments/particle-paint.js",
+        "math": "src/math/particle-paint.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/particle-paint.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/particle-paint.js"
+      },
+      "defaults": {
+        "composition": 0,
+        "morph": 0.65,
+        "flow": 0.8,
+        "depth": 1.1,
+        "brush": 1,
+        "particles": 240000
+      },
+      "capturedState": {
+        "params": {
+          "composition": 0,
+          "morph": 0.65,
+          "flow": 0.8,
+          "depth": 1.1,
+          "brush": 1,
+          "particles": 240000
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            3.5000000000000004,
+            0.3500000000000011,
+            12.5
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "绘画粒子": "24 万",
+          "当前构图": "花潮",
+          "空间深度": "1.10 ×",
+          "交互力场": "待触碰"
+        }
+      },
+      "formula": "p = Σ wᵢ(t) Pᵢ(s) + a · curl A(p,t)；Σ wᵢ = 1",
+      "modelLimits": "视觉参考来自所提供的 Carolina Aiazzi（@Cora_Mat）截图；尚未核验原帖地址、视频或作者源码。这里的三种图像均由参数曲面原创生成，不读取照片，不复现作者算法。curl 场是无散度的解析向量场，但用它直接位移粒子并不等于求解不可压缩流体。半透明笔触采用近似混合，不进行逐粒子排序或真实毛发散射。默认桌面 24 万粒子，手机最多 12 万；200 万为可选高负载档，不承诺所有设备实时。",
+      "sources": [
+        {
+          "label": "视觉参考 · @Cora_Mat（所提供截图，原帖未核验）",
+          "url": "https://x.com/Cora_Mat"
+        },
+        {
+          "label": "Bridson et al. · Curl-Noise for Procedural Fluid Flow · 2007",
+          "url": "https://www.cs.ubc.ca/~rbridson/docs/bridson-siggraph2007-curlnoise.pdf"
+        },
+        {
+          "label": "Three.js · InstancedBufferGeometry",
+          "url": "https://threejs.org/docs/#api/en/core/InstancedBufferGeometry"
+        }
+      ],
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
+    },
+    {
+      "id": "liquid-glass",
+      "name": {
+        "zh": "液态玻璃",
+        "en": "Liquid glass"
+      },
+      "description": {
+        "zh": "透明液态形体在灰色云幕前融合、流动和回弹，曲面折射背景，边缘呈现柔和高光与克制的色散。",
+        "en": "Transparent liquid forms merge, flow and spring back against gray procedural clouds, refracting the backdrop with soft highlights and restrained dispersion."
+      },
+      "modelType": "连续形体 · 折射光学",
+      "route": "index.html#liquid-glass",
+      "screenshot": {
+        "path": "docs/screenshots/20-liquid-glass.jpg",
+        "rawUrl": "https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/20-liquid-glass.jpg",
+        "width": 1280,
+        "height": 800,
+        "bytes": 96850,
+        "sha256": "c7dae392b29afe62f5cad55e92075b67e1413fc8ade10f7aa7b6dd10450610de"
+      },
+      "source": {
+        "scene": "src/experiments/liquid-glass.js",
+        "math": "src/math/liquid-glass.js",
+        "sceneUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/experiments/liquid-glass.js",
+        "mathUrl": "https://github.com/aelf-hzz780/math-lab-3js/blob/main/src/math/liquid-glass.js"
+      },
+      "defaults": {
+        "shape": "mirror",
+        "flow": 0.45,
+        "viscosity": 0.85,
+        "ior": 1.36,
+        "dispersion": 0.25
+      },
+      "capturedState": {
+        "params": {
+          "shape": "mirror",
+          "flow": 0.45,
+          "viscosity": 0.85,
+          "ior": 1.36,
+          "dispersion": 0.25
+        },
+        "seed": 42,
+        "camera": {
+          "position": [
+            -1.3499999999999999,
+            0.1199999999999996,
+            9.65
+          ],
+          "target": [
+            -1.65,
+            -0.05,
+            0
+          ]
+        },
+        "simulationTimeSeconds": 0,
+        "requestedRunningMilliseconds": 0,
+        "paused": true,
+        "automaticCamera": false,
+        "quality": "high",
+        "immersive": true,
+        "metrics": {
+          "折射率": "IOR 1.36",
+          "形态": "云镜",
+          "牵引": "0.00 m",
+          "黏滞感": "0.85"
+        }
+      },
+      "formula": "F = smoothMin(torus₁, torus₂, droplets)；surface: F = 0\nn₁ sinθ₁ = n₂ sinθ₂；ẍ + 2ωẋ + ω²(x − target) = 0",
+      "modelLimits": "根据 Shader Development Studio 的截图创作的独立视觉实验。仅取得静态截图，尚未核验作者的源码、运动细节或其 TSL 流体算法。本实验使用 WebGL 隐式几何和弹簧形变，未求解 Navier–Stokes，不是 WebGPU 计算着色器流体；“黏滞感”控制回弹速度。折射采用有限步数、一次入射和一次出射，色散为有限 RGB 近似；不计算多次内部反射、焦散、真实体积云或质量守恒。",
+      "sources": [
+        {
+          "label": "视觉参考 · Shader Development Studio / @shadersweden · 用户提供截图",
+          "url": "https://x.com/shadersweden"
+        },
+        {
+          "label": "Inigo Quilez · distance functions / smooth union",
+          "url": "https://iquilezles.org/articles/distfunctions/"
+        },
+        {
+          "label": "Physically Based Rendering · dielectric reflection and refraction",
+          "url": "https://pbr-book.org/4ed/Reflection_Models/Dielectric_BSDF"
+        }
+      ],
+      "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699"
     }
   ],
-  "totalImageBytes": 1807237,
+  "totalImageBytes": 1998908,
   "validation": {
     "allScenesReady": true,
     "parameterDefaultsMatched": true,

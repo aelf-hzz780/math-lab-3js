@@ -2,9 +2,9 @@
 
 ## 目标与边界 / Scope
 
-FORMA 是独立的静态 Three.js 数学实验室，包含 18 个可运行、可交互、可解释的数学、物理与程序化图形实验。此公开仓库已启用 Git，未使用 Spec Kitty。应用没有账户、后端、模型 API 或运行时外部资源依赖；研究来源链接仅在主动打开时访问外部网站。
+FORMA 是独立的静态 Three.js 数学实验室，包含 20 个可运行、可交互、可解释的数学、物理与程序化图形实验。此公开仓库已启用 Git，未使用 Spec Kitty。应用没有账户、后端、模型 API 或运行时外部资源依赖；研究来源链接仅在主动打开时访问外部网站。
 
-FORMA is a standalone static Three.js lab with 18 runnable, interactive and documented mathematics, physics and procedural graphics experiments. This public repository uses Git and does not use Spec Kitty. The application has no accounts, backend, model API or external runtime dependencies. Research links open external sites only when followed.
+FORMA is a standalone static Three.js lab with 20 runnable, interactive and documented mathematics, physics and procedural graphics experiments. This public repository uses Git and does not use Spec Kitty. The application has no accounts, backend, model API or external runtime dependencies. Research links open external sites only when followed.
 
 ## 分层与设计选择 / Layers and Design Choices
 
@@ -18,13 +18,13 @@ The registry and scene adapters connect experiments through one interface, keepi
 
 ## 实验接口与状态 / Experiment Interface and State
 
-实验模块导出描述对象和实例工厂；`action`、`pick` 为可选交互方法。
+实验模块导出描述对象和实例工厂；`action`、`pick`、`pointer` 为可选交互方法。
 
-Each experiment exports a definition and instance factory. `action` and `pick` are optional interaction methods.
+Each experiment exports a definition and instance factory. `action`, `pick` and `pointer` are optional interaction methods.
 
 ```js
 export const definition = {
-  id, title, enTitle, kicker, year, category,
+  id, title, enTitle, kicker, year, category, interaction,
   description, formula, explanation, limitations,
   parameters: [{key, label, type, value, min, max, step, options}],
   presets: [{label, params}], actions: [{key, label}], sources: [{label, url}]
@@ -33,7 +33,7 @@ export const definition = {
 export function createExperiment({
   scene, camera, quality, seed, params, onMetrics, setCamera, signal, onError
 }) {
-  return {update, setParameters, reset, dispose, action, pick};
+  return {update, setParameters, reset, dispose, action, pick, pointer};
 }
 ```
 
@@ -48,6 +48,16 @@ Parameters pass shared finite-value, range and option validation; select values 
 `signal` 与 `onError` 为异步实验提供可选的中止和错误通道。应用在切换或清理场景时中止 signal，实验负责在中止时清理尚未返回实例的 Worker 和资源。后台任务可通过 `onError(error)` 报告失败，不必等待下一次播放帧；回调也受加载 epoch 保护。
 
 The optional `signal` and `onError` channels support asynchronous experiments. The application aborts the signal when switching or cleaning up, and experiments release workers and resources even if their instance has not yet been returned. Background tasks can call `onError(error)` without waiting for another playback frame; the callback is also guarded by the loading epoch.
+
+### 连续指针输入 / Continuous pointer input
+
+`definition.interaction = 'field'` 选择场景扰动策略；未声明时继续使用轨道旋转。应用只注册一组画布监听器，把画布相对坐标归一化为 NDC，再调用可选的 `pointer({x,y,active,pressed})`。单指／左键控制场，Shift 或右键拖动控制相机，双指仍可缩放；场景切换无需反复添加 DOM 监听器。指针输入错误走统一 Trace ID 通道。场景数学层只保存输入目标，实际模拟随时钟推进；暂停时图形状态冻结，重置清除扰动。
+
+`definition.interaction = 'field'` selects a field interaction strategy; the default remains orbit rotation. One shared set of canvas listeners normalizes canvas-relative coordinates to NDC and calls optional `pointer({x,y,active,pressed})`. Single-touch/left mouse controls the field, Shift/right drag controls the camera, and two-finger pinch still zooms. Scene switches do not repeatedly add DOM listeners. Pointer errors use the shared Trace ID channel. Scene math retains input targets while simulation follows the clock; pause freezes the effect and reset clears perturbations.
+
+该选择将手势策略与具体着色器分离：应用不需要知道粒子力场或玻璃牵引算法。场景工厂继续负责自身材质、几何和资源销毁，新增效果共用既有 renderer、暂停和导出接口。
+
+This separates gesture policy from concrete shaders: the app has no knowledge of particle forces or glass pulling algorithms. Scene factories retain ownership of materials, geometry and disposal, while the additions share the existing renderer, pause and export interface.
 
 ## 数学与视觉边界 / Mathematical and Visual Boundaries
 
@@ -92,6 +102,20 @@ Immersive and workbench modes share state and controls, with drawer panels on mo
 隐藏页面停止模拟推进与绘制，恢复时重新取墙钟基准。`disposeGroup` 去重释放 geometry、material、texture，包括 shader uniforms 中的纹理。实验切换清理 render lists，页面退出释放监听器、ResizeObserver、动画帧、提示计时器、后处理与 renderer。缓存研究数据只读，实例之间不共享自有图形资源。
 
 Hidden pages stop simulation advancement and rendering, and reset the wall-clock baseline on return. `disposeGroup` deduplicates and releases geometries, materials and textures, including textures in shader uniforms. Switching clears render lists; page exit releases listeners, the ResizeObserver, animation frames, toast timer, postprocessing and renderer. Cached research data is read-only, and instances do not share owned graphics resources.
+
+### 粒子画与液态玻璃 / Particle painting and liquid glass
+
+流彩粒子画用一个实例化几何绘制所有纤维：每粒子四个固定 seed 属性，顶点着色器计算三种参数体积的平滑变形、解析 curl 位移和指针力。默认高档 24 万、低档最多 12 万，低档放大笔触补偿亚像素丢失；200 万档仅供设备余量充足时探索。每帧 CPU 只更新 uniform，成本不随粒子数增加；GPU 工作量与粒子数线性相关。透明混合没有逐粒子排序，不代表真实体积或毛发光学。
+
+Particle painting uses one instanced geometry for all fibers. Four stable seed attributes per particle drive vertex-shader interpolation among three parametric volumes, analytic curl displacement and pointer forces. Defaults are 240,000 strokes in high quality and a 120,000 cap in low quality, with wider low-quality strokes to compensate for subpixel loss. The optional two-million setting requires device headroom. CPU frame work updates uniforms independently of particle count; GPU work scales linearly. Approximate transparency does not sort particles or model volumetric/hair optics.
+
+液态玻璃采用固定预算的逐像素射线步进，通过变形环体、平滑 union 和液滴得到连续隐式曲面，并计算有限的一次入射/出射折射、Fresnel 反射和 RGB 色散。相机矩阵在绘制前更新，暂停时仍可环视；牵引目标与已渲染弹簧状态分离，因此暂停期间输入不会跳变表面。高档/低档云纹理为 4096×2048 / 2048×1024，本地生成后只读使用，RGBA8 约 32 / 8 MiB；换 seed 及退出显式释放。形变不保证质量守恒，也不是 TSL/WebGPU 流体计算。
+
+Liquid glass uses a fixed per-pixel ray-step budget over warped tori, smooth unions and droplets, then approximates a single entry/exit refraction, Fresnel reflection and RGB dispersion. Camera matrices update before drawing so manual orbit works while paused. Pointer targets are separate from rendered spring state, preventing paused input from jumping the surface. High/low cloud textures are 4096×2048 / 2048×1024, generated locally and then read-only, costing roughly 32 / 8 MiB as RGBA8; reseeding and disposal release them explicitly. Deformation does not conserve mass or implement TSL/WebGPU fluid computation.
+
+两项根据静态参考截图创作，未取得原作者动态视频、源码或输入资源。来源、公式、画质预算与适用范围分别见 [粒子模型](models/particle-paint.md) 和 [液态玻璃模型](models/liquid-glass.md)。
+
+Both scenes are independent works inspired by static reference screenshots, without the original videos, source code or input resources. See the [particle model](models/particle-paint.md) and [liquid model](models/liquid-glass.md) for provenance, formulas, budgets and scope.
 
 ## 启动、异常与离线构建 / Startup, Errors and Offline Build
 

@@ -1,3 +1,11 @@
+/** Keep each captured gesture assigned to either the camera or the simulated field. */
+export function isFieldPointerActive(event,pointers) {
+  if(!event||!(pointers instanceof Map))throw new TypeError('Invalid pointer gesture');
+  return !['pointerleave','pointercancel'].includes(event.type)&&!event.shiftKey&&!(event.buttons&2)&&
+    !pointers.get(event.pointerId)?.orbit&&pointers.size<2&&
+    !(event.pointerType==='touch'&&event.type==='pointerup');
+}
+
 /** Camera animation policy is independent of the scene and simulation clock. */
 export class CameraMotion {
   constructor({enabled=false}={}) { this.enabled=enabled; this.idle=5; }

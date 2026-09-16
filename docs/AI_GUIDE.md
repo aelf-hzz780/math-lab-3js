@@ -30,6 +30,8 @@ Routes use `index.html#<id>`. Each ID maps to a scene at `src/experiments/<id>.j
 | `e8` | Viazovska、八维、240根、对称 / Viazovska, eight dimensions, 240 roots | [e8.js](../src/experiments/e8.js) | [e8.js](../src/math/e8.js) |
 | `matroid` | June Huh、拟阵、生成树、Lorentzian、Hessian / matroids, spanning trees, Lorentzian | [matroid.js](../src/experiments/matroid.js) | [matroid.js](../src/math/matroid.js) |
 | `iridescent-terrain` | 云屿、淡彩、雾蓝、淡紫、圆润体积、孔洞、飞行 / cloudlike islands, pastels, mist blue, lavender, rounded forms, holes, flight | [iridescent-terrain.js](../src/experiments/iridescent-terrain.js) | [iridescent-terrain.js](../src/math/iridescent-terrain.js) |
+| `particle-paint` | 画框、纤维笔触、珊瑚粉紫、粒子变形、鼠标流场 / framed artwork, fibrous strokes, coral and lavender, particle morph, pointer field | [particle-paint.js](../src/experiments/particle-paint.js) | [particle-paint.js](../src/math/particle-paint.js) |
+| `liquid-glass` | 透明液滴、流环、云幕、折射、柔光、轻微色散 / transparent droplets, flowing loops, clouds, refraction, soft highlights, subtle dispersion | [liquid-glass.js](../src/experiments/liquid-glass.js) | [liquid-glass.js](../src/math/liquid-glass.js) |
 
 共享交互在 [`src/app.js`](../src/app.js)，材质与几何主要在各场景文件，共享泛光在 [`src/core/glow.js`](../src/core/glow.js)，镜头策略在 [`src/core/presentation.js`](../src/core/presentation.js)，布局在 [`style.css`](../style.css)。增加实验时接入注册表与统一生命周期；完整接口见 [`SDD.md`](SDD.md)。
 
@@ -53,6 +55,10 @@ PLAYWRIGHT_MODULE=/path/to/playwright/index.mjs node scripts/capture-examples.mj
 The application requires neither an npm server nor a model API: open `index.html` from the complete directory, or use `npm start` for a local HTTP preview. Three.js, the Hat generator and research datasets are fixed local assets. Do not edit `dist/app.js` manually; rebuild source and retain the build verification information in [`dist/manifest.json`](../dist/manifest.json).
 
 ## 保持数学边界 / Preserve Mathematical Boundaries
+
+流彩粒子画与液态玻璃根据截图外观独立实现。截图作者分别为 @Cora_Mat 和 @shadersweden；主页链接仅作署名定位，不是已核验的原帖链接。未取得原作者视频、着色器或输入图片。不要声称本仓库使用原作者的 200 万粒子实现、真实 TSL 流体模拟、WebGPU compute 或新的数学发现；实际数量、预算和数学近似以各实验 `definition` 与模型文档为准。两项采用纯程序化内容，没有参考视频帧或外部纹理。
+
+Particle painting and liquid glass are independent implementations based on screenshot appearance. The screenshots credit @Cora_Mat and @shadersweden; profile links identify attribution and are not verified original-post links. Original videos, shaders and input images have not been obtained. Do not claim the original author's two-million-particle implementation, real TSL fluid simulation, WebGPU compute, or a new mathematical discovery. Actual budgets and model approximations are documented in each definition and model note. Both scenes use procedural content without reference video frames or external textures.
 
 虹彩异境使用平滑三维体积层、Marching tetrahedra 分块网格与连续淡彩表面，外观近似柔和云屿；它不求解真实云雾的体积散射。`iridescence` 参数键保留兼容，主要控制色彩晕染，物理薄膜项仅为该值的 0.08 倍。它的参考是 Cristian Peñas（@ilumine_ai）的 X 视频；参考仅限画面特征，不证明作者使用了相同算法、神经网络或某种新数学结构。不要把视频标题中的 “latent space” 自动解释为本仓库使用机器学习。检索入口为 `#iridescent-terrain`、`18-iridescent-terrain.jpg` 和 [模型说明](models/iridescent-terrain.md)。
 
