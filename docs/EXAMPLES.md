@@ -1,4 +1,4 @@
-# FORMA · 18 个真实示例 / 18 real examples
+# FORMA · 20 个真实示例 / 20 real examples
 
 以下图片直接截取自本仓库的 Three.js 应用，包含实际界面与渲染结果。每张为 1280 × 800 的 JPEG；共用 seed 42、默认参数、高画质和固定镜头。它们不是原始上传照片，也不是生成式效果图。
 
@@ -345,4 +345,40 @@ Rounded floating forms and openings layer through a dark space, with mist blue, 
 - [Paul Bourke · Polygonising a scalar field / tetrahedrons](https://paulbourke.net/geometry/polygonise/)
 - [Three.js · MeshPhysicalMaterial / iridescence](https://threejs.org/docs/#api/en/materials/MeshPhysicalMaterial)
 
-图像总大小 / Total image size: 1765 KiB. Bundle SHA-256: `eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1`.
+## 19 · 流彩粒子画 / Living particle canvas
+
+![流彩粒子画 / Living particle canvas](screenshots/19-particle-paint.jpg)
+
+画框内的细密彩色笔触组成有纵深的流动构图，珊瑚、淡紫与雾蓝粒子在三种形态间连续迁移，可用鼠标或触控拨动。
+
+Fine colored strokes form a deep, flowing composition inside a frame; coral, lavender and blue particles continuously morph between three forms and respond to mouse or touch.
+
+模型边界：视觉参考来自所提供的 Carolina Aiazzi（@Cora_Mat）截图；尚未核验原帖地址、视频或作者源码。这里的三种图像均由参数曲面原创生成，不读取照片，不复现作者算法。curl 场是无散度的解析向量场，但用它直接位移粒子并不等于求解不可压缩流体。半透明笔触采用近似混合，不进行逐粒子排序或真实毛发散射。默认桌面 24 万粒子，手机最多 12 万；200 万为可选高负载档，不承诺所有设备实时。
+
+打开 / Open: `index.html#particle-paint` · t = 0.000 s · seed = 42.
+
+[场景 / Scene](../src/experiments/particle-paint.js) · [数学 / Math](../src/math/particle-paint.js) · [原始图片 / Raw JPEG](https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/19-particle-paint.jpg)
+
+- [视觉参考 · @Cora_Mat（所提供截图，原帖未核验）](https://x.com/Cora_Mat)
+- [Bridson et al. · Curl-Noise for Procedural Fluid Flow · 2007](https://www.cs.ubc.ca/~rbridson/docs/bridson-siggraph2007-curlnoise.pdf)
+- [Three.js · InstancedBufferGeometry](https://threejs.org/docs/#api/en/core/InstancedBufferGeometry)
+
+## 20 · 液态玻璃 / Liquid glass
+
+![液态玻璃 / Liquid glass](screenshots/20-liquid-glass.jpg)
+
+透明液态形体在灰色云幕前融合、流动和回弹，曲面折射背景，边缘呈现柔和高光与克制的色散。
+
+Transparent liquid forms merge, flow and spring back against gray procedural clouds, refracting the backdrop with soft highlights and restrained dispersion.
+
+模型边界：根据 Shader Development Studio 的截图创作的独立视觉实验。仅取得静态截图，尚未核验作者的源码、运动细节或其 TSL 流体算法。本实验使用 WebGL 隐式几何和弹簧形变，未求解 Navier–Stokes，不是 WebGPU 计算着色器流体；“黏滞感”控制回弹速度。折射采用有限步数、一次入射和一次出射，色散为有限 RGB 近似；不计算多次内部反射、焦散、真实体积云或质量守恒。
+
+打开 / Open: `index.html#liquid-glass` · t = 0.000 s · seed = 42.
+
+[场景 / Scene](../src/experiments/liquid-glass.js) · [数学 / Math](../src/math/liquid-glass.js) · [原始图片 / Raw JPEG](https://raw.githubusercontent.com/aelf-hzz780/math-lab-3js/main/docs/screenshots/20-liquid-glass.jpg)
+
+- [视觉参考 · Shader Development Studio / @shadersweden · 用户提供截图](https://x.com/shadersweden)
+- [Inigo Quilez · distance functions / smooth union](https://iquilezles.org/articles/distfunctions/)
+- [Physically Based Rendering · dielectric reflection and refraction](https://pbr-book.org/4ed/Reflection_Models/Dielectric_BSDF)
+
+图像总大小 / Total image size: 1952 KiB. Bundle SHA-256: `8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699`.

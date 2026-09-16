@@ -1,6 +1,6 @@
 {
-  "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1",
-  "started": "2026-09-14T11:24:02.358Z",
+  "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699",
+  "started": "2026-09-16T07:39:51.442Z",
   "browser": "152.0.7977.83",
   "protocol": "file:",
   "scenes": [
@@ -93,6 +93,16 @@
       "id": "iridescent-terrain",
       "ready": true,
       "error": null
+    },
+    {
+      "id": "particle-paint",
+      "ready": true,
+      "error": null
+    },
+    {
+      "id": "liquid-glass",
+      "ready": true,
+      "error": null
     }
   ],
   "failureChecks": [
@@ -100,13 +110,13 @@
       "failure": "missing-bundle",
       "loadingHidden": true,
       "recoveryVisible": true,
-      "message": "离线脚本未找到，请重新生成 dist/app.js。 · 参考编号 forma-boot-e4ee9dc6"
+      "message": "离线脚本未找到，请重新生成 dist/app.js。 · 参考编号 forma-boot-ed928ef3"
     },
     {
       "failure": "invalid-bundle",
       "loadingHidden": true,
       "recoveryVisible": true,
-      "message": "Unexpected token '{' · 参考编号 forma-boot-95973c5a"
+      "message": "Unexpected token '{' · 参考编号 forma-boot-37f3eb3b"
     }
   ],
   "errors": [],

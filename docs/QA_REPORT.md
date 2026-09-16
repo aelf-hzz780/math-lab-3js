@@ -1,66 +1,77 @@
-# FORMA 1.2.1 验收报告 / Validation Report
+# FORMA 1.3.0 验收报告 / Validation Report
 
-验收日期：2026-09-14。**18/18 实验离线运行，118/118 数学与状态测试通过。** 本版修复虹彩地形的面片朝向与接缝观感，采用圆润体积层、连续淡彩、宽高光和局部遮蔽，并提前加载前方地形。[前后对比](comparisons/iridescent-terrain.jpg) 使用同一相机、seed 42 和暂停时间 0；两边均为本应用截图。历史结果保留在 [1.2](QA_BASELINE_1.2.md)、[1.1](QA_BASELINE_1.1.md) 和 [1.0](QA_BASELINE_1.0.md)。
+验收日期：2026-09-16。**20/20 实验可离线运行，142/142 数学、状态与手势测试通过。** 本版新增流彩粒子画与液态玻璃，各含三个预设、指针交互和可复现模型。完整图集现有 20 张截图、60 个预设；此前的地形验收保留在 [1.2.1 基线](QA_BASELINE_1.2.1.md)，不作为本版重新测得的地形性能。
 
-Validated on 2026-09-14. **All 18 scenes run offline and all 118 math/state tests pass.** This version fixes terrain face orientation, adds rounded volumes, continuous pastels, broad highlights and local occlusion, and prefetches terrain ahead. The [before/after comparison](comparisons/iridescent-terrain.jpg) uses the same camera, seed 42 and paused time 0; both sides are actual application captures. Historical results are preserved separately.
+Validated on 2026-09-16. **All 20 scenes run offline and all 142 mathematics, state and gesture tests pass.** This release adds particle painting and liquid glass, each with three presets, pointer interaction and reproducible models. The catalog contains 20 captured scenes and 60 presets. Earlier terrain results are preserved in the [1.2.1 baseline](QA_BASELINE_1.2.1.md), rather than presented as new terrain performance measurements.
 
-## 改动与验证 / Changes and Validation
+## 实现与回归 / Implementation and regressions
 
-旧算法按光照法线逐三角面翻转，导致部分内部共享边方向重复，背面剔除后形成三角缺口。先加入失败用例，再按四面体实体到空气方向固定面片绕序。共享边现在反向配对，光照法线不会改变拓扑。平滑交集、低频与中尺度密度起伏取代薄硬层片；顶点位置、法线和新增遮蔽值在相邻区块边界一致。
+粒子画包含三种原创程序构图、闭环平滑变形、解析 curl 位移、沿流向排列的细纤维与真实画框纵深。默认桌面 24 万粒子，手机最多 12 万并放大笔触。测试验证 seed 前缀稳定、混合权重和闭环连续性、curl 数值散度、参数边界以及几何重建/释放。
 
-The previous extractor flipped each triangle using shading normals, producing same-direction interior edges and triangular gaps under backface culling. A failing regression preceded the fix: face winding now follows the tetrahedron's solid-to-air direction. Interior edges pair in opposite directions, and lighting normals do not alter topology. Smooth intersections and low/medium-scale density replace thin, hard shelves; positions, normals and occlusion match at chunk boundaries.
+Particle painting includes three original procedural compositions, smooth cyclic morphing, analytic curl displacement, aligned fine fibers and real frame depth. Defaults are 240,000 desktop particles and a 120,000 mobile cap with wider strokes. Tests cover stable seed prefixes, normalized continuous blend weights, numerical curl divergence, bounds, geometry replacement and disposal.
 
-颜色由两个低频空间场连续混合，删除循环色带与高频颗粒法线。金属度从 0.88 降至 0.06，薄膜虹彩实际值为控件的 0.08 倍；默认粗糙度 0.68。高/低画质使用 48/32 个单元。新增 AO 每顶点采样八次世界密度，仅在区块生成时计算；它不是实时阴影或真实体积散射。
+液态玻璃用相融环体与液滴形成连续曲面；程序化云层通过有限的入射/出射光线折射，临界阻尼弹簧驱动牵引与回弹。测试覆盖固定目标下的帧率一致性、回弹收敛、场连续性、Snell 定律/全反射、无效参数与资源释放。暂停后仍有形变时重新拖动或轻触，不再改变已渲染的 anchor；恢复播放后才推进。两个新材质也移除了反向 smoothstep 的未定义 GLSL 写法。
 
-Two low-frequency spatial fields blend color continuously, replacing cyclic bands and high-frequency grain normals. Metalness drops from 0.88 to 0.06, physical iridescence is scaled to 0.08 of its control, and default roughness is 0.68. High/low quality use 48/32 cells. New vertex occlusion uses eight world-density probes during chunk generation; it is not real-time shadowing or volumetric scattering.
+Liquid glass joins warped rings and droplets into a continuous surface, refracts procedural clouds through finite entry/exit rays, and uses critically damped springs for pulling and recovery. Tests cover timestep subdivision for fixed targets, spring convergence, field continuity, Snell refraction/total internal reflection, invalid inputs and disposal. Starting another drag or pulse while paused with existing deformation no longer changes the rendered anchor until playback resumes. Both new materials avoid undefined reversed-edge GLSL smoothstep calls.
 
-新预加载在边界前 12 m 启动，生成期间继续飞行。只挂载 15 块、最多暂存下一排 3 块；到边界时整排原子替换。只有下一排未完成时才暂缓，避免进入未生成区域。状态测试覆盖预加载时继续移动、慢任务边界等待、整排交换、重置/退出释放和过期任务。
+公共手势策略把单指/左键分配给场景，Shift/右键分配给相机，双指保留缩放。起始为 Shift 旋转时，即使中途松开 Shift，也不会同时触发场扰动。鼠标和触摸输入在暂停时只记录目标，reset 清除已渲染和待处理的扰动。
 
-Prefetch starts 12 m before the next boundary while flight continues. Only 15 chunks are mounted, with at most three next-row chunks staged. Rows swap atomically at the boundary. Incomplete rows temporarily hold travel there. State regressions cover continued movement, slow-worker boundary waits, atomic swaps, reset/disposal and stale tasks.
+Shared gesture policy assigns one finger/left mouse to the field, Shift/right mouse to orbit, and two fingers to zoom. A drag begun as Shift-orbit cannot simultaneously perturb the field when Shift is released. Paused mouse/touch input records targets only, and reset clears both rendered and pending perturbations.
 
-## 浏览器结果 / Browser Results
+## 浏览器结果 / Browser results
 
-| 检查 / Check | 结果 / Result | 记录 / Evidence |
-| --- | --- | --- |
-| 离线启动 / Offline | 18/18，零远程请求与错误 / no remote requests or errors | [offline](qa/offline-report.json) |
-| 预设 / Presets | 54 桌面 + 54 触控模拟 / desktop + touch | [presentation](qa/presentation-report.json) |
-| 地形参数 / Terrain parameters | 3 预设、10 边界，seed/reset PNG 哈希复现 / presets, bounds, reproducible PNG | [terrain](qa/terrain-report.json) |
-| 连续飞行 / Travel | 75.3 m；20 次目录切换资源稳定 / stable resources over 20 switches | [terrain](qa/terrain-report.json) |
-| 取消与回退 / Cancellation and fallback | 4 次加载中止；37 Worker 创建 = 37 终止；无 Worker 回退通过 / 4 aborts, all workers terminated, fallback passes | [terrain](qa/terrain-report.json) |
-| 手机 / Mobile | 390×844、触控、横竖屏相机复位、PNG、无横向溢出 / touch, framing, PNG, no overflow | [terrain](qa/terrain-report.json) |
+| 检查 / Check | 结果 / Result | 证据 / Evidence |
+|---|---|---|
+| Chrome 离线 / Offline | 20/20；无错误、无远程请求 / no errors or remote requests | [offline](qa/offline-report.json) |
+| 全目录预设 / All presets | 60 桌面 + 60 触控模拟 / desktop + touch | [presentation](qa/presentation-report.json) |
+| 新场景边界 / New controls | 23 参数端点、6 动作、高/低画质 / bounds, actions, high/low | [effects](qa/effects-report.json) |
+| 连续交互 / Pointer interaction | 等时鼠标与 CDP 触控轨迹改变图像，相机不动 / equal-time input changes pixels while camera stays fixed | [effects](qa/effects-report.json) |
+| 暂停与重置 / Pause and reset | 暂停输入不改变 PNG；reset 的 PNG 逐字节一致 / frozen input, byte-identical reset PNG | [effects](qa/effects-report.json) |
+| 相机 / Camera | Shift/右键、双指缩放、相机复位 / Shift/right orbit, pinch, reset | [effects](qa/effects-report.json) |
+| 资源 / Resources | 24 次切换后 geometry/texture 计数稳定 / stable counts after 24 switches | [effects](qa/effects-report.json) |
+| 手机布局 / Mobile layout | 390×844、DPR2 触控模拟、低画质，无横向溢出 / touch emulation, low quality, no overflow | [effects](qa/effects-report.json) |
+| 启动失败 / Boot recovery | 缺失/损坏 bundle 显示 Trace ID 与恢复入口 / missing/broken bundle shows recovery | [offline](qa/offline-report.json) |
 
-当前离线包、图集和三个最终浏览器报告使用同一 bundle SHA。缺失/损坏 bundle 的故障检查仍显示 Trace ID 和恢复入口。源 seed 恢复与 reset 的 PNG 在同一浏览器会话逐字节一致；不承诺跨 GPU/浏览器像素相同。浅色地形上的测量文字新增深色衬底，并在最终截图中检查可读性。
+以上三个浏览器报告与截图索引均对应本报告末尾的最终 bundle SHA。桌面/手机最终截图已人工目视检查；手机粒子笔触补偿后，淡紫边缘与珊瑚色核心可辨，玻璃主体与控件均完整可见。
 
-The current bundle, gallery and three final browser reports share one bundle hash. Missing/malformed bundles still show a Trace ID and recovery UI. Restored-seed and reset PNGs match byte-for-byte within one browser session; cross-GPU/browser pixel identity is not promised. Dark backplates maintain measurement-text contrast over the pale terrain and were checked in final captures.
+All three browser reports and the screenshot index match the final bundle hash below. Final desktop/mobile captures were visually inspected. Wider mobile strokes preserve lavender edges and coral centers, and both the glass subject and controls remain visible.
 
-## 性能与范围 / Performance and Scope
+## 性能与模型边界 / Performance and model limits
 
-Apple M3 Pro，macOS arm64，Chrome 152.0.7977.83，headless，1280×800、DPR 1、高画质。独立真实时钟播放 5.346 秒，末尾短窗口采样 **56 FPS**，采样时正在预载前方地形。更细的网格与遮蔽计算提高一次性生成成本，交换时不重新计算整幅几何。
+环境：Apple M3 Pro，macOS arm64，headless Chrome 152.0.7977.83，1280×800、DPR1、高画质。每个场景在独立页面使用真实时钟播放约五秒，采样前关闭其他验收页面。
 
-Apple M3 Pro, macOS arm64, headless Chrome 152.0.7977.83, 1280×800, DPR 1, high quality. A separate real-clock page ran for 5.346 seconds and sampled **56 FPS** in its final short window, while prefetching terrain. Finer grids and occlusion increase chunk-generation cost; row exchanges do not rebuild the entire world.
+Environment: Apple M3 Pro, macOS arm64, headless Chrome 152.0.7977.83, 1280×800, DPR1, high quality. Each scene ran for about five real-clock seconds in its own page after other acceptance pages were closed.
 
-手机验收是同一 Mac 的触控模拟，不是 iOS/Android 真机或长期热稳定性测试。渲染资源计数检查不替代完整堆/驱动泄漏分析。云屿仍为实体表面近似，未模拟真实云雾的体积散射；小于网格尺度的特征可能消失。手动镜头可离开有限窗口，极长距离的材质噪声受浮点精度限制。作者原算法尚未核验。
+| 实验 / Scene | 墙钟秒 / Wall seconds | 末尾短窗 / Final rolling sample |
+|---|---:|---:|
+| `particle-paint` | 5.164 | 60 FPS |
+| `liquid-glass` | 5.160 | 60 FPS |
 
-Mobile checks emulate touch on the same Mac, not physical devices or sustained thermal behavior. Renderer counts do not replace exhaustive heap/driver analysis. Floating forms remain a solid-surface approximation without cloud volumetric scattering. Fine features can disappear below grid resolution; manual cameras can leave the window and long-distance material noise loses floating-point precision. The reference author's algorithm remains unverified.
+这些是默认参数的短时测量，不是持续热负载测试或 200 万粒子档保证。手机为 Mac 上的触控模拟，未测试 iOS/Android 真机性能。资源计数检查不替代完整堆/驱动泄漏分析。
 
-## 产物 / Artifacts
+These are brief measurements at default parameters, not sustained thermal benchmarks or guarantees for the two-million-particle setting. Mobile is emulated on the Mac; physical iOS/Android performance is untested. Resource counters do not replace exhaustive heap/driver leak analysis.
 
-18 张 1280×800 JPEG，共 1,807,237 bytes；另有一张 1600×544 的前后对比图，163,365 bytes。索引记录图像哈希、参数、相机、来源与源码。截图使用虚拟时钟，画面 FPS 不作为性能证据。
+两项视觉依据是用户提供的静态截图，未核验作者原视频、源码或资源。粒子作品是原创程序图像；液态玻璃是几何/光学近似，不是 TSL/WebGPU 流体求解、质量守恒模拟或新的数学结构。透明排序、多次内部反射、焦散与真实体积云不在本模型中。详细范围见 [粒子模型](models/particle-paint.md) 与 [玻璃模型](models/liquid-glass.md)。
 
-18 JPEGs at 1280×800 total 1,807,237 bytes, plus a 1600×544 comparison of 163,365 bytes. Indexes record hashes, parameters, cameras, citations and source paths. Captures use virtual time; displayed FPS is not performance evidence.
+Both effects use supplied static screenshots as visual references; the original videos, source code and assets have not been verified. Particle compositions are original procedural imagery. Glass is a geometry/optics approximation rather than a TSL/WebGPU fluid solver, mass-conserving simulation or new mathematical structure. Per-particle sorting, repeated internal reflections, caustics and true volumetric clouds are outside the models. See the model notes for details.
 
-[图集 / Gallery](EXAMPLES.md) · [截图索引 / Screenshot manifest](screenshots/manifest.json) · [对比来源 / Comparison provenance](comparisons/iridescent-terrain.json)
+## 产物与复验 / Artifacts and reproduction
+
+20 张 1280×800 JPEG 共 1,998,908 bytes；两张新作分别为 99,452 与 96,850 bytes。图集与索引记录参数、seed、相机、来源、源码和图片 SHA。同一浏览器会话的 reset 图像可逐字节复现，不承诺跨 GPU/字体的像素一致。截图使用虚拟时钟，画面 FPS 不作为性能证据。
+
+20 JPEGs at 1280×800 total 1,998,908 bytes; the two additions are 99,452 and 96,850 bytes. The gallery and manifest record parameters, seeds, cameras, sources, code and image hashes. Reset pixels reproduce within a browser session, without a cross-GPU/font guarantee. Screenshots use virtual time; displayed FPS is not performance evidence.
+
+[图集 / Gallery](EXAMPLES.md) · [截图索引 / Manifest](screenshots/manifest.json)
 
 ```sh
 npm test
 npm run build
-PLAYWRIGHT_MODULE=/path/to/playwright/index.mjs node scripts/terrain-check.mjs
 PLAYWRIGHT_MODULE=/path/to/playwright/index.mjs node scripts/offline-check.mjs
 PLAYWRIGHT_MODULE=/path/to/playwright/index.mjs node scripts/presentation-check.mjs
+PLAYWRIGHT_MODULE=/path/to/playwright/index.mjs node scripts/effects-check.mjs
 PLAYWRIGHT_MODULE=/path/to/playwright/index.mjs node scripts/capture-examples.mjs
-python3 scripts/compare-terrain.py  # Pillow required
 ```
 
-Offline bundle: 909,919 bytes. SHA-256:
+Offline bundle: 938,084 bytes. SHA-256:
 
-`eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1`
+`8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699`

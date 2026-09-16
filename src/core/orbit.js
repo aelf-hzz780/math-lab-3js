@@ -3,7 +3,7 @@ import * as THREE from '../../vendor/three.module.js';
 export class OrbitController {
   constructor(camera, element, onClick) {
     this.camera=camera; this.element=element; this.target=new THREE.Vector3();
-    this.spherical=new THREE.Spherical(); this.pointers=new Map(); this.onClick=onClick;
+    this.spherical=new THREE.Spherical(); this.pointers=new Map(); this.onClick=onClick;this.primaryAction='orbit';
     this.abort=new AbortController(); const options={signal:this.abort.signal};
     element.addEventListener('pointerdown',e=>this.down(e),options);
     element.addEventListener('pointermove',e=>this.move(e),options);
@@ -18,7 +18,7 @@ export class OrbitController {
     this.spherical.setFromVector3(this.camera.position.clone().sub(this.target)); this.apply();
   }
   down(e) {
-    this.element.setPointerCapture(e.pointerId);this.pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    this.element.setPointerCapture(e.pointerId);this.pointers.set(e.pointerId,{x:e.clientX,y:e.clientY,orbit:e.button===2||e.shiftKey});
     this.start={x:e.clientX,y:e.clientY};this.travel=0;
   }
   move(e) {
@@ -29,10 +29,10 @@ export class OrbitController {
       const before=Math.hypot(previous.x-other.x,previous.y-other.y);
       const after=Math.hypot(e.clientX-other.x,e.clientY-other.y);
       if(after>0)this.zoom(before/after);
-    }else{
+    }else if(this.primaryAction!=='field'||previous.orbit||e.shiftKey){
       this.spherical.theta-=dx*.005;this.spherical.phi-=dy*.005;this.apply();
     }
-    this.pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    this.pointers.set(e.pointerId,{x:e.clientX,y:e.clientY,orbit:previous.orbit});
   }
   up(e) {if(this.pointers.has(e.pointerId)&&this.travel<5)this.onClick?.(e);this.pointers.delete(e.pointerId);}
   zoom(factor){this.spherical.radius=Math.max(1,Math.min(150,this.spherical.radius*factor));this.apply();}

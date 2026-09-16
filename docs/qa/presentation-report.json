@@ -1,6 +1,6 @@
 {
-  "started": "2026-09-14T11:24:01.977Z",
-  "bundleSha256": "eea289fa7e8dcc17a3a50e2bad43a4f14631efb9707572287084bb9d05e323f1",
+  "started": "2026-09-16T07:39:50.870Z",
+  "bundleSha256": "8877513a37e9ec287cbe2094182b554466cba71cf0cb2870d55edf02d5ec5699",
   "browser": "152.0.7977.83",
   "protocol": "file:",
   "desktopPresets": [
@@ -655,6 +655,81 @@
         "iridescence": 0.25,
         "roughness": 0.58,
         "speed": 3.8
+      },
+      "passed": true
+    },
+    {
+      "id": "particle-paint",
+      "label": "绛紫花潮",
+      "params": {
+        "composition": 0,
+        "morph": 0.65,
+        "flow": 0.8,
+        "depth": 1.1,
+        "brush": 1,
+        "particles": 240000
+      },
+      "passed": true
+    },
+    {
+      "id": "particle-paint",
+      "label": "蓝调绸带",
+      "params": {
+        "composition": 1,
+        "morph": 0.4,
+        "flow": 1.1,
+        "depth": 1.4,
+        "brush": 1.15,
+        "particles": 300000
+      },
+      "passed": true
+    },
+    {
+      "id": "particle-paint",
+      "label": "珊瑚漩涡",
+      "params": {
+        "composition": 2,
+        "morph": 0.5,
+        "flow": 0.65,
+        "depth": 0.8,
+        "brush": 0.85,
+        "particles": 360000
+      },
+      "passed": true
+    },
+    {
+      "id": "liquid-glass",
+      "label": "云镜交融",
+      "params": {
+        "shape": "mirror",
+        "flow": 0.45,
+        "viscosity": 0.85,
+        "ior": 1.36,
+        "dispersion": 0.25
+      },
+      "passed": true
+    },
+    {
+      "id": "liquid-glass",
+      "label": "流环相拥",
+      "params": {
+        "shape": "ribbons",
+        "flow": 0.7,
+        "viscosity": 0.45,
+        "ior": 1.46,
+        "dispersion": 0.4
+      },
+      "passed": true
+    },
+    {
+      "id": "liquid-glass",
+      "label": "银雨悬浮",
+      "params": {
+        "shape": "rain",
+        "flow": 0.3,
+        "viscosity": 1.6,
+        "ior": 1.25,
+        "dispersion": 0.15
       },
       "passed": true
     }
@@ -1313,6 +1388,81 @@
         "speed": 3.8
       },
       "passed": true
+    },
+    {
+      "id": "particle-paint",
+      "label": "绛紫花潮",
+      "params": {
+        "composition": 0,
+        "morph": 0.65,
+        "flow": 0.8,
+        "depth": 1.1,
+        "brush": 1,
+        "particles": 240000
+      },
+      "passed": true
+    },
+    {
+      "id": "particle-paint",
+      "label": "蓝调绸带",
+      "params": {
+        "composition": 1,
+        "morph": 0.4,
+        "flow": 1.1,
+        "depth": 1.4,
+        "brush": 1.15,
+        "particles": 300000
+      },
+      "passed": true
+    },
+    {
+      "id": "particle-paint",
+      "label": "珊瑚漩涡",
+      "params": {
+        "composition": 2,
+        "morph": 0.5,
+        "flow": 0.65,
+        "depth": 0.8,
+        "brush": 0.85,
+        "particles": 360000
+      },
+      "passed": true
+    },
+    {
+      "id": "liquid-glass",
+      "label": "云镜交融",
+      "params": {
+        "shape": "mirror",
+        "flow": 0.45,
+        "viscosity": 0.85,
+        "ior": 1.36,
+        "dispersion": 0.25
+      },
+      "passed": true
+    },
+    {
+      "id": "liquid-glass",
+      "label": "流环相拥",
+      "params": {
+        "shape": "ribbons",
+        "flow": 0.7,
+        "viscosity": 0.45,
+        "ior": 1.46,
+        "dispersion": 0.4
+      },
+      "passed": true
+    },
+    {
+      "id": "liquid-glass",
+      "label": "银雨悬浮",
+      "params": {
+        "shape": "rain",
+        "flow": 0.3,
+        "viscosity": 1.6,
+        "ior": 1.25,
+        "dispersion": 0.15
+      },
+      "passed": true
     }
   ],
   "errors": [],
@@ -1333,13 +1483,13 @@
     "manualHoldStableMilliseconds": 600
   },
   "pngExport": {
-    "filename": "forma-iridescent-terrain-seed-42.png",
-    "bytes": 601267,
+    "filename": "forma-liquid-glass-seed-42.png",
+    "bytes": 1529087,
     "signatureValid": true
   },
   "mobile": {
     "viewport": "390×844, DPR 2, touch emulation",
-    "presetTouches": 54,
+    "presetTouches": 60,
     "overflow": false,
     "theoryDrawer": true,
     "modeSwitch": true

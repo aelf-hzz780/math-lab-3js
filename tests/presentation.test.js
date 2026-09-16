@@ -1,6 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {CameraMotion} from '../src/core/presentation.js';
+import {CameraMotion,isFieldPointerActive} from '../src/core/presentation.js';
+
+test('a latched camera gesture never becomes a simultaneous field drag',()=>{
+  const event={type:'pointermove',pointerId:1,pointerType:'mouse',buttons:1,shiftKey:false};
+  assert.equal(isFieldPointerActive(event,new Map([[1,{orbit:true}]])),false);
+  assert.equal(isFieldPointerActive(event,new Map([[1,{orbit:false}]])),true);
+  assert.equal(isFieldPointerActive({...event,shiftKey:true},new Map([[1,{orbit:false}]])),false);
+  assert.equal(isFieldPointerActive({...event,buttons:2},new Map()),false);
+  assert.equal(isFieldPointerActive(event,new Map([[1,{}],[2,{}]])),false);
+  assert.equal(isFieldPointerActive({...event,type:'pointerup',pointerType:'touch'},new Map()),false);
+  assert.equal(isFieldPointerActive({...event,type:'pointerleave'},new Map()),false);
+  assert.equal(isFieldPointerActive({...event,type:'pointercancel'},new Map()),false);
+});
 
 test('camera respects pause, touch gestures and the idle grace period',()=>{
   const motion=new CameraMotion({enabled:true});

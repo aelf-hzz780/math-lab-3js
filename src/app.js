@@ -3,7 +3,7 @@ import {catalog, iconSvg, loadExperiment} from './catalog.js';
 import {validateParameters, SimulationClock} from './core/state.js';
 import {OrbitController} from './core/orbit.js';
 import {disposeGroup} from './core/resources.js';
-import {CameraMotion} from './core/presentation.js';
+import {CameraMotion,isFieldPointerActive} from './core/presentation.js';
 import {GlowRenderer} from './core/glow.js';
 
 const $=id=>document.getElementById(id);
@@ -76,6 +76,20 @@ function setupRenderer(){
       try{applyInteractionResult(current.pick(raycaster));dirty=true;}catch(error){reportError(error,'selection');}
     });
     listen(renderer.domElement,'pointerdown',()=>cameraMotion.interact());
+    for(const type of ['pointerdown','pointermove','pointerup','pointerleave','pointercancel']){
+      listen(renderer.domElement,type,event=>{
+        if(!current?.pointer)return;
+        const rect=renderer.domElement.getBoundingClientRect();
+        if(rect.width<=0||rect.height<=0)return;
+        const active=isFieldPointerActive(event,orbit.pointers);
+        if(active)cameraMotion.interact();
+        try{
+          current.pointer({x:Math.max(-1,Math.min(1,(event.clientX-rect.left)/rect.width*2-1)),
+            y:Math.max(-1,Math.min(1,1-(event.clientY-rect.top)/rect.height*2)),active,pressed:active&&!!(event.buttons&1)});
+          dirty=true;
+        }catch(error){reportError(error,'pointer');}
+      });
+    }
     listen(renderer.domElement,'wheel',()=>cameraMotion.interact(),{passive:true});
     listen(renderer.domElement,'webglcontextlost',event=>{event.preventDefault();reportError(new Error('图形上下文已丢失，请重新加载实验。'),'webgl');});
     listen(renderer.domElement,'webglcontextrestored',()=>selectExperiment(currentId,true));
@@ -206,6 +220,9 @@ async function selectExperiment(id,force=false){
   try{
     const module=await loadExperiment(id);if(version!==epoch)return;
     definition=module.definition;
+    if(orbit)orbit.primaryAction=definition.interaction==='field'?'field':'orbit';
+    document.querySelector('.interaction-hint').textContent=definition.interaction==='field'
+      ?'移动／按住扰动 · Shift 拖动旋转 · 双指／滚轮缩放':'⤧ 拖动旋转 · 滚轮缩放';
     const saved=savedStates.get(id);params=validateParameters(definition.parameters||[],saved?.params||{});seed=saved?.seed??42;$('seed').value=seed;
     renderDefinition();
     enableExperimentControls(false);
